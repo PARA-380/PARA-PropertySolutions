@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "PARA-PROPERTYSOLUTIONS"
+version = "0.1.0"
+description = "Property Management Software by PARA Property Solutions"
+authors = ["PARA"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+PyQt6 = "^6.6.1"
+pytest = "^8.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+package-mode = false
