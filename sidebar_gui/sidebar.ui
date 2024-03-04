@@ -77,7 +77,7 @@ QPushButton:checked{
           <number>17</number>
          </property>
          <item>
-          <widget class="QPushButton" name="dashboard_button">
+          <widget class="QPushButton" name="dashboard1">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -99,7 +99,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="properties_button">
+          <widget class="QPushButton" name="properties1">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -121,7 +121,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="tenants_button">
+          <widget class="QPushButton" name="tenants1">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -143,7 +143,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="contractors_button">
+          <widget class="QPushButton" name="contractors1">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -165,7 +165,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="noti_button">
+          <widget class="QPushButton" name="notifications1">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -187,7 +187,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="setting_button">
+          <widget class="QPushButton" name="settings1">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -224,7 +224,7 @@ QPushButton:checked{
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="signout_button">
+        <widget class="QPushButton" name="signout1">
          <property name="text">
           <string/>
          </property>
@@ -272,19 +272,6 @@ QPushButton:checked{
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <spacer name="horizontalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>13</width>
-             <height>17</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
           <widget class="QLabel" name="label_2">
            <property name="minimumSize">
             <size>
@@ -310,19 +297,6 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_6">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>27</width>
-             <height>17</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
           <widget class="QLabel" name="label_3">
            <property name="font">
             <font>
@@ -335,19 +309,6 @@ QPushButton:checked{
             <string>MENU</string>
            </property>
           </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>26</width>
-             <height>17</height>
-            </size>
-           </property>
-          </spacer>
          </item>
         </layout>
        </item>
@@ -363,7 +324,7 @@ QPushButton:checked{
           <number>9</number>
          </property>
          <item>
-          <widget class="QPushButton" name="dashboard_button2_2">
+          <widget class="QPushButton" name="dashboard2">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -388,7 +349,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="properties_button2">
+          <widget class="QPushButton" name="properties2">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -410,7 +371,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="tenants_button2">
+          <widget class="QPushButton" name="tenants2">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -432,7 +393,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="contractors_button2">
+          <widget class="QPushButton" name="contractors2">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -454,7 +415,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="noti_button2">
+          <widget class="QPushButton" name="notifications2">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -476,7 +437,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="setting_button2">
+          <widget class="QPushButton" name="settings2">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -513,7 +474,7 @@ QPushButton:checked{
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="signout_button2">
+        <widget class="QPushButton" name="signout2">
          <property name="text">
           <string>Sign Out</string>
          </property>
@@ -771,9 +732,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>dashboard_button2_2</sender>
+   <sender>dashboard2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>dashboard_button</receiver>
+   <receiver>dashboard1</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -787,9 +748,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>dashboard_button</sender>
+   <sender>dashboard1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>dashboard_button2_2</receiver>
+   <receiver>dashboard2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -803,9 +764,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>properties_button2</sender>
+   <sender>properties2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>properties_button</receiver>
+   <receiver>properties1</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -819,9 +780,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>properties_button</sender>
+   <sender>properties1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>properties_button2</receiver>
+   <receiver>properties2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -835,9 +796,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>tenants_button</sender>
+   <sender>tenants1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>tenants_button2</receiver>
+   <receiver>tenants2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -851,9 +812,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>tenants_button2</sender>
+   <sender>tenants2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>tenants_button</receiver>
+   <receiver>tenants1</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -867,9 +828,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>contractors_button</sender>
+   <sender>contractors1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>contractors_button2</receiver>
+   <receiver>contractors2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -883,9 +844,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>contractors_button2</sender>
+   <sender>contractors2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>contractors_button</receiver>
+   <receiver>contractors1</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -899,9 +860,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>noti_button</sender>
+   <sender>notifications1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>noti_button2</receiver>
+   <receiver>notifications2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -915,9 +876,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>noti_button2</sender>
+   <sender>notifications2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>noti_button</receiver>
+   <receiver>notifications1</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -931,9 +892,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>setting_button</sender>
+   <sender>settings1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>setting_button2</receiver>
+   <receiver>settings2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -947,9 +908,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>setting_button2</sender>
+   <sender>settings2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>setting_button</receiver>
+   <receiver>settings1</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -963,7 +924,7 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>signout_button</sender>
+   <sender>signout1</sender>
    <signal>toggled(bool)</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
@@ -979,7 +940,7 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>signout_button2</sender>
+   <sender>signout2</sender>
    <signal>toggled(bool)</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
