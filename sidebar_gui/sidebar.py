@@ -10,7 +10,7 @@ class Sidebar(QMainWindow, Ui_MainWindow):
         #Hide the icon with the description when opening the program first time
         self.icon_bar.setHidden(True)
 
-        #calling methods-------------------------------------------
+        #calling methods switching pages-------------------------------------------
 
         self.dashboard1.clicked.connect(self.switch_to_dashboardPage)
         self.dashboard2.clicked.connect(self.switch_to_dashboardPage)
