@@ -4,11 +4,11 @@ pip install poetry
 ##make sure poetry creates environment in the project folder##
 poetry config virtualenvs.in-project true
 
-##install the packages##
-poetry install
-
 ##activate the venv##
 poetry shell
+
+##install the packages##
+poetry install
 
 ##add new package dependency##
 poetry add package-name
@@ -16,3 +16,4 @@ poetry add package-name
 ##install the packages##
 poetry install
 
+ 
