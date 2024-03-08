@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DashBoard</class>
+ <widget class="QMainWindow" name="DashBoard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1033</width>
+    <height>731</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QPushButton" name="signout_btn">
+        <property name="font">
+         <font>
+          <family>Rockwell</family>
+          <pointsize>10</pointsize>
+          <italic>false</italic>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Sign out</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../allicon.qrc">
+          <normaloff>:/newPrefix/feather/log-out.svg</normaloff>:/newPrefix/feather/log-out.svg</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>588</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="images.qrc">:/newPrefix/Application.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QWidget" name="horizontalLayoutWidget_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>Rockwell Extra Bold</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>WELCOME TO PARA PROPERTY SOLUTIONS - DASHBOARD</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="font">
+           <font>
+            <family>Rockwell</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Profile</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../allicon.qrc">
+            <normaloff>:/newPrefix/feather/user.svg</normaloff>:/newPrefix/feather/user.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="font">
+           <font>
+            <family>Rockwell</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Settings</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../allicon.qrc">
+            <normaloff>:/newPrefix/feather/settings.svg</normaloff>:/newPrefix/feather/settings.svg</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget">
+       <layout class="QGridLayout" name="gridLayout">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="Properties_btn">
+          <property name="font">
+           <font>
+            <family>Rockwell</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Properties</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../allicon.qrc">
+            <normaloff>:/newPrefix/feather/home.svg</normaloff>:/newPrefix/feather/home.svg</iconset>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>false</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="font">
+           <font>
+            <family>Rockwell</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Notifications</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../allicon.qrc">
+            <normaloff>:/newPrefix/feather/bell.svg</normaloff>:/newPrefix/feather/bell.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="Tenants_btn">
+          <property name="font">
+           <font>
+            <family>Rockwell</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Tenants</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../allicon.qrc">
+            <normaloff>:/newPrefix/feather/users.svg</normaloff>:/newPrefix/feather/users.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="font">
+           <font>
+            <family>Rockwell</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Contractors</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../allicon.qrc">
+            <normaloff>:/newPrefix/feather/tool.svg</normaloff>:/newPrefix/feather/tool.svg</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../allicon.qrc"/>
+  <include location="images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>signout_btn</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>DashBoard</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>712</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>51</x>
+     <y>758</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
