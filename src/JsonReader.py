@@ -18,5 +18,5 @@ class jsonwriter:
         pass
 
 
-example : dict = {"Properties":{"property1":{"Tenant":{"name" : "Ridham Patel"}},"property2":{"Tenant":{}},"property3":{"Tenant":{}}}}
+#example : dict = {"Properties":{"property1":{"Tenant":{"name" : "Ridham Patel"}},"property2":{"Tenant":{}},"property3":{"Tenant":{}}}}
 jsonwriter(example).write()
