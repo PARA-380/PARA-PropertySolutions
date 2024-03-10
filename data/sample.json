@@ -1,17 +1,8 @@
 {
-    "Account1":{
-        "Properties": {
-            "property1": {
-                "Tenant": {
-                    "name": "Ridham Patel"
-                }
-            },
-            "property2": {
-                "Tenant": {}
-            },
-            "property3": {
-                "Tenant": {}
-            }
-        }
-    }
+    "name": "Ridham",
+    "username": "RidhamPlaysValorant123",
+    "password": "iluv1D",
+    "properties": {},
+    "tenants": {},
+    "contractors": {}
 }
