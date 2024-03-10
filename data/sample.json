@@ -1,0 +1,17 @@
+{
+    "Account1":{
+        "Properties": {
+            "property1": {
+                "Tenant": {
+                    "name": "Ridham Patel"
+                }
+            },
+            "property2": {
+                "Tenant": {}
+            },
+            "property3": {
+                "Tenant": {}
+            }
+        }
+    }
+}
