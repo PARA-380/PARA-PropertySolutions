@@ -1,10 +1,11 @@
 import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QDialog, QLabel
-from new_win_test import NewWindow
+from Property_Info_Page import Property_Info
 
 class Property_Page(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle("Property Page")
 
         self.setMinimumSize(300, 200)
 
@@ -57,12 +58,7 @@ class Property_Page(QMainWindow):
     def openNewWindow(self):
         if self.selected_button is not None:
             property_number = int(self.selected_button.text().split()[-1])
-            new_window = NewWindow(property_number)
-            new_window.exec()
+            self.property_info_window = Property_Info()  # Store a reference to the window
+            self.property_info_window.show()
 
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    mainWin = Property_Page()
-    mainWin.show()
-    sys.exit(app.exec())
