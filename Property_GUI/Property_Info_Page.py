@@ -55,11 +55,11 @@ class Property_Info(QMainWindow):
         button_layout = QHBoxLayout()
         layout.addLayout(button_layout)
 
-        add_button = QPushButton("Add Property")
+        add_button = QPushButton("Add Description")
         add_button.clicked.connect(self.add_property_to_table)
         button_layout.addWidget(add_button)
 
-        delete_button = QPushButton("Delete Selected Property")
+        delete_button = QPushButton("Delete Selected Description")
         delete_button.clicked.connect(self.delete_property_from_table)
         button_layout.addWidget(delete_button)
 
@@ -149,9 +149,3 @@ class Property_Info(QMainWindow):
         # Code to show pie chart
         pass
 
-'''
-app = QApplication(sys.argv)
-window = Property_Info()
-window.show()
-sys.exit(app.exec())
-'''

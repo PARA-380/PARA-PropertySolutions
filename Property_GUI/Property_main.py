@@ -38,7 +38,7 @@ class Property_Page(QMainWindow):
         
         new_button = QPushButton(f'Property {next_property_number}', self)  # Set button text
         new_button.clicked.connect(lambda _, btn=new_button: self.selectButton(btn))
-        new_button.clicked.connect(self.openNewWindow)  # Connect to open new window
+        new_button.clicked.connect(self.openPropertyInfo)  # Connect to Property Info
         self.buttons.append(new_button)  # Add new button to the list
         self.vertical_layout.addWidget(new_button)  # Add new button to the layout
         new_button.show()
@@ -55,7 +55,7 @@ class Property_Page(QMainWindow):
         self.selected_button = button
         button.setStyleSheet("background-color: grey")  # Highlight selected button
 
-    def openNewWindow(self):
+    def openPropertyInfo(self):
         if self.selected_button is not None:
             property_number = int(self.selected_button.text().split()[-1])
             self.property_info_window = Property_Info()  # Store a reference to the window
