@@ -1,17 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QDialog, QLabel
-
-
-class NewWindow(QDialog):
-    def __init__(self, property_number):
-        super().__init__()
-
-        self.setWindowTitle(f"Property {property_number}")
-        self.setMinimumSize(200, 200)
-
-        self.layout = QVBoxLayout(self)
-        self.label = QLabel(f"This is Property {property_number}'s window", self)
-        self.layout.addWidget(self.label)
+from new_win_test import NewWindow
 
 class Property_Page(QMainWindow):
     def __init__(self):
@@ -63,7 +52,7 @@ class Property_Page(QMainWindow):
         if self.selected_button is not None:
             self.selected_button.setStyleSheet("")  # Reset style of previously selected button
         self.selected_button = button
-        button.setStyleSheet("background-color: yellow")  # Highlight selected button
+        button.setStyleSheet("background-color: grey")  # Highlight selected button
 
     def openNewWindow(self):
         if self.selected_button is not None:
