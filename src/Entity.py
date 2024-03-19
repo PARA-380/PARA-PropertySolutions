@@ -8,3 +8,6 @@ class Entity(ABC):
     def toJSON(self):
         json.write(self.__dict__)
         pass
+
+    def toObj(self):
+        pass

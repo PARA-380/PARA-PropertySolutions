@@ -22,7 +22,7 @@ class Account(Entity):
     
 
 def main() -> None:
-    user = Account("Ridham",username="RidhamPlaysValorant123",password="iluv1D")
+    user = Account(name="Ridham",username="RidhamPlaysValorant123",password="iluv1D")
     user.toJSON()
 
 if __name__ == "__main__":
