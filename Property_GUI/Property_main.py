@@ -14,11 +14,11 @@ class Property_Page(QMainWindow):
 
         self.vertical_layout = QVBoxLayout(self.central_widget)  # Vertical layout
 
-        self.create_button = QPushButton('Create a button', self)
+        self.create_button = QPushButton('Add a property', self)
         self.create_button.clicked.connect(self.createButtonClicked)
         self.vertical_layout.addWidget(self.create_button)
 
-        self.delete_button = QPushButton('Delete selected button', self)
+        self.delete_button = QPushButton('Delete selected property', self)
         self.delete_button.clicked.connect(self.deleteButtonClicked)
         self.vertical_layout.addWidget(self.delete_button)
 
@@ -28,7 +28,7 @@ class Property_Page(QMainWindow):
         self.button_count = 0  # Track the count of created buttons
 
     def createButtonClicked(self):
-        print('Clicked')
+        # print('Clicked')
         self.button_count += 1  # Increment button count
         # Find the next available property number
         existing_properties = [int(button.text().split()[-1]) for button in self.buttons]
