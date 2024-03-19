@@ -11,7 +11,7 @@ class Property_Info(QMainWindow):
         self.setWindowTitle("Property Information")
 
         central_widget = QWidget()  # Create a central widget
-        self.setCentralWidget(central_widget)  # Set the central widget
+        self.setCentralWidget(central_widget)  # Set the central widget - for main window
 
         layout = QVBoxLayout()  # Main layout
         central_widget.setLayout(layout)
@@ -29,10 +29,10 @@ class Property_Info(QMainWindow):
         address_layout.addWidget(save_button)
 
         # Address Label
-        self.address_label = QLabel()
+        self.address_label = QLabel() # Label to display address
         layout.addWidget(self.address_label)
 
-        # Input Widgets
+        # Input Widgets 
         input_layout = QHBoxLayout()
         layout.addLayout(input_layout)
 
@@ -48,7 +48,7 @@ class Property_Info(QMainWindow):
 
         # Tenant dropdown list
         self.tenant_dropdown = QComboBox()
-        self.tenant_dropdown.addItems(["Tenant 1", "Tenant 2", "Tenant 3"])  # Add your tenant names here
+        self.tenant_dropdown.addItems(["Tenant 1", "Tenant 2", "Tenant 3"])  # Add tenant names here
         input_layout.addWidget(self.tenant_dropdown)
 
         # Buttons
@@ -75,13 +75,13 @@ class Property_Info(QMainWindow):
         tables_layout = QHBoxLayout()
         layout.addLayout(tables_layout)
 
-        # Property Details Table
+        # Property Details Table (left)
         self.property_table = QTableWidget()
         self.property_table.setColumnCount(2)
         self.property_table.setHorizontalHeaderLabels(["Description", "Price"])
         tables_layout.addWidget(self.property_table)
 
-        # Tenants Table
+        # Tenants Table (right)
         self.tenants_table = QTableWidget()
         self.tenants_table.setColumnCount(2)
         self.tenants_table.setHorizontalHeaderLabels(["Tenant Name", "Contact"])
