@@ -31,6 +31,7 @@ class Property_Info(QMainWindow):
         # Address Label
         self.address_label = QLabel() # Label to display address
         layout.addWidget(self.address_label)
+        print(self.address_label.text())
 
         # Input Widgets 
         input_layout = QHBoxLayout()
