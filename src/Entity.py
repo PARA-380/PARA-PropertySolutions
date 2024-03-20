@@ -10,4 +10,5 @@ class Entity(ABC):
         pass
 
     def toObj(self):
+        json.read()
         pass

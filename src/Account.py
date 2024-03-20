@@ -25,5 +25,7 @@ def main() -> None:
     user = Account(name="Ridham",username="RidhamPlaysValorant123",password="iluv1D")
     user.toJSON()
 
+    user2 = readJSON()
+
 if __name__ == "__main__":
     main()
