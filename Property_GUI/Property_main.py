@@ -1,64 +1,89 @@
 import sys
-from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QDialog, QLabel
+from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
 from Property_Info_Page import Property_Info
 
+# Define a class for the property page
 class Property_Page(QMainWindow):
     def __init__(self):
         super().__init__()
+        # Set window title and size
         self.setWindowTitle("Property Page")
-
         self.setMinimumSize(300, 200)
-
-        self.central_widget = QWidget()  # Central widget to hold the layout
+        
+        # Create a central widget to hold the layout
+        self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
+        
+        # Create a vertical layout for the central widget
+        self.vertical_layout = QVBoxLayout(self.central_widget)
+        
+        # List to keep track of created button pairs
+        self.buttons = []
 
-        self.vertical_layout = QVBoxLayout(self.central_widget)  # Vertical layout
-
+        # Create a button for adding properties
         self.create_button = QPushButton('Add a property', self)
-        self.create_button.clicked.connect(self.createButtonClicked)
+        self.create_button.clicked.connect(self.create_button_clicked)
         self.vertical_layout.addWidget(self.create_button)
 
-        self.delete_button = QPushButton('Delete selected property', self)
-        self.delete_button.clicked.connect(self.deleteButtonClicked)
-        self.vertical_layout.addWidget(self.delete_button)
-
-        self.buttons = []  # List to keep track of created buttons
-        self.selected_button = None  # Track the currently selected button
-
-        self.button_count = 0  # Track the count of created buttons
-
-    def createButtonClicked(self):
-        # print('Clicked')
-        self.button_count += 1  # Increment button count
-        # Find the next available property number
-        existing_properties = [int(button.text().split()[-1]) for button in self.buttons]
-        next_property_number = 1
-        while next_property_number in existing_properties:
-            next_property_number += 1
+    # Function to handle the "Add a property" button click event
+    def create_button_clicked(self):
+        # Layout to contain property button and delete button
+        property_layout = QHBoxLayout()
         
-        new_button = QPushButton(f'Property {next_property_number}', self)  # Set button text
-        new_button.clicked.connect(lambda _, btn=new_button: self.selectButton(btn))
-        new_button.clicked.connect(self.openPropertyInfo)  # Connect to Property Info
-        self.buttons.append(new_button)  # Add new button to the list
-        self.vertical_layout.addWidget(new_button)  # Add new button to the layout
-        new_button.show()
+        # Create a property button with a label (+ 1 its len to increment number of property)
+        property_button = QPushButton(f'Property {len(self.buttons) + 1}', self)
 
-    def deleteButtonClicked(self):
-        if self.selected_button is not None:
-            self.buttons.remove(self.selected_button)
-            self.selected_button.deleteLater()
-            self.selected_button = None
+        # Call property Info Page
+        property_button.clicked.connect(self.open_property_info)
+        
+        # Create a delete button
+        delete_button = QPushButton('Delete', self)
+        # Connect the delete button to the deleteProperty function
+        delete_button.clicked.connect(lambda _, layout=property_layout: self.delete_property(layout))
+        
+        # Add property button and delete button to the layout
+        property_layout.addWidget(property_button)
+        property_layout.addWidget(delete_button)
+        
+        # Add the layout to the list of buttons
+        self.buttons.append(property_layout)
+        
+        # Add the layout to the vertical layout of the central widget
+        self.vertical_layout.addLayout(property_layout)
 
-    def selectButton(self, button):
-        if self.selected_button is not None:
-            self.selected_button.setStyleSheet("")  # Reset style of previously selected button
-        self.selected_button = button
-        button.setStyleSheet("background-color: grey")  # Highlight selected button
+    # Function to handle deletion of a property
+    def delete_property(self, layout):
+        # Get the property button from the layout
+        property_button = layout.itemAt(0).widget()
+        # Get the text of the property button
+        property_text = property_button.text()
+        
+        # Show a confirmation dialog
+        # set the default button for the message box to be No. If the user closes the dialog without selecting an option, 
+        # this default option will be chosen.
+        reply = QMessageBox.question(self, 'Confirm Deletion', f"Are you sure you want to delete {property_text}?", 
+                                     QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No)
+        
+        # If the user confirms deletion, remove the layout and its widgets
+        if reply == QMessageBox.StandardButton.Yes:
+             # Loop through the items in the layout in reverse order
+             # Reversing the order of the loop is necessary to ensure proper removal of widgets from the layout 
+            for i in reversed(range(layout.count())):
+                # Retrieve the widget at index i in the layout
+                widget = layout.itemAt(i).widget()
+                # Remove the widget from the layout
+                layout.removeWidget(widget)
+                # Delete the widget to free up memory
+                widget.deleteLater()
+            # Remove the layout itself from the list of button layouts
+            self.buttons.remove(layout)
 
-    def openPropertyInfo(self):
-        if self.selected_button is not None:
-            property_number = int(self.selected_button.text().split()[-1])
-            self.property_info_window = Property_Info()  # Store a reference to the window
-            self.property_info_window.show()
+    # Function to open the property info page (connect with property info class)
+    def open_property_info(self):
+        sender_button = self.sender()  # Get the button that triggered the signal
+        property_number = int(sender_button.text().split()[-1])
+        # Create and show the property info window
+        self.property_info_window = Property_Info()
+        self.property_info_window.show()
 
 
