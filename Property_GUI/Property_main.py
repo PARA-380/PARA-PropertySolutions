@@ -51,6 +51,21 @@ class Property_Page(QMainWindow):
         # Add the layout to the vertical layout of the central widget
         self.vertical_layout.addLayout(property_layout)
 
+        # Update the labels of existing property buttons to ensure uniqueness
+        for index, layout in enumerate(self.buttons):
+            # enumerate: iterate over a sequence (such as a list, tuple, or string) while also keeping track of the index of each item.
+            # Iterate over the list of property layouts along with their index
+            # This allows us to access each layout and its corresponding index in the list
+
+            # Get the property button widget from the layout
+            # Since the property button is the first item in the layout, use index 0 to access it
+            property_button = layout.itemAt(0).widget()
+
+            # Update the text of the property button to ensure uniqueness
+            # Use the current index incremented by 1 to represent the new property number
+            # This ensures that each property button has a unique label reflecting its updated number
+            property_button.setText(f'Property {index + 1}')
+
     # Function to handle deletion of a property
     def delete_property(self, layout):
         # Get the property button from the layout

@@ -1,8 +1,10 @@
 from PyQt6.QtWidgets import (
     QMainWindow, QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox, QComboBox
 )
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QUrl
+from PyQt6.QtGui import QDesktopServices  
 import sys
+import re
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
@@ -62,7 +64,6 @@ class Property_Info(QMainWindow):
         button_layout = QHBoxLayout()
         layout.addLayout(button_layout)
 
-
         # Button to add property description to table
         add_button = QPushButton("Add Description")  
         add_button.clicked.connect(self.add_property_to_table)
@@ -103,6 +104,16 @@ class Property_Info(QMainWindow):
         see_pie_chart_button = QPushButton("See Pie Chart")  # Button to see pie chart
         see_pie_chart_button.clicked.connect(self.see_pie_chart)
         layout.addWidget(see_pie_chart_button)
+
+        # Line edit for inputting the link
+        self.link_input = QLineEdit(self)
+        self.link_input.setPlaceholderText("Enter link here")
+        input_layout.addWidget(self.link_input)
+
+        # Button to open the link
+        self.open_link_button = QPushButton("See Images", self)
+        self.open_link_button.clicked.connect(self.open_link_button_clicked)
+        button_layout.addWidget(self.open_link_button)
 
     # Function to add property details to property table
     def add_property_to_table(self):
@@ -201,4 +212,18 @@ class Property_Info(QMainWindow):
     def see_pie_chart(self):
         # Function to display pie chart
         pass
+
+    # Function to open the link when the see images is clicked
+    def open_link_button_clicked(self):
+        link = self.link_input.text()
+
+        # Regular expression to validate the link format
+        link_pattern = re.compile(r'https?://\S+')  # Simple pattern to match URLs starting with http:// or https://
+
+        if link_pattern.fullmatch(link):
+            # Open the link in the default web browser
+            QDesktopServices.openUrl(QUrl(link))
+        else:
+            # Show a warning if the link is invalid
+            QMessageBox.warning(self, "Invalid Link", "Please enter a valid link.")
 
