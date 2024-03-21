@@ -6,7 +6,7 @@ from abc import ABC
 class Entity(ABC):
     
     def toJSON(self):
-        json.write(self.__dict__)
+        json.write()
         pass
 
     def toObj(self):
