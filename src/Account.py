@@ -5,10 +5,11 @@ from Tenant import Tenant
 
 
 class Account(Entity):
-    def __init__(self, name: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
+    def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
                  dashboard={}, contractors: list = None):
-        self.name = name
-        self.ID = self.__createID()
+        self.firstName = first
+        self.lastName = last
+        self.ID = None
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
         self.properties = {}
@@ -16,10 +17,10 @@ class Account(Entity):
         self.contractors = [] if contractors is None else contractors
 
     def __repr__(self):
-        return f"Account{self.name}"
+        return f"Account {self.__dict__}"
     
-    def __createID(self):
-        return 0o001
+    def __createID(self, ID):
+        self.ID = ID
     
     def getID(self):
         assert self.ID != None
@@ -31,11 +32,20 @@ class Account(Entity):
     def addContractor(self, var):
         self.contractors.append(var)
 
-    def set_name(self, name):
-        self.name = name
+    def set_firstName(self, first):
+        self.firstName = first
+    
+    def set_lastName(self, last):
+        self.lastName = last
+
+    def get_firstName(self):
+        return self.firstName
+    
+    def get_lastName(self):
+        return self.lastName 
 
     def get_name(self):
-        return self.name
+        return self.firstName + self.lastName
 
     def set_username(self, username):
         self.username = username
@@ -63,9 +73,12 @@ class Account(Entity):
 
     def to_dict(self):
         return {
-            "name": self.name, "username": self.username, "password": self.password, "properties": self.properties,
+            "first": self.firstName, "last": self.lastName, "username": self.username, "password": self.password, "properties": self.properties,
             "tenants": [tenant.to_dict() for tenant in self.tenants], "contractors": self.contractors
         }
+    
+    def to_sql(self):
+        pass
 
     """
     def toJSON(self):

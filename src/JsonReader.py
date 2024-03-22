@@ -1,11 +1,4 @@
 import json
-from Tenant import Tenant
-
-class MyEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, self == Tenant):
-            return {}
-
 
 class jsonwriter:
 
