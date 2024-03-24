@@ -1,5 +1,7 @@
 import sqlite3
-from Account import Account
+# from Account import Account
+# from Tenant import Tenant
+from System import Account, Tenant
 
 __conn : sqlite3.Connection = None
 __cursor : sqlite3.Cursor = None
@@ -8,6 +10,13 @@ def init():
     global __conn, __cursor
     __conn = sqlite3.connect('data/sql.db')
     __cursor = __conn.cursor()
+
+def closeConnection():
+    global __conn, __cursor
+    if __conn is not None:
+        __conn.close()
+        __conn = None
+        __cursor = None
 
 def cleartables():
     global __conn, __cursor
@@ -41,22 +50,56 @@ def createTables():
 
     __conn.commit()
 
-    #create Table for Property 
-    #address should link to property id
-    # cursor.execute("""CREATE TABLE Property( 
-    #                 property_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-    #                 Ten_ID integer,
-    #                 acc_ID integer,
-    #                )""")
+    # create Table for Property 
+    # address should link to property id
+    __cursor.execute("""CREATE TABLE Property(
+                    property_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    Ten_ID integer,
+                    acc_ID integer
+                   )""")
+    
+def readTables():
+    pass
 
+#need to understand how account creation will work with front end. What are the minimum values needed to create an account?
+#name,username,password?
 def addToAccounts(account : Account):
     global __conn, __cursor
     #TODO: -validation on existing username
-    #       
+    #
     __cursor.execute("INSERT INTO Account (first,last,username) VALUES (:first,:last,:username)", 
                     {   
-                        'first' : account.get_firstName(), 
-                        'last': account.get_lastName(), 
+                        'first' : account.get_firstName(),
+                        'last': account.get_lastName(),
                         'username': account.get_username()
                     })
     __conn.commit()
+
+    #return the KEY ID
+    return __cursor.lastrowid
+
+
+def addToTenants(account : Account, tenant : Tenant):
+    global __conn, __cursor
+
+    __cursor.execute("INSERT INTO Tenant (acc_ID, first, last, ssn, address, phone, email) VALUES (:acc_ID, :first, :last, :ssn, :address, :phone, :email)",
+                     {
+                         'acc_ID' : account.getID(),
+                         'first' : tenant.getFirstName(),
+                         'last' : tenant.getLastName(),
+                         'ssn' : tenant.getSSN(),
+                         'address' : tenant.getAddress(),
+                         'phone' : tenant.getPhoneNumber(),
+                         'email' : tenant.getEmail(),
+                     }
+                     )
+    
+    __conn.commit()
+
+    return __cursor.lastrowid
+
+def editAccount(account : Account):
+    pass
+
+def editTenant(tenant : Tenant):
+    pass

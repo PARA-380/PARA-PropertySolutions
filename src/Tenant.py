@@ -9,17 +9,27 @@ from Entity import Entity
 class Tenant(Entity):
     # tenantName = None
 
-    def __init__(self, firstname: str = "", lastname: str = "", tenantssn: str = "", tenantaddress: str = "",
-                 tenantphonenumber: str = "",
-                 tenantemail: str = ""):
+    def __init__(self, ID : int = None, firstname: str = "", lastname: str = "", ssn: str = "", address: str = "",
+                 phonenumber: str = "",
+                 email: str = ""):
+        self.tenantID = ID
         self.tenantFirstName = firstname
         self.tenantLastName = lastname
-        self.tenantSSN = tenantssn
-        self.tenantAddress = tenantaddress
-        self.tenantPhoneNumber = tenantphonenumber
-        self.tenantEmail = tenantemail
+        self.tenantSSN = ssn
+        self.tenantAddress = address
+        self.tenantPhoneNumber = phonenumber
+        self.tenantEmail = email
         # self.lease = Lease
         # self.dashboard
+
+    def __repr__(self):
+        return f"Tenant ID: {self.tenantID} - {self.tenantFirstName} {self.tenantLastName} lives at {self.tenantAddress}"
+    
+    def setID(self,ID):
+        self.tenantID = ID
+
+    def getID(self):
+        return self.tenantID
 
     def setAddress(self, newAddress: str = None):
         self.tenantAddress = newAddress
@@ -38,6 +48,10 @@ class Tenant(Entity):
 
     def setEmail(self, email: str = None):
         self.tenantEmail = email
+
+    def saveData(self):
+        #TODO: Overwrite to Database
+        pass
 
     def getFirstName(self):
         return self.tenantFirstName

@@ -19,7 +19,7 @@ class Account(Entity):
     def __repr__(self):
         return f"Account {self.__dict__}"
     
-    def __createID(self, ID):
+    def setID(self, ID):
         self.ID = ID
     
     def getID(self):
