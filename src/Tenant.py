@@ -21,6 +21,10 @@ class Tenant(Entity):
         # self.lease = Lease
         # self.dashboard
 
+    def __repr__(self):
+        return f"{self.__dict__}"
+    
+
     def setAddress(self, newAddress: str = None):
         self.tenantAddress = newAddress
 

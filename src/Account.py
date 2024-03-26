@@ -10,9 +10,9 @@ class Account(Entity):
         self.name = name
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
-        self.properties = {}
-        self.tenants = [] if tenants is None else tenants
-        self.contractors = [] if contractors is None else contractors
+        self.properties = []
+        self.tenants = [] #if tenants is None else tenants
+        self.contractors = [] #if contractors is None else contractors
 
     def addTenant(self, var):
         self.tenants.append(var)
@@ -68,6 +68,9 @@ def main() -> None:
     person = Tenant("Ridham")
     person2 = Tenant("Adrian", "Carreno", "012-34-5678", "AHHHHHH", "(805) xxx - xxxx")
     user.addTenant(person)
+    user.addTenant(person2)
+    # print(person2.__dict__)
+    print(user.__dict__)
 
 
 if __name__ == "__main__":
