@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>sidebar icon/bell.svg</file>
+    <file>sidebar icon/grid.svg</file>
+    <file>sidebar icon/home.svg</file>
+    <file>sidebar icon/log-out.svg</file>
+    <file>sidebar icon/menu.svg</file>
+    <file>sidebar icon/settings.svg</file>
+    <file>sidebar icon/smile.svg</file>
+    <file>sidebar icon/tool.svg</file>
+    <file>sidebar icon/user.svg</file>
+    <file>sidebar icon/users.svg</file>
+  </qresource>
+</RCC>

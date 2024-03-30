@@ -9,4 +9,7 @@ Turning .qrc into .py (for the icon):
 pyside6-rcc nameof.qrc -o nameof.py
 
 don't forget to import the icon in the py file:
-from icon_rc.py import *
+from icon_rc.py import \*
+Testing adding more text
+
+# message to team: Look at the venv tutorial to setup your virtual environment
