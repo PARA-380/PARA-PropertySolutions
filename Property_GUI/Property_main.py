@@ -20,21 +20,37 @@ class Property_Page(QMainWindow):
         # List to keep track of created button pairs
         self.buttons = []
 
+        # Counter to keep track of property buttons created by "Add a property" button
+        self.property_button_counter = 0  # Initialize the property_button_counter
+
         # Create a button for adding properties
         self.create_button = QPushButton('Add a property', self)
-        self.create_button.clicked.connect(self.create_button_clicked)
+        self.create_button.clicked.connect(self._create_button_clicked)
         self.vertical_layout.addWidget(self.create_button)
 
+    # @classmethod decorator is used to define a method that operates on the class itself rather than on instances of the class. 
+    # When a method is decorated with @classmethod, the first parameter conventionally named cls is automatically passed to it, 
+    # representing the class itself.
+    @classmethod
+    def _with_property_count(cls, property_count):
+        instance = cls() # equivalent to instance = Property_Page()
+        instance._set_property_count(property_count)
+        return instance
+
     # Function to handle the "Add a property" button click event
-    def create_button_clicked(self):
+    def _create_button_clicked(self):
+
+        # Increment the counter
+        self.property_button_counter += 1
+
         # Layout to contain property button and delete button
         property_layout = QHBoxLayout()
         
         # Create a property button with a label (+ 1 its len to increment number of property)
-        property_button = QPushButton(f'Property {len(self.buttons) + 1}', self)
+        property_button = QPushButton(f'Property {self.property_button_counter}', self)
 
         # Call property Info Page
-        property_button.clicked.connect(self.open_property_info)
+        property_button.clicked.connect(self._open_property_info)
         
         # Create a delete button
         delete_button = QPushButton('Delete', self)
@@ -67,7 +83,7 @@ class Property_Page(QMainWindow):
             property_button.setText(f'Property {index + 1}')
 
     # Function to handle deletion of a property
-    def delete_property(self, layout):
+    def _delete_property(self, layout):
         # Get the property button from the layout
         property_button = layout.itemAt(0).widget()
         # Get the text of the property button
@@ -94,11 +110,30 @@ class Property_Page(QMainWindow):
             self.buttons.remove(layout)
 
     # Function to open the property info page (connect with property info class)
-    def open_property_info(self):
+    def _open_property_info(self):
         sender_button = self.sender()  # Get the button that triggered the signal
         property_number = int(sender_button.text().split()[-1])
         # Create and show the property info window
         self.property_info_window = Property_Info()
         self.property_info_window.show()
 
-
+    # Getter method to retrieve the number of properties created
+    def get_property_count(self):
+        return self.property_button_counter
+    
+    # Setter method to set the number of properties on the page
+    def _set_property_count(self, count):
+        # If the provided count is less than the current count, remove excess property buttons
+        if count < self.property_button_counter:
+            for _ in range(self.property_button_counter - count):
+                # Get the last layout in the vertical layout
+                layout = self.vertical_layout.itemAt(self.vertical_layout.count() - 1)
+                # Remove the layout and its widgets
+                self.vertical_layout.removeItem(layout)
+                layout.deleteLater()
+            self.property_button_counter = count
+        # If the provided count is greater than the current count, add property buttons
+        elif count > self.property_button_counter:
+            for _ in range(count - self.property_button_counter):
+                # Call create_button_clicked to add property buttons
+                self._create_button_clicked()  
