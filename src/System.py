@@ -11,6 +11,9 @@ class System():
 
     def __repr__(self):
         return f"Accounts: {self.Accounts}"
+    
+    def getAccount(self,accID):
+        return self.Accounts.get(accID)
 
     def StartSession(self):
         #TODO:
@@ -44,8 +47,12 @@ class System():
 
         return ten
 
-    def _searchAccount(self, account : Account):
-        pass
+    def _searchAccount(self, accID) -> Account:
+        return db.readAccount(accID)
+    
+    def _searchTenants(self, accID, tenID=None):
+        if(tenID == None):
+            return db.readTenants(accID,tenID)
 
 
 def main() -> None:
@@ -59,7 +66,14 @@ def main() -> None:
     #add tenants to account 1
     user1 = session1.Accounts.get(2)
     tenant = session1._createTenant(user1,"joe","mamma","34212","431 Yojatruz Road", "3421023322","joemamma@csun.edu")
+    tenant = session1._createTenant(user1,"jacob","issa","332255","870 This is a Road", "8008135","JacobIssa@csun.edu")
+    tenant = session1._createTenant(user1,"Laska","MyDog","553324","870 This is a Road", "N/A","Laskipoo@csun.edu")
     print(f"added tenant {tenant}")
+
+    #Search Database to create an Account Class
+    print(f"Account Searched: {session1._searchAccount(2)}")
+    print(f"Tenants Read: {session1._searchTenants(2)}")
+
     pass
 
 if __name__ == "__main__":

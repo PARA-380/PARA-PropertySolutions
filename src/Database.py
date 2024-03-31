@@ -1,7 +1,7 @@
 import sqlite3
 # from Account import Account
 # from Tenant import Tenant
-from System import Account, Tenant
+from System import Account, Tenant, Property
 
 __conn : sqlite3.Connection = None
 __cursor : sqlite3.Cursor = None
@@ -55,7 +55,8 @@ def createTables():
     __cursor.execute("""CREATE TABLE Property(
                     property_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
                     Ten_ID integer,
-                    acc_ID integer
+                    acc_ID integer,
+                    address text
                    )""")
     
 def readTables():
@@ -98,8 +99,55 @@ def addToTenants(account : Account, tenant : Tenant):
 
     return __cursor.lastrowid
 
+#Returns the ID of Property : need to set object propID to this return value
+# def addToProperty(account : Account, tenant : Tenant, property : Property):
+#     global __conn, __cursor
+
+#     __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :first, :last, :ssn, :address, :phone, :email)",
+#                      {
+#                          'ten_ID' : tenant.getID(),
+#                          'acc_ID' : account.getID(),
+#                          'address' : property.getAddress()
+#                      }
+#                      )
+    
+#     __conn.commit()
+
+#     return __cursor.lastrowid   
+
 def editAccount(account : Account):
     pass
 
 def editTenant(tenant : Tenant):
     pass
+
+#Reads the database and returns an object of the account
+def readAccount(accID) -> Account:
+    global __conn, __cursor
+
+    data=__cursor.execute("SELECT * FROM ACCOUNT WHERE (acc_ID) = (:acc_ID)",{
+        'acc_ID' : accID
+    }).fetchone() 
+    print(f"Data: {data}")
+    account = Account(first=data[1],last=data[2],username=data[3])
+    account.setID(data[0])
+    
+    return account
+
+def readTenants(accID,tenID=None) -> Tenant:
+    global __conn, __cursor
+    tenants:dict = {}
+    data=__cursor.execute("SELECT * FROM Tenant WHERE (acc_ID) = (:acc_ID)",{
+        'acc_ID' : accID
+    }).fetchall() #returns a list of tenant data, need to turn into Tenant Objects Dict
+    if data is None:
+        print(f"No data was returned from request on read Tenants on Account Number {accID}")
+        return None
+    print(f"Data: {data}")
+    for tenData in data:
+        tenant = Tenant(firstname=tenData[1],lastname=tenData[2])
+        tenant.setID(tenData[0])
+        print(f"tenant {tenData[0]}, {tenant}")
+        tenants[tenData[0]] = tenant
+
+    return tenants
