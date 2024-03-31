@@ -43,7 +43,7 @@ class Property_Page(QMainWindow):
         # Increment the counter
         self.total_properties_created += 1
         total = self.get_total_properties_created()
-        print(total)
+        print(f"total:  {total}")
 
         # Layout to contain property button and delete button
         property_layout = QHBoxLayout()
@@ -52,7 +52,7 @@ class Property_Page(QMainWindow):
         property_button = QPushButton(f'Property {self.total_properties_created}', self)
 
         # Call property Info Page
-        property_button.clicked.connect(self._open_property_info)
+        # property_button.clicked.connect(self._open_property_info)
         
         # Create a delete button
         delete_button = QPushButton('Delete', self)
@@ -83,6 +83,13 @@ class Property_Page(QMainWindow):
             # Use the current index incremented by 1 to represent the new property number
             # This ensures that each property button has a unique label reflecting its updated number
             property_button.setText(f'Property {index + 1}')
+
+        '''
+        TEST Total Property Button
+        property_buttons = self.get_property_buttons()
+        for button in property_buttons:
+            print(button.text())
+        '''
 
     # Function to handle deletion of a property
     def _delete_property(self, layout):
@@ -115,7 +122,7 @@ class Property_Page(QMainWindow):
                 widget.deleteLater()
             # Remove the layout itself from the list of button layouts
             self.buttons.remove(layout)
-
+    '''
     # Function to open the property info page (connect with property info class)
     def _open_property_info(self):
         property_number = self.get_property_number()  # Get the property number
@@ -124,7 +131,6 @@ class Property_Page(QMainWindow):
         self.property_info_window = Property_Info()
         self.property_info_window.show()
     
-    '''
     # Setter method to set the number of properties on the page
     def _set_property_count(self, count):
         # If the provided count is less than the current count, remove excess property buttons
@@ -150,3 +156,14 @@ class Property_Page(QMainWindow):
     
     def get_total_properties_created(self):
         return self.total_properties_created
+    
+    def get_property_buttons(self):
+        """
+        Returns a list of all property buttons created by the user.
+        """
+        property_buttons = []
+        for layout in self.buttons:
+            property_button = layout.itemAt(0).widget()
+            property_buttons.append(property_button)
+
+        return property_buttons
