@@ -226,11 +226,6 @@ class Property_Info(QMainWindow):
         else:
             # Show a warning if the link is invalid
             QMessageBox.warning(self, "Invalid Link", "Please enter a valid link.")
-
-    # Getter method to retrieve the property number
-    def get_property_number(self):
-        return self.property_number
-    # need to be fix
     
     def _set_address_label(self, address):
         self.address_label.setText(address)

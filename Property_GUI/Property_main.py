@@ -20,8 +20,8 @@ class Property_Page(QMainWindow):
         # List to keep track of created button pairs
         self.buttons = []
 
-        # Counter to keep track of property buttons created by "Add a property" button
-        self.property_button_counter = 0  # Initialize the property_button_counter
+        # Counter to keep track of total properties created
+        self.total_properties_created = 0
 
         # Create a button for adding properties
         self.create_button = QPushButton('Add a property', self)
@@ -41,13 +41,15 @@ class Property_Page(QMainWindow):
     def _create_button_clicked(self):
 
         # Increment the counter
-        self.property_button_counter += 1
+        self.total_properties_created += 1
+        total = self.get_total_properties_created()
+        print(total)
 
         # Layout to contain property button and delete button
         property_layout = QHBoxLayout()
         
         # Create a property button with a label (+ 1 its len to increment number of property)
-        property_button = QPushButton(f'Property {self.property_button_counter}', self)
+        property_button = QPushButton(f'Property {self.total_properties_created}', self)
 
         # Call property Info Page
         property_button.clicked.connect(self._open_property_info)
@@ -55,7 +57,7 @@ class Property_Page(QMainWindow):
         # Create a delete button
         delete_button = QPushButton('Delete', self)
         # Connect the delete button to the deleteProperty function
-        delete_button.clicked.connect(lambda _, layout=property_layout: self.delete_property(layout))
+        delete_button.clicked.connect(lambda _, layout=property_layout: self._delete_property(layout))
         
         # Add property button and delete button to the layout
         property_layout.addWidget(property_button)
@@ -97,8 +99,13 @@ class Property_Page(QMainWindow):
         
         # If the user confirms deletion, remove the layout and its widgets
         if reply == QMessageBox.StandardButton.Yes:
-             # Loop through the items in the layout in reverse order
-             # Reversing the order of the loop is necessary to ensure proper removal of widgets from the layout 
+            # Decrement the total properties created counter
+            self.total_properties_created -= 1
+            self.get_total_properties_created
+            total = self.get_total_properties_created()
+            print(total)
+            # Loop through the items in the layout in reverse order
+            # Reversing the order of the loop is necessary to ensure proper removal of widgets from the layout 
             for i in reversed(range(layout.count())):
                 # Retrieve the widget at index i in the layout
                 widget = layout.itemAt(i).widget()
@@ -111,29 +118,35 @@ class Property_Page(QMainWindow):
 
     # Function to open the property info page (connect with property info class)
     def _open_property_info(self):
-        sender_button = self.sender()  # Get the button that triggered the signal
-        property_number = int(sender_button.text().split()[-1])
+        property_number = self.get_property_number()  # Get the property number
+        print(f"Property number: {property_number}")
         # Create and show the property info window
         self.property_info_window = Property_Info()
         self.property_info_window.show()
-
-    # Getter method to retrieve the number of properties created
-    def get_property_count(self):
-        return self.property_button_counter
     
+    '''
     # Setter method to set the number of properties on the page
     def _set_property_count(self, count):
         # If the provided count is less than the current count, remove excess property buttons
-        if count < self.property_button_counter:
-            for _ in range(self.property_button_counter - count):
+        if count < self.total_properties_created:
+            for _ in range(self.total_properties_created - count):
                 # Get the last layout in the vertical layout
                 layout = self.vertical_layout.itemAt(self.vertical_layout.count() - 1)
                 # Remove the layout and its widgets
                 self.vertical_layout.removeItem(layout)
                 layout.deleteLater()
-            self.property_button_counter = count
+            self.total_properties_created = count
         # If the provided count is greater than the current count, add property buttons
-        elif count > self.property_button_counter:
-            for _ in range(count - self.property_button_counter):
+        elif count > self.total_properties_created:
+            for _ in range(count - self.total_properties_created):
                 # Call create_button_clicked to add property buttons
                 self._create_button_clicked()  
+    '''
+
+    def get_property_number(self):
+        sender_button = self.sender()  # Get the button that triggered the signal
+        property_number = int(sender_button.text().split()[-1])  # Extract the property number from the button text
+        return property_number
+    
+    def get_total_properties_created(self):
+        return self.total_properties_created

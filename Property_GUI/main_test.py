@@ -8,9 +8,9 @@ app = QApplication(sys.argv)
 property_count = 3
 
 # Create an instance of the property page with the specified number of properties
-window = Property_Page._with_property_count(property_count)
+# window = Property_Page._with_property_count(property_count)
 
-# window = Property_Page()
+window = Property_Page()
 
 window.show()
 app.exec()
