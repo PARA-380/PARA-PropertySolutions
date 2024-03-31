@@ -1,3 +1,4 @@
+
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
 import sys
 from Property_main import Property_Page

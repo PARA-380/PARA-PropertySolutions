@@ -28,9 +28,14 @@ class Property_Page(QMainWindow):
         self.create_button.clicked.connect(self._create_button_clicked)
         self.vertical_layout.addWidget(self.create_button)
 
+        # Create instances of the property_Info_Page and a dictionary to store property info pages
+        self.property_page = Property_Info()
+        self.property_info_pages = {}
+
     # @classmethod decorator is used to define a method that operates on the class itself rather than on instances of the class. 
     # When a method is decorated with @classmethod, the first parameter conventionally named cls is automatically passed to it, 
     # representing the class itself.
+    # not sure if we really need this now?????
     @classmethod
     def _with_property_count(cls, property_count):
         instance = cls() # equivalent to instance = Property_Page()
@@ -50,9 +55,6 @@ class Property_Page(QMainWindow):
         
         # Create a property button with a label (+ 1 its len to increment number of property)
         property_button = QPushButton(f'Property {self.total_properties_created}', self)
-
-        # Call property Info Page
-        # property_button.clicked.connect(self._open_property_info)
         
         # Create a delete button
         delete_button = QPushButton('Delete', self)
@@ -84,12 +86,35 @@ class Property_Page(QMainWindow):
             # This ensures that each property button has a unique label reflecting its updated number
             property_button.setText(f'Property {index + 1}')
 
+        # Call property Info Page
+        # has to call it in this function since the property button is dynamically
+        # outside this function would lose the signal to the button (as far as my knowledge)
+        property_button.clicked.connect(self._open_property_info)
+
         '''
-        TEST Total Property Button
+        # TEST Total Property Button
         property_buttons = self.get_property_buttons()
         for button in property_buttons:
             print(button.text())
         '''
+        
+    def _open_property_info(self):
+
+        property_number = self.get_property_number()
+        
+        # If property info page for the given property number doesn't exist, create it
+        if property_number not in self.property_info_pages:
+            self.property_info_pages[property_number] = Property_Info()
+        
+        
+        # TEST
+        property_info_num = self.get_property_info_num()
+        print(property_info_num)
+        
+
+        property_info_page = self.property_info_pages[property_number]
+        property_info_page.setWindowTitle(f"Property {property_number} Information")
+        property_info_page.show()
 
     # Function to handle deletion of a property
     def _delete_property(self, layout):
@@ -106,11 +131,24 @@ class Property_Page(QMainWindow):
         
         # If the user confirms deletion, remove the layout and its widgets
         if reply == QMessageBox.StandardButton.Yes:
+
+            # Remove the property info page instance from the dictionary if it exists
+            property_number = int(property_text.split()[-1])
+            if property_number in self.property_info_pages:
+                self.property_info_pages[property_number].deleteLater()
+                del self.property_info_pages[property_number]
+        
+            # TEST
+            property_info_num = self.get_property_info_num()
+            print(property_info_num)
+
             # Decrement the total properties created counter
             self.total_properties_created -= 1
             self.get_total_properties_created
             total = self.get_total_properties_created()
-            print(total)
+            print(f"total {total}")
+
+
             # Loop through the items in the layout in reverse order
             # Reversing the order of the loop is necessary to ensure proper removal of widgets from the layout 
             for i in reversed(range(layout.count())):
@@ -122,32 +160,6 @@ class Property_Page(QMainWindow):
                 widget.deleteLater()
             # Remove the layout itself from the list of button layouts
             self.buttons.remove(layout)
-    '''
-    # Function to open the property info page (connect with property info class)
-    def _open_property_info(self):
-        property_number = self.get_property_number()  # Get the property number
-        print(f"Property number: {property_number}")
-        # Create and show the property info window
-        self.property_info_window = Property_Info()
-        self.property_info_window.show()
-    
-    # Setter method to set the number of properties on the page
-    def _set_property_count(self, count):
-        # If the provided count is less than the current count, remove excess property buttons
-        if count < self.total_properties_created:
-            for _ in range(self.total_properties_created - count):
-                # Get the last layout in the vertical layout
-                layout = self.vertical_layout.itemAt(self.vertical_layout.count() - 1)
-                # Remove the layout and its widgets
-                self.vertical_layout.removeItem(layout)
-                layout.deleteLater()
-            self.total_properties_created = count
-        # If the provided count is greater than the current count, add property buttons
-        elif count > self.total_properties_created:
-            for _ in range(count - self.total_properties_created):
-                # Call create_button_clicked to add property buttons
-                self._create_button_clicked()  
-    '''
 
     def get_property_number(self):
         sender_button = self.sender()  # Get the button that triggered the signal
@@ -167,3 +179,9 @@ class Property_Page(QMainWindow):
             property_buttons.append(property_button)
 
         return property_buttons
+    
+    def get_property_info_num(self):
+        """
+        Returns a list of property numbers for which property info pages have been created.
+        """
+        return list(self.property_info_pages.keys())
