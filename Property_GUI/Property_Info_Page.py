@@ -8,10 +8,11 @@ import re
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
-    def __init__(self):
+    def __init__(self, property_number):
         super().__init__()
+        self.property_number = property_number
         self.resize(800, 600)
-        self.setWindowTitle("Property Information")
+        self.setWindowTitle(f"Property {property_number} Information")
 
         # Create a central widget
         central_widget = QWidget()  
