@@ -24,7 +24,7 @@ class Property_Page(QMainWindow):
         # Initialize set to track used property numbers
         self.used_property_numbers = set()  
     
-        # Initialize PropertyInfoController instance
+        # Initialize Property_Controller instance
         self.property_info_controller = Property_Controller()  
 
         # Create property buttons based on the total number of properties created
@@ -111,6 +111,7 @@ class Property_Page(QMainWindow):
 def main():
     app = QApplication(sys.argv)
     window = Property_Page()
+
 
     # Set the count of properties created for testing purposes
     count = 3

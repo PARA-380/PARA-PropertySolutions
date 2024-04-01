@@ -5,6 +5,7 @@ from PyQt6.QtCore import Qt, QUrl
 from PyQt6.QtGui import QDesktopServices  
 import sys
 import re
+# from Property_Button_Controller import Property_Controller
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
@@ -14,13 +15,22 @@ class Property_Info(QMainWindow):
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
 
+        # Initialize Property_Controller instance
+        # self.controller = Property_Controller()  
+        # self.controller.create_property_info(property_number)  # Create Property_Info instance in controller
+
+
         # Create a central widget
         central_widget = QWidget()  
         # Set the central widget - for main window
         self.setCentralWidget(central_widget)  
 
-        layout = QVBoxLayout()  # Main layout
+        # Main layout
+        layout = QVBoxLayout() 
         central_widget.setLayout(layout)
+
+        # Instance variable to store the address
+        # self.address = ""  
 
         # Address Input
         address_layout = QHBoxLayout()
@@ -206,8 +216,13 @@ class Property_Info(QMainWindow):
 
     # Function to save address input and display it in address label
     def save_address(self):
+        # Save the address associated with this property number using the controller
         address = self.address_input.text()
-        self.address_label.setText(f"Address: {address}")
+        # self.controller.save_address_controller(self.property_number, address)
+
+        # Display the address in the label
+        self.address_label.setText(f"Address: {self.address_input.text()}")
+        
 
     # If have time
     def see_pie_chart(self):
