@@ -66,6 +66,11 @@ class Property_Info(QMainWindow):
         self.price_input.setFixedWidth(100)
         input_layout.addWidget(self.price_input)
 
+        # Dropdown list for selecting type
+        self.type_dropdown = QComboBox()  
+        self.type_dropdown.addItems(["Collect", "Pay"])
+        input_layout.addWidget(self.type_dropdown)
+
         # Tenant dropdown list
         self.tenant_dropdown = QComboBox()  # Combo box for selecting tenant
         self.tenant_dropdown.addItems(["Tenant 1", "Tenant 2", "Tenant 3"])  # Add tenant names here
@@ -101,9 +106,12 @@ class Property_Info(QMainWindow):
 
         # Property Details Table (left)
         self.property_table = QTableWidget()  # Table to display property details
-        self.property_table.setColumnCount(2)
-        self.property_table.setHorizontalHeaderLabels(["Description", "Price"])
+        self.property_table.setColumnCount(3)
+        self.property_table.setHorizontalHeaderLabels(["Description", "Price", "Type"])
         tables_layout.addWidget(self.property_table)
+
+        # Add initial total row
+        self.add_initial_total_row()
 
         # Tenants Table (right)
         self.tenants_table = QTableWidget()  # Table to display tenant details
@@ -150,18 +158,28 @@ class Property_Info(QMainWindow):
             # Increment the row count to accommodate the new property
             self.property_table.setRowCount(row_count + 1)
 
-            # Create QTableWidgetItem objects for the description and price
+            # Create QTableWidgetItem objects for the description price, and type
             description_item = QTableWidgetItem(description)
             price_item = QTableWidgetItem(price)
-
+            
             # Set the QTableWidgetItem objects in the property table
             # Set the description item in the first column (index 0) 
             self.property_table.setItem(row_count, 0, description_item)
             # Set the price item in the second column (index 1)
             self.property_table.setItem(row_count, 1, price_item)
 
+            # use the selected value from the single type_dropdown
+            selected_type = self.type_dropdown.currentText()
+
+            # Set the type for the new property
+            type_item = QTableWidgetItem(selected_type)
+            self.property_table.setItem(row_count, 2, type_item)
+
+
             # Clear the input fields after adding the property to the table
             self.clear_inputs()
+        
+        self.calculate_total()  # Call the calculate_total method after adding a property
 
     # Function to delete selected property from property table
     def delete_property_from_table(self):
@@ -175,6 +193,44 @@ class Property_Info(QMainWindow):
         else:
             # If no row is selected (selected_row is negative), display a warning message
             QMessageBox.warning(self, "Warning", "No row selected.")
+
+        self.calculate_total()  # Call the calculate_total method after adding a property
+
+    def calculate_total(self):
+        total_collect = 0
+        total_pay = 0
+
+        # Iterate over each row in the property table
+        for row in range(self.property_table.rowCount()):
+            # Retrieve the type and price from the current row
+            type_item = self.property_table.item(row, 2)
+            price_item = self.property_table.item(row, 1)
+
+            # Check if both type_item and price_item are not None
+            if type_item is not None and price_item is not None:
+                # Check the type and add the price accordingly
+                if type_item.text() == "Collect":
+                    total_collect += float(price_item.text())
+                elif type_item.text() == "Pay":
+                    total_pay -= float(price_item.text())
+
+        # Set the total values in the first row of the price column
+        total_price = total_collect + total_pay
+        total_price_item = QTableWidgetItem(str(total_price))
+        self.property_table.setItem(0, 1, total_price_item)
+
+    def add_initial_total_row(self):
+        # Add a row at the beginning of the table for the total
+        self.property_table.insertRow(0)
+
+        # Set the text for the cells in the total row
+        total_item = QTableWidgetItem("Total")
+        total_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+        self.property_table.setItem(0, 0, total_item)
+
+        # Set placeholders for price and type columns
+        self.property_table.setItem(0, 1, QTableWidgetItem(""))
+        self.property_table.setCellWidget(0, 2, QWidget())
 
      # Function to add tenant details to tenants table
     def add_tenant_to_table(self):

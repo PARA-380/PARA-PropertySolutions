@@ -35,6 +35,7 @@ class Property_Controller:
     def save_property_count(self, count):
         self.total_properties_created = count
 
+'''
     def save_address_controller(self, property_number, address):
         # Save the address associated with the property number
         self.property_addresses[property_number] = address
@@ -42,3 +43,4 @@ class Property_Controller:
     def get_address(self, property_number):
         # Retrieve the address associated with the property number
         return self.property_addresses.get(property_number)
+'''
