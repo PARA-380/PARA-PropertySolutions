@@ -1,21 +1,23 @@
 # from JsonReader import jsonwriter as json
 # import array
-from Entity import Entity
 from Tenant import Tenant
 
 
-class Account(Entity):
-    def __init__(self, name: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
-                 dashboard={}, contractors: list = None):
+class Account:
+    def __init__(self, name: str = "", username: str = "", password: str = "", tenants: dict = {},
+                 total_revenue: int = {}, contractors: list = None):
         self.name = name
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
         self.properties = []
-        self.tenants = [] #if tenants is None else tenants
-        self.contractors = [] #if contractors is None else contractors
+        self.tenants = tenants
+        self.contractors = contractors
 
-    def addTenant(self, var):
-        self.tenants.append(var)
+    def addTenant(self, tenant):
+        self.tenants.updatate({tenant.get_ID: tenant})
+
+    def remove_tenant(self, key):
+        self.tenants.pop(key)
 
     def addContractor(self, var):
         self.contractors.append(var)
@@ -56,11 +58,6 @@ class Account(Entity):
             "tenants": [tenant.to_dict() for tenant in self.tenants], "contractors": self.contractors
         }
 
-    """
-    def toJSON(self):
-        import json
-        return json.dumps(self.to_dict())
-    """
 
 
 def main() -> None:

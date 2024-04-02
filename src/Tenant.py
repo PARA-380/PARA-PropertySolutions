@@ -1,17 +1,16 @@
-from Entity import Entity
-
-
 # from Lease import Lease
 # remove above # after added Lease Class
 # add lease variable in "__init__" function
 
 
-class Tenant(Entity):
+class Tenant:
     # tenantName = None
 
-    def __init__(self, firstname: str = "", lastname: str = "", tenantssn: str = "", tenantaddress: str = "",
+    def __init__(self, ID: int = None, firstname: str = "", lastname: str = "", tenantssn: str = "",
+                 tenantaddress: str = "",
                  tenantphonenumber: str = "",
                  tenantemail: str = ""):
+        self.ID = ID
         self.tenantFirstName = firstname
         self.tenantLastName = lastname
         self.tenantSSN = tenantssn
@@ -23,7 +22,12 @@ class Tenant(Entity):
 
     def __repr__(self):
         return f"{self.__dict__}"
-    
+
+    def get_ID(self):
+        return self.ID
+
+    def set_ID(self, newID):
+        self.ID = newID
 
     def setAddress(self, newAddress: str = None):
         self.tenantAddress = newAddress
@@ -64,9 +68,9 @@ class Tenant(Entity):
     def getPhoneNumber(self):
         return self.tenantPhoneNumber
 
-
     def to_dict(self):
-        return {"Name": self.tenantFirstName + " " + self.tenantLastName, "SSN": self.tenantSSN, "Address": self.tenantAddress, "Phone Number": self.tenantPhoneNumber, "Eamil": self.tenantEmail}
+        return {"Name": self.tenantFirstName + " " + self.tenantLastName, "SSN": self.tenantSSN,
+                "Address": self.tenantAddress, "Phone Number": self.tenantPhoneNumber, "Eamil": self.tenantEmail}
 
-#tenant = Tenant("Ridham", "123-45-6789", "Home Address", "(012) 345 - 6789", "ridham.patel@email.com")
-#tenant.toJSON()
+# tenant = Tenant("Ridham", "123-45-6789", "Home Address", "(012) 345 - 6789", "ridham.patel@email.com")
+# tenant.toJSON()
