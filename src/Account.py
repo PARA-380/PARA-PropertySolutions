@@ -1,11 +1,7 @@
-# from JsonReader import jsonwriter as json
-# import array
-# import array
-from Entity import Entity
 from Tenant import Tenant
 
 
-class Account(Entity):
+class Account:
     def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
                  dashboard={}, contractors: list = None):
         self.firstName = first
@@ -14,8 +10,8 @@ class Account(Entity):
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
         self.properties = {}
-        self.tenants = [] 
-        self.contractors = [] if contractors is None else contractors
+        self.tenants = {}
+        self.contractors = {}
 
     def __repr__(self):
         return f"Account {self.__dict__}"
@@ -77,22 +73,15 @@ class Account(Entity):
             "first": self.firstName, "last": self.lastName, "username": self.username, "password": self.password, "properties": self.properties,
             "tenants": [tenant.to_dict() for tenant in self.tenants], "contractors": self.contractors
         }
-    
-    def to_sql(self):
-        pass
-
-    """
-    def toJSON(self):
-        import json
-        return json.dumps(self.to_dict())
-    """
-
 
 def main() -> None:
     user = Account(name="Ridham", username="RidhamPlaysValorant123", password="iluv1D")
     person = Tenant("Ridham")
     person2 = Tenant("Adrian", "Carreno", "012-34-5678", "AHHHHHH", "(805) xxx - xxxx")
     user.addTenant(person)
+    user.addTenant(person2)
+    # print(person2.__dict__)
+    print(user.__dict__)
 
     person2.toJSON()
     user.toJSON()
