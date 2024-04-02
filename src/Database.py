@@ -53,7 +53,7 @@ def createTables():
     # create Table for Property 
     # address should link to property id
     __cursor.execute("""CREATE TABLE Property(
-                    property_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    property_ID integer PRIMARY KEY AUTOINCREMENT,
                     Ten_ID integer,
                     acc_ID integer
                    )""")
