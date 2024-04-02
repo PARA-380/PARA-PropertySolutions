@@ -144,10 +144,18 @@ def readTenants(accID,tenID=None) -> Tenant:
         print(f"No data was returned from request on read Tenants on Account Number {accID}")
         return None
     print(f"Data: {data}")
+
     for tenData in data:
-        tenant = Tenant(firstname=tenData[1],lastname=tenData[2])
+        tenant = Tenant(firstname=tenData[1],lastname=tenData[2],address=tenData[5])
         tenant.setID(tenData[0])
         print(f"tenant {tenData[0]}, {tenant}")
         tenants[tenData[0]] = tenant
 
     return tenants
+
+
+#UPDATE METHODS
+
+def updateAccount(accID):
+    global __conn, __cursor
+    __cursor.execute("UPDATE Account SET  WHERE (acc_ID) = (:acc_ID)", {'acc_ID' : accID})

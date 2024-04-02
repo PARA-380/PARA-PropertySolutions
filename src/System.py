@@ -31,7 +31,7 @@ class System():
     def _createAccount(self, first, last, username, password):
         acc = Account(first,last,username,password)
         acc.setID(db.addToAccounts(acc))
-        self.Accounts[acc.getID()] = acc
+        self.Accounts[acc.getID()] = acc #dict.update()
         # try:
         #     db.addToAccounts(acc)
         #     self.Accounts.append(acc)
@@ -53,6 +53,13 @@ class System():
     def _searchTenants(self, accID, tenID=None):
         if(tenID == None):
             return db.readTenants(accID,tenID)
+        
+
+    #UPDATE methods
+    
+    def _updateAccount(self, accID):
+        db.updateAccount(accID)
+        pass
 
 
 def main() -> None:
