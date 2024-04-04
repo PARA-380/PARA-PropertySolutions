@@ -42,7 +42,7 @@ class System():
 
     def _createTenant(self,account : Account, first="",last="",ssn="",address="",phone="",email=""):
         ten = Tenant(firstname=first,lastname=last,ssn=ssn,address=address,phonenumber=phone,email=email)
-        ten.setID(db.addToTenants(account,ten))
+        ten.setID(db.addToTenants(account,ten))#review whether to set ID in System or Database
         account.addTenant(ten)
 
         return ten
