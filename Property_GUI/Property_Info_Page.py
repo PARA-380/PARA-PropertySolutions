@@ -271,6 +271,7 @@ class Property_Info(QMainWindow):
         self.price_input.clear()
 
     # Function to save address input and display it in address label
+    # Note this is mot save to database, this is just for the display purpose
     def save_address(self):
         # Save the address associated with this property number using the controller
         address = self.address_input.text()
@@ -305,3 +306,7 @@ class Property_Info(QMainWindow):
     
     def get_address_label(self):
         return self.address_label.text()
+    
+    def get_property_number(self):
+        return self.property_number
+    
