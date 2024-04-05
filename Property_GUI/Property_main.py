@@ -1,9 +1,17 @@
+"""
+File: Property_main.py
+Name: Jittapatana (Patrick) Prayoonpruk
+Date: 04/05/2024
+Description: Property main page user interface
+Purposes: 1. To create new properties
+          2. To access existed properties
+          3. To delete properties
+"""
 import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
-# from Property_Info_Page import Property_Info
 from Property_GUI.Property_Button_Controller import Property_Controller
 
-# Define a class for the property page
+
 class Property_Page(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -47,6 +55,8 @@ class Property_Page(QMainWindow):
         self.vertical_layout.addLayout(self.add_property_layout)
 
     def _create_property(self):
+        """_summary_
+        """ 
 
         property_number = self._get_next_available_property_number()
         self.used_property_numbers.add(property_number)  # Add the property number to the set of used property numbers
@@ -108,6 +118,7 @@ class Property_Page(QMainWindow):
             property_number += 1
         return property_number
 
+'''
 def main():
     app = QApplication(sys.argv)
     window = Property_Page()
@@ -126,3 +137,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+'''
