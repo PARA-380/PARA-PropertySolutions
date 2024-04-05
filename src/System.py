@@ -6,7 +6,7 @@ import Database as db
 
 class System():
     def __init__(self):
-        self.Accounts = {}
+        self.Accounts : Account = {}
         pass
 
     def __repr__(self):
@@ -29,6 +29,14 @@ class System():
         pass
 
     def _createAccount(self, first, last, username, password):
+        """_summary_
+
+        Args:
+            first (_type_): _description_
+            last (_type_): _description_
+            username (_type_): _description_
+            password (_type_): _description_
+        """
         acc = Account(first,last,username,password)
         acc.setID(db.addToAccounts(acc))
         self.Accounts[acc.getID()] = acc #dict.update()
@@ -43,16 +51,24 @@ class System():
     def _createTenant(self,account : Account, first="",last="",ssn="",address="",phone="",email=""):
         ten = Tenant(firstname=first,lastname=last,ssn=ssn,address=address,phonenumber=phone,email=email)
         ten.setID(db.addToTenants(account,ten))#review whether to set ID in System or Database
-        account.addTenant(ten)
+        account.addTenant(ten.getID(),ten)
 
         return ten
 
     def _searchAccount(self, accID) -> Account:
+        """_summary_
+
+        Args:
+            accID (_type_): _description_
+
+        Returns:
+            Account: _description_
+        """
         return db.readAccount(accID)
     
     def _searchTenants(self, accID, tenID=None):
         if(tenID == None):
-            return db.readTenants(accID,tenID)
+            return db.readTenants(accID)
         
 
     #UPDATE methods
@@ -80,6 +96,15 @@ def main() -> None:
     #Search Database to create an Account Class
     print(f"Account Searched: {session1._searchAccount(2)}")
     print(f"Tenants Read: {session1._searchTenants(2)}")
+
+
+    #testing update account method
+    myuser = session1.getAccount(1)
+    myuser.set_username("testing UPDATE")
+    print(myuser)
+    session1._updateAccount(myuser)
+    session1._searchAccount(myuser.getID())
+
 
     pass
 

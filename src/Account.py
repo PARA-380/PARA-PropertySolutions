@@ -13,11 +13,11 @@ class Account(Entity):
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
         self.properties = {}
-        self.tenants = [] 
-        self.contractors = [] if contractors is None else contractors
+        self.tenants = {}
+        self.contractors = {}
 
     def __repr__(self):
-        return f"Account {self.__dict__}"
+        return f"Account {self.getID()} {self.__dict__}"
     
     def setID(self, ID):
         self.ID = ID
@@ -26,8 +26,8 @@ class Account(Entity):
         assert self.ID != None
         return self.ID
     
-    def addTenant(self, var):
-        self.tenants.append(var)
+    def addTenant(self,id, tenant):
+        self.tenants[id] = tenant
 
     def addContractor(self, var):
         self.contractors.append(var)

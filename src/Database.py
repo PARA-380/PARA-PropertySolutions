@@ -7,11 +7,17 @@ __conn : sqlite3.Connection = None
 __cursor : sqlite3.Cursor = None
 
 def init():
+    """Starts up the Database and provides the connection and the cursor, which are crucial to executing.
+       __cursor : is responsible for executing sql commands
+       __conn   : is the current connection to a certain database file. (stored locally)
+    """
     global __conn, __cursor
     __conn = sqlite3.connect('data/sql.db')
     __cursor = __conn.cursor()
 
 def closeConnection():
+    """Closes connection to the Database
+    """
     global __conn, __cursor
     if __conn is not None:
         __conn.close()
@@ -19,6 +25,8 @@ def closeConnection():
         __cursor = None
 
 def cleartables():
+    """Clears all Database Tables for Testing purposes
+    """
     global __conn, __cursor
     #Delete Table each time run for testing purposes
     __cursor.execute("DROP TABLE IF EXISTS Account")
@@ -26,6 +34,8 @@ def cleartables():
     __cursor.execute("DROP TABLE IF EXISTS Property")
 
 def createTables():
+    """Creates All Tables needed for initializing the Database
+    """    
     global __conn, __cursor
         #create Table for Accounts
     __cursor.execute("""CREATE TABLE Account(  
@@ -195,6 +205,6 @@ def readTenants(accID:int) -> Tenant:
 
 #UPDATE METHODS
 
-def updateAccount(accID):
+def updateAccount(account : Account):
     global __conn, __cursor
-    __cursor.execute("UPDATE Account SET  WHERE (acc_ID) = (:acc_ID)", {'acc_ID' : accID})
+    __cursor.execute("UPDATE Account SET (first,last,username) = (:first, :last, :username) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID()})
