@@ -1,5 +1,5 @@
 # Import Property_Info class
-from Property_Info_Page import Property_Info
+from Property_GUI.Property_Info_Page import Property_Info
 
 class Property_Controller:
     def __init__(self):

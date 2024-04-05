@@ -1,7 +1,7 @@
 import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
 # from Property_Info_Page import Property_Info
-from Property_Button_Controller import Property_Controller
+from Property_GUI.Property_Button_Controller import Property_Controller
 
 # Define a class for the property page
 class Property_Page(QMainWindow):
