@@ -1,6 +1,19 @@
 from PyQt6.QtWidgets import (
-    QMainWindow, QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox, QComboBox
+    QMainWindow, 
+    QApplication, 
+    QWidget, 
+    QLineEdit, 
+    QPushButton, 
+    QVBoxLayout, 
+    QLabel, 
+    QTableWidget, 
+    QTableWidgetItem, 
+    QHBoxLayout, 
+    QMessageBox, 
+    QComboBox,
+    QHeaderView
 )
+
 from PyQt6.QtCore import Qt
 from PyQt6.QtCore import Qt, QUrl
 from PyQt6.QtGui import QDesktopServices  
@@ -57,8 +70,13 @@ class Contractor_Page(QMainWindow):
 
         # Create a table to display contractors' information
         self.contractors_table = QTableWidget()  
-        self.contractors_table.setColumnCount(6)  
-        self.contractors_table.setHorizontalHeaderLabels(["Specialization", "First Name", "Last Name", "Phone Number", "Property", "Status"]) 
+        self.contractors_table.setColumnCount(7)  
+        self.contractors_table.setHorizontalHeaderLabels(["Specialization", "First Name", "Last Name", "Phone Number", "Property", "Status", "Description"])
+        
+        # Set the resizing mode for the last section (column) to stretch
+        header = self.contractors_table.horizontalHeader()
+        header.setSectionResizeMode(6, QHeaderView.ResizeMode.Stretch)
+
         layout.addWidget(self.contractors_table)
         layout.addWidget(self.contractors_table)
 
