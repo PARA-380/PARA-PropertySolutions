@@ -8,22 +8,12 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
-'''
-print("*************")
-print(os.getcwd())
-print("**************")
-sys.path.append("gui")
-sys.path.append("Property_GUI")'
-'''
-# C:\Users\richa\Desktop\Github Project\PARA-PropertySolutions\gui
-#print(sys.path.append("gui\Property_GUI"))
-#import Property_GUI.Property_Button_Controller
+
 
 from gui.pyqt_dashboard import Ui_DashBoard
-# from test_page import test_page
 from gui.UserProfile import Userprofile
 from Property_GUI.Property_main import Property_Page
-# from Property_GUI.Property_Button_Controller import Property_Controller
+
 
 class Dashboard(QMainWindow, Ui_DashBoard):
     def __init__(self):
