@@ -1,7 +1,7 @@
 from Tenant import Tenant
 
 
-class Account:
+class Account(Entity):
     def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
                  dashboard={}, contractors: list = None):
         self.firstName = first
@@ -25,6 +25,9 @@ class Account:
     
     def addTenant(self,id, tenant):
         self.tenants[id] = tenant
+
+    def remove_tenant(self, key):
+        self.tenants.pop(key)
 
     def addContractor(self, var):
         self.contractors.append(var)
@@ -79,12 +82,6 @@ def main() -> None:
     person = Tenant("Ridham")
     person2 = Tenant("Adrian", "Carreno", "012-34-5678", "AHHHHHH", "(805) xxx - xxxx")
     user.addTenant(person)
-    user.addTenant(person2)
-    # print(person2.__dict__)
-    print(user.__dict__)
-
-    person2.toJSON()
-    user.toJSON()
 
 
 if __name__ == "__main__":
