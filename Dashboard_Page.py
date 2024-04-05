@@ -15,6 +15,7 @@ from gui.UserProfile import Userprofile
 from Property_GUI.Property_main import Property_Page
 from Setting_GUI.Setting_Page_GUI import Setting_Page
 from Notification_GUI.Noti_Page_GUI import Notification_Page
+from Contractor_Page_GUI.Contractor_Page import Contractor_Page
 
 
 class Dashboard(QMainWindow, Ui_DashBoard):
@@ -29,6 +30,8 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         self.pushButton_2.clicked.connect(self.goto_setting_page)
         # pushButton_4 = notification page
         self.pushButton_4.clicked.connect(self.goto_notification_page)
+        # pushButton_5 = contractor page
+        self.pushButton_5.clicked.connect(self.goto_contractor_page)
 
     def goto_property_page(self, checked):
         self.property_page = Property_Page()
@@ -45,3 +48,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
     def goto_notification_page(self, checked):
         self.notification_page = Notification_Page()
         self.notification_page.show()
+
+    def goto_contractor_page(self, checked):
+        self.contractor_page = Contractor_Page()
+        self.contractor_page.show()
