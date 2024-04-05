@@ -27,10 +27,15 @@ class Contractor_Page(QMainWindow):
         self.specialization_input.setPlaceholderText("Specialization")
         input_layout.addWidget(self.specialization_input)
 
-        # Create input fields for name
-        self.name_input = QLineEdit()  
-        self.name_input.setPlaceholderText("Name")
-        input_layout.addWidget(self.name_input)
+        # Create input fields for first name
+        self.first_name_input = QLineEdit()  
+        self.first_name_input.setPlaceholderText("First Name")
+        input_layout.addWidget(self.first_name_input)
+
+        # Create input fields for last name
+        self.last_name_input = QLineEdit()  
+        self.last_name_input.setPlaceholderText("Last Name")
+        input_layout.addWidget(self.last_name_input)
 
         # Create input fields for Phone Number
         self.phone_input = QLineEdit()  
@@ -52,8 +57,9 @@ class Contractor_Page(QMainWindow):
 
         # Create a table to display contractors' information
         self.contractors_table = QTableWidget()  
-        self.contractors_table.setColumnCount(5)  
-        self.contractors_table.setHorizontalHeaderLabels(["Specialization", "Name", "Phone Number", "Action", "Status"])  
+        self.contractors_table.setColumnCount(6)  
+        self.contractors_table.setHorizontalHeaderLabels(["Specialization", "First Name", "Last Name", "Phone Number", "Property", "Status"]) 
+        layout.addWidget(self.contractors_table)
         layout.addWidget(self.contractors_table)
 
         # Button for recommended contractors
@@ -63,37 +69,41 @@ class Contractor_Page(QMainWindow):
 
     # Function to add a contractor to the table
     def add_contractor_to_table(self):
+        # initialize variables
         specialization = self.specialization_input.text()
-        name = self.name_input.text()
+        first_name = self.first_name_input.text()
+        last_name = self.last_name_input.text()
         phone = self.phone_input.text()
 
-         # Check if all fields are filled
-        if specialization and name and phone:
+        # Check if all fields are filled
+        if specialization and first_name and last_name and phone:
             row_count = self.contractors_table.rowCount()
             self.contractors_table.setRowCount(row_count + 1)
 
-            # Create table items for specialization, name, and phone number
+            # Create table items for specialization, first name, last name, and phone number
             specialization_item = QTableWidgetItem(specialization)
-            name_item = QTableWidgetItem(name)
+            first_name_item = QTableWidgetItem(first_name)
+            last_name_item = QTableWidgetItem(last_name)
             phone_item = QTableWidgetItem(phone)
 
              # Set items in the table
             self.contractors_table.setItem(row_count, 0, specialization_item)
-            self.contractors_table.setItem(row_count, 1, name_item)
-            self.contractors_table.setItem(row_count, 2, phone_item)
+            self.contractors_table.setItem(row_count, 1, first_name_item)
+            self.contractors_table.setItem(row_count, 2, last_name_item)
+            self.contractors_table.setItem(row_count, 3, phone_item)
 
             # Add a combo box for actions
             action_combo_box = QComboBox()
-            action_combo_box.addItems(["Task 1", "Task 2", "Task 3", "Pending"])
+            action_combo_box.addItems(["Property 1", "Property 2", "Property 3", "Pending"])
             action_combo_box.setCurrentText("Pending")  # Set default value to "Pending"
-            self.contractors_table.setCellWidget(row_count, 3, action_combo_box)
+            self.contractors_table.setCellWidget(row_count, 4, action_combo_box)
 
              # Add a combo box for status
             status_combo_box = QComboBox()
             status_combo_box.addItems(["In Progress", "Complete", "Pending"])
             status_combo_box.setCurrentText("Pending")  # Set default value to "Pending"
             status_combo_box.currentTextChanged.connect(self.check_notification)  # Connect the signal to the slot
-            self.contractors_table.setCellWidget(row_count, 4, status_combo_box)
+            self.contractors_table.setCellWidget(row_count, 5, status_combo_box)
 
             self.clear_inputs()
 
@@ -109,7 +119,8 @@ class Contractor_Page(QMainWindow):
     # Function to clear input fields
     def clear_inputs(self):
         self.specialization_input.clear()
-        self.name_input.clear()
+        self.first_name_input.clear()
+        self.last_name_input.clear()
         self.phone_input.clear()
 
     # Function to check notification when status changes
