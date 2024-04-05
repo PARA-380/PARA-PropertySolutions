@@ -54,16 +54,11 @@ class System():
         account.addTenant(ten.getID(),ten)
 
         return ten
+    
+    def _createProperty(self, accID : int):
+        property = Property()
 
-    def _searchAccount(self, accID) -> Account:
-        """_summary_
-
-        Args:
-            accID (_type_): _description_
-
-        Returns:
-            Account: _description_
-        """
+    def _searchAccount(self, accID : int) -> Account:
         return db.readAccount(accID)
     
     def _searchTenants(self, accID, tenID=None):

@@ -127,20 +127,20 @@ def addToTenants(account : Account, tenant : Tenant):
     return __cursor.lastrowid
 
 #Returns the ID of Property : need to set object propID to this return value
-# def addToProperty(account : Account, tenant : Tenant, property : Property):
-#     global __conn, __cursor
+def addToProperty(accID : int , tenID : int, property : Property):
+    global __conn, __cursor
 
-#     __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :first, :last, :ssn, :address, :phone, :email)",
-#                      {
-#                          'ten_ID' : tenant.getID(),
-#                          'acc_ID' : account.getID(),
-#                          'address' : property.getAddress()
-#                      }
-#                      )
+    __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :ten_ID, :address)",
+                     {
+                         'ten_ID' : tenID,
+                         'acc_ID' : accID,
+                         'address' : property.getAddress()
+                     }
+                     )
     
-#     __conn.commit()
+    __conn.commit()
 
-#     return __cursor.lastrowid   
+    return __cursor.lastrowid   
 
 def editAccount(account : Account):
     pass

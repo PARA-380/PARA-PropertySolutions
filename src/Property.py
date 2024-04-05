@@ -2,7 +2,7 @@ from Entity import Entity
 class Property(Entity):
     #put the instance variables here like (name : string, ...)
     #TODO: create the Tenant Class and include
-    def __init__(self, address : str = None, tenant : str = None, size : str = None, type : str = None, maximum_living : int = None): 
+    def __init__(self, accID : int = None, address : str = None, tenant : str = None, size : str = None, type : str = None, maximum_living : int = None): 
         pass
 
 
