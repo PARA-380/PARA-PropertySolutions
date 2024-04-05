@@ -2,9 +2,10 @@ from Tenant import Tenant
 
 
 class Property:
-    def __init__(self, address: str = None, tenants: dict = {}, sqft: str = None, home_type: str = None,
-                 max_living: int = None, property_id: int = None):
+    def __init__(self, property_id: int = None, accID : int  = None, address: str = None, tenants: dict = {}, sqft: str = None, home_type: str = None,
+                 max_living: int = None):
         self.property_id = property_id
+        self.account_id = accID
         self.address = address
         self.tenants = tenants
         self.sqft = sqft

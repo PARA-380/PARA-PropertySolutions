@@ -54,7 +54,7 @@ class Account(Entity):
         for p in self.properties:
             print(p)
 
-    def get_tenants(self):
+    def print_tenants(self):
         for t in self.tenants:
             print(t)
 

@@ -5,8 +5,9 @@ from Tenant import Tenant
 import Database as db
 
 class System():
-    def __init__(self):
+    def __init__(self, main : Account):
         self.Accounts : Account = {}
+        self.mainAccount : Account = main
         pass
 
     def __repr__(self):
@@ -76,8 +77,8 @@ class System():
 def main() -> None:
     session1 = System()
     session1.StartSession()
-    session1._createAccount("ali","maamoun","amaamoun21","comp380")
-    session1._createAccount("Ridham","Patel","rpatel20223","valorant")
+    session1._createAccount(first="ali",last="maamoun",username="amaamoun21",password="comp380")
+    session1._createAccount(first="Ridham",last="Patel",username="rpatel20223",password="valorant")
 
     print(session1.Accounts)
 

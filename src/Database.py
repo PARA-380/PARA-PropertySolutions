@@ -86,13 +86,15 @@ def addToAccounts(account : Account):
     global __conn, __cursor
     #TODO: -validation on existing username
     #
-    __cursor.execute("INSERT INTO Account (first,last,username) VALUES (:first,:last,:username)", 
+    __cursor.execute("INSERT INTO Account (first,last,username,password) VALUES (:first,:last,:username, :password)", 
                     {   
                         'first' : account.get_firstName(),
                         'last': account.get_lastName(),
-                        'username': account.get_username()
+                        'username': account.get_username(),
+                        'password' : account.get_password()
                     })
     __conn.commit()
+    account.setID(__cursor.lastrowid)
 
     #return the KEY ID
     return __cursor.lastrowid
@@ -128,6 +130,7 @@ def addToTenants(account : Account, tenant : Tenant):
 
 #Returns the ID of Property : need to set object propID to this return value
 def addToProperty(accID : int , tenID : int, property : Property):
+
     global __conn, __cursor
 
     __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :ten_ID, :address)",
@@ -207,4 +210,4 @@ def readTenants(accID:int) -> Tenant:
 
 def updateAccount(account : Account):
     global __conn, __cursor
-    __cursor.execute("UPDATE Account SET (first,last,username) = (:first, :last, :username) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID()})
+    __cursor.execute("UPDATE Account SET (first,last,username,password) = (:first, :last, :username, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(), 'password' : account.get_password()})
