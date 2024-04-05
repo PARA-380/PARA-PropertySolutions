@@ -35,6 +35,31 @@ class Property_Controller:
     def save_property_count(self, count):
         self.total_properties_created = count
 
+    def save_new_property_db(self, property_info):
+        # Retrieve property information from the Property_Info instance
+        property_id = property_info.get_property_number()
+        print("property_id: ", property_id)
+        address = property_info.get_address_label()
+
+        # Save property information to the database
+        property_id = self.save_property_info_to_database(property_id, address)
+
+        return property_id
+    
+    def save_property_info_to_database(self, property_number, address):
+        # You need to implement saving property information to the database here
+        # For demonstration purposes, let's just print the property information
+        print("Saving Property to Database:")
+        print("Property Number:", property_number)
+        print("Address:", address)
+
+        # need to replace this with actual database interaction code
+        # Example:
+        # property_id = addToProperty(property_number, address)
+
+        # For demonstration purposes, returning the same property number
+        return property_number
+
 '''
     def save_address_controller(self, property_number, address):
         # Save the address associated with the property number
