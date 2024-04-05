@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt
 import sys
 #HelloWorld
-from User_Profile import Ui_MainWindow
+from gui.User_Profile import Ui_MainWindow
 
 class Userprofile(QMainWindow, Ui_MainWindow):
     def __init__(self):
