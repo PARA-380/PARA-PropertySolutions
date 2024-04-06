@@ -32,45 +32,42 @@ class Tenant:
     def setAddress(self, newAddress: str = None):
         self.tenantAddress = newAddress
 
-    def setFirstName(self, name: str = None):
+    def set_first_name(self, name: str = None):
         self.tenantFirstName = name
 
-    def setLastName(self, name: str = None):
+    def set_last_name(self, name: str = None):
         self.tenantLastName = name
 
-    def setSSN(self, newSSN: str = None):
+    def set_ssn(self, newSSN: str = None):
         self.tenantSSN = newSSN
 
-    def setPhoneNumber(self, phoneNumber: str = None):
+    def set_phone_number(self, phoneNumber: str = None):
         self.tenantPhoneNumber = phoneNumber
 
-    def setEmail(self, email: str = None):
+    def set_email(self, email: str = None):
         self.tenantEmail = email
 
-    def getFirstName(self):
+    def get_first_name(self):
         return self.tenantFirstName
 
-    def getLastName(self):
+    def get_last_name(self):
         return self.tenantLastName
 
-    def getName(self):
+    def get_name(self):
         return self.tenantFirstName + " " + self.tenantLastName
 
-    def getEmail(self):
+    def get_email(self):
         return self.tenantEmail
 
-    def getSSN(self):
+    def get_ssn(self):
         return self.tenantSSN
 
-    def getAddress(self):
+    def get_address(self):
         return self.tenantAddress
 
-    def getPhoneNumber(self):
+    def get_phone_number(self):
         return self.tenantPhoneNumber
 
     def to_dict(self):
         return {"Name": self.tenantFirstName + " " + self.tenantLastName, "SSN": self.tenantSSN,
-                "Address": self.tenantAddress, "Phone Number": self.tenantPhoneNumber, "Eamil": self.tenantEmail}
-
-# tenant = Tenant("Ridham", "123-45-6789", "Home Address", "(012) 345 - 6789", "ridham.patel@email.com")
-# tenant.toJSON()
+                "Address": self.tenantAddress, "Phone Number": self.tenantPhoneNumber, "Email": self.tenantEmail}
