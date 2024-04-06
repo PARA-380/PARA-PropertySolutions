@@ -6,8 +6,9 @@ authors = ["PARA"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.12"
 PyQt6 = "^6.6.1"
+PySide6 = "^6.6.2"
 pytest = "^8.1.0"
 
 

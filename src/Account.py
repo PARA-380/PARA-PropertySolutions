@@ -1,7 +1,3 @@
-# from JsonReader import jsonwriter as json
-# import array
-# import array
-from Entity import Entity
 from Tenant import Tenant
 
 
@@ -14,11 +10,11 @@ class Account(Entity):
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
         self.properties = {}
-        self.tenants = [] 
-        self.contractors = [] if contractors is None else contractors
+        self.tenants = {}
+        self.contractors = {}
 
     def __repr__(self):
-        return f"Account {self.__dict__}"
+        return f"Account {self.getID()} {self.__dict__}"
     
     def setID(self, ID):
         self.ID = ID
@@ -27,8 +23,11 @@ class Account(Entity):
         assert self.ID != None
         return self.ID
     
-    def addTenant(self, var):
-        self.tenants.append(var)
+    def addTenant(self,id, tenant):
+        self.tenants[id] = tenant
+
+    def remove_tenant(self, key):
+        self.tenants.pop(key)
 
     def addContractor(self, var):
         self.contractors.append(var)
@@ -55,7 +54,7 @@ class Account(Entity):
         for p in self.properties:
             print(p)
 
-    def get_tenants(self):
+    def print_tenants(self):
         for t in self.tenants:
             print(t)
 
@@ -77,25 +76,12 @@ class Account(Entity):
             "first": self.firstName, "last": self.lastName, "username": self.username, "password": self.password, "properties": self.properties,
             "tenants": [tenant.to_dict() for tenant in self.tenants], "contractors": self.contractors
         }
-    
-    def to_sql(self):
-        pass
-
-    """
-    def toJSON(self):
-        import json
-        return json.dumps(self.to_dict())
-    """
-
 
 def main() -> None:
     user = Account(name="Ridham", username="RidhamPlaysValorant123", password="iluv1D")
     person = Tenant("Ridham")
     person2 = Tenant("Adrian", "Carreno", "012-34-5678", "AHHHHHH", "(805) xxx - xxxx")
     user.addTenant(person)
-
-    person2.toJSON()
-    user.toJSON()
 
 
 if __name__ == "__main__":

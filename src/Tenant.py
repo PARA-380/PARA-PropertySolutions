@@ -1,12 +1,9 @@
-from Entity import Entity
-
-
 # from Lease import Lease
 # remove above # after added Lease Class
 # add lease variable in "__init__" function
 
 
-class Tenant(Entity):
+class Tenant:
     # tenantName = None
 
     def __init__(self, ID : int = None, firstname: str = "", lastname: str = "", ssn: str = "", address: str = "",
@@ -74,9 +71,9 @@ class Tenant(Entity):
     def getPhoneNumber(self):
         return self.tenantPhoneNumber
 
-
     def to_dict(self):
-        return {"Name": self.tenantFirstName + " " + self.tenantLastName, "SSN": self.tenantSSN, "Address": self.tenantAddress, "Phone Number": self.tenantPhoneNumber, "Eamil": self.tenantEmail}
+        return {"Name": self.tenantFirstName + " " + self.tenantLastName, "SSN": self.tenantSSN,
+                "Address": self.tenantAddress, "Phone Number": self.tenantPhoneNumber, "Eamil": self.tenantEmail}
 
-#tenant = Tenant("Ridham", "123-45-6789", "Home Address", "(012) 345 - 6789", "ridham.patel@email.com")
-#tenant.toJSON()
+# tenant = Tenant("Ridham", "123-45-6789", "Home Address", "(012) 345 - 6789", "ridham.patel@email.com")
+# tenant.toJSON()
