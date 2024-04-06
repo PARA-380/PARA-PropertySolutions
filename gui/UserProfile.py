@@ -5,11 +5,14 @@ from PyQt6.QtCore import Qt
 import sys
 #HelloWorld
 from gui.User_Profile import Ui_MainWindow
+from .Cont_UserProfile import Cont_UserProfile, Account
 
 class Userprofile(QMainWindow, Ui_MainWindow):
-    def __init__(self):
+    def __init__(self, Cont_UserProfile : Cont_UserProfile):
         super().__init__()
         self.setupUi(self)
+        self.Cont_UserProfile = Cont_UserProfile #Connects to Controller to access database
+
         self.pushButton.clicked.connect(self.DisplayInfo) #Connect pushButton1 to DisplayInfo
         self.pushButton.clicked.connect(self.ClearFields) #Clears the lines after saving
         self.pushButton_2.clicked.connect(self.ClearFields)  # Connect pushButton2 to ClearFields
@@ -24,8 +27,8 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         LastName = self.lineEdit_3.text()
         PhoneNumber = self.lineEdit_4.text()
         FullName = FirstName + " " + LastName
-
-        self.textEdit.setText(f"Username: {username}\n"
+        account :Account = self.Cont_UserProfile.getMainAccount()
+        self.textEdit.setText(f"Username: {account.get_username()}\n"
                               f"Full Name: {FullName}\n"
                               f"Phone Number: {PhoneNumber}")
 

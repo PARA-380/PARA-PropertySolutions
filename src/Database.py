@@ -42,7 +42,8 @@ def createTables():
                     acc_ID integer PRIMARY KEY,
                     first text,
                     last text,
-                    username text
+                    username text,
+                    password text
                 )""")
 
     #create Table for Tenants 

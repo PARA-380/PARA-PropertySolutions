@@ -1,7 +1,7 @@
-from Tenant import Tenant
+from .Tenant import Tenant
 
 
-class Account(Entity):
+class Account():
     def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
                  dashboard={}, contractors: list = None):
         self.firstName = first
@@ -9,9 +9,6 @@ class Account(Entity):
         self.ID = None
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
-        self.properties = {}
-        self.tenants = {}
-        self.contractors = {}
 
     def __repr__(self):
         return f"Account {self.getID()} {self.__dict__}"

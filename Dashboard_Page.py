@@ -17,11 +17,17 @@ from Setting_GUI.Setting_Page_GUI import Setting_Page
 from Notification_GUI.Noti_Page_GUI import Notification_Page
 from Contractor_Page_GUI.Contractor_Page import Contractor_Page
 
+#controllers
+from gui.Cont_UserProfile import Cont_UserProfile
+
 
 class Dashboard(QMainWindow, Ui_DashBoard):
-    def __init__(self):
+    def __init__(self, Cont_UserProfile : Cont_UserProfile):
         super().__init__()
         self.setupUi(self)
+        #edits by Ali
+        self.Cont_UserProfile = Cont_UserProfile
+        #
         self.show()
         self.Properties_btn.clicked.connect(self.goto_property_page)
         # pushButton = userprofile page
@@ -38,7 +44,8 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         self.property_page.show()
 
     def goto_user_profile_page(self, checked):
-        self.user_profile = Userprofile()
+        print(f"going to user profile page")
+        self.user_profile = Userprofile(self.Cont_UserProfile)
         self.user_profile.show()
 
     def goto_setting_page(self, checked):
