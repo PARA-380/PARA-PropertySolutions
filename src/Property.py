@@ -45,7 +45,7 @@ class Property:
     def add_tenant_to_property(self, tenant: Tenant):
         self.tenants.update({tenant.get_ID(): tenant})
 
-    def remove_tenant_from_property(self, key):
+    def remove_tenant_from_property(self, key:int):
         self.tenants.pop(key)
 
 

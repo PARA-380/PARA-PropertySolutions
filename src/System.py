@@ -1,11 +1,10 @@
-from Entity import Entity
 from Account import Account
 from Property import Property
 from Tenant import Tenant
 import Database as db
 
 class System():
-    def __init__(self, main : Account):
+    def __init__(self, main : Account = None):
         self.Accounts : Account = {}
         self.mainAccount : Account = main
         pass
