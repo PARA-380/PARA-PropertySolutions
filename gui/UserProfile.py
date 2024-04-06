@@ -5,7 +5,7 @@ from PyQt6.QtCore import Qt
 import sys
 #HelloWorld
 from gui.User_Profile import Ui_MainWindow
-from .Cont_UserProfile import Cont_UserProfile, Account
+from ..src.Cont_UserProfile import Cont_UserProfile, Account
 
 class Userprofile(QMainWindow, Ui_MainWindow):
     def __init__(self, Cont_UserProfile : Cont_UserProfile):
@@ -29,8 +29,8 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         FullName = FirstName + " " + LastName
         account :Account = self.Cont_UserProfile.getMainAccount()
         self.textEdit.setText(f"Username: {account.get_username()}\n"
-                              f"Full Name: {FullName}\n"
-                              f"Phone Number: {PhoneNumber}")
+                              f"Full Name: {account.get_firstName()}\n"
+                              f"Phone Number: {account.get_phonenumber()}")
 
     def ClearFields(self):
         self.lineEdit.clear()  # Clear username field

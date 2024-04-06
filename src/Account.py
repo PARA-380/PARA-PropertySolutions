@@ -2,11 +2,12 @@ from .Tenant import Tenant
 
 
 class Account():
-    def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
+    def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", phone : str = "", tenants: list = None, total_revenue={},
                  dashboard={}, contractors: list = None):
         self.firstName = first
         self.lastName = last
         self.ID = None
+        self.phoneNumber = phone
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
 
@@ -43,6 +44,12 @@ class Account():
 
     def get_name(self):
         return self.firstName + self.lastName
+    
+    def get_phonenumber(self):
+        return self.phoneNumber
+    
+    def set_phonenumber(self, phone):
+        self.phoneNumber = phone
 
     def set_username(self, username):
         self.username = username

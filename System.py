@@ -3,7 +3,7 @@ from src.Property import Property
 from src.Tenant import Tenant
 import src.Database as db
 
-from gui.Cont_UserProfile import Cont_UserProfile
+from src.Cont_UserProfile import Cont_UserProfile
 
 class System():
     def __init__(self, main : Account = None):
