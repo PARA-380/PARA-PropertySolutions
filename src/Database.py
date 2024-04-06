@@ -3,8 +3,11 @@ import sqlite3
 # from Tenant import Tenant
 from System import Account, Tenant, Property
 
-__conn : sqlite3.Connection = None
-__cursor : sqlite3.Cursor = None
+# from TenantController import TenantController
+
+__conn: sqlite3.Connection = None
+__cursor: sqlite3.Cursor = None
+
 
 def init():
     """Starts up the Database and provides the connection and the cursor, which are crucial to executing.
@@ -15,6 +18,7 @@ def init():
     __conn = sqlite3.connect('data/sql.db')
     __cursor = __conn.cursor()
 
+
 def closeConnection():
     """Closes connection to the Database
     """
@@ -24,20 +28,22 @@ def closeConnection():
         __conn = None
         __cursor = None
 
+
 def cleartables():
     """Clears all Database Tables for Testing purposes
     """
     global __conn, __cursor
-    #Delete Table each time run for testing purposes
+    # Delete Table each time run for testing purposes
     __cursor.execute("DROP TABLE IF EXISTS Account")
     __cursor.execute("DROP TABLE IF EXISTS Tenant")
     __cursor.execute("DROP TABLE IF EXISTS Property")
 
+
 def createTables():
     """Creates All Tables needed for initializing the Database
-    """    
+    """
     global __conn, __cursor
-        #create Table for Accounts
+    # create Table for Accounts
     __cursor.execute("""CREATE TABLE Account(  
                     acc_ID integer PRIMARY KEY,
                     first text,
@@ -45,8 +51,8 @@ def createTables():
                     username text
                 )""")
 
-    #create Table for Tenants 
-    #address should link to property id
+    # create Table for Tenants
+    # address should link to property id
     __cursor.execute("""CREATE TABLE Tenant(  
                     Ten_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
                     acc_ID integer,
@@ -68,13 +74,15 @@ def createTables():
                     acc_ID integer,
                     address text
                    )""")
-    
+
+
 def readTables():
     pass
 
-#need to understand how account creation will work with front end. What are the minimum values needed to create an account?
-#name,username,password?
-def addToAccounts(account : Account):
+
+# need to understand how account creation will work with front end. What are the minimum values needed to create an account?
+# name,username,password?
+def addToAccounts(account: Account):
     """Creates new row in Account Table and returns the KEY generated
 
     Args:
@@ -84,27 +92,27 @@ def addToAccounts(account : Account):
         _type_: KEY id generated
     """
     global __conn, __cursor
-    #TODO: -validation on existing username
+    # TODO: -validation on existing username
     #
-    __cursor.execute("INSERT INTO Account (first,last,username,password) VALUES (:first,:last,:username, :password)", 
-                    {   
-                        'first' : account.get_firstName(),
-                        'last': account.get_lastName(),
-                        'username': account.get_username(),
-                        'password' : account.get_password()
-                    })
+    __cursor.execute("INSERT INTO Account (first,last,username,password) VALUES (:first,:last,:username, :password)",
+                     {
+                         'first': account.get_firstName(),
+                         'last': account.get_lastName(),
+                         'username': account.get_username(),
+                         'password': account.get_password()
+                     })
     __conn.commit()
     account.setID(__cursor.lastrowid)
 
-    #return the KEY ID
+    # return the KEY ID
     return __cursor.lastrowid
 
 
-def addToTenants(account : Account, tenant : Tenant):
+def addToTenants(account_id: int, tenant: Tenant):
     """Inserts into Tenant Table a tenant associated to an account
 
     Args:
-        account (Account): object of the account we want to add a tenant to
+        account_id (int): ID of the account we want to add a tenant to
         tenant (Tenant): object of the tenant we are adding to the account
 
     Returns:
@@ -112,46 +120,50 @@ def addToTenants(account : Account, tenant : Tenant):
     """
     global __conn, __cursor
 
-    __cursor.execute("INSERT INTO Tenant (acc_ID, first, last, ssn, address, phone, email) VALUES (:acc_ID, :first, :last, :ssn, :address, :phone, :email)",
-                     {
-                         'acc_ID' : account.getID(),
-                         'first' : tenant.getFirstName(),
-                         'last' : tenant.getLastName(),
-                         'ssn' : tenant.getSSN(),
-                         'address' : tenant.getAddress(),
-                         'phone' : tenant.getPhoneNumber(),
-                         'email' : tenant.getEmail(),
-                     }
-                     )
-    
+    __cursor.execute(
+        "INSERT INTO Tenant (acc_ID, first, last, ssn, address, phone, email) VALUES (:acc_ID, :first, :last, :ssn, :address, :phone, :email)",
+        {
+            'acc_ID': account_id,
+            'first': tenant.get_first_name(),
+            'last': tenant.get_last_name(),
+            'ssn': tenant.get_ssn(),
+            'address': tenant.get_address(),
+            'phone': tenant.get_phone_number(),
+            'email': tenant.get_email(),
+        }
+        )
+
     __conn.commit()
-    tenant.setID(__cursor.lastrowid)
+    tenant.set_id(__cursor.lastrowid)
     return __cursor.lastrowid
 
-#Returns the ID of Property : need to set object propID to this return value
-def addToProperty(accID : int , tenID : int, property : Property):
 
+# Returns the ID of Property : need to set object propID to this return value
+def addToProperty(accID: int, tenID: int, property: Property):
     global __conn, __cursor
 
     __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :ten_ID, :address)",
                      {
-                         'ten_ID' : tenID,
-                         'acc_ID' : accID,
-                         'address' : property.getAddress()
+                         'ten_ID': tenID,
+                         'acc_ID': accID,
+                         'address': property.get_address()
                      }
                      )
-    
+
     __conn.commit()
 
-    return __cursor.lastrowid   
+    return __cursor.lastrowid
 
-def editAccount(account : Account):
+
+def editAccount(account: Account):
     pass
 
-def editTenant(tenant : Tenant):
+
+def editTenant(tenant: Tenant):
     pass
 
-#Reads the database and returns an object of the account
+
+# Reads the database and returns an object of the account
 def readAccount(accID: int) -> Account:
     """Reads the Database Account Table and returns the row associated with an Account ID
 
@@ -163,16 +175,17 @@ def readAccount(accID: int) -> Account:
     """
     global __conn, __cursor
 
-    data=__cursor.execute("SELECT * FROM ACCOUNT WHERE (acc_ID) = (:acc_ID)",{
-        'acc_ID' : accID
-    }).fetchone() 
+    data = __cursor.execute("SELECT * FROM ACCOUNT WHERE (acc_ID) = (:acc_ID)", {
+        'acc_ID': accID
+    }).fetchone()
     print(f"Data: {data}")
-    account = Account(first=data[1],last=data[2],username=data[3])
+    account = Account(first=data[1], last=data[2], username=data[3])
     account.setID(data[0])
-    
+
     return account
 
-def readTenants(accID:int) -> Tenant:
+
+def readTenants(accID: int) -> Tenant:
     """Read DataBase Tenant Table
 
     Args:
@@ -182,32 +195,43 @@ def readTenants(accID:int) -> Tenant:
         Tenants: A Dictionary of Tenant objects based on KEY ID : Tenant pairs
     """
     global __conn, __cursor
-    #temporary dictionary to return list of tenant objects
-    tenants:dict = {}
-    #use cursor to execute SELECT sql code. fetchall fields returned from condition for tenants associated with account id
-    data=__cursor.execute("SELECT * FROM Tenant WHERE (acc_ID) = (:acc_ID)",{
-        'acc_ID' : accID
-    }).fetchall() #returns a list of tenant data, need to turn into Tenant Objects Dict
-    #if data is None, then there was no tenants with associated account id
+    # temporary dictionary to return list of tenant objects
+    tenants: dict = {}
+    # use cursor to execute SELECT sql code. fetchall fields returned from condition for tenants associated with account id
+    data = __cursor.execute("SELECT * FROM Tenant WHERE (acc_ID) = (:acc_ID)", {
+        'acc_ID': accID
+    }).fetchall()  # returns a list of tenant data, need to turn into Tenant Objects Dict
+    # if data is None, then there was no tenants with associated account id
     if data is None:
         print(f"No data was returned from request on read Tenants on Account Number {accID}")
         return None
     print(f"Data: {data}")
 
-    #parse through tenant data and create tenant objects
+    # parse through tenant data and create tenant objects
     for tenData in data:
-        tenant = Tenant(firstname=tenData[1],lastname=tenData[2],address=tenData[5])
-        #use DB generated Key as Tenants' ID
+        tenant = Tenant(firstname=tenData[1], lastname=tenData[2], address=tenData[5])
+        # use DB generated Key as Tenants' ID
         tenant.setID(tenData[0])
         print(f"tenant {tenData[0]}, {tenant}")
-        #dictionary key to tenant pair value. 'tenID' : "tenantObject"
+        # dictionary key to tenant pair value. 'tenID' : "tenantObject"
         tenants[tenData[0]] = tenant
-    #return list of tenants associated to accID account
+    # return list of tenants associated to accID account
     return tenants
 
 
-#UPDATE METHODS
+# UPDATE METHODS
 
-def updateAccount(account : Account):
+def updateAccount(account: Account):
     global __conn, __cursor
-    __cursor.execute("UPDATE Account SET (first,last,username,password) = (:first, :last, :username, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(), 'password' : account.get_password()})
+    __cursor.execute(
+        "UPDATE Account SET (first,last,username,password) = (:first, :last, :username, :password) WHERE (acc_ID) = (:acc_ID)",
+        {'first': account.get_firstName(), 'last': account.get_lastName(), 'username': account.get_username(),
+         'acc_ID': account.getID(), 'password': account.get_password()})
+
+
+def update_tenant(tenant: Tenant):
+    global __conn, __cursor
+    __cursor.execute(
+        "UPDATE Tenant SET (acc_ID, first, last, ssn, address, phone, email) = (:acc_ID, :first, :last, :ssn, :address, :phone, :email WHERE (ten_ID) = (:ten_ID)",
+        {'first': tenant.get_first_name(), 'last': tenant.get_last_name(), 'ssn': tenant.get_ssn(),
+         'address': tenant.get_address(), 'phone': tenant.get_phone_number(), 'email': tenant.get_email()})

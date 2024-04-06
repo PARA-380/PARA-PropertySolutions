@@ -1,7 +1,7 @@
 from Tenant import Tenant
 
 
-class Account(Entity):
+class Account:
     def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
                  dashboard={}, contractors: list = None):
         self.firstName = first
@@ -16,10 +16,10 @@ class Account(Entity):
     def __repr__(self):
         return f"Account {self.getID()} {self.__dict__}"
     
-    def setID(self, ID):
+    def set_id(self, ID):
         self.ID = ID
     
-    def getID(self):
+    def get_id(self):
         assert self.ID != None
         return self.ID
     

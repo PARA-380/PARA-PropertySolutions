@@ -6,10 +6,10 @@
 class Tenant:
     # tenantName = None
 
-    def __init__(self, ID : int = None, firstname: str = "", lastname: str = "", ssn: str = "", address: str = "",
+    def __init__(self, firstname: str = "", lastname: str = "", ssn: str = "", address: str = "",
                  phonenumber: str = "",
                  email: str = ""):
-        self.tenantID = ID
+        self.tenantID = None
         self.tenantFirstName = firstname
         self.tenantLastName = lastname
         self.tenantSSN = ssn
@@ -22,10 +22,10 @@ class Tenant:
     def __repr__(self):
         return f"Tenant ID: {self.tenantID} - {self.tenantFirstName} {self.tenantLastName} lives at {self.tenantAddress}"
     
-    def setID(self,ID):
+    def set_id(self,ID):
         self.tenantID = ID
 
-    def getID(self):
+    def get_id(self):
         return self.tenantID
 
     def setAddress(self, newAddress: str = None):
