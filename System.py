@@ -9,7 +9,7 @@ class System():
     def __init__(self, main : Account = None):
         self.Accounts : Account = {}
         self.mainAccount : Account = main
-        self.cont_userprofile = Cont_UserProfile(self)
+        self.cont_userprofile = Cont_UserProfile(self.mainAccount)
         pass
 
     def __repr__(self):

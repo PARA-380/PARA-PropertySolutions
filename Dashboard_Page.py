@@ -18,7 +18,7 @@ from Notification_GUI.Noti_Page_GUI import Notification_Page
 from Contractor_Page_GUI.Contractor_Page import Contractor_Page
 
 #controllers
-from Cont_UserProfile import Cont_UserProfile
+from System import Cont_UserProfile
 
 
 class Dashboard(QMainWindow, Ui_DashBoard):
