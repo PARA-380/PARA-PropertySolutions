@@ -1,7 +1,7 @@
-from Account import Account
-from Property import Property
-from Tenant import Tenant
-import Database as db
+from Entities.Account import Account
+from Entities.Property import Property
+from Entities.Tenant import Tenant
+import Database.Database as db
 
 class System():
     def __init__(self, main : Account = None):
@@ -95,7 +95,7 @@ def main() -> None:
 
     #testing update account method
     myuser = session1.getAccount(1)
-    myuser.set_username("testing UPDATE")
+    myuser.set_username("testing UPDATE AGAINNNNNNN")
     print(myuser)
     session1._updateAccount(myuser)
     session1._searchAccount(myuser.getID())
