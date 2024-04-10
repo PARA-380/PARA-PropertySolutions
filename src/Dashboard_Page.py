@@ -10,7 +10,7 @@ from PyQt6.QtWidgets import (
 )
 
 
-from gui.pyqt_dashboard import Ui_DashBoard
+from gui.Dashboard.pyqt_dashboard import Ui_DashBoard
 from gui.UserProfile.UserProfile import Userprofile
 from gui.Property_GUI.Property_main import Property_Page
 from gui.Setting_GUI.Setting_Page_GUI import Setting_Page
