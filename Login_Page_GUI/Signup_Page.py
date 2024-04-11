@@ -39,7 +39,7 @@ class SignUp_Page(QWidget):
             QMessageBox.warning(self, "Error", "Passwords do not match.")
             return
 
-        # add code to store the email and password, for example in a database.
+        # add code to store the email and password to the database.
         # Print them for testing purpose
         print("Email:", email)
         print("Password:", password)
