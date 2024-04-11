@@ -1,6 +1,3 @@
-import sys
-
-sys.path.append('./')
-
-print('here')
-print(sys.path)
+from .System import System
+from .Database import Database
+from .main_gui import main_gui

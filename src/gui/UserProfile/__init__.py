@@ -1,5 +1,2 @@
-import sys
 
-sys.path.append('../../')
-
-print(sys.path)
+from .User_Profile_GUI import Ui_MainWindow

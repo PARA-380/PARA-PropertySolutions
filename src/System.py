@@ -1,7 +1,7 @@
-from Entities.Account import Account
-from Entities.Property import Property
-from Entities.Tenant import Tenant
-import Database.Database as db
+from Entities import Account
+from Entities import Property
+from Entities import Tenant
+from . import Database as db
 
 class System():
     def __init__(self, main : Account = None):

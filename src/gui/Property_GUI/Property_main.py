@@ -9,7 +9,7 @@ Purposes: 1. To create new properties
 """
 import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
-from Property_GUI.Property_Button_Controller import Property_Controller
+from .Property_Button_Controller import Property_Controller
 
 
 class Property_Page(QMainWindow):
