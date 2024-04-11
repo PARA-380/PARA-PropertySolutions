@@ -2,18 +2,31 @@
 File: Property_main.py
 Name: Jittapatana (Patrick) Prayoonpruk
 Date: 04/05/2024
-Description: Property main page user interface
-Purposes: 1. To create new properties
-          2. To access existed properties
-          3. To delete properties
+Description: This file contains the main user interface for managing properties.
 """
+
 import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
 from Property_GUI.Property_Button_Controller import Property_Controller
 
 
 class Property_Page(QMainWindow):
+    """A class representing the main window for property management.
+
+    Attributes:
+        central_widget (QWidget): Central widget of the main window.
+        vertical_layout (QVBoxLayout): Vertical layout for organizing widgets.
+        buttons (list): List to keep track of created button pairs.
+        used_property_numbers (set): Set to track used property numbers.
+        property_info_controller (Property_Controller): Instance of the property controller.
+        add_property_layout (QHBoxLayout): Layout for "Add a property" button.
+        create_button (QPushButton): Button for adding properties.
+    """
+
     def __init__(self):
+        """Initializes the Property_Page class.
+        """
+
         super().__init__()
         # Set window title and size
         self.setWindowTitle("Property Page")
@@ -55,8 +68,9 @@ class Property_Page(QMainWindow):
         self.vertical_layout.addLayout(self.add_property_layout)
 
     def _create_property(self):
-        """_summary_
-        """ 
+        """
+        Creates a new property button, as well as the delete button next to it.
+        """
 
         property_number = self._get_next_available_property_number()
         self.used_property_numbers.add(property_number)  # Add the property number to the set of used property numbers
@@ -134,7 +148,6 @@ def main():
 
     window.show()
     sys.exit(app.exec())
-
-if __name__ == "__main__":
-    main()
 '''
+if __name__ == "__main__":
+    Property_Page()

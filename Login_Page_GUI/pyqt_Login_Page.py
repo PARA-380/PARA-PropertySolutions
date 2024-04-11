@@ -123,7 +123,7 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label_4.setText(_translate("Form", "Log In"))
-        self.username_line_edit.setPlaceholderText(_translate("Form", "  User Name"))
+        self.username_line_edit.setPlaceholderText(_translate("Form", "  Email"))
         self.password_line_edit.setPlaceholderText(_translate("Form", "  Password"))
         self.login_btn.setText(_translate("Form", "L O G I N"))
         self.login_btn_2.setText(_translate("Form", "S I G N U P"))
