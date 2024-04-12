@@ -3,7 +3,8 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt
 import sys
-import tenantsUI_Controller
+from tenantsUI_Controller import TenantsUI
+from src.Tenant import Tenant
 
 from QtTenantPage import Ui_MainWindow
 
@@ -16,7 +17,6 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         self.tableWidget.setColumnWidth(2, 300)
         self.tableWidget.setColumnWidth(1, 200)
         self.tableWidget.setColumnWidth(3, 200)
-
 
 
 if __name__ == "__main__":
