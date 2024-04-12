@@ -13,27 +13,35 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.Cont_UserProfile = Cont_UserProfile #Connects to Controller to access database
         self.DisplayInfo()
-        self.pushButton.clicked.connect(self.DisplayInfo) #Connect pushButton1 to DisplayInfo
-        self.pushButton.clicked.connect(self.ClearFields) #Clears the lines after saving
+        self.pushButton.clicked.connect(self.SaveInfo) #Connect pushButton1 to DisplayInfo
+        # self.pushButton.clicked.connect(self.ClearFields) #Clears the lines after saving
         self.pushButton_2.clicked.connect(self.ClearFields)  # Connect pushButton2 to ClearFields
         self.show()
 
-
-
-
-    def DisplayInfo(self):
+    def SaveInfo(self):
+        mainAcc = self.Cont_UserProfile._getMainAccount()
+        # self.lineEdit.(mainAcc.get_firstName())
         username = self.lineEdit.text()
         FirstName = self.lineEdit_2.text()
         LastName = self.lineEdit_3.text()
         PhoneNumber = self.lineEdit_4.text()
+        #controller work
+        tempacc = Account(first=FirstName,last=LastName,username=username,phone=PhoneNumber)
         #uses the controller to update the database and the controllers main account with new info
-        # Cont_UserProfile._updateAccount(Account(first=FirstName,last=LastName,username=username,phone=PhoneNumber))
+        self.Cont_UserProfile._updateAccount(accID=mainAcc.getID(), tempAcc=tempacc)
 
         # FullName = FirstName + " " + LastName
-        account :Account = self.Cont_UserProfile._getMainAccount()
-        self.textEdit.setText(f"Username: {account.get_username()}\n"
-                              f"Full Name: {account.get_firstName()} {account.get_lastName()}\n"
-                              f"Phone Number: {account.get_phonenumber()}")
+        mainAcc :Account = self.Cont_UserProfile._getMainAccount()
+        self.textEdit.setText(f"Username: {mainAcc.get_username()}\n"
+                              f"Full Name: {mainAcc.get_firstName()} {mainAcc.get_lastName()}\n"
+                              f"Phone Number: {mainAcc.get_phonenumber()}")
+        
+    def DisplayInfo(self):
+        mainAcc = self.Cont_UserProfile._getMainAccount()
+        mainAcc :Account = self.Cont_UserProfile._getMainAccount()
+        self.textEdit.setText(f"Username: {mainAcc.get_username()}\n"
+                              f"Full Name: {mainAcc.get_firstName()} {mainAcc.get_lastName()}\n"
+                              f"Phone Number: {mainAcc.get_phonenumber()}") 
 
     def ClearFields(self):
         self.lineEdit.clear()  # Clear username field
