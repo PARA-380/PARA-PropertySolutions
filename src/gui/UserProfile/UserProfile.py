@@ -4,12 +4,14 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt
 import sys
 #HelloWorld
-from . import Ui_MainWindow
+from src.gui.UserProfile.User_Profile_GUI import Ui_MainWindow
+from System import Cont_UserProfile
 
 class Userprofile(QMainWindow, Ui_MainWindow):
-    def __init__(self):
+    def __init__(self, Cont_UserProfile : Cont_UserProfile):
         super().__init__()
         self.setupUi(self)
+
         self.pushButton.clicked.connect(self.DisplayInfo) #Connect pushButton1 to DisplayInfo
         self.pushButton.clicked.connect(self.ClearFields) #Clears the lines after saving
         self.pushButton_2.clicked.connect(self.ClearFields)  # Connect pushButton2 to ClearFields
@@ -36,9 +38,10 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         self.lineEdit_4.clear()  # Clear phone number field
 
 
-
+'''
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     UserProfile_page = Userprofile()
     UserProfile_page.show()
     sys.exit(app.exec())
+'''

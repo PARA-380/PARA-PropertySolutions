@@ -1,7 +1,7 @@
-from src.Account import Account
-from src.Property import Property
-from src.Tenant import Tenant
-import src.Database as db
+from src.Entities.Account import Account
+from src.Entities.Property import Property
+from src.Entities.Tenant import Tenant
+import src.Database.Database as db
 
 from src.Cont_UserProfile import Cont_UserProfile
 

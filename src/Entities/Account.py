@@ -1,4 +1,4 @@
-from Entities.Tenant import Tenant
+from src.Entities.Tenant import Tenant
 
 
 class Account:
@@ -78,10 +78,13 @@ class Account:
         }
 
 def main() -> None:
+    ''''
     user = Account(name="Ridham", username="RidhamPlaysValorant123", password="iluv1D")
     person = Tenant("Ridham")
     person2 = Tenant("Adrian", "Carreno", "012-34-5678", "AHHHHHH", "(805) xxx - xxxx")
     user.addTenant(person)
+    '''
+    pass
 
 
 if __name__ == "__main__":
