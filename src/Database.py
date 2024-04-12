@@ -42,7 +42,8 @@ def createTables():
                     acc_ID integer PRIMARY KEY,
                     first text,
                     last text,
-                    username text
+                    username text,
+                    password text
                 )""")
 
     #create Table for Tenants 
@@ -218,4 +219,18 @@ def __parseTenantList(data) -> dict:
 
 def updateAccount(account : Account):
     global __conn, __cursor
-    __cursor.execute("UPDATE Account SET (first,last,username) = (:first, :last, :username) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID()})
+    __cursor.execute("UPDATE Account SET (first,last,username,password) = (:first, :last, :username, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(), 'password' : account.get_password()})
+
+def updateTenant(tenant :Tenant):
+    global __conn, __cursor
+    __cursor.execute("UPDATE Tenant SET (acc_ID,first,last,ssn,address,phone,email) = (:acc_ID, :first, :last, :ssn, :address, :phone, :email) WHERE (ten_ID) = (:ten_ID)",
+                     {'acc_ID' : tenant.get_account_id(),'first': tenant.getFirstName(), 'last' : tenant.getLastName(), 'ssn' : tenant.getSSN(), 'address' : tenant.getAddress(), 'phone' : tenant.getPhoneNumber(), 'email' : tenant.getEmail()})
+
+
+#                           acc_ID' : account.getID(),
+#                          'first' : tenant.getFirstName(),
+#                          'last' : tenant.getLastName(),
+#                          'ssn' : tenant.getSSN(),
+#                          'address' : tenant.getAddress(),
+#                          'phone' : tenant.getPhoneNumber(),
+#                          'email' : tenant.getEmail(),

@@ -4,12 +4,16 @@ version = "0.1.0"
 description = "Property Management Software by PARA Property Solutions"
 authors = ["PARA"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.12"
+python = ">=3.12, <3.13"
 PyQt6 = "^6.6.1"
 PySide6 = "^6.6.2"
 pytest = "^8.1.0"
+
+[tool.poetry.scripts]
+test = 'tests:test'
 
 
 [build-system]

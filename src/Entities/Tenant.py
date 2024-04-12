@@ -10,6 +10,7 @@ class Tenant:
                  phonenumber: str = "",
                  email: str = ""):
         self.tenantID = ID
+        self.accountID = None
         self.tenantFirstName = firstname
         self.tenantLastName = lastname
         self.tenantSSN = ssn
@@ -27,6 +28,12 @@ class Tenant:
 
     def getID(self):
         return self.tenantID
+    
+    def get_account_id(self):
+        return self.accountID
+    
+    def _set_account_id(self, accID):
+        self.accountID = accID
 
     def setAddress(self, newAddress: str = None):
         self.tenantAddress = newAddress

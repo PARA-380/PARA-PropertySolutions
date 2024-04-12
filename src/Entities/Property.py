@@ -1,4 +1,4 @@
-from Entities.Tenant import Tenant
+from .Tenant import Tenant
 
 
 class Property:
