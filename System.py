@@ -78,9 +78,7 @@ class System():
 
     #UPDATE methods
     
-    def _updateAccount(self, accID):
-        db.updateAccount(accID)
-        pass
+
 
 
 def main() -> None:

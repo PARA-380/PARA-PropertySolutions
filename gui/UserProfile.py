@@ -26,10 +26,13 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         FirstName = self.lineEdit_2.text()
         LastName = self.lineEdit_3.text()
         PhoneNumber = self.lineEdit_4.text()
-        FullName = FirstName + " " + LastName
+        #uses the controller to update the database and the controllers main account with new info
+        # Cont_UserProfile._updateAccount(Account(first=FirstName,last=LastName,username=username,phone=PhoneNumber))
+
+        # FullName = FirstName + " " + LastName
         account :Account = self.Cont_UserProfile._getMainAccount()
         self.textEdit.setText(f"Username: {account.get_username()}\n"
-                              f"Full Name: {account.get_firstName()}\n"
+                              f"Full Name: {account.get_firstName()} {account.get_lastName()}\n"
                               f"Phone Number: {account.get_phonenumber()}")
 
     def ClearFields(self):

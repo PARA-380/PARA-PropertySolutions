@@ -15,6 +15,16 @@ class Cont_UserProfile:
     
     def _searchAccount(self, accID : int) -> None:
         self.__setMainAccount(db.readAccount(accID))
+
+    def _updateAccount(self, account : Account):
+        """updates account with accID in database.
+           and updates self main account
+        Args:
+            accID (_type_): account ID to be updated in Database
+        """
+        db.updateAccount(account)
+        self._searchAccount(account.getID())
+        pass
     
     def _createAccount(self, first, last, username, password):
         acc = Account(first,last,username,password)
@@ -26,4 +36,3 @@ class Cont_UserProfile:
         # except:
         #     print(f"{acc} already exists!")
         #     pass
-        pass
