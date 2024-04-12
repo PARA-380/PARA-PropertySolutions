@@ -5,8 +5,8 @@ from PyQt6.QtWidgets import (
 
 import sys
 
-from pyqt_Login_Page import Ui_Form
-from Signup_Page import SignUp_Page
+from Login_Page_GUI.pyqt_Login_Page import Ui_Form
+from Login_Page_GUI.Signup_Page import SignUp_Page
 
 class Login_Page(QMainWindow, Ui_Form):
     def __init__(self):
