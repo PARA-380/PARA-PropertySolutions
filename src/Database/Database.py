@@ -88,12 +88,12 @@ def addToAccounts(account : Account):
     global __conn, __cursor
     #TODO: -validation on existing username
     #
-    __cursor.execute("INSERT INTO Account (first,last,username,phonenumber,password) VALUES (:first,:last,:username,:phone, :password)", 
+    __cursor.execute("INSERT INTO Account (first,last,username,phonenumber,password) VALUES (:first,:last,:username,:phonenumber, :password)",
                     {   
                         'first' : account.get_firstName(),
                         'last': account.get_lastName(),
                         'username': account.get_username(),
-                        'phone' : account.get_phonenumber(),
+                        'phonenumber' : account.get_phonenumber(),
                         'password' : account.get_password()
 
                     })
