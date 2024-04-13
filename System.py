@@ -30,8 +30,11 @@ class System():
         #take in username and password and find corresponding Object
         #load data from JSON file and create Account Object
         db.init()
-        db.cleartables()    #for testing purposes
-        db.createTables()   #creates the Account, Tenant, Property, etc. Tables
+        try:
+            #db.cleartables()    #for testing purposes
+            db.createTables()   #creates the Account, Tenant, Property, etc. Tables
+        except:
+            pass
         pass
 
     def EndSession(self):
