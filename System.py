@@ -43,9 +43,10 @@ class System():
             pass
         self.cont_login = Cont_Login()
         #login will be validating here before creating user profile
-        self.cont_userprofile = self.cont_login.getUserProfile()
-
         pass
+    
+    def setControllerUserProfile(self):
+        self.cont_userprofile = self.cont_login.getUserProfile()
 
     def EndSession(self):
         #Save data from Account object into Database and close session

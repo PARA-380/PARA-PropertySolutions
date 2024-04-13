@@ -14,11 +14,14 @@ class Cont_Login:
         """
         return self.cont_user
 
-    def validateLogin(self, temp_username ="", temp_password = ""):
+    def validateLogin(self, temp_username ="", temp_password = "") -> bool:
         users = self.searchAccount(temp_username) #returns Account objects
         for account in users:
             if temp_password is account.get_password():
+                print(f'account match! : {account}')
                 self.cont_user.__setMainAccount(account)
+                return True
+        return False
 
     def searchAccount(self, username = "") -> list[Account]:
         users : list[Account] = db.searchAccount(username)

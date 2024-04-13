@@ -16,6 +16,8 @@ class Login_Page(QMainWindow, Ui_Form):
         super().__init__()
         self.setupUi(self)
         self.show()
+        #setup controller
+        self.cont_login = Cont_Login()
 
         # login_btn_2 = sign up button
         self.login_btn_2.clicked.connect(self.go_to_signup_page)
@@ -32,11 +34,14 @@ class Login_Page(QMainWindow, Ui_Form):
         print("login in")
         print(self.username_line_edit.text())
         print(self.password_line_edit.text())
-        if self.username_line_edit.text() == "1" and self.password_line_edit.text() == "2":
+        temp_username = self.username_line_edit.text()
+        temp_password = self.password_line_edit.text()
+        
+        if self.cont_login.validateLogin(temp_username,temp_password):
             print("log in success")
             self.hide()
-            dashboard = Dashboard()
-            dashboard.show()
+            # dashboard = Dashboard()
+            # dashboard.show()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
