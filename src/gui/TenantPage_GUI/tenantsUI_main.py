@@ -3,10 +3,10 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt
 import sys
-from tenantsUI_Controller import TenantsUI
-from src.Tenant import Tenant
+# from tenantsUI_Controller import TenantsUI
+# from src.gui.TenantPage_GUI. import Tenant
 
-from QtTenantPage import Ui_MainWindow
+from src.gui.TenantPage_GUI.QtTenantPage import Ui_MainWindow
 
 class tenantsui(QMainWindow, Ui_MainWindow):
     def __init__(self):
