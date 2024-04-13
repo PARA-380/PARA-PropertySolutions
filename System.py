@@ -37,7 +37,7 @@ class System():
         
         db.init()
         try:
-            #db.cleartables()    #for testing purposes
+            # db.cleartables()    #for testing purposes
             db.createTables()   #creates the Account, Tenant, Property, etc. Tables
         except:
             pass

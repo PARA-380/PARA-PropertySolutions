@@ -12,7 +12,8 @@ def init():
        __conn   : is the current connection to a certain database file. (stored locally)
     """
     global __conn, __cursor
-    __conn = sqlite3.connect('../data/sql.db')
+    # __conn = sqlite3.connect('../data/sql.db')
+    __conn = sqlite3.connect('data/sql.db')
     __cursor = __conn.cursor()
 
 def closeConnection():
@@ -178,13 +179,17 @@ def readAccount(accID: int) -> Account:
 
 def searchAccount(username : str) -> list[Account]:
     global __conn, __cursor
-    users = list[Account]
+    users = list()
     data=__cursor.execute("SELECT * FROM ACCOUNT WHERE (username) = (:username)",{
         'username' : username
     }).fetchall() 
     
     for user in data:
-        users.append(Account(first=user[1],last=user[2],username=user[3],phone=user[4],password=user[5]).setID(user[0]))
+        # users.append(Account(first=user[1],last=user[2],username=user[3],phone=user[4],password=user[5]).setID(user[0]))
+        acc = Account(first=user[1],last=user[2],username=user[3],phone=user[4],password=user[5])
+        acc.setID(user[0])
+        users.append(acc)
+    print(f'type: {type(users)}, user: {users}')
     return users
 
 

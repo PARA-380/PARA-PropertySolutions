@@ -38,10 +38,14 @@ class Login_Page(QMainWindow, Ui_Form):
         temp_password = self.password_line_edit.text()
         
         if self.cont_login.validateLogin(temp_username,temp_password):
+            print(f' print if {self.cont_login.validateLogin(temp_username,temp_password)}')
             print("log in success")
-            self.hide()
+            self.close()
+            # self.hide()
             # dashboard = Dashboard()
             # dashboard.show()
+        else:
+            print("not match")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

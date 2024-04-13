@@ -12,10 +12,10 @@ class Cont_UserProfile:
             mainAccount (Account, optional): The main account associated to the Controller. Defaults to None.
         """
         self.mainAccount = mainAccount
-        self.createAccount(self.mainAccount)
+        # self.createAccount(self.mainAccount)
         pass
 
-    def __setMainAccount(self, acc : Account = None):
+    def setMainAccount(self, acc : Account = None):
         """Sets the main Account Object of this controller
 
         Args:
@@ -64,6 +64,7 @@ class Cont_UserProfile:
         acc = account
         acc.setID(db.addToAccounts(acc))
         self.__setMainAccount(acc)
+
         # try:
         #     db.addToAccounts(acc)
 
