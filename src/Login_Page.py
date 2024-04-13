@@ -35,6 +35,12 @@ class Login_Page(QMainWindow, Ui_Form):
             self.hide()
             dashboard = Dashboard()
             dashboard.show()
+    
+    def get_username(self):
+        return self.username_line_edit.text()
+    
+    def get_password(self):
+        return self.password_line_edit.text()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
