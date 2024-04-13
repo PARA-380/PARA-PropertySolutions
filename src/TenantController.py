@@ -18,45 +18,46 @@ class TenantController:
     def add_tenant(self, tenant: Tenant):
         self.tenants.append(tenant)
 
-    def find_tenant_by_id(self, tenant_id: int):
+    def find_tenant_by_id(self, account_id: int, tenant_id: int):
+        db.readTenants(account_id)
         for tenant in self.tenants:
             if tenant.get_id() == tenant_id:
                 return tenant
         print("Tenant not found")
         return None
 
-    def update_tenant_first_name(self, tenant_first_name: str, tenant_id: int):
-        tenant = self.find_tenant_by_id(tenant_id)
+    def update_tenant_first_name(self, account_id: int, tenant_first_name: str, tenant_id: int):
+        tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_first_name(tenant_first_name)
             db.update_tenant(tenant)
 
-    def update_tenant_name(self, tenant_last_name: str, tenant_id: int):
-        tenant = self.find_tenant_by_id(tenant_id)
+    def update_tenant_name(self, account_id: int, tenant_last_name: str, tenant_id: int):
+        tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_last_name(tenant_last_name)
             db.update_tenant(tenant)
 
-    def update_ssn(self, tenant_id: int, tenant_ssn: str):
-        tenant = self.find_tenant_by_id(tenant_id)
+    def update_ssn(self, account_id: int, tenant_id: int, tenant_ssn: str):
+        tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_ssn(tenant_ssn)
             db.update_tenant(tenant)
 
-    def update_phone_number(self, tenant_id: int, phone_number: str):
-        tenant = self.find_tenant_by_id(tenant_id)
+    def update_phone_number(self, account_id: int, tenant_id: int, phone_number: str):
+        tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_phone_number(phone_number)
             db.update_tenant(tenant)
 
-    def update_tenant_address(self, tenant_id: int, new_address: str):
-        tenant = self.find_tenant_by_id(tenant_id)
+    def update_tenant_address(self, account_id: int, tenant_id: int, new_address: str):
+        tenant = self.find_tenant_by_id(1,tenant_id)
         if tenant:
             tenant.setAddress(new_address)
             db.update_tenant(tenant)
 
-    def update_tenant_email(self, tenant_id: int, email: str):
-        tenant = self.find_tenant_by_id(tenant_id)
+    def update_tenant_email(self, account_id: int, tenant_id: int, email: str):
+        tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_email(email)
             db.update_tenant(tenant)

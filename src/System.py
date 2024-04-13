@@ -3,10 +3,11 @@ from Property import Property
 from Tenant import Tenant
 import Database as db
 
-class System():
+class System:
     def __init__(self, main : Account = None):
         self.Accounts : Account = {}
         self.mainAccount : Account = main
+        #self.controller_tenant = TenantController()
         pass
 
     def __repr__(self):
@@ -74,8 +75,12 @@ class System():
 
 
 def main() -> None:
+    from TenantController import TenantController
     session1 = System()
     session1.StartSession()
+    ten = TenantController()
+
+    """
     session1._createAccount(first="ali",last="maamoun",username="amaamoun21",password="comp380")
     session1._createAccount(first="Ridham",last="Patel",username="rpatel20223",password="valorant")
 
@@ -99,6 +104,9 @@ def main() -> None:
     print(myuser)
     session1._updateAccount(myuser)
     session1._searchAccount(myuser.getID())
+    """
+    ten.create_tenant("Adrian", "Carreno", "4564", "address here", "phone number here", "email here")
+    ten.print_tenants()
 
 
     pass
