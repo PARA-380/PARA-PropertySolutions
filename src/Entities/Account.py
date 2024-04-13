@@ -1,17 +1,14 @@
-from src.Entities.Tenant import Tenant
+from .Tenant import Tenant
 
 
-class Account:
-    def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", tenants: list = None, total_revenue={},
-                 dashboard={}, contractors: list = None):
+class Account():
+    def __init__(self, first: str = "", last: str = "", username: str = "", password: str = "", phone : str = ""):
         self.firstName = first
         self.lastName = last
         self.ID = None
+        self.phoneNumber = phone
         self.username = username
         self.password = password  # might want to implement a security feature for storing passwords in json files
-        self.properties = {}
-        self.tenants = {}
-        self.contractors = {}
 
     def __repr__(self):
         return f"Account {self.getID()} {self.__dict__}"
@@ -46,6 +43,12 @@ class Account:
 
     def get_name(self):
         return self.firstName + self.lastName
+    
+    def get_phonenumber(self):
+        return self.phoneNumber
+    
+    def set_phonenumber(self, phone):
+        self.phoneNumber = phone
 
     def set_username(self, username):
         self.username = username
@@ -78,13 +81,10 @@ class Account:
         }
 
 def main() -> None:
-    ''''
     user = Account(name="Ridham", username="RidhamPlaysValorant123", password="iluv1D")
     person = Tenant("Ridham")
     person2 = Tenant("Adrian", "Carreno", "012-34-5678", "AHHHHHH", "(805) xxx - xxxx")
     user.addTenant(person)
-    '''
-    pass
 
 
 if __name__ == "__main__":
