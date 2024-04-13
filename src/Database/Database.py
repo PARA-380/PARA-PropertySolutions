@@ -12,7 +12,7 @@ def init():
        __conn   : is the current connection to a certain database file. (stored locally)
     """
     global __conn, __cursor
-    __conn = sqlite3.connect('src/Database/data/sql.db')
+    __conn = sqlite3.connect('../data/sql.db')
     __cursor = __conn.cursor()
 
 def closeConnection():
