@@ -12,6 +12,7 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.Cont_UserProfile = Cont_UserProfile #Connects to Controller to access database
+        print(self.Cont_UserProfile.mainAccount)
         self.DisplayInfo()
         self.pushButton.clicked.connect(self.SaveInfo) #Connect pushButton1 to DisplayInfo
         # self.pushButton.clicked.connect(self.ClearFields) #Clears the lines after saving

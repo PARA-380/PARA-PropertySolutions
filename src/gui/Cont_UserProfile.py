@@ -13,17 +13,17 @@ class Cont_UserProfile:
     def _getMainAccount(self):
         return self.getMainAccount()
     
-    def _searchAccount(self, accID : int) -> None:
+    def searchAccount(self, accID : int) -> None:
         self.__setMainAccount(db.readAccount(accID))
 
-    def _updateAccount(self, account : Account):
+    def updateAccount(self, account : Account):
         """updates account with accID in database.
            and updates self main account
         Args:
             accID (_type_): account ID to be updated in Database
         """
         db.updateAccount(account)
-        self._searchAccount(account.getID())
+        self.searchAccount(account.getID())
         pass
     
     def _createAccount(self, first, last, username, password):

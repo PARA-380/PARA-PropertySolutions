@@ -7,7 +7,7 @@ from src.Entities.Account import Account
 
 def run():
     app = QApplication(sys.argv)
-
+    print("***********************************")
     session = System(Account(first="Ridham", last="Petal", username="123", password="4560"))
     window = Dashboard(session.cont_userprofile)
 
