@@ -43,6 +43,7 @@ def createTables():
                     first text,
                     last text,
                     username text,
+                    phonenumber text,
                     password text
                 )""")
 
@@ -87,12 +88,14 @@ def addToAccounts(account : Account):
     global __conn, __cursor
     #TODO: -validation on existing username
     #
-    __cursor.execute("INSERT INTO Account (first,last,username,password) VALUES (:first,:last,:username, :password)", 
+    __cursor.execute("INSERT INTO Account (first,last,username,phonenumber,password) VALUES (:first,:last,:username,:phone, :password)", 
                     {   
                         'first' : account.get_firstName(),
                         'last': account.get_lastName(),
                         'username': account.get_username(),
+                        'phone' : account.get_phonenumber(),
                         'password' : account.get_password()
+
                     })
     __conn.commit()
     account.setID(__cursor.lastrowid)
@@ -168,7 +171,7 @@ def readAccount(accID: int) -> Account:
         'acc_ID' : accID
     }).fetchone() 
     print(f"Data: {data}")
-    account = Account(first=data[1],last=data[2],username=data[3],password=data[4])
+    account = Account(first=data[1],last=data[2],username=data[3],phone=data[4],password=data[5])
     account.setID(data[0])
     
     return account
@@ -211,4 +214,4 @@ def readTenants(accID:int) -> Tenant:
 
 def updateAccount(account : Account):
     global __conn, __cursor
-    __cursor.execute("UPDATE Account SET (first,last,username,password) = (:first, :last, :username, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(), 'password' : account.get_password()})
+    __cursor.execute("UPDATE Account SET (first,last,username,phonenumber,password) = (:first, :last, :username,:phone, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(),'phone':account.get_phonenumber(), 'password' : account.get_password()})
