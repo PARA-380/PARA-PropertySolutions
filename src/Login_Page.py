@@ -9,6 +9,8 @@ from src.gui.Login_Page_GUI.pyqt_Login_Page import Ui_Form
 from src.gui.Login_Page_GUI.Signup_Page import SignUp_Page
 from src.Dashboard_Page import Dashboard
 
+from src.Cont_Login import Cont_Login
+
 class Login_Page(QMainWindow, Ui_Form):
     def __init__(self):
         super().__init__()

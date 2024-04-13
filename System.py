@@ -4,13 +4,18 @@ from src.Entities.Tenant import Tenant
 import src.Database.Database as db
 
 from src.Cont_UserProfile import Cont_UserProfile
+from src.Cont_Login import Cont_Login
 
 class System():
     def __init__(self, main : Account = None):
         self.Accounts : Account = {}
         self.mainAccount : Account = main
+        #controllers
+        self.cont_userprofile : Cont_UserProfile
+        self.cont_login : Cont_Login
+        #setup database and controllers
         self.StartSession()
-        self.cont_userprofile = Cont_UserProfile(self.mainAccount)
+        
         pass
 
     def __repr__(self):
@@ -29,16 +34,22 @@ class System():
         #TODO:
         #take in username and password and find corresponding Object
         #load data from JSON file and create Account Object
+        
         db.init()
         try:
-            db.cleartables()    #for testing purposes
+            #db.cleartables()    #for testing purposes
             db.createTables()   #creates the Account, Tenant, Property, etc. Tables
         except:
             pass
+        self.cont_login = Cont_Login()
+        #login will be validating here before creating user profile
+        self.cont_userprofile = self.cont_login.getUserProfile()
+
         pass
 
     def EndSession(self):
         #Save data from Account object into Database and close session
+        print(f'ending session...')
         pass
 
     def createAccount(self, first, last, username, password):

@@ -176,6 +176,20 @@ def readAccount(accID: int) -> Account:
     
     return account
 
+def searchAccount(username : str) -> list[Account]:
+    global __conn, __cursor
+    users = list[Account]
+    data=__cursor.execute("SELECT * FROM ACCOUNT WHERE (username) = (:username)",{
+        'username' : username
+    }).fetchall() 
+    
+    for user in data:
+        users.append(Account(first=user[1],last=user[2],username=user[3],phone=user[4],password=user[5]).setID(user[0]))
+    return users
+
+
+
+
 def readTenants(accID:int) -> Tenant:
     """Read DataBase Tenant Table
 
