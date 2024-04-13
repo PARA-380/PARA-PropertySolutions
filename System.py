@@ -31,7 +31,7 @@ class System():
         #load data from JSON file and create Account Object
         db.init()
         try:
-            #db.cleartables()    #for testing purposes
+            db.cleartables()    #for testing purposes
             db.createTables()   #creates the Account, Tenant, Property, etc. Tables
         except:
             pass
@@ -41,7 +41,7 @@ class System():
         #Save data from Account object into Database and close session
         pass
 
-    def _createAccount(self, first, last, username, password):
+    def createAccount(self, first, last, username, password):
         """_summary_
 
         Args:
@@ -62,20 +62,20 @@ class System():
         #     pass
         pass
 
-    def _createTenant(self,account : Account, first="",last="",ssn="",address="",phone="",email=""):
+    def createTenant(self, account : Account, first="", last="", ssn="", address="", phone="", email=""):
         ten = Tenant(firstname=first,lastname=last,ssn=ssn,address=address,phonenumber=phone,email=email)
         ten.setID(db.addToTenants(account,ten))#review whether to set ID in System or Database
         account.addTenant(ten.getID(),ten)
 
         return ten
     
-    def _createProperty(self, accID : int):
+    def createProperty(self, accID : int):
         property = Property()
 
-    def _searchAccount(self, accID : int) -> Account:
+    def searchAccount(self, accID : int) -> Account:
         return self.cont_userprofile._searchAccount(accID)
     
-    def _searchTenants(self, accID, tenID=None):
+    def searchTenants(self, accID, tenID=None):
         if(tenID != None):
             return db.readTenants(accID)
         
@@ -88,7 +88,7 @@ class System():
 def main() -> None:
     session1 = System()
     session1.StartSession()
-    session1.cont_userprofile._createAccount(first="ali",last="maamoun",username="amaamoun21",password="comp380")
+    session1.cont_userprofile.createAccount()
     # session1._createAccount(first="Ridham",last="Patel",username="rpatel20223",password="valorant")
 
     # print(session1.Accounts)
@@ -101,7 +101,7 @@ def main() -> None:
     # print(f"added tenant {tenant}")
 
     #Search Database to create an Account Class
-    session1.cont_userprofile._searchAccount(1)
+    session1.cont_userprofile.searchAccount(1)
     print(f"Account Searched: {session1.cont_userprofile.mainAccount}")
     # print(f"Tenants Read: {session1._searchTenants(2)}")
 

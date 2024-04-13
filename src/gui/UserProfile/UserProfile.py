@@ -20,7 +20,7 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         self.show()
 
     def SaveInfo(self):
-        mainAcc = self.Cont_UserProfile._getMainAccount()
+        mainAcc = self.Cont_UserProfile.getMainAccount()
         # self.lineEdit.(mainAcc.get_firstName())
         username = self.lineEdit.text()
         FirstName = self.lineEdit_2.text()
@@ -29,17 +29,17 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         #controller work
         tempacc = Account(first=FirstName,last=LastName,username=username,phone=PhoneNumber)
         #uses the controller to update the database and the controllers main account with new info
-        self.Cont_UserProfile._updateAccount(accID=mainAcc.getID(), tempAcc=tempacc)
+        self.Cont_UserProfile.updateAccount(accID=mainAcc.getID(), tempAcc=tempacc)
 
         # FullName = FirstName + " " + LastName
-        mainAcc :Account = self.Cont_UserProfile._getMainAccount()
+        mainAcc :Account = self.Cont_UserProfile.getMainAccount()
         self.textEdit.setText(f"Username: {mainAcc.get_username()}\n"
                               f"Full Name: {mainAcc.get_firstName()} {mainAcc.get_lastName()}\n"
                               f"Phone Number: {mainAcc.get_phonenumber()}")
         
     def DisplayInfo(self):
-        mainAcc = self.Cont_UserProfile._getMainAccount()
-        mainAcc :Account = self.Cont_UserProfile._getMainAccount()
+        mainAcc = self.Cont_UserProfile.getMainAccount()
+        mainAcc :Account = self.Cont_UserProfile.getMainAccount()
         self.textEdit.setText(f"Username: {mainAcc.get_username()}\n"
                               f"Full Name: {mainAcc.get_firstName()} {mainAcc.get_lastName()}\n"
                               f"Phone Number: {mainAcc.get_phonenumber()}") 

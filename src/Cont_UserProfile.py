@@ -12,7 +12,7 @@ class Cont_UserProfile:
             mainAccount (Account, optional): The main account associated to the Controller. Defaults to None.
         """
         self.mainAccount = mainAccount
-        self._createAccount(self.mainAccount)
+        self.createAccount(self.mainAccount)
         pass
 
     def __setMainAccount(self, acc : Account = None):
@@ -23,7 +23,7 @@ class Cont_UserProfile:
         """
         self.mainAccount = acc
 
-    def _getMainAccount(self) -> Account:
+    def getMainAccount(self) -> Account:
         """Returns the main Account Object
 
         Returns:
@@ -31,7 +31,7 @@ class Cont_UserProfile:
         """
         return self.mainAccount
 
-    def _searchAccount(self, accID : int) -> None:
+    def searchAccount(self, accID : int) -> None:
         """Searches the Database for the account associated with its ID
 
         Args:
@@ -39,7 +39,7 @@ class Cont_UserProfile:
         """
         self.__setMainAccount(db.readAccount(accID))
 
-    def _updateAccount(self, accID : int, tempAcc : Account):
+    def updateAccount(self, accID : int, tempAcc : Account):
         """updates account with accID in database.
            and updates self main account
         Args:
@@ -50,9 +50,9 @@ class Cont_UserProfile:
         self.mainAccount.set_username(tempAcc.get_username())
         self.mainAccount.set_phonenumber(tempAcc.get_phonenumber())
         db.updateAccount(self.mainAccount)
-        self._searchAccount(self.mainAccount.getID())
+        self.searchAccount(self.mainAccount.getID())
 
-    def _createAccount(self, account : Account):
+    def createAccount(self, account: Account):
         """Creates an Account and sets it as the main account. Useful for Signing up for an account
 
         Args:
