@@ -64,7 +64,7 @@ def createTables():
     # create Table for Property 
     # address should link to property id
     __cursor.execute("""CREATE TABLE Property(
-                    property_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    property_ID integer PRIMARY KEY AUTOINCREMENT,
                     Ten_ID integer,
                     acc_ID integer,
                     address text
@@ -87,13 +87,15 @@ def addToAccounts(account : Account):
     global __conn, __cursor
     #TODO: -validation on existing username
     #
-    __cursor.execute("INSERT INTO Account (first,last,username) VALUES (:first,:last,:username)", 
+    __cursor.execute("INSERT INTO Account (first,last,username,password) VALUES (:first,:last,:username, :password)", 
                     {   
                         'first' : account.get_firstName(),
                         'last': account.get_lastName(),
-                        'username': account.get_username()
+                        'username': account.get_username(),
+                        'password' : account.get_password()
                     })
     __conn.commit()
+    account.setID(__cursor.lastrowid)
 
     #return the KEY ID
     return __cursor.lastrowid
@@ -128,20 +130,21 @@ def addToTenants(account : Account, tenant : Tenant):
     return __cursor.lastrowid
 
 #Returns the ID of Property : need to set object propID to this return value
-# def addToProperty(account : Account, tenant : Tenant, property : Property):
-#     global __conn, __cursor
+def addToProperty(accID : int , tenID : int, property : Property):
 
-#     __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :first, :last, :ssn, :address, :phone, :email)",
-#                      {
-#                          'ten_ID' : tenant.getID(),
-#                          'acc_ID' : account.getID(),
-#                          'address' : property.getAddress()
-#                      }
-#                      )
+    global __conn, __cursor
+
+    __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :ten_ID, :address)",
+                     {
+                         'ten_ID' : tenID,
+                         'acc_ID' : accID,
+                         'address' : property.getAddress()
+                     }
+                     )
     
-#     __conn.commit()
+    __conn.commit()
 
-#     return __cursor.lastrowid   
+    return __cursor.lastrowid   
 
 def editAccount(account : Account):
     pass
@@ -204,6 +207,7 @@ def __parseTenantList(data) -> dict:
     """ 
         #parse through tenant data and create tenant objects
     tenants:dict = {}
+    #parse through tenant data and create tenant objects
     for tenData in data:
         tenant = Tenant(firstname=tenData[1],lastname=tenData[2],address=tenData[5])
         #use DB generated Key as Tenants' ID
