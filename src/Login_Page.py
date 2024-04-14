@@ -26,7 +26,7 @@ class Login_Page(QMainWindow, Ui_Form):
         self.login_btn.clicked.connect(self.log_in)
 
     def go_to_signup_page(self):
-        self.signup_page = SignUp_Page()
+        self.signup_page = SignUp_Page(self.cont_login)
         self.signup_page.show()
 
     def log_in(self):

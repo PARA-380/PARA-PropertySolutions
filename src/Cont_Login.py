@@ -13,6 +13,9 @@ class Cont_Login:
             Cont_UserProfile: Controller for Main Account User
         """
         return self.cont_user
+    
+    def setUserProfile(self, account : Account):
+        self.cont_user.setMainAccount(account)
 
     def validateLogin(self, temp_username ="", temp_password = "") -> bool:
         users = self.searchAccount(temp_username) #returns Account objects
@@ -31,6 +34,6 @@ class Cont_Login:
         return users
     
     #TODO:
-    def createAccount():
-        pass
+    def createAccount(self, username = "", password = ""):
+        self.setUserProfile(db.addToAccounts(Account(username=username,password=password)))
 

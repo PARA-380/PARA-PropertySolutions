@@ -102,7 +102,8 @@ def addToAccounts(account : Account):
     account.setID(__cursor.lastrowid)
 
     #return the KEY ID
-    return __cursor.lastrowid
+    #NOTICE: CHANGED to account FROM __cursor.lastrowid
+    return account
 
 
 def addToTenants(account : Account, tenant : Tenant):
