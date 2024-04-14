@@ -21,7 +21,7 @@ class Cont_Login:
             # print(f'{account}')
             # print(f'tem_pass: {type(temp_password)}, account: {type(account.get_password())}')
             if temp_password == account.get_password():
-                print(f'account match! : {account}')
+                print(f'account match! : {type(account)}')
                 self.cont_user.setMainAccount(account)
                 return True
         return False

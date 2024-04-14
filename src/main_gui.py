@@ -17,7 +17,7 @@ def run():
     print("db call at run")
     db.addToAccounts(Account(first="Ridham", last="Petal", username="123", password="4560"))
     #launch Login GUI
-    loginWindow = Login_Page()
+    loginWindow = Login_Page(session.cont_login)
     print("login app exec")
     app.exec()
 

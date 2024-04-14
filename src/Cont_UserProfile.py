@@ -37,7 +37,7 @@ class Cont_UserProfile:
         Args:
             accID (int): The account ID to be searched for in the database
         """
-        self.__setMainAccount(db.readAccount(accID))
+        self.setMainAccount(db.readAccount(accID))
 
     def updateAccount(self, accID : int, tempAcc : Account):
         """updates account with accID in database.

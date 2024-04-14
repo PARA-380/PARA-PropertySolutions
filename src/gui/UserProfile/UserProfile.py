@@ -39,7 +39,7 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         
     def DisplayInfo(self):
         mainAcc = self.Cont_UserProfile.getMainAccount()
-        mainAcc :Account = self.Cont_UserProfile.getMainAccount()
+        #mainAcc :Account = self.Cont_UserProfile.getMainAccount()
         self.textEdit.setText(f"Username: {mainAcc.get_username()}\n"
                               f"Full Name: {mainAcc.get_firstName()} {mainAcc.get_lastName()}\n"
                               f"Phone Number: {mainAcc.get_phonenumber()}") 
