@@ -102,7 +102,8 @@ def addToAccounts(account : Account):
     account.setID(__cursor.lastrowid)
 
     #return the KEY ID
-    return __cursor.lastrowid
+    #NOTICE: CHANGED to account FROM __cursor.lastrowid
+    return account
 
 
 def addToTenants(account : Account, tenant : Tenant):
@@ -176,6 +177,24 @@ def readAccount(accID: int) -> Account:
     account.setID(data[0])
     
     return account
+
+def searchAccount(username : str) -> list[Account]:
+    global __conn, __cursor
+    users = list()
+    data=__cursor.execute("SELECT * FROM ACCOUNT WHERE (username) = (:username)",{
+        'username' : username
+    }).fetchall() 
+    
+    for user in data:
+        # users.append(Account(first=user[1],last=user[2],username=user[3],phone=user[4],password=user[5]).setID(user[0]))
+        acc = Account(first=user[1],last=user[2],username=user[3],phone=user[4],password=user[5])
+        acc.setID(user[0])
+        users.append(acc)
+    print(f'type: {type(users)}, user: {users}')
+    return users
+
+
+
 
 def readTenants(accID:int) -> Tenant:
     """Read DataBase Tenant Table

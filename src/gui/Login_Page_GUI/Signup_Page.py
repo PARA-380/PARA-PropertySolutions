@@ -1,11 +1,15 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QMessageBox
 
+from src.Cont_Login import Cont_Login
+
 class SignUp_Page(QWidget):
-    def __init__(self):
+    def __init__(self, cont_login : Cont_Login):
         super().__init__()
         self.setWindowTitle("Sign Up")
         self.setGeometry(200, 200, 300, 200)
+
+        self.Cont_Login = cont_login
 
         self.email_label = QLabel("Email:")
         self.email_edit = QLineEdit()
@@ -44,6 +48,7 @@ class SignUp_Page(QWidget):
         print("Email:", email)
         print("Password:", password)
         print("Sign up successful.")
+        self.Cont_Login.createAccount(username=email,password=password)
 
         # Close the sign-up page after successful sign-up
         self.close() 

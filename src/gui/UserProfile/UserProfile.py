@@ -11,12 +11,19 @@ class Userprofile(QMainWindow, Ui_MainWindow):
     def __init__(self, Cont_UserProfile : Cont_UserProfile):
         super().__init__()
         self.setupUi(self)
+
         self.Cont_UserProfile = Cont_UserProfile #Connects to Controller to access database
         print(self.Cont_UserProfile.mainAccount)
         self.DisplayInfo()
         self.pushButton.clicked.connect(self.SaveInfo) #Connect pushButton1 to DisplayInfo
         # self.pushButton.clicked.connect(self.ClearFields) #Clears the lines after saving
         self.pushButton_2.clicked.connect(self.ClearFields)  # Connect pushButton2 to ClearFields
+
+        self.lineEdit.setText(self.Cont_UserProfile.getMainAccount().get_username())
+        self.lineEdit_2.setText(self.Cont_UserProfile.getMainAccount().get_firstName())
+        self.lineEdit_3.setText(self.Cont_UserProfile.getMainAccount().get_lastName())
+        self.lineEdit_4.setText(self.Cont_UserProfile.getMainAccount().get_phonenumber())
+
         self.show()
 
     def SaveInfo(self):
@@ -39,7 +46,7 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         
     def DisplayInfo(self):
         mainAcc = self.Cont_UserProfile.getMainAccount()
-        mainAcc :Account = self.Cont_UserProfile.getMainAccount()
+        #mainAcc :Account = self.Cont_UserProfile.getMainAccount()
         self.textEdit.setText(f"Username: {mainAcc.get_username()}\n"
                               f"Full Name: {mainAcc.get_firstName()} {mainAcc.get_lastName()}\n"
                               f"Phone Number: {mainAcc.get_phonenumber()}") 
