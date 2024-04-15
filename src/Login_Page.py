@@ -16,6 +16,9 @@ class Login_Page(QMainWindow, Ui_Form):
         super().__init__()
         self.setupUi(self)
         self.show()
+
+        self.is_login = False
+
         #setup controller
         self.cont_login = cont_login
 
@@ -44,6 +47,7 @@ class Login_Page(QMainWindow, Ui_Form):
             # self.hide()
             # dashboard = Dashboard()
             # dashboard.show()
+            self.is_login = True
         else:
             print("not match")
 

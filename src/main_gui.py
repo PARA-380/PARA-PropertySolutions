@@ -9,9 +9,11 @@ from src.Entities.Account import Account
 
 
 def run():
+    
     app = QApplication(sys.argv)
     print("***********************************")
-    
+
+
     # session = System(Account(first="Ridham", last="Petal", username="123", password="4560"))
     session = System()
     print("db call at run")
@@ -21,15 +23,15 @@ def run():
     print("login app exec")
     app.exec()
 
+    if(loginWindow.is_login):
+        session.setControllerUserProfile()
+        
+        window = Dashboard(session.cont_userprofile)
 
-    session.setControllerUserProfile()
+        window.show()
+
+        app.exec()
     
-    window = Dashboard(session.cont_userprofile)
-
-    window.show()
-
-    app.exec()
-
 
 
 run()
