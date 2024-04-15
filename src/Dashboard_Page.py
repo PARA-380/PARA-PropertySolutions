@@ -30,6 +30,9 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         self.Cont_UserProfile = Cont_UserProfile
         #
         self.show()
+
+        self.is_signout = False
+
         self.Properties_btn.clicked.connect(self.goto_property_page)
         # pushButton = userprofile page
         self.pushButton_3.clicked.connect(self.goto_user_profile_page)
@@ -41,6 +44,8 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         self.pushButton_5.clicked.connect(self.goto_contractor_page)
         # Tenants_btn = Tenant page
         self.Tenants_btn.clicked.connect(self.goto_tenant_page)
+        # signout_btn = signout button
+        self.signout_btn.clicked.connect(self.sign_out)
 
     def goto_property_page(self, checked):
         self.property_page = Property_Page()
@@ -66,3 +71,8 @@ class Dashboard(QMainWindow, Ui_DashBoard):
     def goto_tenant_page(self, checked):
         self.tenant_page = tenantsui()
         self.tenant_page.show()
+
+    def sign_out(self, checked):
+        self.close()
+        self.is_signout = True
+        
