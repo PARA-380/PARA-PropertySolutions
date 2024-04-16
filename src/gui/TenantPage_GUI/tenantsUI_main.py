@@ -19,7 +19,9 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         SSN = self.LE_SSN.text()
         Phone_Number = self.LE_PhoneNumber.text()
         Email = self.LE_Email.text()
-        self.AddTenant.clicked.connect(self.__Add_Tenant)
+        # self.AddTenant.clicked.connect(self.__Add_Tenant)
+        self.AddTenant.clicked.connect(lambda: self.__Add_Tenant())
+
         self.DeleteTenant.clicked.connect(self.Delete_Tenant)  # Connect the Delete Tenant button
         self.tableWidget.setColumnWidth(4, 600)
         self.tableWidget.setColumnWidth(2, 300)
@@ -47,6 +49,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
             mostly used by tenants which already exist in data base to be added to table. 
             Defaults to None.
         """
+        print(f'type Tenant: {type(tenant)}')
         if tenant is None:
             print(f"reading from the user input")
             First_Name =  self.LE_FirstName.text()
@@ -55,8 +58,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
             Phone_Number = self.LE_PhoneNumber.text()
             Email = self.LE_Email.text()
             tenant = Tenant(firstname=First_Name,lastname=Last_Name,ssn=SSN,phonenumber=Phone_Number,email=Email)
-        
-
+            print(f'test getting into this if: {tenant.getFirstName()}')
         # Insert a new row at the end of the tableWidget
         row_position = self.tableWidget.rowCount()
         self.tableWidget.insertRow(row_position)
@@ -64,6 +66,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         print(type(tenant))
 
         # Add the data to the new row
+        print(f'tenant.getfirstname: {tenant.getFirstName()}, type {type(tenant.getFirstName())}')
         self.tableWidget.setItem(row_position, 0, QTableWidgetItem(tenant.getFirstName()))
         self.tableWidget.setItem(row_position, 1, QTableWidgetItem(tenant.getLastName()))
         self.tableWidget.setItem(row_position, 2, QTableWidgetItem(tenant.getSSN()))
