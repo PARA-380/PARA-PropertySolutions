@@ -39,7 +39,7 @@ class System():
         
         db.init()
         try:
-            db.cleartables()    #for testing purposes
+            #db.cleartables()    #for testing purposes
             db.createTables()   #creates the Account, Tenant, Property, etc. Tables
         except:
             pass
@@ -51,7 +51,7 @@ class System():
     def setControllerUserProfile(self):
         self.cont_userprofile = self.cont_login.getUserProfile()
         self.mainAccount = self.cont_userprofile.getMainAccount()
-        self.cont_tenant = Cont_Tenant(self.mainAccount.getID())
+        self.cont_tenant = Cont_Tenant(self.mainAccount.getID()) #review this line
 
     def EndSession(self):
         #Save data from Account object into Database and close session

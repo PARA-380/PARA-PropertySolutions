@@ -1,6 +1,5 @@
 from typing import List
-from Entities.Tenant import Tenant
-from System import db
+from System import db, Tenant
 
 
 class Cont_Tenant:
@@ -28,8 +27,11 @@ class Cont_Tenant:
         print("Tenant not found")
         return None
     
-    def get_tenats(self):
+    def get_tenants(self):
         return self.tenants
+    
+    def update_tenant(self):
+        pass
 
     def update_tenant_first_name(self, account_id: int, tenant_first_name: str, tenant_id: int):
         tenant = self.find_tenant_by_id(1, tenant_id)

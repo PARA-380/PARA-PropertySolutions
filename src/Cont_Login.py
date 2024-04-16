@@ -13,7 +13,7 @@ class Cont_Login:
             Cont_UserProfile: Controller for Main Account User
         """
         return self.cont_user
-    
+
     def setUserProfile(self, account : Account):
         self.cont_user.setMainAccount(account)
 

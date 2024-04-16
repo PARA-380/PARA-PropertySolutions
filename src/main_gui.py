@@ -26,17 +26,17 @@ def run():
 
     mainacc = session.getMainAccount()
     print(f"mainaccount: {mainacc}")
-    db.addToTenants(1,Tenant(firstname="Adrian", lastname="Carreno"))
-    db.addToTenants(2,Tenant(firstname="Ridham", lastname="Patel"))
-    db.addToTenants(1,Tenant(firstname="Ali", lastname="Maamoun"))
-    db.addToTenants(1,Tenant(firstname="Patrick", lastname="P"))
+    # db.addToTenants(1,Tenant(firstname="Adrian", lastname="Carreno"))
+    # db.addToTenants(2,Tenant(firstname="Ridham", lastname="Patel"))
+    # db.addToTenants(1,Tenant(firstname="Ali", lastname="Maamoun"))
+    # db.addToTenants(1,Tenant(firstname="Patrick", lastname="P"))
     print("login app exec")
     app.exec()
 
     if(loginWindow.is_login):
         session.setControllerUserProfile()
         
-        window = Dashboard(session.cont_userprofile)
+        window = Dashboard(session.cont_userprofile,session.cont_tenant)
 
         window.show()
 
