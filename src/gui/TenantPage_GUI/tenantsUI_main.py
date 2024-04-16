@@ -19,7 +19,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         SSN = self.LE_SSN.text()
         Phone_Number = self.LE_PhoneNumber.text()
         Email = self.LE_Email.text()
-        self.AddTenant.clicked.connect(self.__Add_Tenant)
+        self.AddTenant.clicked.connect(lambda : self.__Add_Tenant())
         self.DeleteTenant.clicked.connect(self.Delete_Tenant)  # Connect the Delete Tenant button
         self.tableWidget.setColumnWidth(4, 600)
         self.tableWidget.setColumnWidth(2, 300)
@@ -55,6 +55,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
             Phone_Number = self.LE_PhoneNumber.text()
             Email = self.LE_Email.text()
             tenant = Tenant(firstname=First_Name,lastname=Last_Name,ssn=SSN,phonenumber=Phone_Number,email=Email)
+            self.cont_tenant.add_tenant(tenant)
         
 
         # Insert a new row at the end of the tableWidget
