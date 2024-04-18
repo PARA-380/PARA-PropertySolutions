@@ -19,9 +19,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         SSN = self.LE_SSN.text()
         Phone_Number = self.LE_PhoneNumber.text()
         Email = self.LE_Email.text()
-        # self.AddTenant.clicked.connect(self.__Add_Tenant)
-        self.AddTenant.clicked.connect(lambda: self.__Add_Tenant())
-
+        self.AddTenant.clicked.connect(lambda : self.__Add_Tenant(tenant=None))
         self.DeleteTenant.clicked.connect(self.Delete_Tenant)  # Connect the Delete Tenant button
         self.tableWidget.setColumnWidth(4, 600)
         self.tableWidget.setColumnWidth(2, 300)
@@ -37,7 +35,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
             tenants (_type_): list of tenant types
         """
         for tenant in tenants:
-            print(f"{tenant}, {type(tenant)}")
+            # print(f"{tenant}, {type(tenant)}")
             self.__Add_Tenant(tenant)
 
     def __Add_Tenant(self, tenant : Tenant = None):
@@ -49,7 +47,6 @@ class tenantsui(QMainWindow, Ui_MainWindow):
             mostly used by tenants which already exist in data base to be added to table. 
             Defaults to None.
         """
-        print(f'type Tenant: {type(tenant)}')
         if tenant is None:
             print(f"reading from the user input")
             First_Name =  self.LE_FirstName.text()
@@ -58,15 +55,17 @@ class tenantsui(QMainWindow, Ui_MainWindow):
             Phone_Number = self.LE_PhoneNumber.text()
             Email = self.LE_Email.text()
             tenant = Tenant(firstname=First_Name,lastname=Last_Name,ssn=SSN,phonenumber=Phone_Number,email=Email)
-            print(f'test getting into this if: {tenant.getFirstName()}')
+            # print(f"New Tenant Added!: {tenant}")
+            self.cont_tenant.create_tenant(tenant)
+        
+
         # Insert a new row at the end of the tableWidget
         row_position = self.tableWidget.rowCount()
         self.tableWidget.insertRow(row_position)
 
-        print(type(tenant))
+        print(tenant)
 
         # Add the data to the new row
-        print(f'tenant.getfirstname: {tenant.getFirstName()}, type {type(tenant.getFirstName())}')
         self.tableWidget.setItem(row_position, 0, QTableWidgetItem(tenant.getFirstName()))
         self.tableWidget.setItem(row_position, 1, QTableWidgetItem(tenant.getLastName()))
         self.tableWidget.setItem(row_position, 2, QTableWidgetItem(tenant.getSSN()))
@@ -75,9 +74,16 @@ class tenantsui(QMainWindow, Ui_MainWindow):
 
 
     def Delete_Tenant(self):
-        selected_row = self.tableWidget.currentRow()  # Get the index of the currently selected row
+        # selected_row = self.tableWidget.currentRow()  # Get the index of the currently selected row
+        selected_row = self.tableWidget.selectionModel().selectedRows()
+        print(f"ROW: {selected_row}")
+        for index in selected_row:
+            print(f"column: {index.column}, row: {index.row}")
+        self.tableWidget.columnAt(2) #get the ssn from the ssn column
+        print(selected_row)
         if selected_row >= 0:  # Check if a row is selected (index is valid)
             self.tableWidget.removeRow(selected_row)  # Remove the selected row
+            self.cont_tenant.remove_tenant()
         else:
             QMessageBox.warning(self, "Warning", "Please select a row to delete", QMessageBox.StandardButton.Ok)
 
