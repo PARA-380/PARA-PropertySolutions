@@ -216,18 +216,18 @@ def readTenants(accID:int) -> list[Tenant]:
     if data is None:
         print(f"No data was returned from request on read Tenants on Account Number {accID}")
         return None
-    print(f"Data: {data}")
+    # print(f"Data: {data}")
 
     #parse through tenant data and create tenant objects
     for tenData in data:
         tenant = Tenant(firstname=tenData[1],lastname=tenData[2],address=tenData[5])
         #use DB generated Key as Tenants' ID
         tenant.setID(tenData[0])
-        print(f"tenant {tenData[0]}, {tenant}")
+        # print(f"tenant {tenData[0]}, {tenant}")
         #
         tenants.append(tenant) 
     #return list of tenants associated to accID account
-    print(f"tenants: {tenants}")
+    # print(f"tenants: {tenants}")
     return tenants
 
 
@@ -238,3 +238,12 @@ def updateAccount(account : Account):
     __cursor.execute("UPDATE Account SET (first,last,username,phonenumber,password) = (:first, :last, :username,:phone, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(),'phone':account.get_phonenumber(), 'password' : account.get_password()}).fetchone()
     __conn.commit()
     readAccount(account.getID())
+
+
+#DELETE METHODS
+
+def deleteTenant(ssn : str):
+    global __conn, __cursor
+    __cursor.execute("DELETE FROM Tenant WHERE (ssn) = (:ssn)", {
+        'ssn' : ssn
+    })

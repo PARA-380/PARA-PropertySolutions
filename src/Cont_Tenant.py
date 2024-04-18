@@ -4,15 +4,15 @@ from System import db, Tenant
 
 class Cont_Tenant:
     def __init__(self, accID):
+        self.accID = accID
         self.tenants = list(db.readTenants(accID))
         for ten in self.tenants:
             print(f"self.tenants : {type(ten)}")
 
-    def create_tenant(self, firstname: str, lastname: str, tenantssn: str, tenantaddress: str,
-                      tenantphonenumber: str, tenantemail: str):
+    def create_tenant(self, tenant: Tenant):
         # Here, you can add any validation or preprocessing needed before creating the Tenant
-        new_tenant = Tenant(firstname, lastname, tenantssn, tenantaddress, tenantphonenumber, tenantemail)
-        db.addToTenants(1, new_tenant)
+        new_tenant = tenant
+        db.addToTenants(self.accID, new_tenant)
         self.add_tenant(new_tenant)
         # TODO: add database logic
 
@@ -20,7 +20,6 @@ class Cont_Tenant:
         self.tenants.append(tenant)
 
     def find_tenant_by_id(self, account_id: int, tenant_id: int):
-        
         for tenant in self.tenants:
             if tenant.get_id() == tenant_id:
                 return tenant
@@ -70,7 +69,8 @@ class Cont_Tenant:
             db.update_tenant(tenant)
 
     def remove_tenant(self, tenant_id: int):
-        self.tenants = [tenant for tenant in self.tenants if tenant.get_id() != tenant_id]
+        self.tenants = [tenant for tenant in self.tenants if tenant.getID() == tenant_id]
+        db.deleteTenant(tenant_id)
 
     def print_tenants(self):
         for tenant in self.tenants:
