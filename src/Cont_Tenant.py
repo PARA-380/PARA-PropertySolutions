@@ -6,8 +6,11 @@ class Cont_Tenant:
     def __init__(self, accID):
         self.accID = accID
         self.tenants = list(db.readTenants(accID))
+        DEBUG = True
         for ten in self.tenants:
-            print(f"self.tenants : {type(ten)}")
+            if DEBUG:
+                print(f"self.tenants : {ten}")
+                DEBUG = False
 
     def create_tenant(self, tenant: Tenant):
         # Here, you can add any validation or preprocessing needed before creating the Tenant
@@ -29,8 +32,8 @@ class Cont_Tenant:
     def get_tenants(self):
         return self.tenants
     
-    def update_tenant(self):
-        pass
+    def update_tenants(self):
+        self.tenants = list(db.readTenants(self.accID))
 
     def update_tenant_first_name(self, account_id: int, tenant_first_name: str, tenant_id: int):
         tenant = self.find_tenant_by_id(1, tenant_id)
@@ -68,9 +71,9 @@ class Cont_Tenant:
             tenant.set_email(email)
             db.update_tenant(tenant)
 
-    def remove_tenant(self, tenant_id: int):
-        self.tenants = [tenant for tenant in self.tenants if tenant.getID() == tenant_id]
-        db.deleteTenant(tenant_id)
+    def remove_tenant(self, ten_id:int):
+        self.tenants = [tenant for tenant in self.tenants if tenant.getID() == ten_id]
+        db.deleteTenant(ten_id)
 
     def print_tenants(self):
         for tenant in self.tenants:

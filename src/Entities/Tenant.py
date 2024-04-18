@@ -20,14 +20,14 @@ class Tenant:
         # self.lease = Lease
         # self.dashboard
 
-    # def __repr__(self):
-    #     return f"""Tenant ID: {self.tenantID} \n 
-    #     {self.tenantFirstName} {self.tenantLastName} \n 
-    #     Address: {self.tenantAddress}\n
-    #     Account: {self.accountID}\n
-    #     SSN: {self.tenantSSN}\n
-    #     Email: {self.tenantEmail}\n
-    #     Phone: {self.tenantPhoneNumber}\n"""
+    def __repr__(self):
+        return f"""Tenant ID: {self.tenantID} \n 
+        {self.tenantFirstName} {self.tenantLastName} \n 
+        Address: {self.tenantAddress}\n
+        Account: {self.accountID}\n
+        SSN: {self.tenantSSN}\n
+        Email: {self.tenantEmail}\n
+        Phone: {self.tenantPhoneNumber}\n"""
     
     def setID(self,ID):
         self.tenantID = ID

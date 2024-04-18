@@ -63,7 +63,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         row_position = self.tableWidget.rowCount()
         self.tableWidget.insertRow(row_position)
 
-        print(tenant)
+        print(f"HEEERHHRHHRHREEEEE: {tenant.getID()}")
 
         # Add the data to the new row
         self.tableWidget.setItem(row_position, 0, QTableWidgetItem(tenant.getFirstName()))
@@ -71,21 +71,25 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         self.tableWidget.setItem(row_position, 2, QTableWidgetItem(tenant.getSSN()))
         self.tableWidget.setItem(row_position, 3, QTableWidgetItem(tenant.getPhoneNumber()))
         self.tableWidget.setItem(row_position, 4, QTableWidgetItem(tenant.getEmail()))
+        self.tableWidget.setItem(row_position, 6, QTableWidgetItem(tenant.getID()))
 
 
     def Delete_Tenant(self):
-        # selected_row = self.tableWidget.currentRow()  # Get the index of the currently selected row
+        current_row = self.tableWidget.currentRow()  # Get the index of the currently selected row
         selected_row = self.tableWidget.selectionModel().selectedRows()
         print(f"ROW: {selected_row}")
         for index in selected_row:
-            print(f"column: {index.column}, row: {index.row}")
-        self.tableWidget.columnAt(2) #get the ssn from the ssn column
-        print(selected_row)
-        if selected_row >= 0:  # Check if a row is selected (index is valid)
-            self.tableWidget.removeRow(selected_row)  # Remove the selected row
-            self.cont_tenant.remove_tenant()
-        else:
-            QMessageBox.warning(self, "Warning", "Please select a row to delete", QMessageBox.StandardButton.Ok)
+            ten_id = self.tableWidget.model().data(self.tableWidget.model().index(index.row(), 5))
+            print(f'TRY THIS{ten_id}')
+            print(f"column: {index.column()}, row: {index.row()}")
+            id = self.tableWidget.columnAt(6) #get the ssn from the ssn column
+            print(f'TRY THIS{id}')
+            print(selected_row)
+            if current_row >= 0:  # Check if a row is selected (index is valid)
+                self.tableWidget.removeRow(current_row)  # Remove the selected row
+                self.cont_tenant.remove_tenant(ten_id)
+            else:
+                QMessageBox.warning(self, "Warning", "Please select a row to delete", QMessageBox.StandardButton.Ok)
 
 
 if __name__ == "__main__":
