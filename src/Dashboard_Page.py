@@ -19,15 +19,16 @@ from gui.Contractor_Page_GUI.Contractor_Page import Contractor_Page
 from gui.TenantPage_GUI.tenantsUI_main import tenantsui
 
 #controllers
-from System import Cont_UserProfile
+from System import Cont_UserProfile, Cont_Tenant
 
 
 class Dashboard(QMainWindow, Ui_DashBoard):
-    def __init__(self, Cont_UserProfile : Cont_UserProfile):
+    def __init__(self, Cont_UserProfile : Cont_UserProfile, Cont_TenantPage : Cont_Tenant):
         super().__init__()
         self.setupUi(self)
         #edits by Ali
         self.Cont_UserProfile = Cont_UserProfile
+        self.Cont_TenantPage = Cont_TenantPage
         #
         self.show()
 
@@ -69,7 +70,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         self.contractor_page.show()
 
     def goto_tenant_page(self, checked):
-        self.tenant_page = tenantsui()
+        self.tenant_page = tenantsui(self.Cont_TenantPage)
         self.tenant_page.show()
 
     def sign_out(self, checked):

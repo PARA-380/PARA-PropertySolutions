@@ -5,6 +5,7 @@ import src.Database.Database as db
 
 from src.Cont_UserProfile import Cont_UserProfile
 from src.Cont_Login import Cont_Login
+from src.Cont_Tenant import Cont_Tenant
 
 class System():
     def __init__(self, main : Account = None):
@@ -13,6 +14,7 @@ class System():
         #controllers
         self.cont_userprofile : Cont_UserProfile
         self.cont_login : Cont_Login
+        self.cont_tenant : Cont_Tenant
         #setup database and controllers
         self.StartSession()
         
@@ -42,11 +44,14 @@ class System():
         except:
             pass
         self.cont_login = Cont_Login()
+        
         #login will be validating here before creating user profile
         pass
     
     def setControllerUserProfile(self):
         self.cont_userprofile = self.cont_login.getUserProfile()
+        self.mainAccount = self.cont_userprofile.getMainAccount()
+        self.cont_tenant = Cont_Tenant(self.mainAccount.getID()) #review this line
 
     def EndSession(self):
         #Save data from Account object into Database and close session
@@ -77,7 +82,8 @@ class System():
     def createTenant(self, account : Account, first="", last="", ssn="", address="", phone="", email=""):
         ten = Tenant(firstname=first,lastname=last,ssn=ssn,address=address,phonenumber=phone,email=email)
         ten.setID(db.addToTenants(account,ten))#review whether to set ID in System or Database
-        account.addTenant(ten.getID(),ten)
+        # account.addTenant(ten.getID(),ten)
+        #add to Contollers list
 
         return ten
     
