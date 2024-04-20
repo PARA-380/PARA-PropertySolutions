@@ -71,12 +71,6 @@ class System():
         acc.setID(db.addToAccounts(acc))
         self.Accounts[acc.getID()] = acc #dict.update()
         self.setMainAccount(acc.getID())
-        # try:
-        #     db.addToAccounts(acc)
-        #     self.Accounts.append(acc)
-        # except:
-        #     print(f"{acc} already exists!")
-        #     pass
         pass
 
     def createTenant(self, account : Account, first="", last="", ssn="", address="", phone="", email=""):
@@ -107,21 +101,10 @@ def main() -> None:
     session1 = System()
     session1.StartSession()
     session1.cont_userprofile.createAccount()
-    # session1._createAccount(first="Ridham",last="Patel",username="rpatel20223",password="valorant")
-
-    # print(session1.Accounts)
-
-    #add tenants to account 1
-    # user1 = session1.Accounts.get(2)
-    # tenant = session1._createTenant(user1,"joe","mamma","34212","431 Yojatruz Road", "3421023322","joemamma@csun.edu")
-    # tenant = session1._createTenant(user1,"jacob","issa","332255","870 This is a Road", "8008135","JacobIssa@csun.edu")
-    # tenant = session1._createTenant(user1,"Laska","MyDog","553324","870 This is a Road", "N/A","Laskipoo@csun.edu")
-    # print(f"added tenant {tenant}")
 
     #Search Database to create an Account Class
     session1.cont_userprofile.searchAccount(1)
-    print(f"Account Searched: {session1.cont_userprofile.mainAccount}")
-    # print(f"Tenants Read: {session1._searchTenants(2)}")
+    #print(f"Account Searched: {session1.cont_userprofile.mainAccount}")
 
 
     #testing update account method

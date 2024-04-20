@@ -13,7 +13,7 @@ def init():
     """
     global __conn, __cursor
     # __conn = sqlite3.connect('../data/sql.db')
-    __conn = sqlite3.connect('data/sql.db')
+    __conn = sqlite3.connect('../data/sql.db')
     __cursor = __conn.cursor()
 
 def closeConnection():
@@ -171,8 +171,7 @@ def readAccount(accID: int) -> Account:
 
     data=__cursor.execute("SELECT * FROM ACCOUNT WHERE (acc_ID) = (:acc_ID)",{
         'acc_ID' : accID
-    }).fetchone() 
-    print(f"Data: {data}")
+    }).fetchone()
     account = Account(first=data[1],last=data[2],username=data[3],phone=data[4],password=data[5])
     account.setID(data[0])
     
@@ -190,7 +189,6 @@ def searchAccount(username : str) -> list[Account]:
         acc = Account(first=user[1],last=user[2],username=user[3],phone=user[4],password=user[5])
         acc.setID(user[0])
         users.append(acc)
-    print(f'type: {type(users)}, user: {users}')
     return users
 
 
@@ -216,7 +214,6 @@ def readTenants(accID:int) -> list[Tenant]:
     if data is None:
         print(f"No data was returned from request on read Tenants on Account Number {accID}")
         return None
-    print(f"Data: {data}")
 
     #parse through tenant data and create tenant objects
     for tenData in data:

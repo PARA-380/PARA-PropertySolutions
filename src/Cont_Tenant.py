@@ -9,7 +9,7 @@ class Cont_Tenant:
         DEBUG = True
         for ten in self.tenants:
             if DEBUG:
-                print(f"self.tenants : {ten}")
+                #print(f"self.tenants : {ten}")
                 DEBUG = False
 
     def create_tenant(self, tenant: Tenant):

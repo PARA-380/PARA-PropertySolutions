@@ -33,20 +33,12 @@ class Login_Page(QMainWindow, Ui_Form):
         self.signup_page.show()
 
     def log_in(self):
-        # Add is sign in success def here to check
-        print("login in")
-        print(self.username_line_edit.text())
-        print(self.password_line_edit.text())
         temp_username = self.username_line_edit.text()
         temp_password = self.password_line_edit.text()
         
         if self.cont_login.validateLogin(temp_username,temp_password):
-            #print(f' print if {self.cont_login.validateLogin(temp_username,temp_password)}')
             print("log in success")
             self.close()
-            # self.hide()
-            # dashboard = Dashboard()
-            # dashboard.show()
             self.is_login = True
         else:
             print("not match")
