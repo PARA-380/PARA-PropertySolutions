@@ -30,6 +30,7 @@ class Cont_Tenant:
         return None
     
     def get_tenants(self):
+        self.update_tenants()
         return self.tenants
     
     def update_tenants(self):
@@ -72,7 +73,10 @@ class Cont_Tenant:
             db.update_tenant(tenant)
 
     def remove_tenant(self, ten_id:int):
-        # self.tenants.remove(tenant for tenant in self.tenants if tenant.getID() == ten_id)
+        for tenant in self.tenants:
+            if tenant.getID() == ten_id:
+                print("DELETED TENANT")
+                self.tenants.remove(tenant)
         db.deleteTenant(ten_id)
 
     def print_tenants(self):
