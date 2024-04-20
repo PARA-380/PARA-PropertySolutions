@@ -12,6 +12,8 @@ from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApp
 from .Property_Button_Controller import Property_Controller
 
 
+
+
 class Property_Page(QMainWindow):
     def __init__(self):
         super().__init__()

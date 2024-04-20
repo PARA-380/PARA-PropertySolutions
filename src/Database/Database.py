@@ -67,7 +67,6 @@ def createTables():
     # address should link to property id
     __cursor.execute("""CREATE TABLE Property(
                     property_ID integer PRIMARY KEY AUTOINCREMENT,
-                    Ten_ID integer,
                     acc_ID integer,
                     address text
                    )""")
@@ -135,13 +134,12 @@ def addToTenants(accID : int, tenant : Tenant):
     return __cursor.lastrowid
 
 #Returns the ID of Property : need to set object propID to this return value
-def addToProperty(accID : int , tenID : int, property : Property):
+def addToProperty(accID : int, property : Property):
 
     global __conn, __cursor
 
-    __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :ten_ID, :address)",
+    __cursor.execute("INSERT INTO Property (acc_ID, address) VALUES (:acc_ID, :address)",
                      {
-                         'ten_ID' : tenID,
                          'acc_ID' : accID,
                          'address' : property.getAddress()
                      }
@@ -229,6 +227,25 @@ def readTenants(accID:int) -> list[Tenant]:
     #return list of tenants associated to accID account
     # print(f"tenants: {tenants}")
     return tenants
+
+def readProperty(accID:int) -> list[Property]:
+    global __conn, __cursor
+    properties = list()
+    data = __cursor.execute("SELECT * FROM Property WHERE (acc_ID) = (:acc_ID)",{
+        'acc_ID' : accID
+    }).fetchall()
+    if data is None:
+        print(f"No data was returned from request on read Properties on Account Number {accID}")
+        return None
+    print(f"Data: {data}")
+
+    for propData in data:
+        temp_property = Property(accID=accID,address=propData[2])
+        temp_property.set_property_id = propData[0]
+        properties.append(temp_property)
+
+    return properties
+
 
 
 #UPDATE METHODS
