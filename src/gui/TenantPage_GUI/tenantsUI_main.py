@@ -39,7 +39,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
             self.__Add_Tenant(tenant)
 
     def __Add_Tenant(self, tenant : Tenant = None):
-        """Adds a single tenant to a row in the tenant page UI
+        """Creates a single tenant to a row in the tenant page UI
         can give a tenant object or will use the items filled in the UI rows by user
 
         Args:
@@ -64,6 +64,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         self.tableWidget.insertRow(row_position)
 
         print(f"HEEERHHRHHRHREEEEE: {tenant.getID()}")
+        print(f"tableSize: {self.tableWidget}")
 
         # Add the data to the new row
         self.tableWidget.setItem(row_position, 0, QTableWidgetItem(tenant.getFirstName()))
@@ -71,15 +72,20 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         self.tableWidget.setItem(row_position, 2, QTableWidgetItem(tenant.getSSN()))
         self.tableWidget.setItem(row_position, 3, QTableWidgetItem(tenant.getPhoneNumber()))
         self.tableWidget.setItem(row_position, 4, QTableWidgetItem(tenant.getEmail()))
-        self.tableWidget.setItem(row_position, 6, QTableWidgetItem(tenant.getID()))
+        self.tableWidget.setItem(row_position, 6, QTableWidgetItem(str(tenant.getID())))
+        itematcolumn6 = self.tableWidget.item(row_position,0)
+        print(f"item at col 6{itematcolumn6.text()}")
 
 
     def Delete_Tenant(self):
         current_row = self.tableWidget.currentRow()  # Get the index of the currently selected row
+        itematcolumn6 = self.tableWidget.item(current_row,6)
+        print(f"col6: {itematcolumn6.text()}")
         selected_row = self.tableWidget.selectionModel().selectedRows()
+        print(f"ROW: {current_row}")
         print(f"ROW: {selected_row}")
         for index in selected_row:
-            ten_id = self.tableWidget.model().data(self.tableWidget.model().index(index.row(), 5))
+            ten_id = self.tableWidget.model().data(self.tableWidget.model().index(index.row(), 6))
             print(f'TRY THIS{ten_id}')
             print(f"column: {index.column()}, row: {index.row()}")
             id = self.tableWidget.columnAt(6) #get the ssn from the ssn column

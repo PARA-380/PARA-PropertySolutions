@@ -96,6 +96,8 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Email"))
         item = self.tableWidget.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Address"))
+        item = self.tableWidget.horizontalHeaderItem(6)
+        item.setText(_translate("MainWindow", "tenid"))
         self.LE_FirstName.setPlaceholderText(_translate("MainWindow", "Add First Name"))
         self.LE_LastName.setPlaceholderText(_translate("MainWindow", "Add Last Name"))
         self.LE_SSN.setPlaceholderText(_translate("MainWindow", "Add SSN"))

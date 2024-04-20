@@ -72,7 +72,7 @@ class Cont_Tenant:
             db.update_tenant(tenant)
 
     def remove_tenant(self, ten_id:int):
-        self.tenants = [tenant for tenant in self.tenants if tenant.getID() == ten_id]
+        # self.tenants.remove(tenant for tenant in self.tenants if tenant.getID() == ten_id)
         db.deleteTenant(ten_id)
 
     def print_tenants(self):
