@@ -3,7 +3,14 @@ from System import db, Tenant
 
 
 class Cont_Tenant:
+    """Controller Class for Tenants to connect Tenant Operations to Database and GUI.
+    """
     def __init__(self, accID):
+        """Constructs a Tenant Controller based on the current Tenant Table in Database
+
+        Args:
+            accID (_type_): A given account ID for the current Session. 
+        """
         self.accID = accID
         self.tenants = list(db.readTenants(accID))
         DEBUG = True
@@ -13,6 +20,11 @@ class Cont_Tenant:
                 DEBUG = False
 
     def create_tenant(self, tenant: Tenant):
+        """Creates a new tenant to the Database
+
+        Args:
+            tenant (Tenant): Given Tenant Object to copy details to Database
+        """
         # Here, you can add any validation or preprocessing needed before creating the Tenant
         new_tenant = tenant
         db.addToTenants(self.accID, new_tenant)
@@ -20,9 +32,23 @@ class Cont_Tenant:
         # TODO: add database logic
 
     def add_tenant(self, tenant: Tenant):
+        """Adds the tenant to the Controller's list of Tenant Objects
+
+        Args:
+            tenant (Tenant): Given Tenant to add
+        """
         self.tenants.append(tenant)
 
     def find_tenant_by_id(self, account_id: int, tenant_id: int):
+        """Finds the Tenant in its list from the given Tenant ID.
+
+        Args:
+            account_id (int): Given Account ID if we need to look up the Database Again.
+            tenant_id (int): The Database Tenant ID to look for.
+
+        Returns:
+            _type_: Returns the Tenant if Found or None if not found.
+        """
         for tenant in self.tenants:
             if tenant.get_id() == tenant_id:
                 return tenant
