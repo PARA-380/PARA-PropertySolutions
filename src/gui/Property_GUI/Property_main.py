@@ -33,6 +33,7 @@ class Property_Page(QMainWindow):
 
         # Initialize set to track used property numbers
         self.used_property_numbers = set()  
+        self.property_ids = {}
     
         # Initialize Property_Controller instance
         self.property_info_controller = Property_Controller()  
@@ -56,7 +57,16 @@ class Property_Page(QMainWindow):
         self.add_property_layout.addWidget(self.create_button)
         self.vertical_layout.addLayout(self.add_property_layout)
 
-    def _create_property(self):
+        
+        self.property_numbers = [1,2,4]
+        self.setup_properties(self.property_numbers)
+        self.property_number = self._get_next_available_property_number()
+
+    def setup_properties(self,properties):
+        for property in properties:
+            self._create_property(property)
+
+    def _create_property(self, property_number):
         """_summary_
         """ 
 
