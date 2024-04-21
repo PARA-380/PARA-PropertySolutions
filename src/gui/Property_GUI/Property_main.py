@@ -64,10 +64,6 @@ class Property_Page(QMainWindow):
         self.add_property_layout.addWidget(self.create_button)
         self.vertical_layout.addLayout(self.add_property_layout)
 
-
-        self.property_IDs = { #[property_number] : property_ID
-            }
-        
         #setup the property numbers associated to which property ID
         self.setup_properties(self.Cont_Property.getProperties())
         self.is_setup = False
@@ -77,8 +73,8 @@ class Property_Page(QMainWindow):
             self.is_setup = True
             property_number = self._get_next_available_property_number()
             self._create_property(property_number)
-            self.property_IDs[property_number] = property.get_property_id()
-        print(f"Property Numbers{self.property_IDs}")
+            self.Cont_Property.addPropertyID(property_number,property.get_property_id())
+        print(f"Property Numbers{self.Cont_Property.property_IDs}")
 
 
     def _create_property(self, property_number):
