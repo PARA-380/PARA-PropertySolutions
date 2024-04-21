@@ -7,3 +7,5 @@ from .main_gui import main_gui
 import sys
 
 sys.path.append('./src')
+
+__all__ = ["Cont_Login"]

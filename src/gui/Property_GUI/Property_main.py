@@ -6,6 +6,8 @@ Description: Property main page user interface
 Purposes: 1. To create new properties
           2. To access existed properties
           3. To delete properties
+Data Structures: List and set
+Algorithm: 
 """
 import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
