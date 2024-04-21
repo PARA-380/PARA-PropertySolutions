@@ -43,7 +43,7 @@ class Property_Page(QMainWindow):
         # self.property_ids = {}
     
         # Initialize Property_Controller instance
-        self.property_info_controller = Property_Controller()  
+        self.property_info_controller = Property_Controller(self.Cont_Property)
 
         # Create property buttons based on the total number of properties created
         total_properties_created = self.property_info_controller.get_total_properties_created()

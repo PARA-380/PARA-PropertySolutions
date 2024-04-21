@@ -6,11 +6,13 @@ from PyQt6.QtGui import QDesktopServices
 import sys
 import re
 # from Property_Button_Controller import Property_Controller
+from System import Cont_Property, Property
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
-    def __init__(self, property_number):
+    def __init__(self, property_number, property_controller: Cont_Property):
         super().__init__()
+        self.property_controller = property_controller
         self.property_number = property_number
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
@@ -35,6 +37,7 @@ class Property_Info(QMainWindow):
         # Address Input
         address_layout = QHBoxLayout()
         layout.addLayout(address_layout)
+        #self.setup_address(self.property_number)
 
         # Line edit for entering address
         self.address_input = QLineEdit()  
@@ -43,7 +46,7 @@ class Property_Info(QMainWindow):
 
         # Button to save address
         save_button = QPushButton("Save") 
-        save_button.clicked.connect(self.save_address)
+        save_button.clicked.connect(lambda: self.save_address())
         address_layout.addWidget(save_button)
 
         # Address Label
@@ -272,13 +275,21 @@ class Property_Info(QMainWindow):
 
     # Function to save address input and display it in address label
     # Note this is mot save to database, this is just for the display purpose
-    def save_address(self):
+    def save_address(self, address: str = None):
         # Save the address associated with this property number using the controller
-        address = self.address_input.text()
+        if address is None:
+            address = self.address_input.text()
         # self.controller.save_address_controller(self.property_number, address)
-
+        #print(f"{property.get_address()}")
         # Display the address in the label
-        self.address_label.setText(f"Address: {self.address_input.text()}")
+        self.address_label.setText(f"Address: {address}")
+
+    def setup_address(self, key: int = None):
+        self.property_controller.getProperties()
+        address = self.property_controller.get_property_address(self.property_controller.getPropertyID(key))
+        print(f"Address:     {address}")
+        self.save_address(address)
+
         
 
     # If have time

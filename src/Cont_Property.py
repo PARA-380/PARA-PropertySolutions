@@ -27,3 +27,14 @@ class Cont_Property:
         #note: you can look up by property number in dictionary if given a key.
 
     #TODO: Reading Database and putting Address in GUI
+
+    def find_property_by_id(self, prop_id):
+        for property in self.Properties:
+            if property.get_property_id() == prop_id:
+                return property
+        print("Property not found")
+        return None
+
+    def get_property_address(self, prop_id: int):
+        self.find_property_by_id(prop_id).get_address()
+

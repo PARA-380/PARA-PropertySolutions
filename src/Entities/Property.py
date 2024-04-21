@@ -15,6 +15,9 @@ class Property:
     def __repr__(self):
         return f"{self.property_id}, {self.address}"
 
+    def get_account_id(self):
+        return self.account_id
+
     def get_property_id(self):
         return self.property_id
 
@@ -45,6 +48,8 @@ class Property:
     def set_max_living(self, num):
         self.max_living = num
 
+    def get_tenants(self):
+        return self.tenants
     def add_tenant_to_property(self, tenant: Tenant):
         self.tenants.update({tenant.get_ID(): tenant})
 
