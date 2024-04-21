@@ -245,7 +245,7 @@ def readProperty(accID:int) -> list[Property]:
 
     for propData in data:
         temp_property = Property(accID=accID,address=propData[2])
-        temp_property.set_property_id = propData[0]
+        temp_property.set_property_id(propData[0])
         properties.append(temp_property)
 
     return properties

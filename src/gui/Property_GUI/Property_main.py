@@ -27,14 +27,14 @@ class Property_Page(QMainWindow):
         self.Cont_Tenant = cont_tenant
 
         print(f"{self.Cont_Property.getProperties()}")
-        
+
         # Create a central widget to hold the layout
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
-        
+
         # Create a vertical layout for the central widget
         self.vertical_layout = QVBoxLayout(self.central_widget)
-        
+
         # List to keep track of created button pairs
         self.buttons = []
 
@@ -68,15 +68,15 @@ class Property_Page(QMainWindow):
         self.property_numbers = { #[property_number] : property_ID
             }
         
-
-        self.setup_properties(self.property_numbers)
+        #setup the property numbers associated to which property ID
+        self.setup_properties(self.Cont_Property.getProperties())
         
 
     def setup_properties(self,properties):
-        for property in range(len(properties)):
+        for property in range(1, len(properties)):
             self._create_property(property)
             property_number = self._get_next_available_property_number()
-            self.property_numbers[property_number] = self.Cont_Property.getProperties()[property].get_property_id()
+            self.property_numbers[property_number] = properties[property].get_property_id()
         print(f"Property Numbers{self.property_numbers}")
 
 
