@@ -1,3 +1,11 @@
+"""
+File: UserProfile.py
+Name: Ridham Patel
+Date: 04/02/2024
+Description: User Prifle page user interface
+Purposes: 1. To edit information connected to the current user.
+          2. To display information
+"""
 from PyQt6.QtWidgets import (
     QMainWindow, QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox, QComboBox
 )
