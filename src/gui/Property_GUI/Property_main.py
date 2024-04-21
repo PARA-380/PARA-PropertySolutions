@@ -62,16 +62,22 @@ class Property_Page(QMainWindow):
         self.setup_properties(self.property_numbers)
         self.property_number = self._get_next_available_property_number()
 
+        self.setup_prop_is_called = False
+
     def setup_properties(self,properties):
+        self.setup_prop_is_called = True
         for property in properties:
+            self.used_property_numbers.add(property)
             self._create_property(property)
 
     def _create_property(self, property_number):
         """_summary_
         """ 
 
-        property_number = self._get_next_available_property_number()
-        self.used_property_numbers.add(property_number)  # Add the property number to the set of used property numbers
+        # if setup property is called, skip these line
+        if not self.setup_prop_is_called:
+            property_number = self._get_next_available_property_number()
+            self.used_property_numbers.add(property_number)  # Add the property number to the set of used property numbers
 
         self.property_info_controller.create_property_info(property_number)
 
