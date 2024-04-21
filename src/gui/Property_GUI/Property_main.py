@@ -40,7 +40,7 @@ class Property_Page(QMainWindow):
 
         # Initialize set to track used property numbers
         self.used_property_numbers = set()  
-        self.property_ids = {}
+        # self.property_ids = {}
     
         # Initialize Property_Controller instance
         self.property_info_controller = Property_Controller()  
@@ -65,26 +65,28 @@ class Property_Page(QMainWindow):
         self.vertical_layout.addLayout(self.add_property_layout)
 
 
-        self.property_numbers = { #[property_number] : property_ID
+        self.property_IDs = { #[property_number] : property_ID
             }
         
         #setup the property numbers associated to which property ID
         self.setup_properties(self.Cont_Property.getProperties())
-        
+        self.is_setup = False
 
     def setup_properties(self,properties):
-        for property in range(1, len(properties)):
-            self._create_property(property)
+        for property in properties:
+            self.is_setup = True
             property_number = self._get_next_available_property_number()
-            self.property_numbers[property_number] = properties[property].get_property_id()
-        print(f"Property Numbers{self.property_numbers}")
+            self._create_property(property_number)
+            self.property_IDs[property_number] = property.get_property_id()
+        print(f"Property Numbers{self.property_IDs}")
 
 
     def _create_property(self, property_number):
         """_summary_
         """ 
-
-        property_number = self._get_next_available_property_number()
+        if not self.is_setup:
+            property_number = self._get_next_available_property_number()
+        self.is_setup = False
         self.used_property_numbers.add(property_number)  # Add the property number to the set of used property numbers
 
         self.property_info_controller.create_property_info(property_number)
@@ -143,6 +145,9 @@ class Property_Page(QMainWindow):
         while property_number in self.used_property_numbers:
             property_number += 1
         return property_number
+    
+    def get_property_id(self, property_number):
+        return self.property_IDs[property_number]
 
 '''
 def main():

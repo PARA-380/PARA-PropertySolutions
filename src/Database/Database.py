@@ -275,3 +275,9 @@ def deleteTenant(ten_id : int):
         'ID' : ten_id
     })
     __conn.commit()
+
+def main():
+    addToProperty(1,Property(accID=1))
+
+if __name__ == "__main__":
+    main()
