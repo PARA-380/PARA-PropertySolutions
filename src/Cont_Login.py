@@ -2,8 +2,11 @@ from System import Account, db, Cont_UserProfile
 
 
 class Cont_Login:
+    """Connects the GUI To the Database
+    """
 
     def __init__(self):
+        """Knows Controller of User Profile, to set up the main account after logging in."""
         self.cont_user = Cont_UserProfile()
 
     def getUserProfile(self) -> Cont_UserProfile:
@@ -15,9 +18,23 @@ class Cont_Login:
         return self.cont_user
 
     def setUserProfile(self, account : Account):
+        """sets the User Profile Controller's Main Account it referrs to.
+
+        Args:
+            account (Account): The account to be the main account
+        """
         self.cont_user.setMainAccount(account)
 
     def validateLogin(self, temp_username ="", temp_password = "") -> bool:
+        """Boolean Method to Validate the proper username and password combination.
+
+        Args:
+            temp_username (str, optional): Given Username to search for. Defaults to "".
+            temp_password (str, optional): Given Password to see if matches with given username. Defaults to "".
+
+        Returns:
+            bool: Whether the combination was a match to the Database
+        """
         users = self.searchAccount(temp_username) #returns Account objects
 
         for account in users:
@@ -29,10 +46,24 @@ class Cont_Login:
         return False
 
     def searchAccount(self, username = "") -> list[Account]:
+        """Searches the Database for the given Username
+
+        Args:
+            username (str, optional): Username to search for. Defaults to "".
+
+        Returns:
+            list[Account]: list of matching Usernames
+        """
         users = db.searchAccount(username)
         return users
     
     #TODO:
     def createAccount(self, username = "", password = ""):
+        """Creates an account to the Database given a username and password
+
+        Args:
+            username (str, optional): _description_. Defaults to "".
+            password (str, optional): _description_. Defaults to "".
+        """
         self.setUserProfile(db.addToAccounts(Account(username=username,password=password)))
 
