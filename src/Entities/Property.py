@@ -12,6 +12,9 @@ class Property:
         self.home_type = home_type
         self.max_living = max_living
 
+    def __repr__(self):
+        return f"{self.property_id}, {self.address}"
+
     def get_property_id(self):
         return self.property_id
 

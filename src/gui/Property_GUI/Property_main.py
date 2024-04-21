@@ -11,15 +11,22 @@ import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
 from .Property_Button_Controller import Property_Controller
 
-
+from System import Cont_Property, Cont_Tenant
 
 
 class Property_Page(QMainWindow):
-    def __init__(self):
+    def __init__(self, cont_property : Cont_Property, cont_tenant : Cont_Tenant):
         super().__init__()
         # Set window title and size
         self.setWindowTitle("Property Page")
         self.setMinimumSize(300, 200)
+
+
+        #Controllers
+        self.Cont_Property = cont_property
+        self.Cont_Tenant = cont_tenant
+
+        print(f"{self.Cont_Property.getProperties()}")
         
         # Create a central widget to hold the layout
         self.central_widget = QWidget()
@@ -57,14 +64,21 @@ class Property_Page(QMainWindow):
         self.add_property_layout.addWidget(self.create_button)
         self.vertical_layout.addLayout(self.add_property_layout)
 
+
+        self.property_numbers = { #[property_number] : property_ID
+            }
         
-        self.property_numbers = [1,2,4]
+
         self.setup_properties(self.property_numbers)
-        self.property_number = self._get_next_available_property_number()
+        
 
     def setup_properties(self,properties):
-        for property in properties:
+        for property in range(len(properties)):
             self._create_property(property)
+            property_number = self._get_next_available_property_number()
+            self.property_numbers[property_number] = self.Cont_Property.getProperties()[property].get_property_id()
+        print(f"Property Numbers{self.property_numbers}")
+
 
     def _create_property(self, property_number):
         """_summary_

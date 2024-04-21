@@ -16,6 +16,7 @@ class System():
         self.cont_userprofile : Cont_UserProfile
         self.cont_login : Cont_Login
         self.cont_tenant : Cont_Tenant
+        self.cont_property  : Cont_Property
         #setup database and controllers
         self.StartSession()
         
@@ -49,10 +50,11 @@ class System():
         #login will be validating here before creating user profile
         pass
     
-    def setControllerUserProfile(self):
+    def setControllerUserProfile(self): #change name to setupControllers
         self.cont_userprofile = self.cont_login.getUserProfile()
         self.mainAccount = self.cont_userprofile.getMainAccount()
         self.cont_tenant = Cont_Tenant(self.mainAccount.getID()) #review this line
+        self.cont_property = Cont_Property(self.mainAccount.getID())
 
     def EndSession(self):
         #Save data from Account object into Database and close session

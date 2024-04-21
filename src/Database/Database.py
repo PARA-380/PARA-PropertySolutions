@@ -53,6 +53,7 @@ def createTables():
     __cursor.execute("""CREATE TABLE Tenant(  
                     Ten_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
                     acc_ID integer,
+                    prop_ID integer,
                     first text,
                     last text,
                     ssn text,
@@ -61,8 +62,6 @@ def createTables():
                     email text
                 )""")
 
-    __conn.commit()
-
     # create Table for Property 
     # address should link to property id
     __cursor.execute("""CREATE TABLE Property(
@@ -70,6 +69,10 @@ def createTables():
                     acc_ID integer,
                     address text
                    )""")
+    
+    
+    
+    __conn.commit()
     
 def readTables():
     pass
@@ -141,11 +144,12 @@ def addToProperty(accID : int, property : Property):
     __cursor.execute("INSERT INTO Property (acc_ID, address) VALUES (:acc_ID, :address)",
                      {
                          'acc_ID' : accID,
-                         'address' : property.getAddress()
+                         'address' : property.get_address()
                      }
                      )
     
     __conn.commit()
+    property.set_property_id(__cursor.lastrowid)
 
     return __cursor.lastrowid   
 
@@ -218,7 +222,7 @@ def readTenants(accID:int) -> list[Tenant]:
 
     #parse through tenant data and create tenant objects
     for tenData in data:
-        tenant = Tenant(firstname=tenData[2],lastname=tenData[3],ssn=tenData[4],address=tenData[5],phonenumber=tenData[6],email=tenData[7])
+        tenant = Tenant(firstname=tenData[3],lastname=tenData[4],ssn=tenData[5],address=tenData[6],phonenumber=tenData[7],email=tenData[8])
         #use DB generated Key as Tenants' ID
         tenant.setID(tenData[0])
         # print(f"tenant {tenData[0]}, {tenant}")
@@ -255,6 +259,12 @@ def updateAccount(account : Account):
     __cursor.execute("UPDATE Account SET (first,last,username,phonenumber,password) = (:first, :last, :username,:phone, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(),'phone':account.get_phonenumber(), 'password' : account.get_password()}).fetchone()
     __conn.commit()
     readAccount(account.getID())
+
+def updateTenant(tenant :Tenant):
+    global __conn, __cursor
+    __cursor.execute("UPDATE Tenant SET (acc_ID,prop_ID, first,last,ssn,address,phone,email) = (:acc_ID,:prop_ID, :first, :last, :ssn, :address, :phone, :email) WHERE (ten_ID) = (:ten_ID)",
+                     {'acc_ID' : tenant.get_account_id(),'prop_ID' : tenant.get_property_id(),'first': tenant.getFirstName(), 'last' : tenant.getLastName(), 'ssn' : tenant.getSSN(), 'address' : tenant.getAddress(), 'phone' : tenant.getPhoneNumber(), 'email' : tenant.getEmail()})
+
 
 
 #DELETE METHODS

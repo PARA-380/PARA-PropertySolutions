@@ -6,6 +6,7 @@ from System import System, db
 
 from src.Entities.Account import Account
 from src.Entities.Tenant import Tenant
+from src.Entities.Property import Property
 
 
 
@@ -30,13 +31,14 @@ def run():
     # db.addToTenants(2,Tenant(firstname="Ridham", lastname="Patel"))
     # db.addToTenants(1,Tenant(firstname="Ali", lastname="Maamoun"))
     # db.addToTenants(1,Tenant(firstname="Patrick", lastname="P"))
+    
     print("login app exec")
     app.exec()
 
     if(loginWindow.is_login):
         session.setControllerUserProfile()
-        
-        window = Dashboard(session.cont_userprofile,session.cont_tenant)
+        # db.addToProperty(session.getMainAccount().getID(),Property(address="123 main st"))
+        window = Dashboard(session.cont_userprofile,session.cont_tenant, session.cont_property)
 
         window.show()
 
