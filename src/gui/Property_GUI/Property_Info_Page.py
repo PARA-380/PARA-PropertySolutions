@@ -1,3 +1,12 @@
+"""
+File: Property_main.py
+Name: Jittapatana (Patrick) Prayoonpruk
+Date: 04/05/2024
+Description: Property main page user interface
+Purposes: 1. To add new tenants into the property
+          2. To add property information including address and bills
+          3. To see the total earning according to the bills
+"""
 from PyQt6.QtWidgets import (
     QMainWindow, QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox, QComboBox
 )
@@ -9,7 +18,17 @@ import re
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
+    """Represents the user interface for the property main page
+
+    Args:
+        QMainWindow: The base class for the main window widget.
+    """
     def __init__(self, property_number):
+        """Initializes the Property_Info object.
+
+        Args:
+            property_number (int): The unique identifier for the property.
+        """
         super().__init__()
         self.property_number = property_number
         self.resize(800, 600)
@@ -136,6 +155,8 @@ class Property_Info(QMainWindow):
 
     # Function to add property details to property table
     def add_property_to_table(self):
+        """Adds property details to the property table.
+        """
 
         description = self.description_input.text()
         price = self.price_input.text()
@@ -183,6 +204,8 @@ class Property_Info(QMainWindow):
 
     # Function to delete selected property from property table
     def delete_property_from_table(self):
+        """Deletes selected property from the property table.
+        """
         # Get the index of the currently selected row in the property table
         selected_row = self.property_table.currentRow()
 
@@ -197,6 +220,10 @@ class Property_Info(QMainWindow):
         self.calculate_total()  # Call the calculate_total method after adding a property
 
     def calculate_total(self):
+        """Calculates the total earning according to the property bills.
+
+        The bills can either be "collect" or "pay"
+        """
         total_collect = 0
         total_pay = 0
 
@@ -220,6 +247,8 @@ class Property_Info(QMainWindow):
         self.property_table.setItem(0, 1, total_price_item)
 
     def add_initial_total_row(self):
+        """_summary_
+        """
         # Add a row at the beginning of the table for the total
         self.property_table.insertRow(0)
 
@@ -234,6 +263,10 @@ class Property_Info(QMainWindow):
 
      # Function to add tenant details to tenants table
     def add_tenant_to_table(self):
+        """Adds tenant details to the tenants table.
+
+        the list of all tenants can be selected and added in to the specific property
+        """
         tenant_name = self.tenant_dropdown.currentText()
 
         # Here, retrieve other details of the tenant using the selected name,
@@ -256,6 +289,8 @@ class Property_Info(QMainWindow):
 
     # Function to delete selected tenant from tenants table
     def delete_tenant_from_table(self):
+        """Deletes selected tenant from the tenants table.
+        """
         # Get the index of the currently selected row in the tenants table
         selected_row = self.tenants_table.currentRow()
 
@@ -267,12 +302,18 @@ class Property_Info(QMainWindow):
 
     # Function to clear input fields
     def clear_inputs(self):
+        """Clears the input fields.
+
+        Clears the input fields, including description and price, and reset it to the empty state
+        """
         self.description_input.clear()
         self.price_input.clear()
 
     # Function to save address input and display it in address label
     # Note this is mot save to database, this is just for the display purpose
     def save_address(self):
+        """Displays the address in the address label.
+        """
         # Save the address associated with this property number using the controller
         address = self.address_input.text()
         # self.controller.save_address_controller(self.property_number, address)
@@ -288,6 +329,8 @@ class Property_Info(QMainWindow):
 
     # Function to open the link when the see images is clicked
     def open_link_button_clicked(self):
+        """Opens the link when the "See Images" button is clicked.
+        """
         link = self.link_input.text()
 
         # Regular expression to validate the link format
@@ -300,13 +343,28 @@ class Property_Info(QMainWindow):
             # Show a warning if the link is invalid
             QMessageBox.warning(self, "Invalid Link", "Please enter a valid link.")
     
-    def _set_address_label(self, address):
+    def set_address_label(self, address):
+        """Sets the address label.
+
+        Args:
+            address (str): The address to be set in the label.
+        """
         self.address_label.setText(address)
         self.address_label.update()  # Update the label in the GUI
     
     def get_address_label(self):
+        """Gets the text from the address label.
+
+        Returns:
+            str: The text displayed in the address label.
+        """
         return self.address_label.text()
     
     def get_property_number(self):
+        """Gets the property number.
+
+        Returns:
+            int: The property number associated with this Property_Info object.
+        """
         return self.property_number
     

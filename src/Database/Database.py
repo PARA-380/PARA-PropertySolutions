@@ -13,7 +13,7 @@ def init():
     """
     global __conn, __cursor
     # __conn = sqlite3.connect('../data/sql.db')
-    __conn = sqlite3.connect('../data/sql.db')
+    __conn = sqlite3.connect('data/sql.db')
     __cursor = __conn.cursor()
 
 def closeConnection():

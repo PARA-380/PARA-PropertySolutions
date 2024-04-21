@@ -1,3 +1,13 @@
+"""
+File: Contractor_Page.py
+Name: Jittapatana (Patrick) Prayoonpruk
+Date: 04/12/2024
+Description: Contractor page user interface
+Purposes: 1. To create new contractors
+          2. To delete contractors
+          3. To assign tasks to contractors
+"""
+
 from PyQt6.QtWidgets import (
     QMainWindow, 
     QApplication, 
@@ -21,7 +31,19 @@ import sys
 
 # Define a class for the Contractor Page
 class Contractor_Page(QMainWindow):
+    """Represents the main window for the contractor page
+
+    This class provides the user interface for managing contractors.
+
+    Args:
+        QMainWindow (QMainWindow): The base class for the main window of the application.
+    """
     def __init__(self):
+        """Initialize the Contractor_Page instance.
+
+        Initializes the user interface components, including input fields, buttons,
+        and a table to display contractors' information.
+        """
         super().__init__()
         self.resize(800, 600)
         self.setWindowTitle("Contractor Page")
@@ -85,8 +107,12 @@ class Contractor_Page(QMainWindow):
         recommended_button.clicked.connect(self.open_recommended_contractors_website)
         layout.addWidget(recommended_button)
 
-    # Function to add a contractor to the table
     def add_contractor_to_table(self):
+        """Add a new contractor to the table
+
+        Retrieves information from input fields and adds a new row to the contractors' table.
+        Additionally, adds combo boxes for assigning tasks and status for added contractors.
+        """
         # initialize variables
         specialization = self.specialization_input.text()
         first_name = self.first_name_input.text()
@@ -125,8 +151,14 @@ class Contractor_Page(QMainWindow):
 
             self.clear_inputs()
 
-    # Function to delete a contractor from the table
     def delete_contractor_from_table(self):
+        """Delete the selected contractor from the table.
+
+        Retrieves the index of the currently selected row in the contractors' table
+        and removes the corresponding row from the table. 
+        
+        If no row is selected, a warning message will be displayed.
+        """
         selected_row = self.contractors_table.currentRow()
 
         if selected_row >= 0:
@@ -136,6 +168,11 @@ class Contractor_Page(QMainWindow):
 
     # Function to clear input fields
     def clear_inputs(self):
+        """Clear all input fields.
+
+        Clears the text in the input fields for specialization, first name, last name,
+        and phone number (effectively resetting them to an empty state).
+        """
         self.specialization_input.clear()
         self.first_name_input.clear()
         self.last_name_input.clear()
@@ -145,11 +182,24 @@ class Contractor_Page(QMainWindow):
     # This is for testing purpose for now
     # Need to modify to send it to notification page
     def check_notification(self, status):
+        """Check for notifications based on the status
+
+        displays a notification message if the status of a task is changed to "Complete".
+
+        Args:
+            status (str): The status of the task.
+        """
         if status == "Complete":
             QMessageBox.information(self, "Task Complete", "Notification: Task is complete!")
 
     # Function to open recommended contractors website
     def open_recommended_contractors_website(self):
+        """Open the website for recommended contractors.
+
+        Opens a web browser to the specified website URL, which contains
+        information about recommended contractors for the user to access.
+
+        """
         # Replace 'https://example.com' with the actual website URL
         website_url = "https://example.com"
         QDesktopServices.openUrl(QUrl(website_url))

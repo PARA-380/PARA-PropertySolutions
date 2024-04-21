@@ -1,8 +1,25 @@
+"""
+File: Setting_Page_GUI.py
+Name: Jittapatana (Patrick) Prayoonpruk
+Date: 04/12/2024
+Description: Setting page user interface
+Purposes: 1. To delete an account permanently
+          2. To provide contact for IT and other supports
+"""
 import sys
 from PyQt6.QtWidgets import QApplication, QDialog, QPushButton, QVBoxLayout, QLabel, QMessageBox
 
 class Setting_Page(QDialog):
+    """Represents the settings page for IT support information
+
+    Provides options for deleting the user account permanently.
+
+    Args:
+        QDialog (QDialog): The base class for dialog windows in PyQt6.
+    """
     def __init__(self):
+        """Initialize the Setting_Page instance
+        """
         super().__init__()
         self.setWindowTitle("Settings")
         
@@ -20,6 +37,8 @@ class Setting_Page(QDialog):
         self.setLayout(layout)
     
     def show_delete_warning(self):
+        """Display a warning message box for confirming account deletion.
+        """
         # Show a warning message box
         msg_box = QMessageBox()
         msg_box.setWindowTitle("Delete Account")
@@ -33,6 +52,8 @@ class Setting_Page(QDialog):
             self.delete_account()
     
     def delete_account(self):
+        """Delete the user account permanently
+        """
         # Implement delete account functionality here
         print("Account deleted successfully!")
 

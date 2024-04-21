@@ -1,10 +1,31 @@
+"""
+File: Signup_Page.py
+Name: Jittapatana (Patrick) Prayoonpruk
+Date: 04/19/2024
+Description: Sign up page user interface
+Purposes: To create a new account in order to sign in into the application
+"""
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QMessageBox
 
 from src.Cont_Login import Cont_Login
 
 class SignUp_Page(QWidget):
+    """Represents the sign-up page for new users
+
+    Provides a user interface for users to create a new account by entering
+    their email address, password, and confirming the password.
+
+    Args:
+        QWidget (QWidget): The base class for UI object in PyQt6
+    """
     def __init__(self, cont_login : Cont_Login):
+        """Initialize the SignUp_Page instance.
+
+        Args:
+            cont_login (Cont_Login): An instance of the Cont_Login class, which handles 
+                the connection between user interface, entity class, and System (database).
+        """
         super().__init__()
         self.setWindowTitle("Sign Up")
         self.setGeometry(200, 200, 300, 200)
@@ -35,6 +56,12 @@ class SignUp_Page(QWidget):
         self.setLayout(layout)
 
     def sign_up(self):
+        """Process the sign-up action
+
+        Retrieves the email address, password, and confirmed password from the input fields.
+        Checks if the entered password matches the confirmed password.
+        Closes the sign-up page after successful sign-up.
+        """
         email = self.email_edit.text()
         password = self.password_edit.text()
         confirm_password = self.confirm_password_edit.text()
