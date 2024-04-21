@@ -143,7 +143,7 @@ def addToProperty(accID : int , tenID : int, property : Property):
                      {
                          'ten_ID' : tenID,
                          'acc_ID' : accID,
-                         'address' : property.getAddress()
+                         'address' : property.get_address()
                      }
                      )
     

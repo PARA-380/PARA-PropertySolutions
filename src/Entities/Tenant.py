@@ -6,11 +6,12 @@
 class Tenant:
     # tenantName = None
 
-    def __init__(self, ID : int = None, firstname: str = "", lastname: str = "", ssn: str = "", address: str = "",
+    def __init__(self, ten_ID : int = None, firstname: str = "", lastname: str = "", ssn: str = "", address: str = "",
                  phonenumber: str = "",
                  email: str = ""):
-        self.tenantID = ID
+        self.tenantID = ten_ID
         self.accountID = None
+        self.propertyID = None
         self.tenantFirstName = firstname
         self.tenantLastName = lastname
         self.tenantSSN = ssn
@@ -40,6 +41,12 @@ class Tenant:
     
     def _set_account_id(self, accID):
         self.accountID = accID
+
+    def set_property_id(self, prop_id):
+        self.propertyID = prop_id
+
+    def get_property_id(self):
+        return self.propertyID
 
     def setAddress(self, newAddress: str = None):
         self.tenantAddress = newAddress

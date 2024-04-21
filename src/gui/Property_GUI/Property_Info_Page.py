@@ -7,11 +7,14 @@ import sys
 import re
 # from Property_Button_Controller import Property_Controller
 
+from System import Cont_Property, Cont_Tenant
+
 # Define a class Property_info
 class Property_Info(QMainWindow):
-    def __init__(self, property_number):
+    def __init__(self, property_number = 0, property_ID = None, controller_tenant : Cont_Tenant = None, controller_property : Cont_Property = None):
         super().__init__()
         self.property_number = property_number
+        self.property_ID = property_ID
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
 
@@ -19,6 +22,11 @@ class Property_Info(QMainWindow):
         # self.controller = Property_Controller()  
         # self.controller.create_property_info(property_number)  # Create Property_Info instance in controller
 
+        #Controllers
+        self.Cont_Tenant = controller_tenant
+        self.Cont_Property = controller_property
+
+        
 
         # Create a central widget
         central_widget = QWidget()  
@@ -73,7 +81,9 @@ class Property_Info(QMainWindow):
 
         # Tenant dropdown list
         self.tenant_dropdown = QComboBox()  # Combo box for selecting tenant
-        self.tenant_dropdown.addItems(["Tenant 1", "Tenant 2", "Tenant 3"])  # Add tenant names here
+        tenantNames = self.Cont_Tenant.get_tenant_names()
+        self.tenant_dropdown.addItems(tenantNames)  # Add tenant names here
+        # self.tenant_dropdown.addItems(["Tenant 1", "Tenant 2", "Tenant 3"])  # Add tenant names here
         input_layout.addWidget(self.tenant_dropdown)
 
         # Buttons

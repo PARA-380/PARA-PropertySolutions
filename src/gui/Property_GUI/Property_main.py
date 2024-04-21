@@ -11,12 +11,18 @@ import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
 from .Property_Button_Controller import Property_Controller
 
-
+from System import Cont_Property, Cont_Tenant
 
 
 class Property_Page(QMainWindow):
-    def __init__(self):
+    def __init__(self, cont_property : Cont_Property, cont_tenant : Cont_Tenant):
         super().__init__()
+
+        #Controllers
+        self.Cont_Property = cont_property
+        self.Cont_Tenant = cont_tenant
+
+
         # Set window title and size
         self.setWindowTitle("Property Page")
         self.setMinimumSize(300, 200)
@@ -35,19 +41,15 @@ class Property_Page(QMainWindow):
         self.used_property_numbers = set()  
     
         # Initialize Property_Controller instance
-        self.property_info_controller = Property_Controller()  
+        self.property_info_controller = Property_Controller(self.Cont_Property, self.Cont_Tenant)  
 
         # Create property buttons based on the total number of properties created
         total_properties_created = self.property_info_controller.get_total_properties_created()
         for _ in range(total_properties_created):
             self._create_property()
 
-        # Get property numbers from controller
-        property_numbers = self.property_info_controller.get_property_numbers()
+        
 
-        # Create property buttons based on the total number of properties created
-        for property_number in property_numbers:
-            self._create_property(property_number)
 
         # Create a button for adding properties
         self.add_property_layout = QHBoxLayout()  # Layout for "Add a property" button
@@ -55,12 +57,26 @@ class Property_Page(QMainWindow):
         self.create_button.clicked.connect(self._create_property)
         self.add_property_layout.addWidget(self.create_button)
         self.vertical_layout.addLayout(self.add_property_layout)
+        
+        # Get property numbers from controller
+        property_numbers = self.property_info_controller.get_property_numbers()
 
-    def _create_property(self):
+        # Create property buttons based on the total number of properties created
+        for property_number in range(len(property_numbers)):
+            self._create_property(property_number)
+
+    #Controller Reads properties associated with account
+    #Create a button for each property read
+    def setup_properties(self, properties):
+        for property in properties:
+            self._create_property()
+
+    def _create_property(self, prop_number = None):
         """_summary_
         """ 
-
-        property_number = self._get_next_available_property_number()
+        property_number = prop_number
+        if(property_number is None):
+            property_number = self._get_next_available_property_number()
         self.used_property_numbers.add(property_number)  # Add the property number to the set of used property numbers
 
         self.property_info_controller.create_property_info(property_number)
@@ -68,7 +84,7 @@ class Property_Page(QMainWindow):
         # Layout for each property button and delete button
         property_layout = QHBoxLayout()  
         property_button = QPushButton(f'Property {property_number}', self)
-        property_button.clicked.connect(self._open_property_info)
+        property_button.clicked.connect(lambda : self._open_property_info())
         # Dynamic Properties library from PyQt
         property_button.setProperty("property_number", property_number)
         property_layout.addWidget(property_button)
