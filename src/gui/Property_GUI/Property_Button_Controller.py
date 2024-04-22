@@ -10,6 +10,8 @@ class Property_Controller:
         self.Cont_Property = cont_property
 
     def create_property_info(self, property_number):
+        print(f"CREATED PROPERTY {property_number}")
+
         # Create an instance of Property_Info for the given property number
         property_info = Property_Info(property_number=property_number, property_controller=self.Cont_Property)
         # Store the instance in the dictionary
@@ -20,7 +22,7 @@ class Property_Controller:
     def get_property_info(self, property_number):
         # Retrieve Property_Info instance for the given property number
         info_page = self.property_info_pages.get(property_number)
-        info_page.setup_address(property_number)
+        # info_page.setup_address(property_number)
         return info_page
 
     def delete_property_info(self, property_number):

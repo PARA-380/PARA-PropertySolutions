@@ -108,6 +108,7 @@ class Property_Page(QMainWindow):
 
         # Retrieve Property_Info instance from PropertyInfoController
         property_info = self.property_info_controller.get_property_info(property_number)
+        property_info.setup_address(property_number)
 
         if property_info:
             property_info.setWindowTitle(f"Property {property_number} Information")
@@ -116,6 +117,7 @@ class Property_Page(QMainWindow):
     def _delete_property(self, property_number):
 
         self.used_property_numbers.remove(property_number)  # Remove the deleted property number from the set of used property numbers
+
 
         # Create a QMessageBox for confirmation
         reply = QMessageBox.question(self, 'Confirm Deletion', f"Are you sure you want to delete Property {property_number}?",
