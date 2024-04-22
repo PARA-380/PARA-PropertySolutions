@@ -1,3 +1,10 @@
+"""
+File: Noti_Page_GUI.py
+Name: Jittapatana (Patrick) Prayoonpruk
+Date: 04/12/2024
+Description: Notification Page user interface
+Purposes: To see the notification regarding the maintenance
+"""
 import sys
 from PyQt6.QtWidgets import (
     QApplication, 
