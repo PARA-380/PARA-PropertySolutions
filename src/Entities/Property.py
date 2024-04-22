@@ -2,7 +2,7 @@ from .Tenant import Tenant
 
 
 class Property:
-    def __init__(self, property_id: int = None, accID : int  = None, address: str = None, tenants: dict = {}, sqft: str = None, home_type: str = None,
+    def __init__(self, property_id: int = None, accID : int  = None, address: str = "", tenants: dict = {}, sqft: str = "", home_type: str = "",
                  max_living: int = None):
         self.property_id = property_id
         self.account_id = accID

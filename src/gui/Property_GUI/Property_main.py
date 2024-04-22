@@ -60,7 +60,7 @@ class Property_Page(QMainWindow):
         # Create a button for adding properties
         self.add_property_layout = QHBoxLayout()  # Layout for "Add a property" button
         self.create_button = QPushButton('Add a property', self)
-        self.create_button.clicked.connect(self._create_property)
+        self.create_button.clicked.connect(lambda:  self._create_property())
         self.add_property_layout.addWidget(self.create_button)
         self.vertical_layout.addLayout(self.add_property_layout)
 
@@ -77,14 +77,15 @@ class Property_Page(QMainWindow):
         print(f"Property Numbers{self.Cont_Property.property_IDs}")
 
 
-    def _create_property(self, property_number):
+    def _create_property(self, property_number = None):
         """_summary_
         """ 
         if not self.is_setup:
             property_number = self._get_next_available_property_number()
+            newPropertyID = self.Cont_Property.createProperty()
+            self.Cont_Property.addPropertyID(property_number, newPropertyID)
         self.is_setup = False
         self.used_property_numbers.add(property_number)  # Add the property number to the set of used property numbers
-
         self.property_info_controller.create_property_info(property_number)
 
         # Layout for each property button and delete button

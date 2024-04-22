@@ -284,8 +284,8 @@ class Property_Info(QMainWindow):
         # Display the address in the label
         self.address_label.setText(f"Address: {address}")
 
+
     def setup_address(self, key: int = None):
-        self.property_controller.getProperties()
         address = self.property_controller.get_property_address(self.property_controller.getPropertyID(key))
         print(f"Address:     {address}")
         self.save_address(address)

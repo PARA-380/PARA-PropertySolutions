@@ -8,8 +8,9 @@ class Cont_Property:
             }
 
 
-    def createProperty(self, property : Property):
-        db.addToProperty(accID=self.mainAccountID, property=property)
+    def createProperty(self, property : Property = Property()) -> int:
+        return db.addToProperty(accID=self.mainAccountID, property=property)
+
 
     def getProperties(self) -> list[Property]:
         return db.readProperty(self.mainAccountID)
@@ -19,6 +20,7 @@ class Cont_Property:
     
     def getPropertyID(self, key):
         return self.property_IDs[key]
+
 
     #TODO: setters and getters for Address and other attributes
         #get a property from property_IDs and return a requested value
@@ -36,5 +38,9 @@ class Cont_Property:
         return None
 
     def get_property_address(self, prop_id: int):
-        self.find_property_by_id(prop_id).get_address()
+        return self.find_property_by_id(prop_id).get_address()
 
+    def update_address(self, address: str, prop_id: int):
+        prop = self.find_property_by_id(prop_id)
+        prop.set_address(address)
+        db.updateProperty(prop)

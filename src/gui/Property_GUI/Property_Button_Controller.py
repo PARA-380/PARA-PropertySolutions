@@ -21,6 +21,7 @@ class Property_Controller:
         # Retrieve Property_Info instance for the given property number
         info_page = self.property_info_pages.get(property_number)
         info_page.setup_address(property_number)
+        return info_page
 
     def delete_property_info(self, property_number):
         # Delete Property_Info instance for the given property number
