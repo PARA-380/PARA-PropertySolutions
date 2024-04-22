@@ -1,19 +1,20 @@
 # Import Property_Info class
 from .Property_Info_Page import Property_Info
-from System import Cont_Property
+from System import Cont_Property, Cont_Tenant
 
 class Property_Controller:
-    def __init__(self, cont_property: Cont_Property):
+    def __init__(self, cont_property: Cont_Property, cont_tenant : Cont_Tenant):
         self.property_info_pages = {}  # Dictionary to store Property_Info instances
         self.total_properties_created = 0  # Counter to keep track of total properties created
         self.property_numbers = []  # List to store the property numbers
         self.Cont_Property = cont_property
+        self.Cont_Tenant = cont_tenant
 
     def create_property_info(self, property_number):
         print(f"CREATED PROPERTY {property_number}")
 
         # Create an instance of Property_Info for the given property number
-        property_info = Property_Info(property_number=property_number, property_controller=self.Cont_Property)
+        property_info = Property_Info(property_number=property_number,tenant_controller=self.Cont_Tenant, property_controller=self.Cont_Property)
         # Store the instance in the dictionary
         self.property_info_pages[property_number] = property_info
         # Increment the total properties created counter

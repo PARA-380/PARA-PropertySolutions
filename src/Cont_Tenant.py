@@ -33,6 +33,12 @@ class Cont_Tenant:
         self.update_tenants()
         return self.tenants
     
+    def get_tenant_names(self):
+        names = list()
+        for tenant in self.tenants:
+            names.append(tenant.getFirstName() +" "+ tenant.getLastName())
+        return names
+    
     def update_tenants(self):
         self.tenants = list(db.readTenants(self.accID))
 

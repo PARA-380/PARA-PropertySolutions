@@ -6,13 +6,14 @@ from PyQt6.QtGui import QDesktopServices
 import sys
 import re
 # from Property_Button_Controller import Property_Controller
-from System import Cont_Property, Property
+from System import Cont_Property,Cont_Tenant, Property
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
-    def __init__(self, property_number, property_controller: Cont_Property):
+    def __init__(self, property_number, tenant_controller : Cont_Tenant, property_controller: Cont_Property):
         super().__init__()
         self.property_controller = property_controller
+        self.tenant_controller = tenant_controller
         self.property_number = property_number
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
@@ -76,7 +77,8 @@ class Property_Info(QMainWindow):
 
         # Tenant dropdown list
         self.tenant_dropdown = QComboBox()  # Combo box for selecting tenant
-        self.tenant_dropdown.addItems(["Tenant 1", "Tenant 2", "Tenant 3"])  # Add tenant names here
+        tenantNames = self.tenant_controller.get_tenant_names()
+        self.tenant_dropdown.addItems(tenantNames)  # Add tenant names here
         input_layout.addWidget(self.tenant_dropdown)
 
         # Buttons
