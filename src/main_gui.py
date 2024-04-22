@@ -1,3 +1,10 @@
+"""
+File: main_gui.py
+Date: 04/23/2024
+main_gui serves as the main for the entire application
+In order to run the application, users must run it through main_gui.py
+"""
+
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
 import sys
 from Dashboard_Page import Dashboard
@@ -10,6 +17,8 @@ from src.Entities.Tenant import Tenant
 
 
 def run():
+    """Represents the driver function to run the entire application
+    """
     
     app = QApplication(sys.argv)
 

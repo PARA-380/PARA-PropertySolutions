@@ -1,5 +1,7 @@
-'''
-from .Account import Account
-from .Property import Property
-from .Tenant import Tenant
-'''
+"""
+Package Name: Entities
+Date: 04/23/2024
+Entities package provides all the necessary documentations for the entities classes in our PMDA.
+
+Navigate through the modules below:
+"""
