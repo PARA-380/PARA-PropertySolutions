@@ -5,6 +5,16 @@ from System import Account, Tenant, Property
 
 __conn : sqlite3.Connection = None
 __cursor : sqlite3.Cursor = None
+""" Module Name: Database
+    Date: 02/14/2024 - 4/21/2024
+    Name: Ali Maamoun
+    A static file which makes calls to a single database file 
+    regarding a number of Tables important to the project.
+    Uses sqlite3 to manage sql code in python. Purpose is to 
+    make dealing with database as easy as Database.addtoTenants(TenantObj)
+
+"""
+
 
 def init():
     """Starts up the Database and provides the connection and the cursor, which are crucial to executing.
@@ -136,12 +146,19 @@ def addToTenants(accID : int, tenant : Tenant):
 
 #Returns the ID of Property : need to set object propID to this return value
 def addToProperty(accID : int , tenID : int, property : Property):
+    """Adds a new Property Object into the Database by copying its contents and linking its IDs to other tables
 
+    Args:
+        accID (int): The account associated with this property
+        property (Property): Property Object to copy contents from
+
+    Returns:
+        _type_: Returns the Unique ID in that table.
+    """
     global __conn, __cursor
 
-    __cursor.execute("INSERT INTO Property (ten_ID, acc_ID, address) VALUES (:acc_ID, :ten_ID, :address)",
+    __cursor.execute("INSERT INTO Property (acc_ID, address) VALUES (:acc_ID, :ten_ID, :address)",
                      {
-                         'ten_ID' : tenID,
                          'acc_ID' : accID,
                          'address' : property.getAddress()
                      }
@@ -178,6 +195,14 @@ def readAccount(accID: int) -> Account:
     return account
 
 def searchAccount(username : str) -> list[Account]:
+    """Searches the accounts based on matching usernames
+
+    Args:
+        username (str): Username to search for
+
+    Returns:
+        list[Account]: List of matching Account objects.
+    """
     global __conn, __cursor
     users = list()
     data=__cursor.execute("SELECT * FROM ACCOUNT WHERE (username) = (:username)",{
@@ -231,6 +256,11 @@ def readTenants(accID:int) -> list[Tenant]:
 #UPDATE METHODS
 
 def updateAccount(account : Account):
+    """Updates the Account in the Database. Copies all its contents into exisitng Account Entry in table
+
+    Args:
+        account (Account): Account to copy
+    """
     global __conn, __cursor
     __cursor.execute("UPDATE Account SET (first,last,username,phonenumber,password) = (:first, :last, :username,:phone, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(),'phone':account.get_phonenumber(), 'password' : account.get_password()}).fetchone()
     __conn.commit()
@@ -240,6 +270,11 @@ def updateAccount(account : Account):
 #DELETE METHODS
 
 def deleteTenant(ten_id : int):
+    """Removes a Tenant Row from the Tenant Table in Database by searching by Unique ID.
+
+    Args:
+        ten_id (int): The Unique ID to search for.
+    """
     global __conn, __cursor
     __cursor.execute("DELETE FROM Tenant WHERE (Ten_id) = (:ID)", {
         'ID' : ten_id
