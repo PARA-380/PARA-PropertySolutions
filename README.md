@@ -1,15 +1,24 @@
 # PARA-PropertySolutions
 
-For GUI Pyside6 and PyQt6 with QtDesigner:
+# Install the dependency
 
-Turning .ui file into .py:
-pyuic6 -x nameof.ui -o nameof.py
-
-Turning .qrc into .py (for the icon):
-pyside6-rcc nameof.qrc -o nameof.py
-
-don't forget to import the icon in the py file:
-from icon_rc.py import \*
-Testing adding more text
-
-# message to team: Look at the venv tutorial to setup your virtual environment
+### install poetry to your computer
+```
+pip install poetry
+```
+### make sure poetry creates environment in the project folder
+```
+poetry config virtualenvs.in-project true
+```
+### activate the venv
+```
+poetry shell
+```
+### install the packages
+```
+poetry install
+```
+# Instruction for Running the Application
+```
+python -m src.main_gui
+```

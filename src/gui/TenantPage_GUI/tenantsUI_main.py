@@ -1,3 +1,12 @@
+"""
+File: tenantsUI_main.py
+Name: Ridham Patel
+Date: 04/10/2024
+Description: Tenants main user interface
+Purposes: 1. To create new tenant
+          2. To delete existing tenant
+          3. To display tenant information
+"""
 from PyQt6.QtWidgets import (
     QMainWindow, QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox, QComboBox
 )
@@ -8,7 +17,9 @@ from src.gui.TenantPage_GUI.QtTenantPage import Ui_MainWindow
 from System import Tenant, Cont_Tenant
 
 class tenantsui(QMainWindow, Ui_MainWindow):
+  
     def __init__(self, controller_tenant : Cont_Tenant):
+        
         super().__init__()
         self.setupUi(self)
         self.show()
@@ -78,6 +89,8 @@ class tenantsui(QMainWindow, Ui_MainWindow):
 
 
     def Delete_Tenant(self):
+        """Basically deletes the tenant and updates in the database as well.
+        """
         current_row = self.tableWidget.currentRow()  # Get the index of the currently selected row
         itematcolumn6 = self.tableWidget.item(current_row,6)
         print(f"col6: {itematcolumn6.text()}")
@@ -99,6 +112,8 @@ class tenantsui(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == "__main__":
+    """This is just a function that runs the GUI
+    """
     app = QApplication(sys.argv)
     Tenant_page = tenantsui()
     Tenant_page.show()

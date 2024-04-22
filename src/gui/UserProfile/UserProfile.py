@@ -1,3 +1,11 @@
+"""
+File: UserProfile.py
+Name: Ridham Patel
+Date: 04/02/2024
+Description: User Prifle page user interface
+Purposes: 1. To edit information connected to the current user.
+          2. To display information
+"""
 from PyQt6.QtWidgets import (
     QMainWindow, QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox, QComboBox
 )
@@ -8,7 +16,19 @@ from src.gui.UserProfile.User_Profile_GUI import Ui_MainWindow
 from System import Cont_UserProfile, Account
 
 class Userprofile(QMainWindow, Ui_MainWindow):
+    """Represents the UserProfile interface for the application.
+
+    Args:
+        QMainWindow (QMainWindow):  The base class for the main window of the application.
+        Ui_MainWindow (Ui_MainWindow): The user interface class for the UserProfile with the assist of QtDesigner.
+    """
     def __init__(self, Cont_UserProfile : Cont_UserProfile):
+        """Initializes the UserProfile instance.
+
+        Args:
+            Cont_UserProfile (Cont_UserProfile):  An instance of Cont_UserProfile, 
+                which handles user profile-related functionalities.
+        """
         super().__init__()
         self.setupUi(self)
 
@@ -27,6 +47,8 @@ class Userprofile(QMainWindow, Ui_MainWindow):
         self.show()
 
     def SaveInfo(self):
+        """Saves the information about the user entered into the line edits.
+        """
         mainAcc = self.Cont_UserProfile.getMainAccount()
         # self.lineEdit.(mainAcc.get_firstName())
         username = self.lineEdit.text()
@@ -45,6 +67,8 @@ class Userprofile(QMainWindow, Ui_MainWindow):
                               f"Phone Number: {mainAcc.get_phonenumber()}")
         
     def DisplayInfo(self):
+        """Display information about the account from the database.
+        """
         mainAcc = self.Cont_UserProfile.getMainAccount()
         #mainAcc :Account = self.Cont_UserProfile.getMainAccount()
         self.textEdit.setText(f"Username: {mainAcc.get_username()}\n"
@@ -52,6 +76,8 @@ class Userprofile(QMainWindow, Ui_MainWindow):
                               f"Phone Number: {mainAcc.get_phonenumber()}") 
 
     def ClearFields(self):
+        """Clears the information entered into the line edits.
+        """
         self.lineEdit.clear()  # Clear username field
         self.lineEdit_2.clear()  # Clear first name field
         self.lineEdit_3.clear()  # Clear last name field
@@ -60,6 +86,8 @@ class Userprofile(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == "__main__":
+    """Runs the application.
+    """
     app = QApplication(sys.argv)
     UserProfile_page = Userprofile()
     UserProfile_page.show()
