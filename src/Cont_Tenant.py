@@ -56,49 +56,104 @@ class Cont_Tenant:
         return None
     
     def get_tenants(self):
+        """
+        Calls function update_tenants() to update tenants and returns them
+        @return:
+        """
         self.update_tenants()
         return self.tenants
     
     def update_tenants(self):
+        """
+        Calls on the database to update list of tenants
+        @return:
+        """
         self.tenants = list(db.readTenants(self.accID))
 
     def update_tenant_first_name(self, account_id: int, tenant_first_name: str, tenant_id: int):
+        """
+        Finds the tenant by ID and updates the first name
+        @param account_id:
+        @param tenant_first_name:
+        @param tenant_id:
+        @return:
+        """
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_first_name(tenant_first_name)
             db.update_tenant(tenant)
 
     def update_tenant_name(self, account_id: int, tenant_last_name: str, tenant_id: int):
+        """
+        Finds the tenant by ID and updates the last name
+        @param account_id:
+        @param tenant_last_name:
+        @param tenant_id:
+        @return:
+        """
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_last_name(tenant_last_name)
             db.update_tenant(tenant)
 
     def update_ssn(self, account_id: int, tenant_id: int, tenant_ssn: str):
+        """
+        Finds the tenant by ID and updates the SSN
+        @param account_id:
+        @param tenant_id:
+        @param tenant_ssn:
+        @return:
+        """
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_ssn(tenant_ssn)
             db.update_tenant(tenant)
 
     def update_phone_number(self, account_id: int, tenant_id: int, phone_number: str):
+        """
+        Finds the tenant by ID and updates the phone number
+        @param account_id:
+        @param tenant_id:
+        @param phone_number:
+        @return:
+        """
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_phone_number(phone_number)
             db.update_tenant(tenant)
 
     def update_tenant_address(self, account_id: int, tenant_id: int, new_address: str):
+        """
+        Finds the tenant by ID and updates the address
+        @param account_id:
+        @param tenant_id:
+        @param new_address:
+        @return:
+        """
         tenant = self.find_tenant_by_id(1,tenant_id)
         if tenant:
             tenant.setAddress(new_address)
             db.update_tenant(tenant)
 
     def update_tenant_email(self, account_id: int, tenant_id: int, email: str):
+        """
+        Finds the tenant by ID and updates the email
+        @param account_id:
+        @param tenant_id:
+        @param email:
+        @return:
+        """
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_email(email)
             db.update_tenant(tenant)
 
     def remove_tenant(self, ten_id:int):
+        """
+        Finds the tenant by ID and removes them from the list of tenants
+        @param ten_id:
+        @return:
+        """
         for tenant in self.tenants:
             if tenant.getID() == ten_id:
                 print("DELETED TENANT")
@@ -106,5 +161,9 @@ class Cont_Tenant:
         db.deleteTenant(ten_id)
 
     def print_tenants(self):
+        """
+        prints from the list of tenants one by one
+        @return:
+        """
         for tenant in self.tenants:
             print(tenant)
