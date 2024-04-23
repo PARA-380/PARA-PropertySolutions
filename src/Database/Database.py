@@ -13,7 +13,7 @@ def init():
     """
     global __conn, __cursor
     # __conn = sqlite3.connect('../data/sql.db')
-    __conn = sqlite3.connect('../data/sql.db')
+    __conn = sqlite3.connect('data/sql.db')
     __cursor = __conn.cursor()
 
 def closeConnection():
@@ -262,15 +262,17 @@ def updateAccount(account : Account):
 
 def updateTenant(tenant :Tenant):
     global __conn, __cursor
-    __cursor.execute("UPDATE Tenant SET (acc_ID,prop_ID, first,last,ssn,address,phone,email) = (:acc_ID,:prop_ID, :first, :last, :ssn, :address, :phone, :email) WHERE (ten_ID) = (:ten_ID)",
-                     {'acc_ID' : tenant.get_account_id(),'prop_ID' : tenant.get_property_id(),'first': tenant.getFirstName(), 'last' : tenant.getLastName(), 'ssn' : tenant.getSSN(), 'address' : tenant.getAddress(), 'phone' : tenant.getPhoneNumber(), 'email' : tenant.getEmail()})
+    __cursor.execute("UPDATE Tenant SET (acc_ID, prop_ID, first,last,ssn,address,phone,email) = (:acc_ID,:prop_ID, :first, :last, :ssn, :address, :phone, :email) WHERE (ten_ID) = (:ten_ID)",
+                     {'acc_ID' : tenant.get_account_id(),'prop_ID' : tenant.get_property_id(),'first': tenant.getFirstName(), 'last' : tenant.getLastName(), 'ssn' : tenant.getSSN(), 'address' : tenant.getAddress(), 'phone' : tenant.getPhoneNumber(), 'email' : tenant.getEmail(), 'ten_ID' : tenant.getID()})
+    __conn.commit()
 
 def updateProperty(property : Property):
     global __conn, __cursor
     __cursor.execute(
-        "UPDATE Property SET (acc_ID,prop_ID, address, tenants, sqft) = (:acc_ID,:prop_ID, :address, :tenants, :sqft) WHERE (prop_ID) = (:prop_ID)",
+        "UPDATE Property SET (acc_ID,prop_ID, address, tenants, sqft) = (:acc_ID, :address, :tenants, :sqft) WHERE (prop_ID) = (:prop_ID)",
         {'acc_ID': property.get_account_id(), 'prop_ID': property.get_property_id(), 'address': property.get_address(),
          'tenants': property.get_tenants(), 'sqft': property.get_sqft()})
+    __conn.commit()
 
 
 #DELETE METHODS

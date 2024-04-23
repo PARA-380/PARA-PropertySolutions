@@ -15,6 +15,8 @@ class Property_Info(QMainWindow):
         self.property_controller = property_controller
         self.tenant_controller = tenant_controller
         self.property_number = property_number
+        # self.property_id where do we get this from? Dictionary in Property Button?
+        self.property_id = self.property_controller.getPropertyID(self.property_number)
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
 
@@ -77,8 +79,8 @@ class Property_Info(QMainWindow):
 
         # Tenant dropdown list
         self.tenant_dropdown = QComboBox()  # Combo box for selecting tenant
-        tenantNames = self.tenant_controller.get_tenant_names()
-        self.tenant_dropdown.addItems(tenantNames)  # Add tenant names here
+        self.tenantNames_to_id = self.tenant_controller.get_tenant_names() #changed name from tenantNames
+        self.tenant_dropdown.addItems(self.tenantNames_to_id.keys())  # Add tenant names here
         input_layout.addWidget(self.tenant_dropdown)
 
         # Buttons
@@ -255,9 +257,17 @@ class Property_Info(QMainWindow):
             # Create a QTableWidgetItem object to hold the tenant name
             name_item = QTableWidgetItem(tenant_name)
 
+            #get tenant id from a dictionary [names -> ID]
+
             # Set the QTableWidgetItem object in the tenants table
             # Set the tenant name item in the first column (index 0)
             self.tenants_table.setItem(row_count, 0, name_item)
+
+            #get property ID from dictionary [property_number -> property_id]
+            tenant_id = self.tenantNames_to_id[tenant_name]
+            self.tenant_controller.add_to_property(tenant_id,self.property_id)
+            # self.tenant_controller.add_to_property(tenant_id????,self.property_id)
+            #ask controller to set property id to this tenant
 
     # Function to delete selected tenant from tenants table
     def delete_tenant_from_table(self):

@@ -44,13 +44,13 @@ class Property_Controller:
 
     def save_new_property(self, property_info):
         # Retrieve property information from the Property_Info instance
-        property_id = property_info.get_property_number()
-        print("property_id: ", property_id)
+        property_number = property_info.get_property_number()
+        print("property_id: ", property_number)
         address = property_info.get_address_label()
         # Save property information to the database
-        property_id = self.save_property_info_to_database(property_id, address)
+        property_number = self.save_property_info_to_database(property_number, address)
 
-        return property_id
+        return property_number
     
     def save_property_info_to_database(self, property_number, address):
         # need to implement saving property information to the database here

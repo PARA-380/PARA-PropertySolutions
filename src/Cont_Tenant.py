@@ -24,7 +24,7 @@ class Cont_Tenant:
 
     def find_tenant_by_id(self, account_id: int, tenant_id: int):
         for tenant in self.tenants:
-            if tenant.get_id() == tenant_id:
+            if tenant.getID() == tenant_id:
                 return tenant
         print("Tenant not found")
         return None
@@ -34,13 +34,31 @@ class Cont_Tenant:
         return self.tenants
     
     def get_tenant_names(self):
-        names = list()
+        names = dict()
         for tenant in self.tenants:
-            names.append(tenant.getFirstName() +" "+ tenant.getLastName())
+            names[tenant.getFirstName() +" "+ tenant.getLastName()] = tenant.getID()
+        print(names)
         return names
     
     def update_tenants(self):
         self.tenants = list(db.readTenants(self.accID))
+
+    def add_to_property(self, tenID, propID):
+        """adds the property ID to the tenant
+
+        Args:
+            tenID (_type_): _description_
+            propID (_type_): _description_
+        """
+        #find the tenant with id
+        tenant = self.find_tenant_by_id(self.accID,tenID)
+        #set tenant object's prop id
+        tenant.set_property_id(propID)
+        #ask database to update with tenantid
+        db.updateTenant(tenant)
+        
+        
+
 
     def update_tenant_first_name(self, account_id: int, tenant_first_name: str, tenant_id: int):
         tenant = self.find_tenant_by_id(1, tenant_id)

@@ -9,7 +9,9 @@ class Cont_Property:
 
 
     def createProperty(self, property : Property = Property()) -> int:
-        return db.addToProperty(accID=self.mainAccountID, property=property)
+        new_id = db.addToProperty(accID=self.mainAccountID, property=property)
+        self.Properties = self.getProperties()
+        return new_id
 
 
     def getProperties(self) -> list[Property]:
