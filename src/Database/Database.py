@@ -1,10 +1,3 @@
-import sqlite3
-# from Account import Account
-# from Tenant import Tenant
-from System import Account, Tenant, Property
-
-__conn : sqlite3.Connection = None
-__cursor : sqlite3.Cursor = None
 """ Module Name: Database
     Date: 02/14/2024 - 4/21/2024
     Name: Ali Maamoun
@@ -14,6 +7,13 @@ __cursor : sqlite3.Cursor = None
     make dealing with database as easy as Database.addtoTenants(TenantObj)
 
 """
+import sqlite3
+# from Account import Account
+# from Tenant import Tenant
+from System import Account, Tenant, Property
+
+__conn : sqlite3.Connection = None
+__cursor : sqlite3.Cursor = None
 
 
 def init():
