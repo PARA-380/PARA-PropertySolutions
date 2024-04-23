@@ -19,7 +19,14 @@ from PyQt6.QtWidgets import (
     QMessageBox)
 
 class Notification_Page(QMainWindow):
+    """_summary_
+
+    Args:
+        QMainWindow (QMainWindow): The base class for UI object in PyQt6
+    """
     def __init__(self):
+        """Initializes the Notification page object
+        """
         super().__init__()
         self.setWindowTitle("Notifications")
 
@@ -65,6 +72,10 @@ class Notification_Page(QMainWindow):
         
     
     def populate_notifications(self):
+        """populate the message into the notification table
+
+        Note: this only works for testing purpose right now
+        """
         # Sample notification data for testing purpose
         notifications = [
             {"count": 3, "description": "New messages received"},
@@ -83,14 +94,16 @@ class Notification_Page(QMainWindow):
             self.notification_table.setItem(row, 1, description_item)
 
     def delete_selected_row(self):
-            selected_row = self.notification_table.currentRow()
-            if selected_row >= 0:
-                confirmation = QMessageBox.question(self, "Confirm Deletion", "Are you sure you want to delete this notification?",
-                                                    QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-                if confirmation == QMessageBox.StandardButton.Yes:
-                    self.notification_table.removeRow(selected_row)
-            else:
-                QMessageBox.information(self, "No Row Selected", "Please select a row to delete.")
+        """delete the selected row on the table
+        """
+        selected_row = self.notification_table.currentRow()
+        if selected_row >= 0:
+            confirmation = QMessageBox.question(self, "Confirm Deletion", "Are you sure you want to delete this notification?",
+                                                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+            if confirmation == QMessageBox.StandardButton.Yes:
+                self.notification_table.removeRow(selected_row)
+        else:
+            QMessageBox.information(self, "No Row Selected", "Please select a row to delete.")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
