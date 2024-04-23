@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Cont_Tenant</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">Cont_Tenant</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Ccont_tenant.py">c:\users\richa\desktop\github project\para-propertysolutions\src\cont_tenant.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Cont_Tenant">Cont_Tenant</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno,&nbsp;Ali&nbsp;Maamoun<br>
+Date:&nbsp;04/23/24<br>
+Description:&nbsp;Controller&nbsp;for&nbsp;Tenant&nbsp;class<br>
+Purposes:&nbsp;Controller&nbsp;Class&nbsp;for&nbsp;Tenants&nbsp;to&nbsp;connect&nbsp;Tenant&nbsp;Operations&nbsp;to&nbsp;Database&nbsp;and&nbsp;GUI.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="src.Database.Database.html">src.Database.Database</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Cont_Tenant.html#Cont_Tenant">Cont_Tenant</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Cont_Tenant">class <strong>Cont_Tenant</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Cont_Tenant">Cont_Tenant</a>(accID)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Cont_Tenant-__init__"><strong>__init__</strong></a>(self, accID)</dt><dd><span class="code">Constructs&nbsp;a&nbsp;Tenant&nbsp;Controller&nbsp;based&nbsp;on&nbsp;the&nbsp;current&nbsp;Tenant&nbsp;Table&nbsp;in&nbsp;Database<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;accID&nbsp;(_type_):&nbsp;A&nbsp;given&nbsp;account&nbsp;ID&nbsp;for&nbsp;the&nbsp;current&nbsp;Session.</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-add_tenant"><strong>add_tenant</strong></a>(self, tenant: src.Entities.Tenant.Tenant)</dt><dd><span class="code">Adds&nbsp;the&nbsp;tenant&nbsp;to&nbsp;the&nbsp;Controller's&nbsp;list&nbsp;of&nbsp;Tenant&nbsp;Objects<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tenant&nbsp;(Tenant):&nbsp;Given&nbsp;Tenant&nbsp;to&nbsp;add</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-create_tenant"><strong>create_tenant</strong></a>(self, tenant: src.Entities.Tenant.Tenant)</dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;tenant&nbsp;to&nbsp;the&nbsp;Database<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tenant&nbsp;(Tenant):&nbsp;Given&nbsp;Tenant&nbsp;Object&nbsp;to&nbsp;copy&nbsp;details&nbsp;to&nbsp;Database</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-find_tenant_by_id"><strong>find_tenant_by_id</strong></a>(self, account_id: int, tenant_id: int)</dt><dd><span class="code">Finds&nbsp;the&nbsp;Tenant&nbsp;in&nbsp;its&nbsp;list&nbsp;from&nbsp;the&nbsp;given&nbsp;Tenant&nbsp;ID.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;account_id&nbsp;(int):&nbsp;Given&nbsp;Account&nbsp;ID&nbsp;if&nbsp;we&nbsp;need&nbsp;to&nbsp;look&nbsp;up&nbsp;the&nbsp;Database&nbsp;Again.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tenant_id&nbsp;(int):&nbsp;The&nbsp;Database&nbsp;Tenant&nbsp;ID&nbsp;to&nbsp;look&nbsp;for.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;Returns&nbsp;the&nbsp;Tenant&nbsp;if&nbsp;Found&nbsp;or&nbsp;None&nbsp;if&nbsp;not&nbsp;found.</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-get_tenants"><strong>get_tenants</strong></a>(self)</dt><dd><span class="code">Calls&nbsp;function&nbsp;<a href="#Cont_Tenant-update_tenants">update_tenants</a>()&nbsp;to&nbsp;update&nbsp;tenants&nbsp;and&nbsp;returns&nbsp;them<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-print_tenants"><strong>print_tenants</strong></a>(self)</dt><dd><span class="code">prints&nbsp;from&nbsp;the&nbsp;list&nbsp;of&nbsp;tenants&nbsp;one&nbsp;by&nbsp;one<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-remove_tenant"><strong>remove_tenant</strong></a>(self, ten_id: int)</dt><dd><span class="code">Finds&nbsp;the&nbsp;tenant&nbsp;by&nbsp;ID&nbsp;and&nbsp;removes&nbsp;them&nbsp;from&nbsp;the&nbsp;list&nbsp;of&nbsp;tenants<br>
+@param&nbsp;ten_id:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-update_phone_number"><strong>update_phone_number</strong></a>(self, account_id: int, tenant_id: int, phone_number: str)</dt><dd><span class="code">Finds&nbsp;the&nbsp;tenant&nbsp;by&nbsp;ID&nbsp;and&nbsp;updates&nbsp;the&nbsp;phone&nbsp;number<br>
+@param&nbsp;account_id:<br>
+@param&nbsp;tenant_id:<br>
+@param&nbsp;phone_number:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-update_ssn"><strong>update_ssn</strong></a>(self, account_id: int, tenant_id: int, tenant_ssn: str)</dt><dd><span class="code">Finds&nbsp;the&nbsp;tenant&nbsp;by&nbsp;ID&nbsp;and&nbsp;updates&nbsp;the&nbsp;SSN<br>
+@param&nbsp;account_id:<br>
+@param&nbsp;tenant_id:<br>
+@param&nbsp;tenant_ssn:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-update_tenant_address"><strong>update_tenant_address</strong></a>(self, account_id: int, tenant_id: int, new_address: str)</dt><dd><span class="code">Finds&nbsp;the&nbsp;tenant&nbsp;by&nbsp;ID&nbsp;and&nbsp;updates&nbsp;the&nbsp;address<br>
+@param&nbsp;account_id:<br>
+@param&nbsp;tenant_id:<br>
+@param&nbsp;new_address:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-update_tenant_email"><strong>update_tenant_email</strong></a>(self, account_id: int, tenant_id: int, email: str)</dt><dd><span class="code">Finds&nbsp;the&nbsp;tenant&nbsp;by&nbsp;ID&nbsp;and&nbsp;updates&nbsp;the&nbsp;email<br>
+@param&nbsp;account_id:<br>
+@param&nbsp;tenant_id:<br>
+@param&nbsp;email:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-update_tenant_first_name"><strong>update_tenant_first_name</strong></a>(self, account_id: int, tenant_first_name: str, tenant_id: int)</dt><dd><span class="code">Finds&nbsp;the&nbsp;tenant&nbsp;by&nbsp;ID&nbsp;and&nbsp;updates&nbsp;the&nbsp;first&nbsp;name<br>
+@param&nbsp;account_id:<br>
+@param&nbsp;tenant_first_name:<br>
+@param&nbsp;tenant_id:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-update_tenant_name"><strong>update_tenant_name</strong></a>(self, account_id: int, tenant_last_name: str, tenant_id: int)</dt><dd><span class="code">Finds&nbsp;the&nbsp;tenant&nbsp;by&nbsp;ID&nbsp;and&nbsp;updates&nbsp;the&nbsp;last&nbsp;name<br>
+@param&nbsp;account_id:<br>
+@param&nbsp;tenant_last_name:<br>
+@param&nbsp;tenant_id:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Cont_Tenant-update_tenants"><strong>update_tenants</strong></a>(self)</dt><dd><span class="code">Calls&nbsp;on&nbsp;the&nbsp;database&nbsp;to&nbsp;update&nbsp;list&nbsp;of&nbsp;tenants<br>
+@return:</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>List</strong> = typing.List</td></tr></table>
+</body></html>

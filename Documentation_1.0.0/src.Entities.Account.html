@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module src.Entities.Account</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.Entities.html" class="white">Entities</a>.Account</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Centities%5Caccount.py">c:\users\richa\desktop\github project\para-propertysolutions\src\entities\account.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Account">Account</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno,&nbsp;Ali&nbsp;Maamoun<br>
+Date:&nbsp;04/23/24<br>
+Description:&nbsp;Handles&nbsp;<a href="#Account">Account</a>&nbsp;attributes<br>
+Purposes:&nbsp;Creates&nbsp;a&nbsp;basis&nbsp;for&nbsp;an&nbsp;account&nbsp;and&nbsp;its&nbsp;attributes.&nbsp;&nbsp;Attributes&nbsp;get&nbsp;handled&nbsp;by&nbsp;its&nbsp;controller.<br>
+Owns&nbsp;properties&nbsp;and&nbsp;has&nbsp;a&nbsp;login.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.Entities.Account.html#Account">Account</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Account">class <strong>Account</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Account">Account</a>(first:&nbsp;str&nbsp;=&nbsp;'',&nbsp;last:&nbsp;str&nbsp;=&nbsp;'',&nbsp;username:&nbsp;str&nbsp;=&nbsp;'',&nbsp;password:&nbsp;str&nbsp;=&nbsp;'',&nbsp;phone:&nbsp;str&nbsp;=&nbsp;'')<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Account-__init__"><strong>__init__</strong></a>(self, first: str = '', last: str = '', username: str = '', password: str = '', phone: str = '')</dt><dd><span class="code">@param&nbsp;first:<br>
+@param&nbsp;last:<br>
+@param&nbsp;username:<br>
+@param&nbsp;password:<br>
+@param&nbsp;phone:</span></dd></dl>
+
+<dl><dt><a name="Account-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><span class="code">Specifies&nbsp;how&nbsp;class&nbsp;will&nbsp;be&nbsp;printed<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-addContractor"><strong>addContractor</strong></a>(self, var)</dt></dl>
+
+<dl><dt><a name="Account-addTenant"><strong>addTenant</strong></a>(self, id, tenant)</dt><dd><span class="code">Adds&nbsp;Tenants&nbsp;to&nbsp;the&nbsp;list<br>
+@param&nbsp;id:<br>
+@param&nbsp;tenant:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-getID"><strong>getID</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;<a href="#Account">Account</a>&nbsp;ID<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-get_contractors"><strong>get_contractors</strong></a>(self)</dt><dd><span class="code">Prints&nbsp;a&nbsp;list&nbsp;of&nbsp;Contractors<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-get_firstName"><strong>get_firstName</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;First&nbsp;Name&nbsp;of&nbsp;the&nbsp;account<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-get_lastName"><strong>get_lastName</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;Last&nbsp;Name&nbsp;of&nbsp;the&nbsp;account<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-get_name"><strong>get_name</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;both&nbsp;First&nbsp;and&nbsp;Last&nbsp;name&nbsp;of&nbsp;the&nbsp;account<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-get_password"><strong>get_password</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;Password&nbsp;for&nbsp;the&nbsp;account<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-get_phonenumber"><strong>get_phonenumber</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;Phone&nbsp;Number&nbsp;of&nbsp;the&nbsp;account<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-get_properties"><strong>get_properties</strong></a>(self)</dt><dd><span class="code">Prints&nbsp;a&nbsp;list&nbsp;of&nbsp;Properties<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-get_username"><strong>get_username</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;Username&nbsp;of&nbsp;the&nbsp;account<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-print_tenants"><strong>print_tenants</strong></a>(self)</dt><dd><span class="code">Prints&nbsp;a&nbsp;list&nbsp;of&nbsp;tenants<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-remove_tenant"><strong>remove_tenant</strong></a>(self, key)</dt><dd><span class="code">Removes&nbsp;Tenants&nbsp;from&nbsp;the&nbsp;list<br>
+@param&nbsp;key:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-setID"><strong>setID</strong></a>(self, ID)</dt><dd><span class="code">Sets&nbsp;the&nbsp;<a href="#Account">Account</a>&nbsp;ID<br>
+@type&nbsp;ID:&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="Account-set_firstName"><strong>set_firstName</strong></a>(self, first)</dt><dd><span class="code">Sets&nbsp;the&nbsp;First&nbsp;Name&nbsp;of&nbsp;the&nbsp;account<br>
+@param&nbsp;first:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-set_lastName"><strong>set_lastName</strong></a>(self, last)</dt><dd><span class="code">Sets&nbsp;the&nbsp;Last&nbsp;Name&nbsp;of&nbsp;the&nbsp;account<br>
+@param&nbsp;last:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-set_password"><strong>set_password</strong></a>(self, password)</dt><dd><span class="code">Sets&nbsp;the&nbsp;Password&nbsp;for&nbsp;the&nbsp;account<br>
+@param&nbsp;password:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-set_phonenumber"><strong>set_phonenumber</strong></a>(self, phone)</dt><dd><span class="code">Sets&nbsp;the&nbsp;Phone&nbsp;Number&nbsp;of&nbsp;the&nbsp;account<br>
+@param&nbsp;phone:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-set_username"><strong>set_username</strong></a>(self, username)</dt><dd><span class="code">Sets&nbsp;the&nbsp;Username&nbsp;for&nbsp;the&nbsp;account<br>
+@param&nbsp;username:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Account-to_dict"><strong>to_dict</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;Print&nbsp;statement&nbsp;for&nbsp;account&nbsp;class<br>
+@return:</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt></dl>
+</td></tr></table>
+</body></html>

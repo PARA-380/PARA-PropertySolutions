@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module src.Database.Database</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.Database.html" class="white">Database</a>.Database</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Cdatabase%5Cdatabase.py">c:\users\richa\desktop\github project\para-propertysolutions\src\database\database.py</a></td></tr></table>
+    <p><span class="code">Module&nbsp;Name:&nbsp;Database<br>
+Date:&nbsp;02/14/2024&nbsp;-&nbsp;4/21/2024<br>
+Name:&nbsp;Ali&nbsp;Maamoun<br>
+A&nbsp;static&nbsp;file&nbsp;which&nbsp;makes&nbsp;calls&nbsp;to&nbsp;a&nbsp;single&nbsp;database&nbsp;file&nbsp;<br>
+regarding&nbsp;a&nbsp;number&nbsp;of&nbsp;Tables&nbsp;important&nbsp;to&nbsp;the&nbsp;project.<br>
+Uses&nbsp;sqlite3&nbsp;to&nbsp;manage&nbsp;sql&nbsp;code&nbsp;in&nbsp;python.&nbsp;Purpose&nbsp;is&nbsp;to&nbsp;<br>
+make&nbsp;dealing&nbsp;with&nbsp;database&nbsp;as&nbsp;easy&nbsp;as&nbsp;Database.addtoTenants(TenantObj)</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="sqlite3.html">sqlite3</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-addToAccounts"><strong>addToAccounts</strong></a>(account: src.Entities.Account.Account)</dt><dd><span class="code">Creates&nbsp;new&nbsp;row&nbsp;in&nbsp;Account&nbsp;Table&nbsp;and&nbsp;returns&nbsp;the&nbsp;KEY&nbsp;generated<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;account&nbsp;(Account):&nbsp;Account&nbsp;Object<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;KEY&nbsp;id&nbsp;generated</span></dd></dl>
+ <dl><dt><a name="-addToProperty"><strong>addToProperty</strong></a>(accID: int, tenID: int, property: src.Entities.Property.Property)</dt><dd><span class="code">Adds&nbsp;a&nbsp;new&nbsp;Property&nbsp;Object&nbsp;into&nbsp;the&nbsp;Database&nbsp;by&nbsp;copying&nbsp;its&nbsp;contents&nbsp;and&nbsp;linking&nbsp;its&nbsp;IDs&nbsp;to&nbsp;other&nbsp;tables<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;accID&nbsp;(int):&nbsp;The&nbsp;account&nbsp;associated&nbsp;with&nbsp;this&nbsp;property<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property&nbsp;(Property):&nbsp;Property&nbsp;Object&nbsp;to&nbsp;copy&nbsp;contents&nbsp;from<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;Returns&nbsp;the&nbsp;Unique&nbsp;ID&nbsp;in&nbsp;that&nbsp;table.</span></dd></dl>
+ <dl><dt><a name="-addToTenants"><strong>addToTenants</strong></a>(accID: int, tenant: src.Entities.Tenant.Tenant)</dt><dd><span class="code">Inserts&nbsp;into&nbsp;Tenant&nbsp;Table&nbsp;a&nbsp;tenant&nbsp;associated&nbsp;to&nbsp;an&nbsp;account<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;account&nbsp;(Account):&nbsp;object&nbsp;of&nbsp;the&nbsp;account&nbsp;we&nbsp;want&nbsp;to&nbsp;add&nbsp;a&nbsp;tenant&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tenant&nbsp;(Tenant):&nbsp;object&nbsp;of&nbsp;the&nbsp;tenant&nbsp;we&nbsp;are&nbsp;adding&nbsp;to&nbsp;the&nbsp;account<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;Returns&nbsp;the&nbsp;ID&nbsp;associated&nbsp;to&nbsp;the&nbsp;Tenant.&nbsp;Must&nbsp;be&nbsp;set&nbsp;to&nbsp;Tenant&nbsp;Object</span></dd></dl>
+ <dl><dt><a name="-cleartables"><strong>cleartables</strong></a>()</dt><dd><span class="code">Clears&nbsp;all&nbsp;Database&nbsp;Tables&nbsp;for&nbsp;Testing&nbsp;purposes</span></dd></dl>
+ <dl><dt><a name="-closeConnection"><strong>closeConnection</strong></a>()</dt><dd><span class="code">Closes&nbsp;connection&nbsp;to&nbsp;the&nbsp;Database</span></dd></dl>
+ <dl><dt><a name="-createTables"><strong>createTables</strong></a>()</dt><dd><span class="code">Creates&nbsp;All&nbsp;Tables&nbsp;needed&nbsp;for&nbsp;initializing&nbsp;the&nbsp;Database</span></dd></dl>
+ <dl><dt><a name="-deleteTenant"><strong>deleteTenant</strong></a>(ten_id: int)</dt><dd><span class="code">Removes&nbsp;a&nbsp;Tenant&nbsp;Row&nbsp;from&nbsp;the&nbsp;Tenant&nbsp;Table&nbsp;in&nbsp;Database&nbsp;by&nbsp;searching&nbsp;by&nbsp;Unique&nbsp;ID.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ten_id&nbsp;(int):&nbsp;The&nbsp;Unique&nbsp;ID&nbsp;to&nbsp;search&nbsp;for.</span></dd></dl>
+ <dl><dt><a name="-editAccount"><strong>editAccount</strong></a>(account: src.Entities.Account.Account)</dt></dl>
+ <dl><dt><a name="-editTenant"><strong>editTenant</strong></a>(tenant: src.Entities.Tenant.Tenant)</dt></dl>
+ <dl><dt><a name="-init"><strong>init</strong></a>()</dt><dd><span class="code">Starts&nbsp;up&nbsp;the&nbsp;Database&nbsp;and&nbsp;provides&nbsp;the&nbsp;connection&nbsp;and&nbsp;the&nbsp;cursor,&nbsp;which&nbsp;are&nbsp;crucial&nbsp;to&nbsp;executing.<br>
+__cursor&nbsp;:&nbsp;is&nbsp;responsible&nbsp;for&nbsp;executing&nbsp;sql&nbsp;commands<br>
+__conn&nbsp;&nbsp;&nbsp;:&nbsp;is&nbsp;the&nbsp;current&nbsp;connection&nbsp;to&nbsp;a&nbsp;certain&nbsp;database&nbsp;file.&nbsp;(stored&nbsp;locally)</span></dd></dl>
+ <dl><dt><a name="-readAccount"><strong>readAccount</strong></a>(accID: int) -&gt; src.Entities.Account.Account</dt><dd><span class="code">Reads&nbsp;the&nbsp;Database&nbsp;Account&nbsp;Table&nbsp;and&nbsp;returns&nbsp;the&nbsp;row&nbsp;associated&nbsp;with&nbsp;an&nbsp;Account&nbsp;ID<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;accID&nbsp;(int):&nbsp;The&nbsp;Account&nbsp;ID&nbsp;to&nbsp;lookup&nbsp;as&nbsp;the&nbsp;KEY<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Account:&nbsp;an&nbsp;Account&nbsp;object&nbsp;with&nbsp;the&nbsp;data&nbsp;recieved&nbsp;from&nbsp;Database</span></dd></dl>
+ <dl><dt><a name="-readTables"><strong>readTables</strong></a>()</dt></dl>
+ <dl><dt><a name="-readTenants"><strong>readTenants</strong></a>(accID: int) -&gt; list[src.Entities.Tenant.Tenant]</dt><dd><span class="code">Read&nbsp;DataBase&nbsp;Tenant&nbsp;Table<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;accID&nbsp;(int):&nbsp;Key&nbsp;of&nbsp;the&nbsp;Account&nbsp;to&nbsp;lookup&nbsp;tenants<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Tenants:&nbsp;A&nbsp;Dictionary&nbsp;of&nbsp;Tenant&nbsp;objects&nbsp;based&nbsp;on&nbsp;KEY&nbsp;ID&nbsp;:&nbsp;Tenant&nbsp;pairs</span></dd></dl>
+ <dl><dt><a name="-searchAccount"><strong>searchAccount</strong></a>(username: str) -&gt; list[src.Entities.Account.Account]</dt><dd><span class="code">Searches&nbsp;the&nbsp;accounts&nbsp;based&nbsp;on&nbsp;matching&nbsp;usernames<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username&nbsp;(str):&nbsp;Username&nbsp;to&nbsp;search&nbsp;for<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list[Account]:&nbsp;List&nbsp;of&nbsp;matching&nbsp;Account&nbsp;objects.</span></dd></dl>
+ <dl><dt><a name="-updateAccount"><strong>updateAccount</strong></a>(account: src.Entities.Account.Account)</dt><dd><span class="code">Updates&nbsp;the&nbsp;Account&nbsp;in&nbsp;the&nbsp;Database.&nbsp;Copies&nbsp;all&nbsp;its&nbsp;contents&nbsp;into&nbsp;exisitng&nbsp;Account&nbsp;Entry&nbsp;in&nbsp;table<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;account&nbsp;(Account):&nbsp;Account&nbsp;to&nbsp;copy</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>__annotations__</strong> = {'__conn': &lt;class 'sqlite3.Connection'&gt;, '__cursor': &lt;class 'sqlite3.Cursor'&gt;}</td></tr></table>
+</body></html>

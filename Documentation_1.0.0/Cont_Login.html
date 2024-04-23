@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Cont_Login</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">Cont_Login</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Ccont_login.py">c:\users\richa\desktop\github project\para-propertysolutions\src\cont_login.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Cont_Login">Cont_Login</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno,&nbsp;Ali&nbsp;Maamoun<br>
+Date:&nbsp;04/23/24<br>
+Description:&nbsp;Controller&nbsp;for&nbsp;Login_Page&nbsp;class<br>
+Purposes:&nbsp;Controller&nbsp;Class&nbsp;for&nbsp;Login_Page&nbsp;to&nbsp;connect&nbsp;Login&nbsp;Operations&nbsp;to&nbsp;Database&nbsp;and&nbsp;GUI.<br>
+Sets&nbsp;the&nbsp;main&nbsp;account&nbsp;to&nbsp;be&nbsp;used&nbsp;in&nbsp;active&nbsp;session&nbsp;and&nbsp;handles&nbsp;Login&nbsp;verification.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="src.Database.Database.html">src.Database.Database</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Cont_Login.html#Cont_Login">Cont_Login</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Cont_Login">class <strong>Cont_Login</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Connects&nbsp;the&nbsp;GUI&nbsp;To&nbsp;the&nbsp;Database<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Cont_Login-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Knows&nbsp;Controller&nbsp;of&nbsp;User&nbsp;Profile,&nbsp;to&nbsp;set&nbsp;up&nbsp;the&nbsp;main&nbsp;account&nbsp;after&nbsp;logging&nbsp;in.</span></dd></dl>
+
+<dl><dt><a name="Cont_Login-createAccount"><strong>createAccount</strong></a>(self, username='', password='')</dt><dd><span class="code">Creates&nbsp;an&nbsp;account&nbsp;to&nbsp;the&nbsp;Database&nbsp;given&nbsp;a&nbsp;username&nbsp;and&nbsp;password<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username&nbsp;(str,&nbsp;optional):&nbsp;_description_.&nbsp;Defaults&nbsp;to&nbsp;"".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;password&nbsp;(str,&nbsp;optional):&nbsp;_description_.&nbsp;Defaults&nbsp;to&nbsp;"".</span></dd></dl>
+
+<dl><dt><a name="Cont_Login-getUserProfile"><strong>getUserProfile</strong></a>(self) -&gt; src.Cont_UserProfile.Cont_UserProfile</dt><dd><span class="code">returns&nbsp;Controller&nbsp;User&nbsp;Profile.&nbsp;Mainly&nbsp;for&nbsp;System&nbsp;to&nbsp;use.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Cont_UserProfile:&nbsp;Controller&nbsp;for&nbsp;Main&nbsp;Account&nbsp;User</span></dd></dl>
+
+<dl><dt><a name="Cont_Login-searchAccount"><strong>searchAccount</strong></a>(self, username='') -&gt; list[src.Entities.Account.Account]</dt><dd><span class="code">Searches&nbsp;the&nbsp;Database&nbsp;for&nbsp;the&nbsp;given&nbsp;Username<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username&nbsp;(str,&nbsp;optional):&nbsp;Username&nbsp;to&nbsp;search&nbsp;for.&nbsp;Defaults&nbsp;to&nbsp;"".<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list[Account]:&nbsp;list&nbsp;of&nbsp;matching&nbsp;Usernames</span></dd></dl>
+
+<dl><dt><a name="Cont_Login-setUserProfile"><strong>setUserProfile</strong></a>(self, account: src.Entities.Account.Account)</dt><dd><span class="code">sets&nbsp;the&nbsp;User&nbsp;Profile&nbsp;Controller's&nbsp;Main&nbsp;Account&nbsp;it&nbsp;referrs&nbsp;to.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;account&nbsp;(Account):&nbsp;The&nbsp;account&nbsp;to&nbsp;be&nbsp;the&nbsp;main&nbsp;account</span></dd></dl>
+
+<dl><dt><a name="Cont_Login-validateLogin"><strong>validateLogin</strong></a>(self, temp_username='', temp_password='') -&gt; bool</dt><dd><span class="code">Boolean&nbsp;Method&nbsp;to&nbsp;Validate&nbsp;the&nbsp;proper&nbsp;username&nbsp;and&nbsp;password&nbsp;combination.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;temp_username&nbsp;(str,&nbsp;optional):&nbsp;Given&nbsp;Username&nbsp;to&nbsp;search&nbsp;for.&nbsp;Defaults&nbsp;to&nbsp;"".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;temp_password&nbsp;(str,&nbsp;optional):&nbsp;Given&nbsp;Password&nbsp;to&nbsp;see&nbsp;if&nbsp;matches&nbsp;with&nbsp;given&nbsp;username.&nbsp;Defaults&nbsp;to&nbsp;"".<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;Whether&nbsp;the&nbsp;combination&nbsp;was&nbsp;a&nbsp;match&nbsp;to&nbsp;the&nbsp;Database</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

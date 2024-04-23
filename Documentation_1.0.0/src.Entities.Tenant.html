@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module src.Entities.Tenant</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.Entities.html" class="white">Entities</a>.Tenant</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Centities%5Ctenant.py">c:\users\richa\desktop\github project\para-propertysolutions\src\entities\tenant.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Tenant">Tenant</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno,&nbsp;Ali&nbsp;Maamoun<br>
+Date:&nbsp;04/23/24<br>
+Description:&nbsp;Handles&nbsp;<a href="#Tenant">Tenant</a>&nbsp;attributes<br>
+Purposes:&nbsp;Creates&nbsp;a&nbsp;basis&nbsp;for&nbsp;a&nbsp;<a href="#Tenant">Tenant</a>&nbsp;and&nbsp;its&nbsp;attributes.&nbsp;&nbsp;Attributes&nbsp;get&nbsp;handled&nbsp;by&nbsp;its&nbsp;controller.<br>
+<a href="#Tenant">Tenant</a>&nbsp;will&nbsp;reside&nbsp;in&nbsp;Account's&nbsp;Property.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.Entities.Tenant.html#Tenant">Tenant</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Tenant">class <strong>Tenant</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Tenant">Tenant</a>(ID:&nbsp;int&nbsp;=&nbsp;None,&nbsp;firstname:&nbsp;str&nbsp;=&nbsp;'',&nbsp;lastname:&nbsp;str&nbsp;=&nbsp;'',&nbsp;ssn:&nbsp;str&nbsp;=&nbsp;'',&nbsp;address:&nbsp;str&nbsp;=&nbsp;'',&nbsp;phonenumber:&nbsp;str&nbsp;=&nbsp;'',&nbsp;email:&nbsp;str&nbsp;=&nbsp;'')<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Tenant-__init__"><strong>__init__</strong></a>(self, ID: int = None, firstname: str = '', lastname: str = '', ssn: str = '', address: str = '', phonenumber: str = '', email: str = '')</dt><dd><span class="code">Defines&nbsp;parameters&nbsp;for&nbsp;<a href="#Tenant">Tenant</a>&nbsp;Class<br>
+@param&nbsp;ID:<br>
+@param&nbsp;firstname:<br>
+@param&nbsp;lastname:<br>
+@param&nbsp;ssn:<br>
+@param&nbsp;address:<br>
+@param&nbsp;phonenumber:<br>
+@param&nbsp;email:</span></dd></dl>
+
+<dl><dt><a name="Tenant-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><span class="code">Specifies&nbsp;how&nbsp;class&nbsp;will&nbsp;be&nbsp;printed<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-getAddress"><strong>getAddress</strong></a>(self)</dt><dd><span class="code">Gets&nbsp;the&nbsp;Property&nbsp;address&nbsp;that&nbsp;is&nbsp;associated&nbsp;with&nbsp;the&nbsp;tenant<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-getEmail"><strong>getEmail</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;<a href="#Tenant">Tenant</a>'s&nbsp;Email<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-getFirstName"><strong>getFirstName</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;<a href="#Tenant">Tenant</a>'s&nbsp;First&nbsp;Name<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-getID"><strong>getID</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;<a href="#Tenant">Tenant</a>&nbsp;ID<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-getLastName"><strong>getLastName</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;<a href="#Tenant">Tenant</a>'s&nbsp;Last&nbsp;Name<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-getName"><strong>getName</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;both&nbsp;of&nbsp;the&nbsp;Tenants&nbsp;First&nbsp;and&nbsp;Last&nbsp;Name<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-getPhoneNumber"><strong>getPhoneNumber</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;<a href="#Tenant">Tenant</a>'s&nbsp;Phone&nbsp;Number<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-getSSN"><strong>getSSN</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;the&nbsp;Tenants&nbsp;Social&nbsp;Security&nbsp;Number<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-get_account_id"><strong>get_account_id</strong></a>(self)</dt><dd><span class="code">Gets&nbsp;the&nbsp;Account&nbsp;ID&nbsp;that&nbsp;is&nbsp;associated&nbsp;with&nbsp;the&nbsp;tenant<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-saveData"><strong>saveData</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Tenant-setAddress"><strong>setAddress</strong></a>(self, newAddress: str = None)</dt><dd><span class="code">Associates&nbsp;Property&nbsp;address&nbsp;with&nbsp;tenant<br>
+@param&nbsp;newAddress:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-setEmail"><strong>setEmail</strong></a>(self, email: str = None)</dt><dd><span class="code">Sets&nbsp;<a href="#Tenant">Tenant</a>'s&nbsp;Email<br>
+@param&nbsp;email:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-setFirstName"><strong>setFirstName</strong></a>(self, name: str = None)</dt><dd><span class="code">Sets&nbsp;First&nbsp;name&nbsp;of&nbsp;the&nbsp;tenant<br>
+@param&nbsp;name:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-setID"><strong>setID</strong></a>(self, ID)</dt><dd><span class="code">Sets&nbsp;<a href="#Tenant">Tenant</a>&nbsp;ID<br>
+@param&nbsp;ID:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-setLastName"><strong>setLastName</strong></a>(self, name: str = None)</dt><dd><span class="code">Sets&nbsp;Last&nbsp;Name&nbsp;of&nbsp;the&nbsp;<a href="#Tenant">Tenant</a><br>
+@param&nbsp;name:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-setPhoneNumber"><strong>setPhoneNumber</strong></a>(self, phoneNumber: str = None)</dt><dd><span class="code">Sets&nbsp;<a href="#Tenant">Tenant</a>'s&nbsp;Phone&nbsp;Number<br>
+@param&nbsp;phoneNumber:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-setSSN"><strong>setSSN</strong></a>(self, newSSN: str = None)</dt><dd><span class="code">Sets&nbsp;the&nbsp;<a href="#Tenant">Tenant</a>'s&nbsp;Social&nbsp;Security&nbsp;Numebr<br>
+@param&nbsp;newSSN:<br>
+@return:</span></dd></dl>
+
+<dl><dt><a name="Tenant-to_dict"><strong>to_dict</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;Print&nbsp;statement&nbsp;for&nbsp;<a href="#Tenant">Tenant</a>&nbsp;class<br>
+@return:</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

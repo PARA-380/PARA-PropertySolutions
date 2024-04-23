@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module src.gui.Property_GUI.Property_Info_Page</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.gui.html" class="white">gui</a>.<a href="src.gui.Property_GUI.html" class="white">Property_GUI</a>.Property_Info_Page</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Cgui%5Cproperty_gui%5Cproperty_info_page.py">c:\users\richa\desktop\github project\para-propertysolutions\src\gui\property_gui\property_info_page.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;Property_main.py<br>
+Name:&nbsp;Jittapatana&nbsp;(Patrick)&nbsp;Prayoonpruk<br>
+Date:&nbsp;04/05/2024<br>
+Description:&nbsp;Property&nbsp;main&nbsp;page&nbsp;user&nbsp;interface<br>
+Purposes:&nbsp;1.&nbsp;To&nbsp;add&nbsp;new&nbsp;tenants&nbsp;into&nbsp;the&nbsp;property<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;To&nbsp;add&nbsp;property&nbsp;information&nbsp;including&nbsp;address&nbsp;and&nbsp;bills<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;To&nbsp;see&nbsp;the&nbsp;total&nbsp;earning&nbsp;according&nbsp;to&nbsp;the&nbsp;bills</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="re.html">re</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>(<a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.gui.Property_GUI.Property_Info_Page.html#Property_Info">Property_Info</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Property_Info">class <strong>Property_Info</strong></a>(<a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Property_Info">Property_Info</a>(property_number)<br>
+&nbsp;<br>
+Represents&nbsp;the&nbsp;user&nbsp;interface&nbsp;for&nbsp;the&nbsp;property&nbsp;main&nbsp;page<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>:&nbsp;The&nbsp;base&nbsp;class&nbsp;for&nbsp;the&nbsp;main&nbsp;window&nbsp;widget.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.gui.Property_GUI.Property_Info_Page.html#Property_Info">Property_Info</a></dd>
+<dd><a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a></dd>
+<dd><a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a></dd>
+<dd><a href="PyQt6.sip.html#wrapper">PyQt6.sip.wrapper</a></dd>
+<dd><a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a></dd>
+<dd><a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Property_Info-__init__"><strong>__init__</strong></a>(self, property_number)</dt><dd><span class="code">Initializes&nbsp;the&nbsp;<a href="#Property_Info">Property_Info</a>&nbsp;object.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property_number&nbsp;(int):&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;the&nbsp;property.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-add_initial_total_row"><strong>add_initial_total_row</strong></a>(self)</dt><dd><span class="code">Adds&nbsp;an&nbsp;initial&nbsp;total&nbsp;row&nbsp;to&nbsp;the&nbsp;property&nbsp;details&nbsp;table.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;inserts&nbsp;a&nbsp;new&nbsp;row&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;property&nbsp;details&nbsp;table&nbsp;to&nbsp;display&nbsp;the&nbsp;total&nbsp;earnings.<br>
+The&nbsp;total&nbsp;row&nbsp;contains&nbsp;the&nbsp;text&nbsp;"Total"&nbsp;in&nbsp;the&nbsp;description&nbsp;column&nbsp;and&nbsp;placeholders&nbsp;for&nbsp;the&nbsp;price&nbsp;and&nbsp;type&nbsp;columns.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-add_property_to_table"><strong>add_property_to_table</strong></a>(self)</dt><dd><span class="code">Adds&nbsp;property&nbsp;details&nbsp;to&nbsp;the&nbsp;property&nbsp;table.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-add_tenant_to_table"><strong>add_tenant_to_table</strong></a>(self)</dt><dd><span class="code">Adds&nbsp;tenant&nbsp;details&nbsp;to&nbsp;the&nbsp;tenants&nbsp;table.<br>
+&nbsp;<br>
+the&nbsp;list&nbsp;of&nbsp;all&nbsp;tenants&nbsp;can&nbsp;be&nbsp;selected&nbsp;and&nbsp;added&nbsp;in&nbsp;to&nbsp;the&nbsp;specific&nbsp;property</span></dd></dl>
+
+<dl><dt><a name="Property_Info-calculate_total"><strong>calculate_total</strong></a>(self)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;total&nbsp;earning&nbsp;according&nbsp;to&nbsp;the&nbsp;property&nbsp;bills.<br>
+&nbsp;<br>
+The&nbsp;bills&nbsp;can&nbsp;either&nbsp;be&nbsp;"collect"&nbsp;or&nbsp;"pay"</span></dd></dl>
+
+<dl><dt><a name="Property_Info-clear_inputs"><strong>clear_inputs</strong></a>(self)</dt><dd><span class="code">Clears&nbsp;the&nbsp;input&nbsp;fields.<br>
+&nbsp;<br>
+Clears&nbsp;the&nbsp;input&nbsp;fields,&nbsp;including&nbsp;description&nbsp;and&nbsp;price,&nbsp;and&nbsp;reset&nbsp;it&nbsp;to&nbsp;the&nbsp;empty&nbsp;state</span></dd></dl>
+
+<dl><dt><a name="Property_Info-delete_property_from_table"><strong>delete_property_from_table</strong></a>(self)</dt><dd><span class="code">Deletes&nbsp;selected&nbsp;property&nbsp;from&nbsp;the&nbsp;property&nbsp;table.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-delete_tenant_from_table"><strong>delete_tenant_from_table</strong></a>(self)</dt><dd><span class="code">Deletes&nbsp;selected&nbsp;tenant&nbsp;from&nbsp;the&nbsp;tenants&nbsp;table.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-get_address_label"><strong>get_address_label</strong></a>(self)</dt><dd><span class="code">Gets&nbsp;the&nbsp;text&nbsp;from&nbsp;the&nbsp;address&nbsp;label.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;The&nbsp;text&nbsp;displayed&nbsp;in&nbsp;the&nbsp;address&nbsp;label.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-get_property_number"><strong>get_property_number</strong></a>(self)</dt><dd><span class="code">Gets&nbsp;the&nbsp;property&nbsp;number.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;The&nbsp;property&nbsp;number&nbsp;associated&nbsp;with&nbsp;this&nbsp;<a href="#Property_Info">Property_Info</a>&nbsp;object.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-open_link_button_clicked"><strong>open_link_button_clicked</strong></a>(self)</dt><dd><span class="code">Opens&nbsp;the&nbsp;link&nbsp;when&nbsp;the&nbsp;"See&nbsp;Images"&nbsp;button&nbsp;is&nbsp;clicked.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-save_address"><strong>save_address</strong></a>(self)</dt><dd><span class="code">Displays&nbsp;the&nbsp;address&nbsp;in&nbsp;the&nbsp;address&nbsp;label.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-see_pie_chart"><strong>see_pie_chart</strong></a>(self)</dt><dd><span class="code">Display&nbsp;a&nbsp;pie&nbsp;chart&nbsp;(currently&nbsp;not&nbsp;being&nbsp;implemented)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-set_address_label"><strong>set_address_label</strong></a>(self, address)</dt><dd><span class="code">Sets&nbsp;the&nbsp;address&nbsp;label.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;(str):&nbsp;The&nbsp;address&nbsp;to&nbsp;be&nbsp;set&nbsp;in&nbsp;the&nbsp;label.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>:<br>
+<dl><dt><a name="Property_Info-actionEvent"><strong>actionEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-actionEvent">actionEvent</a>(self,&nbsp;a0:&nbsp;Optional[QActionEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-addDockWidget"><strong>addDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-addDockWidget">addDockWidget</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])<br>
+<a href="#Property_Info-addDockWidget">addDockWidget</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea,&nbsp;dockwidget:&nbsp;Optional[QDockWidget],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-addToolBar"><strong>addToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-addToolBar">addToolBar</a>(self,&nbsp;area:&nbsp;Qt.ToolBarArea,&nbsp;toolbar:&nbsp;Optional[QToolBar])<br>
+<a href="#Property_Info-addToolBar">addToolBar</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])<br>
+<a href="#Property_Info-addToolBar">addToolBar</a>(self,&nbsp;title:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QToolBar]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-addToolBarBreak"><strong>addToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-addToolBarBreak">addToolBarBreak</a>(self,&nbsp;area:&nbsp;Qt.ToolBarArea&nbsp;=&nbsp;Qt.TopToolBarArea)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-centralWidget"><strong>centralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-centralWidget">centralWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-changeEvent"><strong>changeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-changeEvent">changeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-childEvent"><strong>childEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-childEvent">childEvent</a>(self,&nbsp;a0:&nbsp;Optional[QChildEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-closeEvent"><strong>closeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-closeEvent">closeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QCloseEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-connectNotify"><strong>connectNotify</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-connectNotify">connectNotify</a>(self,&nbsp;signal:&nbsp;QMetaMethod)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;event:&nbsp;Optional[QContextMenuEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-corner"><strong>corner</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-corner">corner</a>(self,&nbsp;corner:&nbsp;Qt.Corner)&nbsp;-&gt;&nbsp;Qt.DockWidgetArea</span></dd></dl>
+
+<dl><dt><a name="Property_Info-create"><strong>create</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-create">create</a>(self,&nbsp;window:&nbsp;PyQt6.sip.voidptr&nbsp;=&nbsp;None,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-createPopupMenu"><strong>createPopupMenu</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-createPopupMenu">createPopupMenu</a>(self)&nbsp;-&gt;&nbsp;Optional[QMenu]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-customEvent"><strong>customEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-customEvent">customEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-destroy"><strong>destroy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-disconnectNotify"><strong>disconnectNotify</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-disconnectNotify">disconnectNotify</a>(self,&nbsp;signal:&nbsp;QMetaMethod)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dockOptions"><strong>dockOptions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dockOptions">dockOptions</a>(self)&nbsp;-&gt;&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>.DockOption</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dockWidgetArea"><strong>dockWidgetArea</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dockWidgetArea">dockWidgetArea</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;Qt.DockWidgetArea</span></dd></dl>
+
+<dl><dt><a name="Property_Info-documentMode"><strong>documentMode</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-documentMode">documentMode</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragEnterEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragLeaveEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragMoveEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dropEvent"><strong>dropEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dropEvent">dropEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDropEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-enterEvent"><strong>enterEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-enterEvent">enterEvent</a>(self,&nbsp;event:&nbsp;Optional[QEnterEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-event"><strong>event</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-event">event</a>(self,&nbsp;event:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-focusInEvent"><strong>focusInEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-focusInEvent">focusInEvent</a>(self,&nbsp;a0:&nbsp;Optional[QFocusEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-focusNextChild"><strong>focusNextChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;next:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-focusOutEvent"><strong>focusOutEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-focusOutEvent">focusOutEvent</a>(self,&nbsp;a0:&nbsp;Optional[QFocusEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-hideEvent"><strong>hideEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-hideEvent">hideEvent</a>(self,&nbsp;a0:&nbsp;Optional[QHideEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-iconSize"><strong>iconSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-iconSize">iconSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<strong>iconSizeChanged</strong> = &lt;unbound PYQT_SIGNAL iconSizeChanged(QSize)&gt;
+<dl><dt><a name="Property_Info-initPainter"><strong>initPainter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-initPainter">initPainter</a>(self,&nbsp;painter:&nbsp;Optional[QPainter])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;a0:&nbsp;Optional[QInputMethodEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-insertToolBar"><strong>insertToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-insertToolBar">insertToolBar</a>(self,&nbsp;before:&nbsp;Optional[QToolBar],&nbsp;toolbar:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-insertToolBarBreak"><strong>insertToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-insertToolBarBreak">insertToolBarBreak</a>(self,&nbsp;before:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isAnimated"><strong>isAnimated</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isAnimated">isAnimated</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isDockNestingEnabled"><strong>isDockNestingEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isDockNestingEnabled">isDockNestingEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isSeparator"><strong>isSeparator</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isSeparator">isSeparator</a>(self,&nbsp;pos:&nbsp;QPoint)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isSignalConnected"><strong>isSignalConnected</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isSignalConnected">isSignalConnected</a>(self,&nbsp;signal:&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-keyPressEvent"><strong>keyPressEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-keyPressEvent">keyPressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-leaveEvent"><strong>leaveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-leaveEvent">leaveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-menuBar"><strong>menuBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-menuBar">menuBar</a>(self)&nbsp;-&gt;&nbsp;Optional[QMenuBar]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-menuWidget"><strong>menuWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-menuWidget">menuWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-metric"><strong>metric</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-metric">metric</a>(self,&nbsp;a0:&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mousePressEvent"><strong>mousePressEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mousePressEvent">mousePressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-moveEvent"><strong>moveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-moveEvent">moveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMoveEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-nativeEvent"><strong>nativeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-nativeEvent">nativeEvent</a>(self,&nbsp;eventType:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;message:&nbsp;Optional[PyQt6.sip.voidptr])&nbsp;-&gt;&nbsp;(bool,&nbsp;Optional[PyQt6.sip.voidptr])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-paintEvent"><strong>paintEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-paintEvent">paintEvent</a>(self,&nbsp;a0:&nbsp;Optional[QPaintEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-receivers"><strong>receivers</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-receivers">receivers</a>(self,&nbsp;signal:&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-removeDockWidget"><strong>removeDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-removeDockWidget">removeDockWidget</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-removeToolBar"><strong>removeToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-removeToolBar">removeToolBar</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-removeToolBarBreak"><strong>removeToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-removeToolBarBreak">removeToolBarBreak</a>(self,&nbsp;before:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-resizeDocks"><strong>resizeDocks</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-resizeDocks">resizeDocks</a>(self,&nbsp;docks:&nbsp;Iterable[QDockWidget],&nbsp;sizes:&nbsp;Iterable[int],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-resizeEvent"><strong>resizeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-resizeEvent">resizeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QResizeEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-restoreDockWidget"><strong>restoreDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-restoreDockWidget">restoreDockWidget</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-restoreState"><strong>restoreState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-restoreState">restoreState</a>(self,&nbsp;state:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;version:&nbsp;int&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-saveState"><strong>saveState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-saveState">saveState</a>(self,&nbsp;version:&nbsp;int&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="Property_Info-sender"><strong>sender</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-sender">sender</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setAnimated"><strong>setAnimated</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setAnimated">setAnimated</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setCentralWidget"><strong>setCentralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setCentralWidget">setCentralWidget</a>(self,&nbsp;widget:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setCorner"><strong>setCorner</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setCorner">setCorner</a>(self,&nbsp;corner:&nbsp;Qt.Corner,&nbsp;area:&nbsp;Qt.DockWidgetArea)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setDockNestingEnabled"><strong>setDockNestingEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setDockNestingEnabled">setDockNestingEnabled</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setDockOptions"><strong>setDockOptions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setDockOptions">setDockOptions</a>(self,&nbsp;options:&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>.DockOption)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setDocumentMode"><strong>setDocumentMode</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setDocumentMode">setDocumentMode</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setIconSize"><strong>setIconSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setIconSize">setIconSize</a>(self,&nbsp;iconSize:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMenuBar"><strong>setMenuBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMenuBar">setMenuBar</a>(self,&nbsp;menubar:&nbsp;Optional[QMenuBar])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMenuWidget"><strong>setMenuWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMenuWidget">setMenuWidget</a>(self,&nbsp;menubar:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setStatusBar"><strong>setStatusBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setStatusBar">setStatusBar</a>(self,&nbsp;statusbar:&nbsp;Optional[QStatusBar])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setTabPosition"><strong>setTabPosition</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setTabPosition">setTabPosition</a>(self,&nbsp;areas:&nbsp;Qt.DockWidgetArea,&nbsp;tabPosition:&nbsp;QTabWidget.TabPosition)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setTabShape"><strong>setTabShape</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setTabShape">setTabShape</a>(self,&nbsp;tabShape:&nbsp;QTabWidget.TabShape)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setToolButtonStyle"><strong>setToolButtonStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setToolButtonStyle">setToolButtonStyle</a>(self,&nbsp;toolButtonStyle:&nbsp;Qt.ToolButtonStyle)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setUnifiedTitleAndToolBarOnMac"><strong>setUnifiedTitleAndToolBarOnMac</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setUnifiedTitleAndToolBarOnMac">setUnifiedTitleAndToolBarOnMac</a>(self,&nbsp;set:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-sharedPainter"><strong>sharedPainter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;Optional[QPainter]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-showEvent"><strong>showEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-showEvent">showEvent</a>(self,&nbsp;a0:&nbsp;Optional[QShowEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-splitDockWidget"><strong>splitDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-splitDockWidget">splitDockWidget</a>(self,&nbsp;after:&nbsp;Optional[QDockWidget],&nbsp;dockwidget:&nbsp;Optional[QDockWidget],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-statusBar"><strong>statusBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-statusBar">statusBar</a>(self)&nbsp;-&gt;&nbsp;Optional[QStatusBar]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-tabPosition"><strong>tabPosition</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-tabPosition">tabPosition</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea)&nbsp;-&gt;&nbsp;QTabWidget.TabPosition</span></dd></dl>
+
+<dl><dt><a name="Property_Info-tabShape"><strong>tabShape</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-tabShape">tabShape</a>(self)&nbsp;-&gt;&nbsp;QTabWidget.TabShape</span></dd></dl>
+
+<strong>tabifiedDockWidgetActivated</strong> = &lt;unbound PYQT_SIGNAL tabifiedDockWidgetActivated(QDockWidget*)&gt;
+<dl><dt><a name="Property_Info-tabifiedDockWidgets"><strong>tabifiedDockWidgets</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-tabifiedDockWidgets">tabifiedDockWidgets</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;List[QDockWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-tabifyDockWidget"><strong>tabifyDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-tabifyDockWidget">tabifyDockWidget</a>(self,&nbsp;first:&nbsp;Optional[QDockWidget],&nbsp;second:&nbsp;Optional[QDockWidget])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-tabletEvent"><strong>tabletEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-tabletEvent">tabletEvent</a>(self,&nbsp;a0:&nbsp;Optional[QTabletEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-takeCentralWidget"><strong>takeCentralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-takeCentralWidget">takeCentralWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-timerEvent"><strong>timerEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-timerEvent">timerEvent</a>(self,&nbsp;a0:&nbsp;Optional[QTimerEvent])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-toolBarArea"><strong>toolBarArea</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-toolBarArea">toolBarArea</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])&nbsp;-&gt;&nbsp;Qt.ToolBarArea</span></dd></dl>
+
+<dl><dt><a name="Property_Info-toolBarBreak"><strong>toolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-toolBarBreak">toolBarBreak</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-toolButtonStyle"><strong>toolButtonStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-toolButtonStyle">toolButtonStyle</a>(self)&nbsp;-&gt;&nbsp;Qt.ToolButtonStyle</span></dd></dl>
+
+<strong>toolButtonStyleChanged</strong> = &lt;unbound PYQT_SIGNAL toolButtonStyleChanged(Qt::ToolButtonStyle)&gt;
+<dl><dt><a name="Property_Info-unifiedTitleAndToolBarOnMac"><strong>unifiedTitleAndToolBarOnMac</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-unifiedTitleAndToolBarOnMac">unifiedTitleAndToolBarOnMac</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-updateMicroFocus">updateMicroFocus</a>(self,&nbsp;query:&nbsp;Qt.InputMethodQuery&nbsp;=&nbsp;Qt.ImQueryAll)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-wheelEvent"><strong>wheelEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-wheelEvent">wheelEvent</a>(self,&nbsp;a0:&nbsp;Optional[QWheelEvent])</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>:<br>
+<dl><dt><strong>DockOption</strong> = &lt;flag 'DockOption'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="Property_Info-acceptDrops"><strong>acceptDrops</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-accessibleDescription"><strong>accessibleDescription</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Property_Info-accessibleName"><strong>accessibleName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Property_Info-actions"><strong>actions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-actions">actions</a>(self)&nbsp;-&gt;&nbsp;List[QAction]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-activateWindow"><strong>activateWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-activateWindow">activateWindow</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-addAction"><strong>addAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Property_Info-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Property_Info-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Property_Info-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Property_Info-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Property_Info-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Property_Info-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Property_Info-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Property_Info-addAction">addAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-addActions"><strong>addActions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-addActions">addActions</a>(self,&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-adjustSize"><strong>adjustSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-adjustSize">adjustSize</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-autoFillBackground"><strong>autoFillBackground</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-backgroundRole"><strong>backgroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="Property_Info-baseSize"><strong>baseSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Property_Info-childAt"><strong>childAt</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-childAt">childAt</a>(self,&nbsp;p:&nbsp;QPoint)&nbsp;-&gt;&nbsp;Optional[QWidget]<br>
+<a href="#Property_Info-childAt">childAt</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-childrenRect"><strong>childrenRect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Property_Info-childrenRegion"><strong>childrenRegion</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="Property_Info-clearFocus"><strong>clearFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-clearFocus">clearFocus</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-clearMask"><strong>clearMask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-clearMask">clearMask</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-close"><strong>close</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-contentsMargins"><strong>contentsMargins</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</span></dd></dl>
+
+<dl><dt><a name="Property_Info-contentsRect"><strong>contentsRect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Property_Info-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</span></dd></dl>
+
+<dl><dt><a name="Property_Info-createWindowContainer"><strong>createWindowContainer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-createWindowContainer">createWindowContainer</a>(window:&nbsp;Optional[QWindow],&nbsp;parent:&nbsp;Optional[QWidget]&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Qt.WindowType&nbsp;=&nbsp;Qt.WindowFlags())&nbsp;-&gt;&nbsp;QWidget</span></dd></dl>
+
+<dl><dt><a name="Property_Info-cursor"><strong>cursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</span></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="Property_Info-devType"><strong>devType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-effectiveWinId"><strong>effectiveWinId</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;PyQt6.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="Property_Info-ensurePolished"><strong>ensurePolished</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-ensurePolished">ensurePolished</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-find"><strong>find</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-find">find</a>(a0:&nbsp;PyQt6.sip.voidptr)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-focusPolicy"><strong>focusPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</span></dd></dl>
+
+<dl><dt><a name="Property_Info-focusProxy"><strong>focusProxy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-focusWidget"><strong>focusWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-font"><strong>font</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</span></dd></dl>
+
+<dl><dt><a name="Property_Info-fontInfo"><strong>fontInfo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</span></dd></dl>
+
+<dl><dt><a name="Property_Info-fontMetrics"><strong>fontMetrics</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</span></dd></dl>
+
+<dl><dt><a name="Property_Info-foregroundRole"><strong>foregroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="Property_Info-frameGeometry"><strong>frameGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Property_Info-frameSize"><strong>frameSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Property_Info-geometry"><strong>geometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Property_Info-grab"><strong>grab</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,&nbsp;0),&nbsp;QSize(-1,&nbsp;-1)))&nbsp;-&gt;&nbsp;QPixmap</span></dd></dl>
+
+<dl><dt><a name="Property_Info-grabGesture"><strong>grabGesture</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-grabGesture">grabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Qt.GestureFlag&nbsp;=&nbsp;Qt.GestureFlags())</span></dd></dl>
+
+<dl><dt><a name="Property_Info-grabKeyboard"><strong>grabKeyboard</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-grabKeyboard">grabKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-grabMouse"><strong>grabMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-grabMouse">grabMouse</a>(self)<br>
+<a href="#Property_Info-grabMouse">grabMouse</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-grabShortcut"><strong>grabShortcut</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-grabShortcut">grabShortcut</a>(self,&nbsp;key:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-graphicsEffect"><strong>graphicsEffect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsEffect]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsProxyWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-hasFocus"><strong>hasFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-height"><strong>height</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-height">height</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-heightForWidth"><strong>heightForWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-heightForWidth">heightForWidth</a>(self,&nbsp;a0:&nbsp;int)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-hide"><strong>hide</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-hide">hide</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-inputMethodHints"><strong>inputMethodHints</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHint</span></dd></dl>
+
+<dl><dt><a name="Property_Info-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;a0:&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="Property_Info-insertAction"><strong>insertAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-insertAction">insertAction</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-insertActions"><strong>insertActions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-insertActions">insertActions</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isActiveWindow"><strong>isActiveWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isAncestorOf"><strong>isAncestorOf</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isAncestorOf">isAncestorOf</a>(self,&nbsp;child:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isEnabled"><strong>isEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isEnabledTo"><strong>isEnabledTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isEnabledTo">isEnabledTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isFullScreen"><strong>isFullScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isHidden"><strong>isHidden</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isLeftToRight"><strong>isLeftToRight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isMaximized"><strong>isMaximized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isMinimized"><strong>isMinimized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isModal"><strong>isModal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isRightToLeft"><strong>isRightToLeft</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isVisible"><strong>isVisible</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isVisibleTo"><strong>isVisibleTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isVisibleTo">isVisibleTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isWindow"><strong>isWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isWindowModified"><strong>isWindowModified</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-layout"><strong>layout</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-layout">layout</a>(self)&nbsp;-&gt;&nbsp;Optional[QLayout]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-layoutDirection"><strong>layoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</span></dd></dl>
+
+<dl><dt><a name="Property_Info-locale"><strong>locale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</span></dd></dl>
+
+<dl><dt><a name="Property_Info-lower"><strong>lower</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-lower">lower</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mapFrom"><strong>mapFrom</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Property_Info-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Property_Info-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mapFromParent"><strong>mapFromParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Property_Info-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mapTo"><strong>mapTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Property_Info-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mapToGlobal"><strong>mapToGlobal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Property_Info-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mapToParent"><strong>mapToParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Property_Info-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mask"><strong>mask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="Property_Info-maximumHeight"><strong>maximumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-maximumSize"><strong>maximumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Property_Info-maximumWidth"><strong>maximumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-minimumHeight"><strong>minimumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-minimumSize"><strong>minimumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Property_Info-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Property_Info-minimumWidth"><strong>minimumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-mouseGrabber"><strong>mouseGrabber</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-move"><strong>move</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-move">move</a>(self,&nbsp;a0:&nbsp;QPoint)<br>
+<a href="#Property_Info-move">move</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-normalGeometry"><strong>normalGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Property_Info-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;type:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-overrideWindowState"><strong>overrideWindowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-overrideWindowState">overrideWindowState</a>(self,&nbsp;state:&nbsp;Qt.WindowState)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-paintEngine"><strong>paintEngine</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;Optional[QPaintEngine]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-palette"><strong>palette</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</span></dd></dl>
+
+<dl><dt><a name="Property_Info-parentWidget"><strong>parentWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-pos"><strong>pos</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="Property_Info-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-raise_"><strong>raise_</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-raise_">raise_</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-rect"><strong>rect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Property_Info-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-releaseKeyboard">releaseKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-releaseMouse"><strong>releaseMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-releaseMouse">releaseMouse</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-releaseShortcut"><strong>releaseShortcut</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-releaseShortcut">releaseShortcut</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-removeAction"><strong>removeAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-removeAction">removeAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-render"><strong>render</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-render">render</a>(self,&nbsp;target:&nbsp;Optional[QPaintDevice],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlag&nbsp;=&nbsp;QWidget.RenderFlags(QWidget.DrawWindowBackground|QWidget.DrawChildren))<br>
+<a href="#Property_Info-render">render</a>(self,&nbsp;painter:&nbsp;Optional[QPainter],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlag&nbsp;=&nbsp;QWidget.RenderFlags(QWidget.DrawWindowBackground|QWidget.DrawChildren))</span></dd></dl>
+
+<dl><dt><a name="Property_Info-repaint"><strong>repaint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-repaint">repaint</a>(self)<br>
+<a href="#Property_Info-repaint">repaint</a>(self,&nbsp;x:&nbsp;int,&nbsp;y:&nbsp;int,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#Property_Info-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#Property_Info-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-resize"><strong>resize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-resize">resize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#Property_Info-resize">resize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-restoreGeometry"><strong>restoreGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-restoreGeometry">restoreGeometry</a>(self,&nbsp;geometry:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-saveGeometry"><strong>saveGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="Property_Info-screen"><strong>screen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-screen">screen</a>(self)&nbsp;-&gt;&nbsp;Optional[QScreen]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-scroll"><strong>scroll</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int)<br>
+<a href="#Property_Info-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int,&nbsp;a2:&nbsp;QRect)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;on:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;description:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setAccessibleName"><strong>setAccessibleName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setAccessibleName">setAccessibleName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setAttribute"><strong>setAttribute</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setAttribute">setAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setBaseSize"><strong>setBaseSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setBaseSize">setBaseSize</a>(self,&nbsp;basew:&nbsp;int,&nbsp;baseh:&nbsp;int)<br>
+<a href="#Property_Info-setBaseSize">setBaseSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setContentsMargins"><strong>setContentsMargins</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setContentsMargins">setContentsMargins</a>(self,&nbsp;left:&nbsp;int,&nbsp;top:&nbsp;int,&nbsp;right:&nbsp;int,&nbsp;bottom:&nbsp;int)<br>
+<a href="#Property_Info-setContentsMargins">setContentsMargins</a>(self,&nbsp;margins:&nbsp;QMargins)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;policy:&nbsp;Qt.ContextMenuPolicy)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setCursor"><strong>setCursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setCursor">setCursor</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setDisabled"><strong>setDisabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setDisabled">setDisabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setEnabled"><strong>setEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setEnabled">setEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setFixedHeight"><strong>setFixedHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setFixedHeight">setFixedHeight</a>(self,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setFixedSize"><strong>setFixedSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setFixedSize">setFixedSize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#Property_Info-setFixedSize">setFixedSize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setFixedWidth"><strong>setFixedWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setFixedWidth">setFixedWidth</a>(self,&nbsp;w:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setFocus"><strong>setFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setFocus">setFocus</a>(self)<br>
+<a href="#Property_Info-setFocus">setFocus</a>(self,&nbsp;reason:&nbsp;Qt.FocusReason)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;policy:&nbsp;Qt.FocusPolicy)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setFocusProxy"><strong>setFocusProxy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setFocusProxy">setFocusProxy</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setFont"><strong>setFont</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setFont">setFont</a>(self,&nbsp;a0:&nbsp;QFont)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setForegroundRole"><strong>setForegroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setForegroundRole">setForegroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setGeometry"><strong>setGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setGeometry">setGeometry</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#Property_Info-setGeometry">setGeometry</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;effect:&nbsp;Optional[QGraphicsEffect])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setHidden"><strong>setHidden</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setHidden">setHidden</a>(self,&nbsp;hidden:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;hints:&nbsp;Qt.InputMethodHint)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setLayout"><strong>setLayout</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setLayout">setLayout</a>(self,&nbsp;a0:&nbsp;Optional[QLayout])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;direction:&nbsp;Qt.LayoutDirection)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setLocale"><strong>setLocale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setLocale">setLocale</a>(self,&nbsp;locale:&nbsp;QLocale)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMask"><strong>setMask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QBitmap)<br>
+<a href="#Property_Info-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;maxh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMaximumSize"><strong>setMaximumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMaximumSize">setMaximumSize</a>(self,&nbsp;maxw:&nbsp;int,&nbsp;maxh:&nbsp;int)<br>
+<a href="#Property_Info-setMaximumSize">setMaximumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;maxw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;minh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMinimumSize"><strong>setMinimumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMinimumSize">setMinimumSize</a>(self,&nbsp;minw:&nbsp;int,&nbsp;minh:&nbsp;int)<br>
+<a href="#Property_Info-setMinimumSize">setMinimumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;minw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setMouseTracking"><strong>setMouseTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setMouseTracking">setMouseTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setPalette"><strong>setPalette</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setPalette">setPalette</a>(self,&nbsp;a0:&nbsp;QPalette)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setParent"><strong>setParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget])<br>
+<a href="#Property_Info-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget],&nbsp;f:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setScreen"><strong>setScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setScreen">setScreen</a>(self,&nbsp;a0:&nbsp;Optional[QScreen])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#Property_Info-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setSizePolicy"><strong>setSizePolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setSizePolicy">setSizePolicy</a>(self,&nbsp;a0:&nbsp;QSizePolicy)<br>
+<a href="#Property_Info-setSizePolicy">setSizePolicy</a>(self,&nbsp;hor:&nbsp;QSizePolicy.Policy,&nbsp;ver:&nbsp;QSizePolicy.Policy)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setStatusTip"><strong>setStatusTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setStatusTip">setStatusTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setStyle"><strong>setStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setStyle">setStyle</a>(self,&nbsp;a0:&nbsp;Optional[QStyle])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setStyleSheet"><strong>setStyleSheet</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setStyleSheet">setStyleSheet</a>(self,&nbsp;styleSheet:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setTabOrder"><strong>setTabOrder</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setTabOrder">setTabOrder</a>(a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setTabletTracking"><strong>setTabletTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setTabletTracking">setTabletTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setToolTip"><strong>setToolTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setToolTip">setToolTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;msec:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setVisible"><strong>setVisible</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setVisible">setVisible</a>(self,&nbsp;visible:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWhatsThis"><strong>setWhatsThis</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWhatsThis">setWhatsThis</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;filePath:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowFlag"><strong>setWindowFlag</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowFlag">setWindowFlag</a>(self,&nbsp;a0:&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowFlags"><strong>setWindowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowFlags">setWindowFlags</a>(self,&nbsp;type:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowIcon"><strong>setWindowIcon</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowIcon">setWindowIcon</a>(self,&nbsp;icon:&nbsp;QIcon)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowIconText"><strong>setWindowIconText</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowIconText">setWindowIconText</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowModality"><strong>setWindowModality</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowModality">setWindowModality</a>(self,&nbsp;windowModality:&nbsp;Qt.WindowModality)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowModified"><strong>setWindowModified</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowModified">setWindowModified</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;level:&nbsp;float)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowRole"><strong>setWindowRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowRole">setWindowRole</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowState"><strong>setWindowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowState">setWindowState</a>(self,&nbsp;state:&nbsp;Qt.WindowState)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setWindowTitle"><strong>setWindowTitle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setWindowTitle">setWindowTitle</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-show"><strong>show</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-show">show</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-showFullScreen"><strong>showFullScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-showFullScreen">showFullScreen</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-showMaximized"><strong>showMaximized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-showMaximized">showMaximized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-showMinimized"><strong>showMinimized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-showMinimized">showMinimized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-showNormal"><strong>showNormal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-showNormal">showNormal</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-size"><strong>size</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Property_Info-sizeHint"><strong>sizeHint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Property_Info-sizeIncrement"><strong>sizeIncrement</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Property_Info-sizePolicy"><strong>sizePolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</span></dd></dl>
+
+<dl><dt><a name="Property_Info-stackUnder"><strong>stackUnder</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-stackUnder">stackUnder</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-statusTip"><strong>statusTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Property_Info-style"><strong>style</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-style">style</a>(self)&nbsp;-&gt;&nbsp;Optional[QStyle]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-styleSheet"><strong>styleSheet</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Property_Info-testAttribute"><strong>testAttribute</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-testAttribute">testAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-toolTip"><strong>toolTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Property_Info-toolTipDuration"><strong>toolTipDuration</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-underMouse"><strong>underMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-ungrabGesture"><strong>ungrabGesture</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-ungrabGesture">ungrabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-unsetCursor"><strong>unsetCursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-unsetCursor">unsetCursor</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-unsetLayoutDirection">unsetLayoutDirection</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-unsetLocale"><strong>unsetLocale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-unsetLocale">unsetLocale</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-update"><strong>update</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-update">update</a>(self)<br>
+<a href="#Property_Info-update">update</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#Property_Info-update">update</a>(self,&nbsp;a0:&nbsp;QRegion)<br>
+<a href="#Property_Info-update">update</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-updateGeometry"><strong>updateGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-updateGeometry">updateGeometry</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-updatesEnabled"><strong>updatesEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-visibleRegion"><strong>visibleRegion</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="Property_Info-whatsThis"><strong>whatsThis</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Property_Info-width"><strong>width</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-width">width</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-winId"><strong>winId</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-winId">winId</a>(self)&nbsp;-&gt;&nbsp;PyQt6.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="Property_Info-window"><strong>window</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-window">window</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-windowFilePath"><strong>windowFilePath</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Property_Info-windowFlags"><strong>windowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="Property_Info-windowHandle"><strong>windowHandle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;Optional[QWindow]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-windowIcon"><strong>windowIcon</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</span></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="Property_Info-windowIconText"><strong>windowIconText</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="Property_Info-windowModality"><strong>windowModality</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</span></dd></dl>
+
+<dl><dt><a name="Property_Info-windowOpacity"><strong>windowOpacity</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="Property_Info-windowRole"><strong>windowRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Property_Info-windowState"><strong>windowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowState</span></dd></dl>
+
+<dl><dt><a name="Property_Info-windowTitle"><strong>windowTitle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="Property_Info-windowType"><strong>windowType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="Property_Info-x"><strong>x</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-x">x</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-y"><strong>y</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-y">y</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>RenderFlag</strong> = &lt;flag 'RenderFlag'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><a name="Property_Info-__getattr__"><strong>__getattr__</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-__getattr__">__getattr__</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="Property_Info-blockSignals"><strong>blockSignals</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-blockSignals">blockSignals</a>(self,&nbsp;b:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-children"><strong>children</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-children">children</a>(self)&nbsp;-&gt;&nbsp;List[QObject]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-deleteLater"><strong>deleteLater</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-deleteLater">deleteLater</a>(self)</span></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="Property_Info-disconnect"><strong>disconnect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-disconnect">disconnect</a>(a0:&nbsp;QMetaObject.Connection)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#Property_Info-disconnect">disconnect</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dumpObjectInfo">dumpObjectInfo</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dumpObjectTree">dumpObjectTree</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;List[QByteArray]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-eventFilter"><strong>eventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-eventFilter">eventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject],&nbsp;a1:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-findChild"><strong>findChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-findChild">findChild</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT<br>
+<a href="#Property_Info-findChild">findChild</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT</span></dd></dl>
+
+<dl><dt><a name="Property_Info-findChildren"><strong>findChildren</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#Property_Info-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#Property_Info-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#Property_Info-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-inherits"><strong>inherits</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-inherits">inherits</a>(self,&nbsp;classname:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-installEventFilter"><strong>installEventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-installEventFilter">installEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isQuickItemType"><strong>isQuickItemType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isQuickItemType">isQuickItemType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isWidgetType"><strong>isWidgetType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-isWindowType"><strong>isWindowType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-killTimer"><strong>killTimer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-killTimer">killTimer</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Property_Info-metaObject"><strong>metaObject</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;Optional[QMetaObject]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-moveToThread"><strong>moveToThread</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-moveToThread">moveToThread</a>(self,&nbsp;thread:&nbsp;Optional[QThread])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-objectName"><strong>objectName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="Property_Info-parent"><strong>parent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-parent">parent</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-property"><strong>property</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-property">property</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="Property_Info-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code">QObject.<a href="#Property_Info-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</span></dd></dl>
+
+<dl><dt><a name="Property_Info-removeEventFilter"><strong>removeEventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-removeEventFilter">removeEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setObjectName"><strong>setObjectName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setObjectName">setObjectName</a>(self,&nbsp;name:&nbsp;Union[Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;Optional[str]])</span></dd></dl>
+
+<dl><dt><a name="Property_Info-setProperty"><strong>setProperty</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-setProperty">setProperty</a>(self,&nbsp;name:&nbsp;Optional[str],&nbsp;value:&nbsp;Any)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-signalsBlocked"><strong>signalsBlocked</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-startTimer"><strong>startTimer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-startTimer">startTimer</a>(self,&nbsp;interval:&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-thread"><strong>thread</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-thread">thread</a>(self)&nbsp;-&gt;&nbsp;Optional[QThread]</span></dd></dl>
+
+<dl><dt><a name="Property_Info-tr"><strong>tr</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-tr">tr</a>(sourceText:&nbsp;Optional[str],&nbsp;disambiguation:&nbsp;Optional[str]&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt6.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="Property_Info-colorCount"><strong>colorCount</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-depth"><strong>depth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="Property_Info-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="Property_Info-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="Property_Info-heightMM"><strong>heightMM</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-logicalDpiX"><strong>logicalDpiX</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-logicalDpiY"><strong>logicalDpiY</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-paintingActive"><strong>paintingActive</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Property_Info-physicalDpiX"><strong>physicalDpiX</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-physicalDpiY"><strong>physicalDpiY</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Property_Info-widthMM"><strong>widthMM</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Property_Info-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;enum 'PaintDeviceMetric'&gt;</dl>
+
+<hr>
+Static methods inherited from <a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a>:<br>
+<dl><dt><a name="Property_Info-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

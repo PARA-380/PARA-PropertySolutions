@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module src.gui.TenantPage_GUI.tenantsUI_main</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.gui.html" class="white">gui</a>.<a href="src.gui.TenantPage_GUI.html" class="white">TenantPage_GUI</a>.tenantsUI_main</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Cgui%5Ctenantpage_gui%5Ctenantsui_main.py">c:\users\richa\desktop\github project\para-propertysolutions\src\gui\tenantpage_gui\tenantsui_main.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;tenantsUI_main.py<br>
+Name:&nbsp;Ridham&nbsp;Patel<br>
+Date:&nbsp;04/10/2024<br>
+Description:&nbsp;Tenants&nbsp;main&nbsp;user&nbsp;interface<br>
+Purposes:&nbsp;1.&nbsp;To&nbsp;create&nbsp;new&nbsp;tenant<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;To&nbsp;delete&nbsp;existing&nbsp;tenant<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;To&nbsp;display&nbsp;tenant&nbsp;information</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>(<a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.gui.TenantPage_GUI.tenantsUI_main.html#tenantsui">tenantsui</a>(<a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>, <a href="src.gui.TenantPage_GUI.QtTenantPage.html#Ui_MainWindow">src.gui.TenantPage_GUI.QtTenantPage.Ui_MainWindow</a>)
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="src.gui.TenantPage_GUI.QtTenantPage.html#Ui_MainWindow">src.gui.TenantPage_GUI.QtTenantPage.Ui_MainWindow</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.gui.TenantPage_GUI.tenantsUI_main.html#tenantsui">tenantsui</a>(<a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>, <a href="src.gui.TenantPage_GUI.QtTenantPage.html#Ui_MainWindow">src.gui.TenantPage_GUI.QtTenantPage.Ui_MainWindow</a>)
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="tenantsui">class <strong>tenantsui</strong></a>(<a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>, <a href="src.gui.TenantPage_GUI.QtTenantPage.html#Ui_MainWindow">src.gui.TenantPage_GUI.QtTenantPage.Ui_MainWindow</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#tenantsui">tenantsui</a>(controller_tenant:&nbsp;src.Cont_Tenant.Cont_Tenant)<br>
+&nbsp;<br>
+Tenants&nbsp;main&nbsp;user&nbsp;interface&nbsp;for&nbsp;the&nbsp;application<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>&nbsp;(<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>):&nbsp;&nbsp;The&nbsp;base&nbsp;class&nbsp;for&nbsp;the&nbsp;main&nbsp;window&nbsp;of&nbsp;the&nbsp;application.<br>
+&nbsp;&nbsp;&nbsp;<a href="src.gui.TenantPage_GUI.QtTenantPage.html#Ui_MainWindow">Ui_MainWindow</a>&nbsp;(<a href="src.gui.TenantPage_GUI.QtTenantPage.html#Ui_MainWindow">Ui_MainWindow</a>):&nbsp;The&nbsp;user&nbsp;interface&nbsp;class&nbsp;for&nbsp;the&nbsp;UserProfile&nbsp;with&nbsp;the&nbsp;assist&nbsp;of&nbsp;QtDesigner.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.gui.TenantPage_GUI.tenantsUI_main.html#tenantsui">tenantsui</a></dd>
+<dd><a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a></dd>
+<dd><a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a></dd>
+<dd><a href="PyQt6.sip.html#wrapper">PyQt6.sip.wrapper</a></dd>
+<dd><a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a></dd>
+<dd><a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a></dd>
+<dd><a href="src.gui.TenantPage_GUI.QtTenantPage.html#Ui_MainWindow">src.gui.TenantPage_GUI.QtTenantPage.Ui_MainWindow</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="tenantsui-Add_Tenants"><strong>Add_Tenants</strong></a>(self, tenants)</dt><dd><span class="code">Populates&nbsp;the&nbsp;table&nbsp;with&nbsp;existing&nbsp;tenants&nbsp;from&nbsp;Database<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tenants&nbsp;(tenant):&nbsp;list&nbsp;of&nbsp;tenant&nbsp;types</span></dd></dl>
+
+<dl><dt><a name="tenantsui-Delete_Tenant"><strong>Delete_Tenant</strong></a>(self)</dt><dd><span class="code">Basically&nbsp;deletes&nbsp;the&nbsp;tenant&nbsp;and&nbsp;updates&nbsp;in&nbsp;the&nbsp;database&nbsp;as&nbsp;well.</span></dd></dl>
+
+<dl><dt><a name="tenantsui-__init__"><strong>__init__</strong></a>(self, controller_tenant: src.Cont_Tenant.Cont_Tenant)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>:<br>
+<dl><dt><a name="tenantsui-actionEvent"><strong>actionEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-actionEvent">actionEvent</a>(self,&nbsp;a0:&nbsp;Optional[QActionEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-addDockWidget"><strong>addDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-addDockWidget">addDockWidget</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])<br>
+<a href="#tenantsui-addDockWidget">addDockWidget</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea,&nbsp;dockwidget:&nbsp;Optional[QDockWidget],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-addToolBar"><strong>addToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-addToolBar">addToolBar</a>(self,&nbsp;area:&nbsp;Qt.ToolBarArea,&nbsp;toolbar:&nbsp;Optional[QToolBar])<br>
+<a href="#tenantsui-addToolBar">addToolBar</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])<br>
+<a href="#tenantsui-addToolBar">addToolBar</a>(self,&nbsp;title:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QToolBar]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-addToolBarBreak"><strong>addToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-addToolBarBreak">addToolBarBreak</a>(self,&nbsp;area:&nbsp;Qt.ToolBarArea&nbsp;=&nbsp;Qt.TopToolBarArea)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-centralWidget"><strong>centralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-centralWidget">centralWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-changeEvent"><strong>changeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-changeEvent">changeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-childEvent"><strong>childEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-childEvent">childEvent</a>(self,&nbsp;a0:&nbsp;Optional[QChildEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-closeEvent"><strong>closeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-closeEvent">closeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QCloseEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-connectNotify"><strong>connectNotify</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-connectNotify">connectNotify</a>(self,&nbsp;signal:&nbsp;QMetaMethod)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;event:&nbsp;Optional[QContextMenuEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-corner"><strong>corner</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-corner">corner</a>(self,&nbsp;corner:&nbsp;Qt.Corner)&nbsp;-&gt;&nbsp;Qt.DockWidgetArea</span></dd></dl>
+
+<dl><dt><a name="tenantsui-create"><strong>create</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-create">create</a>(self,&nbsp;window:&nbsp;PyQt6.sip.voidptr&nbsp;=&nbsp;None,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-createPopupMenu"><strong>createPopupMenu</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-createPopupMenu">createPopupMenu</a>(self)&nbsp;-&gt;&nbsp;Optional[QMenu]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-customEvent"><strong>customEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-customEvent">customEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-destroy"><strong>destroy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-disconnectNotify"><strong>disconnectNotify</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-disconnectNotify">disconnectNotify</a>(self,&nbsp;signal:&nbsp;QMetaMethod)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dockOptions"><strong>dockOptions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dockOptions">dockOptions</a>(self)&nbsp;-&gt;&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>.DockOption</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dockWidgetArea"><strong>dockWidgetArea</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dockWidgetArea">dockWidgetArea</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;Qt.DockWidgetArea</span></dd></dl>
+
+<dl><dt><a name="tenantsui-documentMode"><strong>documentMode</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-documentMode">documentMode</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragEnterEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragLeaveEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragMoveEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dropEvent"><strong>dropEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dropEvent">dropEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDropEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-enterEvent"><strong>enterEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-enterEvent">enterEvent</a>(self,&nbsp;event:&nbsp;Optional[QEnterEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-event"><strong>event</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-event">event</a>(self,&nbsp;event:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-focusInEvent"><strong>focusInEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-focusInEvent">focusInEvent</a>(self,&nbsp;a0:&nbsp;Optional[QFocusEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-focusNextChild"><strong>focusNextChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;next:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-focusOutEvent"><strong>focusOutEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-focusOutEvent">focusOutEvent</a>(self,&nbsp;a0:&nbsp;Optional[QFocusEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-hideEvent"><strong>hideEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-hideEvent">hideEvent</a>(self,&nbsp;a0:&nbsp;Optional[QHideEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-iconSize"><strong>iconSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-iconSize">iconSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<strong>iconSizeChanged</strong> = &lt;unbound PYQT_SIGNAL iconSizeChanged(QSize)&gt;
+<dl><dt><a name="tenantsui-initPainter"><strong>initPainter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-initPainter">initPainter</a>(self,&nbsp;painter:&nbsp;Optional[QPainter])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;a0:&nbsp;Optional[QInputMethodEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-insertToolBar"><strong>insertToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-insertToolBar">insertToolBar</a>(self,&nbsp;before:&nbsp;Optional[QToolBar],&nbsp;toolbar:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-insertToolBarBreak"><strong>insertToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-insertToolBarBreak">insertToolBarBreak</a>(self,&nbsp;before:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isAnimated"><strong>isAnimated</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isAnimated">isAnimated</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isDockNestingEnabled"><strong>isDockNestingEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isDockNestingEnabled">isDockNestingEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isSeparator"><strong>isSeparator</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isSeparator">isSeparator</a>(self,&nbsp;pos:&nbsp;QPoint)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isSignalConnected"><strong>isSignalConnected</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isSignalConnected">isSignalConnected</a>(self,&nbsp;signal:&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-keyPressEvent"><strong>keyPressEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-keyPressEvent">keyPressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-leaveEvent"><strong>leaveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-leaveEvent">leaveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-menuBar"><strong>menuBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-menuBar">menuBar</a>(self)&nbsp;-&gt;&nbsp;Optional[QMenuBar]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-menuWidget"><strong>menuWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-menuWidget">menuWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-metric"><strong>metric</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-metric">metric</a>(self,&nbsp;a0:&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mousePressEvent"><strong>mousePressEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mousePressEvent">mousePressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-moveEvent"><strong>moveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-moveEvent">moveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMoveEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-nativeEvent"><strong>nativeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-nativeEvent">nativeEvent</a>(self,&nbsp;eventType:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;message:&nbsp;Optional[PyQt6.sip.voidptr])&nbsp;-&gt;&nbsp;(bool,&nbsp;Optional[PyQt6.sip.voidptr])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-paintEvent"><strong>paintEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-paintEvent">paintEvent</a>(self,&nbsp;a0:&nbsp;Optional[QPaintEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-receivers"><strong>receivers</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-receivers">receivers</a>(self,&nbsp;signal:&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-removeDockWidget"><strong>removeDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-removeDockWidget">removeDockWidget</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-removeToolBar"><strong>removeToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-removeToolBar">removeToolBar</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-removeToolBarBreak"><strong>removeToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-removeToolBarBreak">removeToolBarBreak</a>(self,&nbsp;before:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-resizeDocks"><strong>resizeDocks</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-resizeDocks">resizeDocks</a>(self,&nbsp;docks:&nbsp;Iterable[QDockWidget],&nbsp;sizes:&nbsp;Iterable[int],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-resizeEvent"><strong>resizeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-resizeEvent">resizeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QResizeEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-restoreDockWidget"><strong>restoreDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-restoreDockWidget">restoreDockWidget</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-restoreState"><strong>restoreState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-restoreState">restoreState</a>(self,&nbsp;state:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;version:&nbsp;int&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-saveState"><strong>saveState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-saveState">saveState</a>(self,&nbsp;version:&nbsp;int&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="tenantsui-sender"><strong>sender</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-sender">sender</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setAnimated"><strong>setAnimated</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setAnimated">setAnimated</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setCentralWidget"><strong>setCentralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setCentralWidget">setCentralWidget</a>(self,&nbsp;widget:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setCorner"><strong>setCorner</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setCorner">setCorner</a>(self,&nbsp;corner:&nbsp;Qt.Corner,&nbsp;area:&nbsp;Qt.DockWidgetArea)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setDockNestingEnabled"><strong>setDockNestingEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setDockNestingEnabled">setDockNestingEnabled</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setDockOptions"><strong>setDockOptions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setDockOptions">setDockOptions</a>(self,&nbsp;options:&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>.DockOption)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setDocumentMode"><strong>setDocumentMode</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setDocumentMode">setDocumentMode</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setIconSize"><strong>setIconSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setIconSize">setIconSize</a>(self,&nbsp;iconSize:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMenuBar"><strong>setMenuBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMenuBar">setMenuBar</a>(self,&nbsp;menubar:&nbsp;Optional[QMenuBar])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMenuWidget"><strong>setMenuWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMenuWidget">setMenuWidget</a>(self,&nbsp;menubar:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setStatusBar"><strong>setStatusBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setStatusBar">setStatusBar</a>(self,&nbsp;statusbar:&nbsp;Optional[QStatusBar])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setTabPosition"><strong>setTabPosition</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setTabPosition">setTabPosition</a>(self,&nbsp;areas:&nbsp;Qt.DockWidgetArea,&nbsp;tabPosition:&nbsp;QTabWidget.TabPosition)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setTabShape"><strong>setTabShape</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setTabShape">setTabShape</a>(self,&nbsp;tabShape:&nbsp;QTabWidget.TabShape)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setToolButtonStyle"><strong>setToolButtonStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setToolButtonStyle">setToolButtonStyle</a>(self,&nbsp;toolButtonStyle:&nbsp;Qt.ToolButtonStyle)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setUnifiedTitleAndToolBarOnMac"><strong>setUnifiedTitleAndToolBarOnMac</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setUnifiedTitleAndToolBarOnMac">setUnifiedTitleAndToolBarOnMac</a>(self,&nbsp;set:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-sharedPainter"><strong>sharedPainter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;Optional[QPainter]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-showEvent"><strong>showEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-showEvent">showEvent</a>(self,&nbsp;a0:&nbsp;Optional[QShowEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-splitDockWidget"><strong>splitDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-splitDockWidget">splitDockWidget</a>(self,&nbsp;after:&nbsp;Optional[QDockWidget],&nbsp;dockwidget:&nbsp;Optional[QDockWidget],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-statusBar"><strong>statusBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-statusBar">statusBar</a>(self)&nbsp;-&gt;&nbsp;Optional[QStatusBar]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-tabPosition"><strong>tabPosition</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-tabPosition">tabPosition</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea)&nbsp;-&gt;&nbsp;QTabWidget.TabPosition</span></dd></dl>
+
+<dl><dt><a name="tenantsui-tabShape"><strong>tabShape</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-tabShape">tabShape</a>(self)&nbsp;-&gt;&nbsp;QTabWidget.TabShape</span></dd></dl>
+
+<strong>tabifiedDockWidgetActivated</strong> = &lt;unbound PYQT_SIGNAL tabifiedDockWidgetActivated(QDockWidget*)&gt;
+<dl><dt><a name="tenantsui-tabifiedDockWidgets"><strong>tabifiedDockWidgets</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-tabifiedDockWidgets">tabifiedDockWidgets</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;List[QDockWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-tabifyDockWidget"><strong>tabifyDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-tabifyDockWidget">tabifyDockWidget</a>(self,&nbsp;first:&nbsp;Optional[QDockWidget],&nbsp;second:&nbsp;Optional[QDockWidget])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-tabletEvent"><strong>tabletEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-tabletEvent">tabletEvent</a>(self,&nbsp;a0:&nbsp;Optional[QTabletEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-takeCentralWidget"><strong>takeCentralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-takeCentralWidget">takeCentralWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-timerEvent"><strong>timerEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-timerEvent">timerEvent</a>(self,&nbsp;a0:&nbsp;Optional[QTimerEvent])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-toolBarArea"><strong>toolBarArea</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-toolBarArea">toolBarArea</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])&nbsp;-&gt;&nbsp;Qt.ToolBarArea</span></dd></dl>
+
+<dl><dt><a name="tenantsui-toolBarBreak"><strong>toolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-toolBarBreak">toolBarBreak</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-toolButtonStyle"><strong>toolButtonStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-toolButtonStyle">toolButtonStyle</a>(self)&nbsp;-&gt;&nbsp;Qt.ToolButtonStyle</span></dd></dl>
+
+<strong>toolButtonStyleChanged</strong> = &lt;unbound PYQT_SIGNAL toolButtonStyleChanged(Qt::ToolButtonStyle)&gt;
+<dl><dt><a name="tenantsui-unifiedTitleAndToolBarOnMac"><strong>unifiedTitleAndToolBarOnMac</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-unifiedTitleAndToolBarOnMac">unifiedTitleAndToolBarOnMac</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-updateMicroFocus">updateMicroFocus</a>(self,&nbsp;query:&nbsp;Qt.InputMethodQuery&nbsp;=&nbsp;Qt.ImQueryAll)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-wheelEvent"><strong>wheelEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-wheelEvent">wheelEvent</a>(self,&nbsp;a0:&nbsp;Optional[QWheelEvent])</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>:<br>
+<dl><dt><strong>DockOption</strong> = &lt;flag 'DockOption'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="tenantsui-acceptDrops"><strong>acceptDrops</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-accessibleDescription"><strong>accessibleDescription</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="tenantsui-accessibleName"><strong>accessibleName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="tenantsui-actions"><strong>actions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-actions">actions</a>(self)&nbsp;-&gt;&nbsp;List[QAction]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-activateWindow"><strong>activateWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-activateWindow">activateWindow</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-addAction"><strong>addAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#tenantsui-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#tenantsui-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#tenantsui-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#tenantsui-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#tenantsui-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#tenantsui-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#tenantsui-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#tenantsui-addAction">addAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-addActions"><strong>addActions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-addActions">addActions</a>(self,&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-adjustSize"><strong>adjustSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-adjustSize">adjustSize</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-autoFillBackground"><strong>autoFillBackground</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-backgroundRole"><strong>backgroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="tenantsui-baseSize"><strong>baseSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="tenantsui-childAt"><strong>childAt</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-childAt">childAt</a>(self,&nbsp;p:&nbsp;QPoint)&nbsp;-&gt;&nbsp;Optional[QWidget]<br>
+<a href="#tenantsui-childAt">childAt</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-childrenRect"><strong>childrenRect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="tenantsui-childrenRegion"><strong>childrenRegion</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="tenantsui-clearFocus"><strong>clearFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-clearFocus">clearFocus</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-clearMask"><strong>clearMask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-clearMask">clearMask</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-close"><strong>close</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-contentsMargins"><strong>contentsMargins</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</span></dd></dl>
+
+<dl><dt><a name="tenantsui-contentsRect"><strong>contentsRect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="tenantsui-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</span></dd></dl>
+
+<dl><dt><a name="tenantsui-createWindowContainer"><strong>createWindowContainer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-createWindowContainer">createWindowContainer</a>(window:&nbsp;Optional[QWindow],&nbsp;parent:&nbsp;Optional[QWidget]&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Qt.WindowType&nbsp;=&nbsp;Qt.WindowFlags())&nbsp;-&gt;&nbsp;QWidget</span></dd></dl>
+
+<dl><dt><a name="tenantsui-cursor"><strong>cursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</span></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="tenantsui-devType"><strong>devType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-effectiveWinId"><strong>effectiveWinId</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;PyQt6.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="tenantsui-ensurePolished"><strong>ensurePolished</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-ensurePolished">ensurePolished</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-find"><strong>find</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-find">find</a>(a0:&nbsp;PyQt6.sip.voidptr)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-focusPolicy"><strong>focusPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</span></dd></dl>
+
+<dl><dt><a name="tenantsui-focusProxy"><strong>focusProxy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-focusWidget"><strong>focusWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-font"><strong>font</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</span></dd></dl>
+
+<dl><dt><a name="tenantsui-fontInfo"><strong>fontInfo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</span></dd></dl>
+
+<dl><dt><a name="tenantsui-fontMetrics"><strong>fontMetrics</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</span></dd></dl>
+
+<dl><dt><a name="tenantsui-foregroundRole"><strong>foregroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="tenantsui-frameGeometry"><strong>frameGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="tenantsui-frameSize"><strong>frameSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="tenantsui-geometry"><strong>geometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="tenantsui-grab"><strong>grab</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,&nbsp;0),&nbsp;QSize(-1,&nbsp;-1)))&nbsp;-&gt;&nbsp;QPixmap</span></dd></dl>
+
+<dl><dt><a name="tenantsui-grabGesture"><strong>grabGesture</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-grabGesture">grabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Qt.GestureFlag&nbsp;=&nbsp;Qt.GestureFlags())</span></dd></dl>
+
+<dl><dt><a name="tenantsui-grabKeyboard"><strong>grabKeyboard</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-grabKeyboard">grabKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-grabMouse"><strong>grabMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-grabMouse">grabMouse</a>(self)<br>
+<a href="#tenantsui-grabMouse">grabMouse</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-grabShortcut"><strong>grabShortcut</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-grabShortcut">grabShortcut</a>(self,&nbsp;key:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-graphicsEffect"><strong>graphicsEffect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsEffect]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsProxyWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-hasFocus"><strong>hasFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-height"><strong>height</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-height">height</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-heightForWidth"><strong>heightForWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-heightForWidth">heightForWidth</a>(self,&nbsp;a0:&nbsp;int)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-hide"><strong>hide</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-hide">hide</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-inputMethodHints"><strong>inputMethodHints</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHint</span></dd></dl>
+
+<dl><dt><a name="tenantsui-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;a0:&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="tenantsui-insertAction"><strong>insertAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-insertAction">insertAction</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-insertActions"><strong>insertActions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-insertActions">insertActions</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isActiveWindow"><strong>isActiveWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isAncestorOf"><strong>isAncestorOf</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isAncestorOf">isAncestorOf</a>(self,&nbsp;child:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isEnabled"><strong>isEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isEnabledTo"><strong>isEnabledTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isEnabledTo">isEnabledTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isFullScreen"><strong>isFullScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isHidden"><strong>isHidden</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isLeftToRight"><strong>isLeftToRight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isMaximized"><strong>isMaximized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isMinimized"><strong>isMinimized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isModal"><strong>isModal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isRightToLeft"><strong>isRightToLeft</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isVisible"><strong>isVisible</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isVisibleTo"><strong>isVisibleTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isVisibleTo">isVisibleTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isWindow"><strong>isWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isWindowModified"><strong>isWindowModified</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-layout"><strong>layout</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-layout">layout</a>(self)&nbsp;-&gt;&nbsp;Optional[QLayout]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-layoutDirection"><strong>layoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</span></dd></dl>
+
+<dl><dt><a name="tenantsui-locale"><strong>locale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</span></dd></dl>
+
+<dl><dt><a name="tenantsui-lower"><strong>lower</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-lower">lower</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mapFrom"><strong>mapFrom</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#tenantsui-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#tenantsui-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mapFromParent"><strong>mapFromParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#tenantsui-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mapTo"><strong>mapTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#tenantsui-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mapToGlobal"><strong>mapToGlobal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#tenantsui-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mapToParent"><strong>mapToParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#tenantsui-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mask"><strong>mask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="tenantsui-maximumHeight"><strong>maximumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-maximumSize"><strong>maximumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="tenantsui-maximumWidth"><strong>maximumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-minimumHeight"><strong>minimumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-minimumSize"><strong>minimumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="tenantsui-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="tenantsui-minimumWidth"><strong>minimumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-mouseGrabber"><strong>mouseGrabber</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-move"><strong>move</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-move">move</a>(self,&nbsp;a0:&nbsp;QPoint)<br>
+<a href="#tenantsui-move">move</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-normalGeometry"><strong>normalGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="tenantsui-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;type:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-overrideWindowState"><strong>overrideWindowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-overrideWindowState">overrideWindowState</a>(self,&nbsp;state:&nbsp;Qt.WindowState)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-paintEngine"><strong>paintEngine</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;Optional[QPaintEngine]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-palette"><strong>palette</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</span></dd></dl>
+
+<dl><dt><a name="tenantsui-parentWidget"><strong>parentWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-pos"><strong>pos</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="tenantsui-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-raise_"><strong>raise_</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-raise_">raise_</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-rect"><strong>rect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="tenantsui-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-releaseKeyboard">releaseKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-releaseMouse"><strong>releaseMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-releaseMouse">releaseMouse</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-releaseShortcut"><strong>releaseShortcut</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-releaseShortcut">releaseShortcut</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-removeAction"><strong>removeAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-removeAction">removeAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-render"><strong>render</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-render">render</a>(self,&nbsp;target:&nbsp;Optional[QPaintDevice],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlag&nbsp;=&nbsp;QWidget.RenderFlags(QWidget.DrawWindowBackground|QWidget.DrawChildren))<br>
+<a href="#tenantsui-render">render</a>(self,&nbsp;painter:&nbsp;Optional[QPainter],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlag&nbsp;=&nbsp;QWidget.RenderFlags(QWidget.DrawWindowBackground|QWidget.DrawChildren))</span></dd></dl>
+
+<dl><dt><a name="tenantsui-repaint"><strong>repaint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-repaint">repaint</a>(self)<br>
+<a href="#tenantsui-repaint">repaint</a>(self,&nbsp;x:&nbsp;int,&nbsp;y:&nbsp;int,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#tenantsui-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#tenantsui-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-resize"><strong>resize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-resize">resize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#tenantsui-resize">resize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-restoreGeometry"><strong>restoreGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-restoreGeometry">restoreGeometry</a>(self,&nbsp;geometry:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-saveGeometry"><strong>saveGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="tenantsui-screen"><strong>screen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-screen">screen</a>(self)&nbsp;-&gt;&nbsp;Optional[QScreen]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-scroll"><strong>scroll</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int)<br>
+<a href="#tenantsui-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int,&nbsp;a2:&nbsp;QRect)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;on:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;description:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setAccessibleName"><strong>setAccessibleName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setAccessibleName">setAccessibleName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setAttribute"><strong>setAttribute</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setAttribute">setAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setBaseSize"><strong>setBaseSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setBaseSize">setBaseSize</a>(self,&nbsp;basew:&nbsp;int,&nbsp;baseh:&nbsp;int)<br>
+<a href="#tenantsui-setBaseSize">setBaseSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setContentsMargins"><strong>setContentsMargins</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setContentsMargins">setContentsMargins</a>(self,&nbsp;left:&nbsp;int,&nbsp;top:&nbsp;int,&nbsp;right:&nbsp;int,&nbsp;bottom:&nbsp;int)<br>
+<a href="#tenantsui-setContentsMargins">setContentsMargins</a>(self,&nbsp;margins:&nbsp;QMargins)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;policy:&nbsp;Qt.ContextMenuPolicy)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setCursor"><strong>setCursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setCursor">setCursor</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setDisabled"><strong>setDisabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setDisabled">setDisabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setEnabled"><strong>setEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setEnabled">setEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setFixedHeight"><strong>setFixedHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setFixedHeight">setFixedHeight</a>(self,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setFixedSize"><strong>setFixedSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setFixedSize">setFixedSize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#tenantsui-setFixedSize">setFixedSize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setFixedWidth"><strong>setFixedWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setFixedWidth">setFixedWidth</a>(self,&nbsp;w:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setFocus"><strong>setFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setFocus">setFocus</a>(self)<br>
+<a href="#tenantsui-setFocus">setFocus</a>(self,&nbsp;reason:&nbsp;Qt.FocusReason)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;policy:&nbsp;Qt.FocusPolicy)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setFocusProxy"><strong>setFocusProxy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setFocusProxy">setFocusProxy</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setFont"><strong>setFont</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setFont">setFont</a>(self,&nbsp;a0:&nbsp;QFont)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setForegroundRole"><strong>setForegroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setForegroundRole">setForegroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setGeometry"><strong>setGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setGeometry">setGeometry</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#tenantsui-setGeometry">setGeometry</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;effect:&nbsp;Optional[QGraphicsEffect])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setHidden"><strong>setHidden</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setHidden">setHidden</a>(self,&nbsp;hidden:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;hints:&nbsp;Qt.InputMethodHint)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setLayout"><strong>setLayout</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setLayout">setLayout</a>(self,&nbsp;a0:&nbsp;Optional[QLayout])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;direction:&nbsp;Qt.LayoutDirection)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setLocale"><strong>setLocale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setLocale">setLocale</a>(self,&nbsp;locale:&nbsp;QLocale)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMask"><strong>setMask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QBitmap)<br>
+<a href="#tenantsui-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;maxh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMaximumSize"><strong>setMaximumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMaximumSize">setMaximumSize</a>(self,&nbsp;maxw:&nbsp;int,&nbsp;maxh:&nbsp;int)<br>
+<a href="#tenantsui-setMaximumSize">setMaximumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;maxw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;minh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMinimumSize"><strong>setMinimumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMinimumSize">setMinimumSize</a>(self,&nbsp;minw:&nbsp;int,&nbsp;minh:&nbsp;int)<br>
+<a href="#tenantsui-setMinimumSize">setMinimumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;minw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setMouseTracking"><strong>setMouseTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setMouseTracking">setMouseTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setPalette"><strong>setPalette</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setPalette">setPalette</a>(self,&nbsp;a0:&nbsp;QPalette)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setParent"><strong>setParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget])<br>
+<a href="#tenantsui-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget],&nbsp;f:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setScreen"><strong>setScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setScreen">setScreen</a>(self,&nbsp;a0:&nbsp;Optional[QScreen])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#tenantsui-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setSizePolicy"><strong>setSizePolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setSizePolicy">setSizePolicy</a>(self,&nbsp;a0:&nbsp;QSizePolicy)<br>
+<a href="#tenantsui-setSizePolicy">setSizePolicy</a>(self,&nbsp;hor:&nbsp;QSizePolicy.Policy,&nbsp;ver:&nbsp;QSizePolicy.Policy)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setStatusTip"><strong>setStatusTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setStatusTip">setStatusTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setStyle"><strong>setStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setStyle">setStyle</a>(self,&nbsp;a0:&nbsp;Optional[QStyle])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setStyleSheet"><strong>setStyleSheet</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setStyleSheet">setStyleSheet</a>(self,&nbsp;styleSheet:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setTabOrder"><strong>setTabOrder</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setTabOrder">setTabOrder</a>(a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setTabletTracking"><strong>setTabletTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setTabletTracking">setTabletTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setToolTip"><strong>setToolTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setToolTip">setToolTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;msec:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setVisible"><strong>setVisible</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setVisible">setVisible</a>(self,&nbsp;visible:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWhatsThis"><strong>setWhatsThis</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWhatsThis">setWhatsThis</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;filePath:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowFlag"><strong>setWindowFlag</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowFlag">setWindowFlag</a>(self,&nbsp;a0:&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowFlags"><strong>setWindowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowFlags">setWindowFlags</a>(self,&nbsp;type:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowIcon"><strong>setWindowIcon</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowIcon">setWindowIcon</a>(self,&nbsp;icon:&nbsp;QIcon)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowIconText"><strong>setWindowIconText</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowIconText">setWindowIconText</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowModality"><strong>setWindowModality</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowModality">setWindowModality</a>(self,&nbsp;windowModality:&nbsp;Qt.WindowModality)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowModified"><strong>setWindowModified</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowModified">setWindowModified</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;level:&nbsp;float)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowRole"><strong>setWindowRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowRole">setWindowRole</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowState"><strong>setWindowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowState">setWindowState</a>(self,&nbsp;state:&nbsp;Qt.WindowState)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setWindowTitle"><strong>setWindowTitle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setWindowTitle">setWindowTitle</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-show"><strong>show</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-show">show</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-showFullScreen"><strong>showFullScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-showFullScreen">showFullScreen</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-showMaximized"><strong>showMaximized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-showMaximized">showMaximized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-showMinimized"><strong>showMinimized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-showMinimized">showMinimized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-showNormal"><strong>showNormal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-showNormal">showNormal</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-size"><strong>size</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="tenantsui-sizeHint"><strong>sizeHint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="tenantsui-sizeIncrement"><strong>sizeIncrement</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="tenantsui-sizePolicy"><strong>sizePolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</span></dd></dl>
+
+<dl><dt><a name="tenantsui-stackUnder"><strong>stackUnder</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-stackUnder">stackUnder</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-statusTip"><strong>statusTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="tenantsui-style"><strong>style</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-style">style</a>(self)&nbsp;-&gt;&nbsp;Optional[QStyle]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-styleSheet"><strong>styleSheet</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="tenantsui-testAttribute"><strong>testAttribute</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-testAttribute">testAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-toolTip"><strong>toolTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="tenantsui-toolTipDuration"><strong>toolTipDuration</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-underMouse"><strong>underMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-ungrabGesture"><strong>ungrabGesture</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-ungrabGesture">ungrabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-unsetCursor"><strong>unsetCursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-unsetCursor">unsetCursor</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-unsetLayoutDirection">unsetLayoutDirection</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-unsetLocale"><strong>unsetLocale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-unsetLocale">unsetLocale</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-update"><strong>update</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-update">update</a>(self)<br>
+<a href="#tenantsui-update">update</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#tenantsui-update">update</a>(self,&nbsp;a0:&nbsp;QRegion)<br>
+<a href="#tenantsui-update">update</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-updateGeometry"><strong>updateGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-updateGeometry">updateGeometry</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-updatesEnabled"><strong>updatesEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-visibleRegion"><strong>visibleRegion</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="tenantsui-whatsThis"><strong>whatsThis</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="tenantsui-width"><strong>width</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-width">width</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-winId"><strong>winId</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-winId">winId</a>(self)&nbsp;-&gt;&nbsp;PyQt6.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="tenantsui-window"><strong>window</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-window">window</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-windowFilePath"><strong>windowFilePath</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="tenantsui-windowFlags"><strong>windowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="tenantsui-windowHandle"><strong>windowHandle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;Optional[QWindow]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-windowIcon"><strong>windowIcon</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</span></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="tenantsui-windowIconText"><strong>windowIconText</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="tenantsui-windowModality"><strong>windowModality</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</span></dd></dl>
+
+<dl><dt><a name="tenantsui-windowOpacity"><strong>windowOpacity</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="tenantsui-windowRole"><strong>windowRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="tenantsui-windowState"><strong>windowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowState</span></dd></dl>
+
+<dl><dt><a name="tenantsui-windowTitle"><strong>windowTitle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="tenantsui-windowType"><strong>windowType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="tenantsui-x"><strong>x</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-x">x</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-y"><strong>y</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-y">y</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>RenderFlag</strong> = &lt;flag 'RenderFlag'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><a name="tenantsui-__getattr__"><strong>__getattr__</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-__getattr__">__getattr__</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="tenantsui-blockSignals"><strong>blockSignals</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-blockSignals">blockSignals</a>(self,&nbsp;b:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-children"><strong>children</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-children">children</a>(self)&nbsp;-&gt;&nbsp;List[QObject]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-deleteLater"><strong>deleteLater</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-deleteLater">deleteLater</a>(self)</span></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="tenantsui-disconnect"><strong>disconnect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-disconnect">disconnect</a>(a0:&nbsp;QMetaObject.Connection)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#tenantsui-disconnect">disconnect</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dumpObjectInfo">dumpObjectInfo</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dumpObjectTree">dumpObjectTree</a>(self)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;List[QByteArray]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-eventFilter"><strong>eventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-eventFilter">eventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject],&nbsp;a1:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-findChild"><strong>findChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-findChild">findChild</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT<br>
+<a href="#tenantsui-findChild">findChild</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT</span></dd></dl>
+
+<dl><dt><a name="tenantsui-findChildren"><strong>findChildren</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#tenantsui-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#tenantsui-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#tenantsui-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-inherits"><strong>inherits</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-inherits">inherits</a>(self,&nbsp;classname:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-installEventFilter"><strong>installEventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-installEventFilter">installEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isQuickItemType"><strong>isQuickItemType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isQuickItemType">isQuickItemType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isWidgetType"><strong>isWidgetType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-isWindowType"><strong>isWindowType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-killTimer"><strong>killTimer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-killTimer">killTimer</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="tenantsui-metaObject"><strong>metaObject</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;Optional[QMetaObject]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-moveToThread"><strong>moveToThread</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-moveToThread">moveToThread</a>(self,&nbsp;thread:&nbsp;Optional[QThread])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-objectName"><strong>objectName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="tenantsui-parent"><strong>parent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-parent">parent</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-property"><strong>property</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-property">property</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="tenantsui-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code">QObject.<a href="#tenantsui-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</span></dd></dl>
+
+<dl><dt><a name="tenantsui-removeEventFilter"><strong>removeEventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-removeEventFilter">removeEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setObjectName"><strong>setObjectName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setObjectName">setObjectName</a>(self,&nbsp;name:&nbsp;Union[Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;Optional[str]])</span></dd></dl>
+
+<dl><dt><a name="tenantsui-setProperty"><strong>setProperty</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-setProperty">setProperty</a>(self,&nbsp;name:&nbsp;Optional[str],&nbsp;value:&nbsp;Any)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-signalsBlocked"><strong>signalsBlocked</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-startTimer"><strong>startTimer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-startTimer">startTimer</a>(self,&nbsp;interval:&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-thread"><strong>thread</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-thread">thread</a>(self)&nbsp;-&gt;&nbsp;Optional[QThread]</span></dd></dl>
+
+<dl><dt><a name="tenantsui-tr"><strong>tr</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-tr">tr</a>(sourceText:&nbsp;Optional[str],&nbsp;disambiguation:&nbsp;Optional[str]&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt6.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="tenantsui-colorCount"><strong>colorCount</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-depth"><strong>depth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="tenantsui-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="tenantsui-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="tenantsui-heightMM"><strong>heightMM</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-logicalDpiX"><strong>logicalDpiX</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-logicalDpiY"><strong>logicalDpiY</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-paintingActive"><strong>paintingActive</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="tenantsui-physicalDpiX"><strong>physicalDpiX</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-physicalDpiY"><strong>physicalDpiY</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="tenantsui-widthMM"><strong>widthMM</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#tenantsui-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;enum 'PaintDeviceMetric'&gt;</dl>
+
+<hr>
+Static methods inherited from <a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a>:<br>
+<dl><dt><a name="tenantsui-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="src.gui.TenantPage_GUI.QtTenantPage.html#Ui_MainWindow">src.gui.TenantPage_GUI.QtTenantPage.Ui_MainWindow</a>:<br>
+<dl><dt><a name="tenantsui-retranslateUi"><strong>retranslateUi</strong></a>(self, MainWindow)</dt></dl>
+
+<dl><dt><a name="tenantsui-setupUi"><strong>setupUi</strong></a>(self, MainWindow)</dt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

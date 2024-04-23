@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module System</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">System</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csystem.py">c:\users\richa\desktop\github project\para-propertysolutions\system.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#System">System</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno,&nbsp;Ali&nbsp;Maamoun<br>
+Date:&nbsp;04/23/24<br>
+Description:&nbsp;A&nbsp;system&nbsp;to&nbsp;handle&nbsp;controllers&nbsp;and&nbsp;a&nbsp;single&nbsp;session.&nbsp;Connects&nbsp;the&nbsp;Database&nbsp;to&nbsp;the&nbsp;rest&nbsp;of&nbsp;the&nbsp;application.<br>
+Purposes:&nbsp;an&nbsp;instance&nbsp;is&nbsp;called&nbsp;a&nbsp;'session',&nbsp;The&nbsp;parent&nbsp;controller&nbsp;which&nbsp;handles&nbsp;their&nbsp;creation,&nbsp;and&nbsp;passing&nbsp;to&nbsp;other&nbsp;classes&nbsp;like&nbsp;GUI&nbsp;elements.<br>
+Passes&nbsp;the&nbsp;database&nbsp;file&nbsp;to&nbsp;controllers&nbsp;that&nbsp;need&nbsp;to&nbsp;import&nbsp;from&nbsp;<a href="#System">System</a>.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="src.Database.Database.html">src.Database.Database</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="System.html#System">System</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="System">class <strong>System</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#System">System</a>(main:&nbsp;src.Entities.Account.Account&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="System-EndSession"><strong>EndSession</strong></a>(self)</dt><dd><span class="code">Supposed&nbsp;to&nbsp;close&nbsp;Database&nbsp;after&nbsp;Logout&nbsp;or&nbsp;page&nbsp;application&nbsp;exit<br>
+@return:<br>
+@rtype:</span></dd></dl>
+
+<dl><dt><a name="System-StartSession"><strong>StartSession</strong></a>(self)</dt><dd><span class="code">Initializes&nbsp;Database&nbsp;and&nbsp;creates&nbsp;Login&nbsp;Controller<br>
+@return:<br>
+@rtype:</span></dd></dl>
+
+<dl><dt><a name="System-__init__"><strong>__init__</strong></a>(self, main: src.Entities.Account.Account = None)</dt><dd><span class="code">Assigns&nbsp;main&nbsp;Account&nbsp;and&nbsp;sets&nbsp;up&nbsp;controllers<br>
+@param&nbsp;main:<br>
+@type&nbsp;main:</span></dd></dl>
+
+<dl><dt><a name="System-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><span class="code">Sets&nbsp;designated&nbsp;way&nbsp;of&nbsp;printing<br>
+@return:<br>
+@rtype:</span></dd></dl>
+
+<dl><dt><a name="System-getAccount"><strong>getAccount</strong></a>(self, accID)</dt><dd><span class="code">Returns&nbsp;Account&nbsp;base&nbsp;off&nbsp;of&nbsp;ID<br>
+@param&nbsp;accID:<br>
+@type&nbsp;accID:<br>
+@return:<br>
+@rtype:</span></dd></dl>
+
+<dl><dt><a name="System-getMainAccount"><strong>getMainAccount</strong></a>(self)</dt><dd><span class="code">Returns&nbsp;Main&nbsp;Account<br>
+@return:<br>
+@rtype:</span></dd></dl>
+
+<dl><dt><a name="System-setControllerUserProfile"><strong>setControllerUserProfile</strong></a>(self)</dt><dd><span class="code">Sets&nbsp;the&nbsp;controller&nbsp;to&nbsp;the&nbsp;active&nbsp;account&nbsp;in&nbsp;session<br>
+@return:<br>
+@rtype:</span></dd></dl>
+
+<dl><dt><a name="System-setMainAccount"><strong>setMainAccount</strong></a>(self, accID)</dt><dd><span class="code">Sets&nbsp;the&nbsp;main&nbsp;account&nbsp;by&nbsp;using&nbsp;its&nbsp;ID&nbsp;from&nbsp;Database<br>
+@param&nbsp;accID:<br>
+@type&nbsp;accID:<br>
+@return:<br>
+@rtype:</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-main"><strong>main</strong></a>() -&gt; None</dt></dl>
+</td></tr></table>
+</body></html>

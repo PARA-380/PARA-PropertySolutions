@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module src.gui.Contractor_Page_GUI.Contractor_Page</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.gui.html" class="white">gui</a>.<a href="src.gui.Contractor_Page_GUI.html" class="white">Contractor_Page_GUI</a>.Contractor_Page</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Cgui%5Ccontractor_page_gui%5Ccontractor_page.py">c:\users\richa\desktop\github project\para-propertysolutions\src\gui\contractor_page_gui\contractor_page.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Contractor_Page">Contractor_Page</a>.py<br>
+Name:&nbsp;Jittapatana&nbsp;(Patrick)&nbsp;Prayoonpruk<br>
+Date:&nbsp;04/12/2024<br>
+Description:&nbsp;Contractor&nbsp;page&nbsp;user&nbsp;interface<br>
+Purposes:&nbsp;1.&nbsp;To&nbsp;create&nbsp;new&nbsp;contractors<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;To&nbsp;delete&nbsp;contractors<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;To&nbsp;assign&nbsp;tasks&nbsp;to&nbsp;contractors</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>(<a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.gui.Contractor_Page_GUI.Contractor_Page.html#Contractor_Page">Contractor_Page</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Contractor_Page">class <strong>Contractor_Page</strong></a>(<a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Represents&nbsp;the&nbsp;main&nbsp;window&nbsp;for&nbsp;the&nbsp;contractor&nbsp;page<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;provides&nbsp;the&nbsp;user&nbsp;interface&nbsp;for&nbsp;managing&nbsp;contractors.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>&nbsp;(<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>):&nbsp;The&nbsp;base&nbsp;class&nbsp;for&nbsp;the&nbsp;main&nbsp;window&nbsp;of&nbsp;the&nbsp;application.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="src.gui.Contractor_Page_GUI.Contractor_Page.html#Contractor_Page">Contractor_Page</a></dd>
+<dd><a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a></dd>
+<dd><a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a></dd>
+<dd><a href="PyQt6.sip.html#wrapper">PyQt6.sip.wrapper</a></dd>
+<dd><a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a></dd>
+<dd><a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Contractor_Page-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initialize&nbsp;the&nbsp;<a href="#Contractor_Page">Contractor_Page</a>&nbsp;instance.<br>
+&nbsp;<br>
+Initializes&nbsp;the&nbsp;user&nbsp;interface&nbsp;components,&nbsp;including&nbsp;input&nbsp;fields,&nbsp;buttons,<br>
+and&nbsp;a&nbsp;table&nbsp;to&nbsp;display&nbsp;contractors'&nbsp;information.</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-add_contractor_to_table"><strong>add_contractor_to_table</strong></a>(self)</dt><dd><span class="code">Add&nbsp;a&nbsp;new&nbsp;contractor&nbsp;to&nbsp;the&nbsp;table<br>
+&nbsp;<br>
+Retrieves&nbsp;information&nbsp;from&nbsp;input&nbsp;fields&nbsp;and&nbsp;adds&nbsp;a&nbsp;new&nbsp;row&nbsp;to&nbsp;the&nbsp;contractors'&nbsp;table.<br>
+Additionally,&nbsp;adds&nbsp;combo&nbsp;boxes&nbsp;for&nbsp;assigning&nbsp;tasks&nbsp;and&nbsp;status&nbsp;for&nbsp;added&nbsp;contractors.</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-check_notification"><strong>check_notification</strong></a>(self, status)</dt><dd><span class="code">Check&nbsp;for&nbsp;notifications&nbsp;based&nbsp;on&nbsp;the&nbsp;status<br>
+&nbsp;<br>
+displays&nbsp;a&nbsp;notification&nbsp;message&nbsp;if&nbsp;the&nbsp;status&nbsp;of&nbsp;a&nbsp;task&nbsp;is&nbsp;changed&nbsp;to&nbsp;"Complete".<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;(str):&nbsp;The&nbsp;status&nbsp;of&nbsp;the&nbsp;task.</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-clear_inputs"><strong>clear_inputs</strong></a>(self)</dt><dd><span class="code">Clear&nbsp;all&nbsp;input&nbsp;fields.<br>
+&nbsp;<br>
+Clears&nbsp;the&nbsp;text&nbsp;in&nbsp;the&nbsp;input&nbsp;fields&nbsp;for&nbsp;specialization,&nbsp;first&nbsp;name,&nbsp;last&nbsp;name,<br>
+and&nbsp;phone&nbsp;number&nbsp;(effectively&nbsp;resetting&nbsp;them&nbsp;to&nbsp;an&nbsp;empty&nbsp;state).</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-delete_contractor_from_table"><strong>delete_contractor_from_table</strong></a>(self)</dt><dd><span class="code">Delete&nbsp;the&nbsp;selected&nbsp;contractor&nbsp;from&nbsp;the&nbsp;table.<br>
+&nbsp;<br>
+Retrieves&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;currently&nbsp;selected&nbsp;row&nbsp;in&nbsp;the&nbsp;contractors'&nbsp;table<br>
+and&nbsp;removes&nbsp;the&nbsp;corresponding&nbsp;row&nbsp;from&nbsp;the&nbsp;table.&nbsp;<br>
+&nbsp;<br>
+If&nbsp;no&nbsp;row&nbsp;is&nbsp;selected,&nbsp;a&nbsp;warning&nbsp;message&nbsp;will&nbsp;be&nbsp;displayed.</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-open_recommended_contractors_website"><strong>open_recommended_contractors_website</strong></a>(self)</dt><dd><span class="code">Open&nbsp;the&nbsp;website&nbsp;for&nbsp;recommended&nbsp;contractors.<br>
+&nbsp;<br>
+Opens&nbsp;a&nbsp;web&nbsp;browser&nbsp;to&nbsp;the&nbsp;specified&nbsp;website&nbsp;URL,&nbsp;which&nbsp;contains<br>
+information&nbsp;about&nbsp;recommended&nbsp;contractors&nbsp;for&nbsp;the&nbsp;user&nbsp;to&nbsp;access.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>:<br>
+<dl><dt><a name="Contractor_Page-actionEvent"><strong>actionEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-actionEvent">actionEvent</a>(self,&nbsp;a0:&nbsp;Optional[QActionEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-addDockWidget"><strong>addDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-addDockWidget">addDockWidget</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])<br>
+<a href="#Contractor_Page-addDockWidget">addDockWidget</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea,&nbsp;dockwidget:&nbsp;Optional[QDockWidget],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-addToolBar"><strong>addToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-addToolBar">addToolBar</a>(self,&nbsp;area:&nbsp;Qt.ToolBarArea,&nbsp;toolbar:&nbsp;Optional[QToolBar])<br>
+<a href="#Contractor_Page-addToolBar">addToolBar</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])<br>
+<a href="#Contractor_Page-addToolBar">addToolBar</a>(self,&nbsp;title:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QToolBar]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-addToolBarBreak"><strong>addToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-addToolBarBreak">addToolBarBreak</a>(self,&nbsp;area:&nbsp;Qt.ToolBarArea&nbsp;=&nbsp;Qt.TopToolBarArea)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-centralWidget"><strong>centralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-centralWidget">centralWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-changeEvent"><strong>changeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-changeEvent">changeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-childEvent"><strong>childEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-childEvent">childEvent</a>(self,&nbsp;a0:&nbsp;Optional[QChildEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-closeEvent"><strong>closeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-closeEvent">closeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QCloseEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-connectNotify"><strong>connectNotify</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-connectNotify">connectNotify</a>(self,&nbsp;signal:&nbsp;QMetaMethod)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;event:&nbsp;Optional[QContextMenuEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-corner"><strong>corner</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-corner">corner</a>(self,&nbsp;corner:&nbsp;Qt.Corner)&nbsp;-&gt;&nbsp;Qt.DockWidgetArea</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-create"><strong>create</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-create">create</a>(self,&nbsp;window:&nbsp;PyQt6.sip.voidptr&nbsp;=&nbsp;None,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-createPopupMenu"><strong>createPopupMenu</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-createPopupMenu">createPopupMenu</a>(self)&nbsp;-&gt;&nbsp;Optional[QMenu]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-customEvent"><strong>customEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-customEvent">customEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-destroy"><strong>destroy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-disconnectNotify"><strong>disconnectNotify</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-disconnectNotify">disconnectNotify</a>(self,&nbsp;signal:&nbsp;QMetaMethod)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dockOptions"><strong>dockOptions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dockOptions">dockOptions</a>(self)&nbsp;-&gt;&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>.DockOption</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dockWidgetArea"><strong>dockWidgetArea</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dockWidgetArea">dockWidgetArea</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;Qt.DockWidgetArea</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-documentMode"><strong>documentMode</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-documentMode">documentMode</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragEnterEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragLeaveEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragMoveEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dropEvent"><strong>dropEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dropEvent">dropEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDropEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-enterEvent"><strong>enterEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-enterEvent">enterEvent</a>(self,&nbsp;event:&nbsp;Optional[QEnterEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-event"><strong>event</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-event">event</a>(self,&nbsp;event:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-focusInEvent"><strong>focusInEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-focusInEvent">focusInEvent</a>(self,&nbsp;a0:&nbsp;Optional[QFocusEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-focusNextChild"><strong>focusNextChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;next:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-focusOutEvent"><strong>focusOutEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-focusOutEvent">focusOutEvent</a>(self,&nbsp;a0:&nbsp;Optional[QFocusEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-hideEvent"><strong>hideEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-hideEvent">hideEvent</a>(self,&nbsp;a0:&nbsp;Optional[QHideEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-iconSize"><strong>iconSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-iconSize">iconSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<strong>iconSizeChanged</strong> = &lt;unbound PYQT_SIGNAL iconSizeChanged(QSize)&gt;
+<dl><dt><a name="Contractor_Page-initPainter"><strong>initPainter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-initPainter">initPainter</a>(self,&nbsp;painter:&nbsp;Optional[QPainter])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;a0:&nbsp;Optional[QInputMethodEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-insertToolBar"><strong>insertToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-insertToolBar">insertToolBar</a>(self,&nbsp;before:&nbsp;Optional[QToolBar],&nbsp;toolbar:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-insertToolBarBreak"><strong>insertToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-insertToolBarBreak">insertToolBarBreak</a>(self,&nbsp;before:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isAnimated"><strong>isAnimated</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isAnimated">isAnimated</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isDockNestingEnabled"><strong>isDockNestingEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isDockNestingEnabled">isDockNestingEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isSeparator"><strong>isSeparator</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isSeparator">isSeparator</a>(self,&nbsp;pos:&nbsp;QPoint)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isSignalConnected"><strong>isSignalConnected</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isSignalConnected">isSignalConnected</a>(self,&nbsp;signal:&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-keyPressEvent"><strong>keyPressEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-keyPressEvent">keyPressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-leaveEvent"><strong>leaveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-leaveEvent">leaveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-menuBar"><strong>menuBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-menuBar">menuBar</a>(self)&nbsp;-&gt;&nbsp;Optional[QMenuBar]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-menuWidget"><strong>menuWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-menuWidget">menuWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-metric"><strong>metric</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-metric">metric</a>(self,&nbsp;a0:&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mousePressEvent"><strong>mousePressEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mousePressEvent">mousePressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-moveEvent"><strong>moveEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-moveEvent">moveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMoveEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-nativeEvent"><strong>nativeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-nativeEvent">nativeEvent</a>(self,&nbsp;eventType:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;message:&nbsp;Optional[PyQt6.sip.voidptr])&nbsp;-&gt;&nbsp;(bool,&nbsp;Optional[PyQt6.sip.voidptr])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-paintEvent"><strong>paintEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-paintEvent">paintEvent</a>(self,&nbsp;a0:&nbsp;Optional[QPaintEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-receivers"><strong>receivers</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-receivers">receivers</a>(self,&nbsp;signal:&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-removeDockWidget"><strong>removeDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-removeDockWidget">removeDockWidget</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-removeToolBar"><strong>removeToolBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-removeToolBar">removeToolBar</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-removeToolBarBreak"><strong>removeToolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-removeToolBarBreak">removeToolBarBreak</a>(self,&nbsp;before:&nbsp;Optional[QToolBar])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-resizeDocks"><strong>resizeDocks</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-resizeDocks">resizeDocks</a>(self,&nbsp;docks:&nbsp;Iterable[QDockWidget],&nbsp;sizes:&nbsp;Iterable[int],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-resizeEvent"><strong>resizeEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-resizeEvent">resizeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QResizeEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-restoreDockWidget"><strong>restoreDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-restoreDockWidget">restoreDockWidget</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-restoreState"><strong>restoreState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-restoreState">restoreState</a>(self,&nbsp;state:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;version:&nbsp;int&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-saveState"><strong>saveState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-saveState">saveState</a>(self,&nbsp;version:&nbsp;int&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-sender"><strong>sender</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-sender">sender</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setAnimated"><strong>setAnimated</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setAnimated">setAnimated</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setCentralWidget"><strong>setCentralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setCentralWidget">setCentralWidget</a>(self,&nbsp;widget:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setCorner"><strong>setCorner</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setCorner">setCorner</a>(self,&nbsp;corner:&nbsp;Qt.Corner,&nbsp;area:&nbsp;Qt.DockWidgetArea)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setDockNestingEnabled"><strong>setDockNestingEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setDockNestingEnabled">setDockNestingEnabled</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setDockOptions"><strong>setDockOptions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setDockOptions">setDockOptions</a>(self,&nbsp;options:&nbsp;<a href="PyQt6.QtWidgets.html#QMainWindow">QMainWindow</a>.DockOption)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setDocumentMode"><strong>setDocumentMode</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setDocumentMode">setDocumentMode</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setIconSize"><strong>setIconSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setIconSize">setIconSize</a>(self,&nbsp;iconSize:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMenuBar"><strong>setMenuBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMenuBar">setMenuBar</a>(self,&nbsp;menubar:&nbsp;Optional[QMenuBar])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMenuWidget"><strong>setMenuWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMenuWidget">setMenuWidget</a>(self,&nbsp;menubar:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setStatusBar"><strong>setStatusBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setStatusBar">setStatusBar</a>(self,&nbsp;statusbar:&nbsp;Optional[QStatusBar])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setTabPosition"><strong>setTabPosition</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setTabPosition">setTabPosition</a>(self,&nbsp;areas:&nbsp;Qt.DockWidgetArea,&nbsp;tabPosition:&nbsp;QTabWidget.TabPosition)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setTabShape"><strong>setTabShape</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setTabShape">setTabShape</a>(self,&nbsp;tabShape:&nbsp;QTabWidget.TabShape)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setToolButtonStyle"><strong>setToolButtonStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setToolButtonStyle">setToolButtonStyle</a>(self,&nbsp;toolButtonStyle:&nbsp;Qt.ToolButtonStyle)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setUnifiedTitleAndToolBarOnMac"><strong>setUnifiedTitleAndToolBarOnMac</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setUnifiedTitleAndToolBarOnMac">setUnifiedTitleAndToolBarOnMac</a>(self,&nbsp;set:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-sharedPainter"><strong>sharedPainter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;Optional[QPainter]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-showEvent"><strong>showEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-showEvent">showEvent</a>(self,&nbsp;a0:&nbsp;Optional[QShowEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-splitDockWidget"><strong>splitDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-splitDockWidget">splitDockWidget</a>(self,&nbsp;after:&nbsp;Optional[QDockWidget],&nbsp;dockwidget:&nbsp;Optional[QDockWidget],&nbsp;orientation:&nbsp;Qt.Orientation)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-statusBar"><strong>statusBar</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-statusBar">statusBar</a>(self)&nbsp;-&gt;&nbsp;Optional[QStatusBar]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-tabPosition"><strong>tabPosition</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-tabPosition">tabPosition</a>(self,&nbsp;area:&nbsp;Qt.DockWidgetArea)&nbsp;-&gt;&nbsp;QTabWidget.TabPosition</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-tabShape"><strong>tabShape</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-tabShape">tabShape</a>(self)&nbsp;-&gt;&nbsp;QTabWidget.TabShape</span></dd></dl>
+
+<strong>tabifiedDockWidgetActivated</strong> = &lt;unbound PYQT_SIGNAL tabifiedDockWidgetActivated(QDockWidget*)&gt;
+<dl><dt><a name="Contractor_Page-tabifiedDockWidgets"><strong>tabifiedDockWidgets</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-tabifiedDockWidgets">tabifiedDockWidgets</a>(self,&nbsp;dockwidget:&nbsp;Optional[QDockWidget])&nbsp;-&gt;&nbsp;List[QDockWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-tabifyDockWidget"><strong>tabifyDockWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-tabifyDockWidget">tabifyDockWidget</a>(self,&nbsp;first:&nbsp;Optional[QDockWidget],&nbsp;second:&nbsp;Optional[QDockWidget])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-tabletEvent"><strong>tabletEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-tabletEvent">tabletEvent</a>(self,&nbsp;a0:&nbsp;Optional[QTabletEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-takeCentralWidget"><strong>takeCentralWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-takeCentralWidget">takeCentralWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-timerEvent"><strong>timerEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-timerEvent">timerEvent</a>(self,&nbsp;a0:&nbsp;Optional[QTimerEvent])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-toolBarArea"><strong>toolBarArea</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-toolBarArea">toolBarArea</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])&nbsp;-&gt;&nbsp;Qt.ToolBarArea</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-toolBarBreak"><strong>toolBarBreak</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-toolBarBreak">toolBarBreak</a>(self,&nbsp;toolbar:&nbsp;Optional[QToolBar])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-toolButtonStyle"><strong>toolButtonStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-toolButtonStyle">toolButtonStyle</a>(self)&nbsp;-&gt;&nbsp;Qt.ToolButtonStyle</span></dd></dl>
+
+<strong>toolButtonStyleChanged</strong> = &lt;unbound PYQT_SIGNAL toolButtonStyleChanged(Qt::ToolButtonStyle)&gt;
+<dl><dt><a name="Contractor_Page-unifiedTitleAndToolBarOnMac"><strong>unifiedTitleAndToolBarOnMac</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-unifiedTitleAndToolBarOnMac">unifiedTitleAndToolBarOnMac</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-updateMicroFocus">updateMicroFocus</a>(self,&nbsp;query:&nbsp;Qt.InputMethodQuery&nbsp;=&nbsp;Qt.ImQueryAll)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-wheelEvent"><strong>wheelEvent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-wheelEvent">wheelEvent</a>(self,&nbsp;a0:&nbsp;Optional[QWheelEvent])</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtWidgets.html#QMainWindow">PyQt6.QtWidgets.QMainWindow</a>:<br>
+<dl><dt><strong>DockOption</strong> = &lt;flag 'DockOption'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="Contractor_Page-acceptDrops"><strong>acceptDrops</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-accessibleDescription"><strong>accessibleDescription</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-accessibleName"><strong>accessibleName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-actions"><strong>actions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-actions">actions</a>(self)&nbsp;-&gt;&nbsp;List[QAction]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-activateWindow"><strong>activateWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-activateWindow">activateWindow</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-addAction"><strong>addAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;icon:&nbsp;QIcon,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int])&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;text:&nbsp;Optional[str],&nbsp;shortcut:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;slot:&nbsp;PYQT_SLOT,&nbsp;type:&nbsp;Qt.ConnectionType&nbsp;=&nbsp;Qt.AutoConnection)&nbsp;-&gt;&nbsp;Optional[QAction]<br>
+<a href="#Contractor_Page-addAction">addAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-addActions"><strong>addActions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-addActions">addActions</a>(self,&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-adjustSize"><strong>adjustSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-adjustSize">adjustSize</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-autoFillBackground"><strong>autoFillBackground</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-backgroundRole"><strong>backgroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-baseSize"><strong>baseSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-childAt"><strong>childAt</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-childAt">childAt</a>(self,&nbsp;p:&nbsp;QPoint)&nbsp;-&gt;&nbsp;Optional[QWidget]<br>
+<a href="#Contractor_Page-childAt">childAt</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-childrenRect"><strong>childrenRect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-childrenRegion"><strong>childrenRegion</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-clearFocus"><strong>clearFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-clearFocus">clearFocus</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-clearMask"><strong>clearMask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-clearMask">clearMask</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-close"><strong>close</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-contentsMargins"><strong>contentsMargins</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-contentsRect"><strong>contentsRect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-createWindowContainer"><strong>createWindowContainer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-createWindowContainer">createWindowContainer</a>(window:&nbsp;Optional[QWindow],&nbsp;parent:&nbsp;Optional[QWidget]&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Qt.WindowType&nbsp;=&nbsp;Qt.WindowFlags())&nbsp;-&gt;&nbsp;QWidget</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-cursor"><strong>cursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</span></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="Contractor_Page-devType"><strong>devType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-effectiveWinId"><strong>effectiveWinId</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;PyQt6.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-ensurePolished"><strong>ensurePolished</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-ensurePolished">ensurePolished</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-find"><strong>find</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-find">find</a>(a0:&nbsp;PyQt6.sip.voidptr)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-focusPolicy"><strong>focusPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-focusProxy"><strong>focusProxy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-focusWidget"><strong>focusWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-font"><strong>font</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-fontInfo"><strong>fontInfo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-fontMetrics"><strong>fontMetrics</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-foregroundRole"><strong>foregroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-frameGeometry"><strong>frameGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-frameSize"><strong>frameSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-geometry"><strong>geometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-grab"><strong>grab</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,&nbsp;0),&nbsp;QSize(-1,&nbsp;-1)))&nbsp;-&gt;&nbsp;QPixmap</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-grabGesture"><strong>grabGesture</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-grabGesture">grabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Qt.GestureFlag&nbsp;=&nbsp;Qt.GestureFlags())</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-grabKeyboard"><strong>grabKeyboard</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-grabKeyboard">grabKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-grabMouse"><strong>grabMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-grabMouse">grabMouse</a>(self)<br>
+<a href="#Contractor_Page-grabMouse">grabMouse</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-grabShortcut"><strong>grabShortcut</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-grabShortcut">grabShortcut</a>(self,&nbsp;key:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-graphicsEffect"><strong>graphicsEffect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsEffect]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsProxyWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-hasFocus"><strong>hasFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-height"><strong>height</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-height">height</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-heightForWidth"><strong>heightForWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-heightForWidth">heightForWidth</a>(self,&nbsp;a0:&nbsp;int)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-hide"><strong>hide</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-hide">hide</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-inputMethodHints"><strong>inputMethodHints</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHint</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;a0:&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-insertAction"><strong>insertAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-insertAction">insertAction</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-insertActions"><strong>insertActions</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-insertActions">insertActions</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isActiveWindow"><strong>isActiveWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isAncestorOf"><strong>isAncestorOf</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isAncestorOf">isAncestorOf</a>(self,&nbsp;child:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isEnabled"><strong>isEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isEnabledTo"><strong>isEnabledTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isEnabledTo">isEnabledTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isFullScreen"><strong>isFullScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isHidden"><strong>isHidden</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isLeftToRight"><strong>isLeftToRight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isMaximized"><strong>isMaximized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isMinimized"><strong>isMinimized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isModal"><strong>isModal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isRightToLeft"><strong>isRightToLeft</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isVisible"><strong>isVisible</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isVisibleTo"><strong>isVisibleTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isVisibleTo">isVisibleTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isWindow"><strong>isWindow</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isWindowModified"><strong>isWindowModified</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-layout"><strong>layout</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-layout">layout</a>(self)&nbsp;-&gt;&nbsp;Optional[QLayout]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-layoutDirection"><strong>layoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-locale"><strong>locale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-lower"><strong>lower</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-lower">lower</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mapFrom"><strong>mapFrom</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Contractor_Page-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Contractor_Page-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mapFromParent"><strong>mapFromParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Contractor_Page-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mapTo"><strong>mapTo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Contractor_Page-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mapToGlobal"><strong>mapToGlobal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Contractor_Page-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mapToParent"><strong>mapToParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint<br>
+<a href="#Contractor_Page-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPointF)&nbsp;-&gt;&nbsp;QPointF</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mask"><strong>mask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-maximumHeight"><strong>maximumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-maximumSize"><strong>maximumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-maximumWidth"><strong>maximumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-minimumHeight"><strong>minimumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-minimumSize"><strong>minimumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-minimumWidth"><strong>minimumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-mouseGrabber"><strong>mouseGrabber</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-move"><strong>move</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-move">move</a>(self,&nbsp;a0:&nbsp;QPoint)<br>
+<a href="#Contractor_Page-move">move</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-normalGeometry"><strong>normalGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;type:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-overrideWindowState"><strong>overrideWindowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-overrideWindowState">overrideWindowState</a>(self,&nbsp;state:&nbsp;Qt.WindowState)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-paintEngine"><strong>paintEngine</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;Optional[QPaintEngine]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-palette"><strong>palette</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-parentWidget"><strong>parentWidget</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-pos"><strong>pos</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-raise_"><strong>raise_</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-raise_">raise_</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-rect"><strong>rect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-releaseKeyboard">releaseKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-releaseMouse"><strong>releaseMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-releaseMouse">releaseMouse</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-releaseShortcut"><strong>releaseShortcut</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-releaseShortcut">releaseShortcut</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-removeAction"><strong>removeAction</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-removeAction">removeAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-render"><strong>render</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-render">render</a>(self,&nbsp;target:&nbsp;Optional[QPaintDevice],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlag&nbsp;=&nbsp;QWidget.RenderFlags(QWidget.DrawWindowBackground|QWidget.DrawChildren))<br>
+<a href="#Contractor_Page-render">render</a>(self,&nbsp;painter:&nbsp;Optional[QPainter],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;QWidget.RenderFlag&nbsp;=&nbsp;QWidget.RenderFlags(QWidget.DrawWindowBackground|QWidget.DrawChildren))</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-repaint"><strong>repaint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-repaint">repaint</a>(self)<br>
+<a href="#Contractor_Page-repaint">repaint</a>(self,&nbsp;x:&nbsp;int,&nbsp;y:&nbsp;int,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#Contractor_Page-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#Contractor_Page-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-resize"><strong>resize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-resize">resize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#Contractor_Page-resize">resize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-restoreGeometry"><strong>restoreGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-restoreGeometry">restoreGeometry</a>(self,&nbsp;geometry:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-saveGeometry"><strong>saveGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-screen"><strong>screen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-screen">screen</a>(self)&nbsp;-&gt;&nbsp;Optional[QScreen]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-scroll"><strong>scroll</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int)<br>
+<a href="#Contractor_Page-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int,&nbsp;a2:&nbsp;QRect)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;on:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;description:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setAccessibleName"><strong>setAccessibleName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setAccessibleName">setAccessibleName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setAttribute"><strong>setAttribute</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setAttribute">setAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setBaseSize"><strong>setBaseSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setBaseSize">setBaseSize</a>(self,&nbsp;basew:&nbsp;int,&nbsp;baseh:&nbsp;int)<br>
+<a href="#Contractor_Page-setBaseSize">setBaseSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setContentsMargins"><strong>setContentsMargins</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setContentsMargins">setContentsMargins</a>(self,&nbsp;left:&nbsp;int,&nbsp;top:&nbsp;int,&nbsp;right:&nbsp;int,&nbsp;bottom:&nbsp;int)<br>
+<a href="#Contractor_Page-setContentsMargins">setContentsMargins</a>(self,&nbsp;margins:&nbsp;QMargins)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;policy:&nbsp;Qt.ContextMenuPolicy)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setCursor"><strong>setCursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setCursor">setCursor</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setDisabled"><strong>setDisabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setDisabled">setDisabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setEnabled"><strong>setEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setEnabled">setEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setFixedHeight"><strong>setFixedHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setFixedHeight">setFixedHeight</a>(self,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setFixedSize"><strong>setFixedSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setFixedSize">setFixedSize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#Contractor_Page-setFixedSize">setFixedSize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setFixedWidth"><strong>setFixedWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setFixedWidth">setFixedWidth</a>(self,&nbsp;w:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setFocus"><strong>setFocus</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setFocus">setFocus</a>(self)<br>
+<a href="#Contractor_Page-setFocus">setFocus</a>(self,&nbsp;reason:&nbsp;Qt.FocusReason)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;policy:&nbsp;Qt.FocusPolicy)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setFocusProxy"><strong>setFocusProxy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setFocusProxy">setFocusProxy</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setFont"><strong>setFont</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setFont">setFont</a>(self,&nbsp;a0:&nbsp;QFont)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setForegroundRole"><strong>setForegroundRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setForegroundRole">setForegroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setGeometry"><strong>setGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setGeometry">setGeometry</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#Contractor_Page-setGeometry">setGeometry</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;effect:&nbsp;Optional[QGraphicsEffect])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setHidden"><strong>setHidden</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setHidden">setHidden</a>(self,&nbsp;hidden:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;hints:&nbsp;Qt.InputMethodHint)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setLayout"><strong>setLayout</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setLayout">setLayout</a>(self,&nbsp;a0:&nbsp;Optional[QLayout])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;direction:&nbsp;Qt.LayoutDirection)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setLocale"><strong>setLocale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setLocale">setLocale</a>(self,&nbsp;locale:&nbsp;QLocale)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMask"><strong>setMask</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QBitmap)<br>
+<a href="#Contractor_Page-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;maxh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMaximumSize"><strong>setMaximumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMaximumSize">setMaximumSize</a>(self,&nbsp;maxw:&nbsp;int,&nbsp;maxh:&nbsp;int)<br>
+<a href="#Contractor_Page-setMaximumSize">setMaximumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;maxw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;minh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMinimumSize"><strong>setMinimumSize</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMinimumSize">setMinimumSize</a>(self,&nbsp;minw:&nbsp;int,&nbsp;minh:&nbsp;int)<br>
+<a href="#Contractor_Page-setMinimumSize">setMinimumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;minw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setMouseTracking"><strong>setMouseTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setMouseTracking">setMouseTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setPalette"><strong>setPalette</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setPalette">setPalette</a>(self,&nbsp;a0:&nbsp;QPalette)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setParent"><strong>setParent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget])<br>
+<a href="#Contractor_Page-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget],&nbsp;f:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setScreen"><strong>setScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setScreen">setScreen</a>(self,&nbsp;a0:&nbsp;Optional[QScreen])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#Contractor_Page-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setSizePolicy"><strong>setSizePolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setSizePolicy">setSizePolicy</a>(self,&nbsp;a0:&nbsp;QSizePolicy)<br>
+<a href="#Contractor_Page-setSizePolicy">setSizePolicy</a>(self,&nbsp;hor:&nbsp;QSizePolicy.Policy,&nbsp;ver:&nbsp;QSizePolicy.Policy)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setStatusTip"><strong>setStatusTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setStatusTip">setStatusTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setStyle"><strong>setStyle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setStyle">setStyle</a>(self,&nbsp;a0:&nbsp;Optional[QStyle])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setStyleSheet"><strong>setStyleSheet</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setStyleSheet">setStyleSheet</a>(self,&nbsp;styleSheet:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setTabOrder"><strong>setTabOrder</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setTabOrder">setTabOrder</a>(a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setTabletTracking"><strong>setTabletTracking</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setTabletTracking">setTabletTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setToolTip"><strong>setToolTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setToolTip">setToolTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;msec:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setVisible"><strong>setVisible</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setVisible">setVisible</a>(self,&nbsp;visible:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWhatsThis"><strong>setWhatsThis</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWhatsThis">setWhatsThis</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;filePath:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowFlag"><strong>setWindowFlag</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowFlag">setWindowFlag</a>(self,&nbsp;a0:&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowFlags"><strong>setWindowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowFlags">setWindowFlags</a>(self,&nbsp;type:&nbsp;Qt.WindowType)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowIcon"><strong>setWindowIcon</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowIcon">setWindowIcon</a>(self,&nbsp;icon:&nbsp;QIcon)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowIconText"><strong>setWindowIconText</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowIconText">setWindowIconText</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowModality"><strong>setWindowModality</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowModality">setWindowModality</a>(self,&nbsp;windowModality:&nbsp;Qt.WindowModality)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowModified"><strong>setWindowModified</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowModified">setWindowModified</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;level:&nbsp;float)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowRole"><strong>setWindowRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowRole">setWindowRole</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowState"><strong>setWindowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowState">setWindowState</a>(self,&nbsp;state:&nbsp;Qt.WindowState)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setWindowTitle"><strong>setWindowTitle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setWindowTitle">setWindowTitle</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-show"><strong>show</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-show">show</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-showFullScreen"><strong>showFullScreen</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-showFullScreen">showFullScreen</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-showMaximized"><strong>showMaximized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-showMaximized">showMaximized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-showMinimized"><strong>showMinimized</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-showMinimized">showMinimized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-showNormal"><strong>showNormal</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-showNormal">showNormal</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-size"><strong>size</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-sizeHint"><strong>sizeHint</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-sizeIncrement"><strong>sizeIncrement</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-sizePolicy"><strong>sizePolicy</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-stackUnder"><strong>stackUnder</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-stackUnder">stackUnder</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-statusTip"><strong>statusTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-style"><strong>style</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-style">style</a>(self)&nbsp;-&gt;&nbsp;Optional[QStyle]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-styleSheet"><strong>styleSheet</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-testAttribute"><strong>testAttribute</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-testAttribute">testAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-toolTip"><strong>toolTip</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-toolTipDuration"><strong>toolTipDuration</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-underMouse"><strong>underMouse</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-ungrabGesture"><strong>ungrabGesture</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-ungrabGesture">ungrabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-unsetCursor"><strong>unsetCursor</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-unsetCursor">unsetCursor</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-unsetLayoutDirection">unsetLayoutDirection</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-unsetLocale"><strong>unsetLocale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-unsetLocale">unsetLocale</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-update"><strong>update</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-update">update</a>(self)<br>
+<a href="#Contractor_Page-update">update</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#Contractor_Page-update">update</a>(self,&nbsp;a0:&nbsp;QRegion)<br>
+<a href="#Contractor_Page-update">update</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-updateGeometry"><strong>updateGeometry</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-updateGeometry">updateGeometry</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-updatesEnabled"><strong>updatesEnabled</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-visibleRegion"><strong>visibleRegion</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-whatsThis"><strong>whatsThis</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-width"><strong>width</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-width">width</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-winId"><strong>winId</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-winId">winId</a>(self)&nbsp;-&gt;&nbsp;PyQt6.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-window"><strong>window</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-window">window</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-windowFilePath"><strong>windowFilePath</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-windowFlags"><strong>windowFlags</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-windowHandle"><strong>windowHandle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;Optional[QWindow]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-windowIcon"><strong>windowIcon</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</span></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="Contractor_Page-windowIconText"><strong>windowIconText</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="Contractor_Page-windowModality"><strong>windowModality</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-windowOpacity"><strong>windowOpacity</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-windowRole"><strong>windowRole</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-windowState"><strong>windowState</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowState</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-windowTitle"><strong>windowTitle</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="Contractor_Page-windowType"><strong>windowType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-x"><strong>x</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-x">x</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-y"><strong>y</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-y">y</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtWidgets.html#QWidget">PyQt6.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>RenderFlag</strong> = &lt;flag 'RenderFlag'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><a name="Contractor_Page-__getattr__"><strong>__getattr__</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-__getattr__">__getattr__</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-blockSignals"><strong>blockSignals</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-blockSignals">blockSignals</a>(self,&nbsp;b:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-children"><strong>children</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-children">children</a>(self)&nbsp;-&gt;&nbsp;List[QObject]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-deleteLater"><strong>deleteLater</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-deleteLater">deleteLater</a>(self)</span></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="Contractor_Page-disconnect"><strong>disconnect</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-disconnect">disconnect</a>(a0:&nbsp;QMetaObject.Connection)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#Contractor_Page-disconnect">disconnect</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dumpObjectInfo">dumpObjectInfo</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dumpObjectTree">dumpObjectTree</a>(self)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;List[QByteArray]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-eventFilter"><strong>eventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-eventFilter">eventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject],&nbsp;a1:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-findChild"><strong>findChild</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-findChild">findChild</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT<br>
+<a href="#Contractor_Page-findChild">findChild</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-findChildren"><strong>findChildren</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#Contractor_Page-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#Contractor_Page-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;Type[QObjectT],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]<br>
+<a href="#Contractor_Page-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;Tuple[Type[QObjectT],&nbsp;...],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Qt.FindChildOption&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObjectT]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-inherits"><strong>inherits</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-inherits">inherits</a>(self,&nbsp;classname:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-installEventFilter"><strong>installEventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-installEventFilter">installEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isQuickItemType"><strong>isQuickItemType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isQuickItemType">isQuickItemType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isWidgetType"><strong>isWidgetType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-isWindowType"><strong>isWindowType</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-killTimer"><strong>killTimer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-killTimer">killTimer</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-metaObject"><strong>metaObject</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;Optional[QMetaObject]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-moveToThread"><strong>moveToThread</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-moveToThread">moveToThread</a>(self,&nbsp;thread:&nbsp;Optional[QThread])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-objectName"><strong>objectName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="Contractor_Page-parent"><strong>parent</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-parent">parent</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-property"><strong>property</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-property">property</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code">QObject.<a href="#Contractor_Page-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-removeEventFilter"><strong>removeEventFilter</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-removeEventFilter">removeEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setObjectName"><strong>setObjectName</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setObjectName">setObjectName</a>(self,&nbsp;name:&nbsp;Union[Union[QByteArray,&nbsp;bytes,&nbsp;bytearray,&nbsp;memoryview],&nbsp;Optional[str]])</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-setProperty"><strong>setProperty</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-setProperty">setProperty</a>(self,&nbsp;name:&nbsp;Optional[str],&nbsp;value:&nbsp;Any)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-signalsBlocked"><strong>signalsBlocked</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-startTimer"><strong>startTimer</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-startTimer">startTimer</a>(self,&nbsp;interval:&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-thread"><strong>thread</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-thread">thread</a>(self)&nbsp;-&gt;&nbsp;Optional[QThread]</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-tr"><strong>tr</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-tr">tr</a>(sourceText:&nbsp;Optional[str],&nbsp;disambiguation:&nbsp;Optional[str]&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtCore.html#QObject">PyQt6.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt6.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="Contractor_Page-colorCount"><strong>colorCount</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-depth"><strong>depth</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-heightMM"><strong>heightMM</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-logicalDpiX"><strong>logicalDpiX</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-logicalDpiY"><strong>logicalDpiY</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-paintingActive"><strong>paintingActive</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-physicalDpiX"><strong>physicalDpiX</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-physicalDpiY"><strong>physicalDpiY</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="Contractor_Page-widthMM"><strong>widthMM</strong></a>(...)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code"><a href="#Contractor_Page-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt6.QtGui.html#QPaintDevice">PyQt6.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;enum 'PaintDeviceMetric'&gt;</dl>
+
+<hr>
+Static methods inherited from <a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a>:<br>
+<dl><dt><a name="Contractor_Page-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> from <a href="PyQt6.sip.html#wrappertype">PyQt6.sip.wrappertype</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt6.sip.html#simplewrapper">PyQt6.sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module src.gui.Property_GUI.Property_Button_Controller</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="src.html" class="white">src</a>.<a href="src.gui.html" class="white">gui</a>.<a href="src.gui.Property_GUI.html" class="white">Property_GUI</a>.Property_Button_Controller</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Cgui%5Cproperty_gui%5Cproperty_button_controller.py">c:\users\richa\desktop\github project\para-propertysolutions\src\gui\property_gui\property_button_controller.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;Property_Button_Controller.py<br>
+Name:&nbsp;Jittapatana&nbsp;(Patrick)&nbsp;Prayoonpruk<br>
+Date:&nbsp;04/07/2024<br>
+Description:&nbsp;The&nbsp;controller&nbsp;that&nbsp;communicates&nbsp;between&nbsp;Property_main&nbsp;and&nbsp;Property_info<br>
+Purposes:&nbsp;To&nbsp;keep&nbsp;track&nbsp;of&nbsp;how&nbsp;many&nbsp;property&nbsp;the&nbsp;user&nbsp;has&nbsp;created<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;create&nbsp;a&nbsp;property&nbsp;info&nbsp;page&nbsp;according&nbsp;to&nbsp;the&nbsp;property&nbsp;button<br>
+Data&nbsp;Structure:&nbsp;List&nbsp;and&nbsp;Dictionary</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="src.gui.Property_GUI.Property_Button_Controller.html#Property_Controller">Property_Controller</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Property_Controller">class <strong>Property_Controller</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Property_Controller">Property_Controller</a>&nbsp;class&nbsp;manages&nbsp;communication&nbsp;between&nbsp;Property_main&nbsp;and&nbsp;Property_info.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property_info_pages&nbsp;(dict):&nbsp;A&nbsp;dictionary&nbsp;to&nbsp;store&nbsp;Property_Info&nbsp;instances,&nbsp;with&nbsp;property&nbsp;numbers&nbsp;as&nbsp;keys.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_properties_created&nbsp;(int):&nbsp;A&nbsp;counter&nbsp;to&nbsp;keep&nbsp;track&nbsp;of&nbsp;the&nbsp;total&nbsp;properties&nbsp;created.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property_numbers&nbsp;(list):&nbsp;A&nbsp;list&nbsp;to&nbsp;store&nbsp;the&nbsp;property&nbsp;numbers.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Property_Controller-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initializes&nbsp;the&nbsp;<a href="#Property_Controller">Property_Controller</a>&nbsp;<a href="builtins.html#object">object</a>.</span></dd></dl>
+
+<dl><dt><a name="Property_Controller-create_property_info"><strong>create_property_info</strong></a>(self, property_number)</dt><dd><span class="code">Creates&nbsp;a&nbsp;Property_Info&nbsp;instance&nbsp;for&nbsp;the&nbsp;given&nbsp;property&nbsp;number&nbsp;and&nbsp;stores&nbsp;it&nbsp;in&nbsp;the&nbsp;dictionary.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property_number&nbsp;(int):&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;the&nbsp;property.</span></dd></dl>
+
+<dl><dt><a name="Property_Controller-delete_property_info"><strong>delete_property_info</strong></a>(self, property_number)</dt><dd><span class="code">Deletes&nbsp;the&nbsp;Property_Info&nbsp;instance&nbsp;for&nbsp;the&nbsp;given&nbsp;property&nbsp;number&nbsp;from&nbsp;the&nbsp;dictionary.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property_number&nbsp;(int):&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;the&nbsp;property.</span></dd></dl>
+
+<dl><dt><a name="Property_Controller-get_property_info"><strong>get_property_info</strong></a>(self, property_number)</dt><dd><span class="code">Retrieves&nbsp;the&nbsp;Property_Info&nbsp;instance&nbsp;for&nbsp;the&nbsp;given&nbsp;property&nbsp;number.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property_number&nbsp;(int):&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;the&nbsp;property.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Property_Info&nbsp;or&nbsp;None:&nbsp;The&nbsp;Property_Info&nbsp;instance&nbsp;associated&nbsp;with&nbsp;the&nbsp;property&nbsp;number,&nbsp;or&nbsp;None&nbsp;if&nbsp;not&nbsp;found.</span></dd></dl>
+
+<dl><dt><a name="Property_Controller-get_property_numbers"><strong>get_property_numbers</strong></a>(self)</dt><dd><span class="code">Retrieves&nbsp;the&nbsp;list&nbsp;of&nbsp;property&nbsp;numbers.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;The&nbsp;list&nbsp;of&nbsp;property&nbsp;numbers.</span></dd></dl>
+
+<dl><dt><a name="Property_Controller-get_total_properties_created"><strong>get_total_properties_created</strong></a>(self)</dt><dd><span class="code">Retrieves&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;properties&nbsp;created.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;The&nbsp;total&nbsp;number&nbsp;of&nbsp;properties&nbsp;created.</span></dd></dl>
+
+<dl><dt><a name="Property_Controller-save_new_property"><strong>save_new_property</strong></a>(self, property_info)</dt><dd><span class="code">Saves&nbsp;the&nbsp;newly&nbsp;created&nbsp;property&nbsp;information&nbsp;to&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property_info&nbsp;(Property_Info):&nbsp;The&nbsp;Property_Info&nbsp;instance&nbsp;containing&nbsp;the&nbsp;property&nbsp;information.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;The&nbsp;property&nbsp;number.</span></dd></dl>
+
+<dl><dt><a name="Property_Controller-save_property_count"><strong>save_property_count</strong></a>(self, count)</dt><dd><span class="code">Saves&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;properties&nbsp;created.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;count&nbsp;(int):&nbsp;The&nbsp;total&nbsp;number&nbsp;of&nbsp;properties&nbsp;created.</span></dd></dl>
+
+<dl><dt><a name="Property_Controller-save_property_info_to_database"><strong>save_property_info_to_database</strong></a>(self, property_number, address)</dt><dd><span class="code">Saves&nbsp;the&nbsp;property&nbsp;information&nbsp;to&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property_number&nbsp;(int):&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;the&nbsp;property.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;(str):&nbsp;The&nbsp;address&nbsp;of&nbsp;the&nbsp;property.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;The&nbsp;property&nbsp;number.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

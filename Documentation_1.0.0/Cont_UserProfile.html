@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Cont_UserProfile</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">Cont_UserProfile</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Ccont_userprofile.py">c:\users\richa\desktop\github project\para-propertysolutions\src\cont_userprofile.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Cont_UserProfile">Cont_UserProfile</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno,&nbsp;Ali&nbsp;Maamoun<br>
+Date:&nbsp;04/23/24<br>
+Description:&nbsp;Controller&nbsp;for&nbsp;Account&nbsp;class<br>
+Purposes:&nbsp;Controller&nbsp;Class&nbsp;for&nbsp;Account&nbsp;class&nbsp;to&nbsp;connect&nbsp;Account&nbsp;Operations&nbsp;to&nbsp;Database&nbsp;and&nbsp;GUI.<br>
+Controls&nbsp;the&nbsp;main&nbsp;account&nbsp;that&nbsp;is&nbsp;active&nbsp;in&nbsp;the&nbsp;session</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="src.Database.Database.html">src.Database.Database</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Cont_UserProfile.html#Cont_UserProfile">Cont_UserProfile</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Cont_UserProfile">class <strong>Cont_UserProfile</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Cont_UserProfile">Cont_UserProfile</a>(mainAccount:&nbsp;src.Entities.Account.Account&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+Creates&nbsp;a&nbsp;controller&nbsp;of&nbsp;the&nbsp;Account&nbsp;Class.&nbsp;Maintains&nbsp;the&nbsp;main&nbsp;Account&nbsp;<a href="builtins.html#object">object</a>&nbsp;and&nbsp;its&nbsp;database&nbsp;state<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Cont_UserProfile-__init__"><strong>__init__</strong></a>(self, mainAccount: src.Entities.Account.Account = None)</dt><dd><span class="code">Constructor&nbsp;of&nbsp;Controller&nbsp;User&nbsp;Profile<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mainAccount&nbsp;(Account,&nbsp;optional):&nbsp;The&nbsp;main&nbsp;account&nbsp;associated&nbsp;to&nbsp;the&nbsp;Controller.&nbsp;Defaults&nbsp;to&nbsp;None.</span></dd></dl>
+
+<dl><dt><a name="Cont_UserProfile-createAccount"><strong>createAccount</strong></a>(self, account: src.Entities.Account.Account)</dt><dd><span class="code">Creates&nbsp;an&nbsp;Account&nbsp;and&nbsp;sets&nbsp;it&nbsp;as&nbsp;the&nbsp;main&nbsp;account.&nbsp;Useful&nbsp;for&nbsp;Signing&nbsp;up&nbsp;for&nbsp;an&nbsp;account<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;first&nbsp;(_type_):&nbsp;First&nbsp;Name&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;last&nbsp;(_type_):&nbsp;Last&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username&nbsp;(_type_):&nbsp;Username<br>
+&nbsp;&nbsp;&nbsp;&nbsp;password&nbsp;(_type_):&nbsp;Password</span></dd></dl>
+
+<dl><dt><a name="Cont_UserProfile-getMainAccount"><strong>getMainAccount</strong></a>(self) -&gt; src.Entities.Account.Account</dt><dd><span class="code">Returns&nbsp;the&nbsp;main&nbsp;Account&nbsp;Object<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Account:&nbsp;The&nbsp;main&nbsp;account&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="Cont_UserProfile-searchAccount"><strong>searchAccount</strong></a>(self, accID: int) -&gt; None</dt><dd><span class="code">Searches&nbsp;the&nbsp;Database&nbsp;for&nbsp;the&nbsp;account&nbsp;associated&nbsp;with&nbsp;its&nbsp;ID<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;accID&nbsp;(int):&nbsp;The&nbsp;account&nbsp;ID&nbsp;to&nbsp;be&nbsp;searched&nbsp;for&nbsp;in&nbsp;the&nbsp;database</span></dd></dl>
+
+<dl><dt><a name="Cont_UserProfile-setMainAccount"><strong>setMainAccount</strong></a>(self, acc: src.Entities.Account.Account = None)</dt><dd><span class="code">Sets&nbsp;the&nbsp;main&nbsp;Account&nbsp;Object&nbsp;of&nbsp;this&nbsp;controller<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;acc&nbsp;(Account,&nbsp;optional):&nbsp;Account&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;be&nbsp;the&nbsp;main&nbsp;Account&nbsp;of&nbsp;this&nbsp;controller.&nbsp;Defaults&nbsp;to&nbsp;None.</span></dd></dl>
+
+<dl><dt><a name="Cont_UserProfile-updateAccount"><strong>updateAccount</strong></a>(self, accID: int, tempAcc: src.Entities.Account.Account)</dt><dd><span class="code">updates&nbsp;account&nbsp;with&nbsp;accID&nbsp;in&nbsp;database.<br>
+&nbsp;&nbsp;&nbsp;and&nbsp;updates&nbsp;self&nbsp;main&nbsp;account<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;accID&nbsp;(_type_):&nbsp;account&nbsp;ID&nbsp;to&nbsp;be&nbsp;updated&nbsp;in&nbsp;Database</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
