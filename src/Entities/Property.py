@@ -1,3 +1,12 @@
+"""
+File: Property.py
+Name: Adrian Carreno, Ali Maamoun
+Date: 04/23/24
+Description: Handles Property attributes
+Purposes: Creates a basis for a property and its attributes.  Attributes get handled by its controller.
+Property is owned by an Account which holds tenants.
+"""
+
 from .Tenant import Tenant
 
 

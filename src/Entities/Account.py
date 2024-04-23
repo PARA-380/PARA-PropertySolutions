@@ -1,3 +1,12 @@
+"""
+File: Account.py
+Name: Adrian Carreno, Ali Maamoun
+Date: 04/23/24
+Description: Handles Account attributes
+Purposes: Creates a basis for an account and its attributes.  Attributes get handled by its controller.
+Owns properties and has a login.
+"""
+
 from .Tenant import Tenant
 
 

@@ -1,3 +1,12 @@
+"""
+File: Cont_UserProfile.py
+Name: Adrian Carreno, Ali Maamoun
+Date: 04/23/24
+Description: Controller for Account class
+Purposes: Controller Class for Account class to connect Account Operations to Database and GUI.
+Controls the main account that is active in the session
+"""
+
 from System import Account, db
 # import Database as db
 # from gui.UserProfile import Userprofile

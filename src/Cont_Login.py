@@ -1,3 +1,12 @@
+"""
+File: Cont_Login.py
+Name: Adrian Carreno, Ali Maamoun
+Date: 04/23/24
+Description: Controller for Login_Page class
+Purposes: Controller Class for Login_Page to connect Login Operations to Database and GUI.
+Sets the main account to be used in active session and handles Login verification.
+"""
+
 from System import Account, db, Cont_UserProfile
 
 

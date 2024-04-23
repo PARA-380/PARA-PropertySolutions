@@ -1,3 +1,13 @@
+"""
+File: System.py
+Name: Adrian Carreno, Ali Maamoun
+Date: 04/23/24
+Description: A system to handle controllers and a single session. Connects the Database to the rest of the application.
+Purposes: an instance is called a 'session', The parent controller which handles their creation, and passing to other classes like GUI elements.
+Passes the database file to controllers that need to import from System.
+"""
+
+
 from src.Entities.Account import Account
 from src.Entities.Property import Property
 from src.Entities.Tenant import Tenant
@@ -9,6 +19,11 @@ from src.Cont_Tenant import Cont_Tenant
 
 class System():
     def __init__(self, main : Account = None):
+        """
+        Assigns main Account and sets up controllers
+        @param main:
+        @type main:
+        """
         self.Accounts : Account = {}
         self.mainAccount : Account = main
         #controllers
@@ -21,18 +36,47 @@ class System():
         pass
 
     def __repr__(self):
+        """
+        Sets designated way of printing
+        @return:
+        @rtype:
+        """
         return f"Accounts: {self.Accounts}"
     
     def setMainAccount(self, accID):
+        """
+        Sets the main account by using its ID from Database
+        @param accID:
+        @type accID:
+        @return:
+        @rtype:
+        """
         self.mainAccount = self.getAccount(accID)
 
     def getMainAccount(self):
+        """
+        Returns Main Account
+        @return:
+        @rtype:
+        """
         return self.mainAccount
     
     def getAccount(self,accID):
+        """
+        Returns Account base off of ID
+        @param accID:
+        @type accID:
+        @return:
+        @rtype:
+        """
         return self.Accounts.get(accID)
 
     def StartSession(self):
+        """
+        Initializes Database and creates Login Controller
+        @return:
+        @rtype:
+        """
         #TODO:
         #take in username and password and find corresponding Object
         #load data from JSON file and create Account Object
@@ -49,50 +93,27 @@ class System():
         pass
     
     def setControllerUserProfile(self):
+        """
+        Sets the controller to the active account in session
+        @return:
+        @rtype:
+        """
         self.cont_userprofile = self.cont_login.getUserProfile()
         self.mainAccount = self.cont_userprofile.getMainAccount()
         self.cont_tenant = Cont_Tenant(self.mainAccount.getID()) #review this line
 
     def EndSession(self):
+        """
+        Supposed to close Database after Logout or page application exit
+        @return:
+        @rtype:
+        """
         #Save data from Account object into Database and close session
         print(f'ending session...')
         pass
 
-    def createAccount(self, first, last, username, password):
-        """_summary_
 
-        Args:
-            first (_type_): _description_
-            last (_type_): _description_
-            username (_type_): _description_
-            password (_type_): _description_
-        """
-        acc = Account(first,last,username,password)
-        acc.setID(db.addToAccounts(acc))
-        self.Accounts[acc.getID()] = acc #dict.update()
-        self.setMainAccount(acc.getID())
-        pass
 
-    def createTenant(self, account : Account, first="", last="", ssn="", address="", phone="", email=""):
-        ten = Tenant(firstname=first,lastname=last,ssn=ssn,address=address,phonenumber=phone,email=email)
-        ten.setID(db.addToTenants(account,ten))#review whether to set ID in System or Database
-        # account.addTenant(ten.getID(),ten)
-        #add to Contollers list
-
-        return ten
-    
-    def createProperty(self, accID : int):
-        property = Property()
-
-    def searchAccount(self, accID : int) -> Account:
-        return self.cont_userprofile._searchAccount(accID)
-    
-    def searchTenants(self, accID, tenID=None):
-        if(tenID != None):
-            return db.readTenants(accID)
-        
-
-    #UPDATE methods
     
 
 

@@ -1,3 +1,13 @@
+"""
+File: Tenant.py
+Name: Adrian Carreno, Ali Maamoun
+Date: 04/23/24
+Description: Handles Tenant attributes
+Purposes: Creates a basis for a Tenant and its attributes.  Attributes get handled by its controller.
+Tenant will reside in Account's Property.
+"""
+
+
 # from Lease import Lease
 # remove above # after added Lease Class
 # add lease variable in "__init__" function

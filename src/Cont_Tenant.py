@@ -1,10 +1,16 @@
+"""
+File: Cont_Tenant.py
+Name: Adrian Carreno, Ali Maamoun
+Date: 04/23/24
+Description: Controller for Tenant class
+Purposes: Controller Class for Tenants to connect Tenant Operations to Database and GUI.
+"""
+
 from typing import List
 from System import db, Tenant
 
 
 class Cont_Tenant:
-    """Controller Class for Tenants to connect Tenant Operations to Database and GUI.
-    """
     def __init__(self, accID):
         """Constructs a Tenant Controller based on the current Tenant Table in Database
 
