@@ -17,6 +17,12 @@ from src.gui.TenantPage_GUI.QtTenantPage import Ui_MainWindow
 from System import Tenant, Cont_Tenant
 
 class tenantsui(QMainWindow, Ui_MainWindow):
+    """Tenants main user interface for the application
+
+     Args:
+        QMainWindow (QMainWindow):  The base class for the main window of the application.
+        Ui_MainWindow (Ui_MainWindow): The user interface class for the UserProfile with the assist of QtDesigner.
+        """
   
     def __init__(self, controller_tenant : Cont_Tenant):
         
@@ -43,7 +49,7 @@ class tenantsui(QMainWindow, Ui_MainWindow):
         """Populates the table with existing tenants from Database
 
         Args:
-            tenants (_type_): list of tenant types
+            tenants (tenant): list of tenant types
         """
         for tenant in tenants:
             # print(f"{tenant}, {type(tenant)}")
