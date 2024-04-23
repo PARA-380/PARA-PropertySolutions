@@ -56,7 +56,7 @@ class Property_Page(QMainWindow):
         # Create property buttons based on the total number of properties created
         for property_number in property_numbers:
             self._create_property(property_number)
-
+        self.is_setup = False
         # Create a button for adding properties
         self.add_property_layout = QHBoxLayout()  # Layout for "Add a property" button
         self.create_button = QPushButton('Add a property', self)
@@ -66,14 +66,15 @@ class Property_Page(QMainWindow):
 
         #setup the property numbers associated to which property ID
         self.setup_properties(self.Cont_Property.getProperties())
-        self.is_setup = False
+
 
     def setup_properties(self,properties):
         for property in properties:
             self.is_setup = True
             property_number = self._get_next_available_property_number()
-            self._create_property(property_number)
             self.Cont_Property.addPropertyID(property_number,property.get_property_id())
+            self._create_property(property_number)
+
         print(f"Property Numbers{self.Cont_Property.property_IDs}")
 
 
