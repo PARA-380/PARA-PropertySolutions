@@ -15,7 +15,14 @@ from .Property_Button_Controller import Property_Controller
 
 
 class Property_Page(QMainWindow):
+    """Property_Page class provides a graphical user interface for managing properties (add/delete).
+
+    Args:
+        QMainWindow (QMainWindow): The base class for UI object in PyQt6
+    """
     def __init__(self):
+        """Initializes the Property_Page class.
+        """
         super().__init__()
         # Set window title and size
         self.setWindowTitle("Property Page")
@@ -57,7 +64,7 @@ class Property_Page(QMainWindow):
         self.vertical_layout.addLayout(self.add_property_layout)
 
     def create_property(self):
-        """_summary_
+        """Creates a new property button and associated functionality.
         """ 
 
         property_number = self.get_next_available_property_number()
@@ -80,6 +87,8 @@ class Property_Page(QMainWindow):
         self.vertical_layout.addLayout(property_layout)
 
     def open_property_info(self):
+        """Opens the information window for the selected property.
+        """
 
         property_number = self.sender().property("property_number")
 
@@ -91,6 +100,11 @@ class Property_Page(QMainWindow):
             property_info.show()
 
     def delete_property(self, property_number):
+        """Deletes the selected property.
+
+        Args:
+            property_number (int): Property number to delete.
+        """
 
         self.used_property_numbers.remove(property_number)  # Remove the deleted property number from the set of used property numbers
 
@@ -115,6 +129,11 @@ class Property_Page(QMainWindow):
                         break
 
     def get_next_available_property_number(self):
+        """Finds the next available property number.
+
+        Returns:
+            int: Next available property number.
+        """
         property_number = 1
         while property_number in self.used_property_numbers:
             property_number += 1

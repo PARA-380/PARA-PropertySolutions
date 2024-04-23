@@ -247,7 +247,10 @@ class Property_Info(QMainWindow):
         self.property_table.setItem(0, 1, total_price_item)
 
     def add_initial_total_row(self):
-        """_summary_
+        """Adds an initial total row to the property details table.
+
+        This method inserts a new row at the beginning of the property details table to display the total earnings.
+        The total row contains the text "Total" in the description column and placeholders for the price and type columns.
         """
         # Add a row at the beginning of the table for the total
         self.property_table.insertRow(0)
@@ -324,6 +327,8 @@ class Property_Info(QMainWindow):
 
     # If have time
     def see_pie_chart(self):
+        """Display a pie chart (currently not being implemented)
+        """
         # Function to display pie chart
         pass
 
