@@ -2,7 +2,7 @@
 File: main_gui.py
 Date: 04/23/2024
 main_gui serves as the main for the entire application
-In order to run the application, users must run it through main_gui.py
+In order to run the application, developers must run it through main_gui.py
 """
 
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
