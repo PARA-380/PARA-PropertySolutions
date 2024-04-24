@@ -14,6 +14,7 @@ from PyQt6.QtCore import Qt, QUrl
 from PyQt6.QtGui import QDesktopServices  
 import sys
 import re
+import matplotlib.pyplot as plt
 # from Property_Button_Controller import Property_Controller
 
 # Define a class Property_info
@@ -329,8 +330,26 @@ class Property_Info(QMainWindow):
     def see_pie_chart(self):
         """Display a pie chart (currently not being implemented)
         """
-        # Function to display pie chart
-        pass
+        # Extract descriptions and prices from the property table
+        descriptions = []
+        prices = []
+        for row in range(1, self.property_table.rowCount()):
+            description_item = self.property_table.item(row, 0)
+            price_item = self.property_table.item(row, 1)
+            if description_item and price_item:
+                descriptions.append(description_item.text())
+                prices.append(float(price_item.text()))
+
+        # Plot pie chart if there are data points
+        if descriptions and prices:
+            # Plot
+            plt.figure(figsize=(8, 8))
+            plt.pie(prices, labels=descriptions, autopct='%1.1f%%', startangle=140)
+            plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+            plt.title('Pie Chart')
+            plt.show()
+        else:
+            QMessageBox.warning(self, "Warning", "No data available to plot pie chart.")
 
     # Function to open the link when the see images is clicked
     def open_link_button_clicked(self):
