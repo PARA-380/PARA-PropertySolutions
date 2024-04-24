@@ -325,8 +325,6 @@ class Property_Info(QMainWindow):
         # Display the address in the label
         self.address_label.setText(f"Address: {self.address_input.text()}")
         
-
-    # If have time
     def see_pie_chart(self):
         """Display a pie chart
 
