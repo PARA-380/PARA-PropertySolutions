@@ -43,6 +43,7 @@ class Cont_Property:
         return self.find_property_by_id(prop_id).get_address()
 
     def update_address(self, address: str, prop_id: int):
+        self.Properties = self.getProperties()
         prop = self.find_property_by_id(prop_id)
         prop.set_address(address)
         db.updateProperty(prop)

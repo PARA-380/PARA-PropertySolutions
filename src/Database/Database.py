@@ -65,9 +65,12 @@ def createTables():
     # create Table for Property 
     # address should link to property id
     __cursor.execute("""CREATE TABLE Property(
-                    property_ID integer PRIMARY KEY AUTOINCREMENT,
+                    prop_ID integer PRIMARY KEY AUTOINCREMENT,
                     acc_ID integer,
-                    address text
+                    address text,
+                    sqft int,
+                    hometype text,
+                    max_living int
                    )""")
     
     
@@ -262,16 +265,15 @@ def updateAccount(account : Account):
 
 def updateTenant(tenant :Tenant):
     global __conn, __cursor
-    __cursor.execute("UPDATE Tenant SET (acc_ID, prop_ID, first,last,ssn,address,phone,email) = (:acc_ID,:prop_ID, :first, :last, :ssn, :address, :phone, :email) WHERE (ten_ID) = (:ten_ID)",
-                     {'acc_ID' : tenant.get_account_id(),'prop_ID' : tenant.get_property_id(),'first': tenant.getFirstName(), 'last' : tenant.getLastName(), 'ssn' : tenant.getSSN(), 'address' : tenant.getAddress(), 'phone' : tenant.getPhoneNumber(), 'email' : tenant.getEmail(), 'ten_ID' : tenant.getID()})
+    __cursor.execute("UPDATE Tenant SET (prop_ID, first,last,ssn,address,phone,email) = (:prop_ID, :first, :last, :ssn, :address, :phone, :email) WHERE (ten_ID) = (:ten_ID)",
+                     {'prop_ID' : tenant.get_property_id(),'first': tenant.getFirstName(), 'last' : tenant.getLastName(), 'ssn' : tenant.getSSN(), 'address' : tenant.getAddress(), 'phone' : tenant.getPhoneNumber(), 'email' : tenant.getEmail(), 'ten_ID' : tenant.getID()})
     __conn.commit()
 
 def updateProperty(property : Property):
     global __conn, __cursor
     __cursor.execute(
-        "UPDATE Property SET (acc_ID,prop_ID, address, tenants, sqft) = (:acc_ID, :address, :tenants, :sqft) WHERE (prop_ID) = (:prop_ID)",
-        {'acc_ID': property.get_account_id(), 'prop_ID': property.get_property_id(), 'address': property.get_address(),
-         'tenants': property.get_tenants(), 'sqft': property.get_sqft()})
+        "UPDATE Property SET (acc_ID, address) = (:acc_ID, :address) WHERE (prop_ID) = (:prop_ID)",
+        {'acc_ID': property.get_account_id(), 'prop_ID': property.get_property_id(), 'address': property.get_address()})
     __conn.commit()
 
 

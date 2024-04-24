@@ -44,7 +44,7 @@ class Cont_Tenant:
         self.tenants = list(db.readTenants(self.accID))
 
     def add_to_property(self, tenID, propID):
-        """adds the property ID to the tenant
+        """adds the property ID, address to the tenant
 
         Args:
             tenID (_type_): _description_
@@ -54,6 +54,7 @@ class Cont_Tenant:
         tenant = self.find_tenant_by_id(self.accID,tenID)
         #set tenant object's prop id
         tenant.set_property_id(propID)
+
         #ask database to update with tenantid
         db.updateTenant(tenant)
         
@@ -64,37 +65,37 @@ class Cont_Tenant:
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_first_name(tenant_first_name)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_tenant_name(self, account_id: int, tenant_last_name: str, tenant_id: int):
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_last_name(tenant_last_name)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_ssn(self, account_id: int, tenant_id: int, tenant_ssn: str):
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_ssn(tenant_ssn)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_phone_number(self, account_id: int, tenant_id: int, phone_number: str):
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_phone_number(phone_number)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
-    def update_tenant_address(self, account_id: int, tenant_id: int, new_address: str):
+    def update_tenant_address(self, account_id: int = 1, tenant_id: int = None, new_address: str = ""):
         tenant = self.find_tenant_by_id(1,tenant_id)
         if tenant:
             tenant.setAddress(new_address)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_tenant_email(self, account_id: int, tenant_id: int, email: str):
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_email(email)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def remove_tenant(self, ten_id:int):
         for tenant in self.tenants:

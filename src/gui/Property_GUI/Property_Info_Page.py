@@ -263,11 +263,30 @@ class Property_Info(QMainWindow):
             # Set the tenant name item in the first column (index 0)
             self.tenants_table.setItem(row_count, 0, name_item)
 
-            #get property ID from dictionary [property_number -> property_id]
-            tenant_id = self.tenantNames_to_id[tenant_name]
-            self.tenant_controller.add_to_property(tenant_id,self.property_id)
+            #assigns tenant to property by setting its property ID and address
+            self.assign_tenant(tenant_name)
             # self.tenant_controller.add_to_property(tenant_id????,self.property_id)
             #ask controller to set property id to this tenant
+
+    def assign_tenant(self, tenant_name):
+        """Does all the things that happen to the tenant when you add a tenant to 
+        a Property. 
+            *Setting the property ID in Tenant.
+            *Setting the Address of Tenant
+            *   
+            *
+
+        Args:
+            tenant_name (_type_): The tenant_name we were working with from the dropdown.
+        """
+        #get property ID from dictionary [property_number -> property_id]
+        tenant_id = self.tenantNames_to_id[tenant_name]
+        #Sets the tenants property ID so we can find it under that ID
+        self.tenant_controller.add_to_property(tenant_id,self.property_id)
+        #Get the property's address and set it and update the database
+        address=self.property_controller.get_property_address(self.property_id)
+
+        self.tenant_controller.update_tenant_address(tenant_id=tenant_id, new_address=address)
 
     # Function to delete selected tenant from tenants table
     def delete_tenant_from_table(self):
@@ -295,6 +314,8 @@ class Property_Info(QMainWindow):
         #print(f"{property.get_address()}")
         # Display the address in the label
         self.address_label.setText(f"Address: {address}")
+        #now have the Controller set the address
+        self.property_controller.update_address(address,self.property_id)
 
 
     def setup_address(self, key: int = None):
