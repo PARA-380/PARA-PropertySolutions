@@ -328,7 +328,9 @@ class Property_Info(QMainWindow):
 
     # If have time
     def see_pie_chart(self):
-        """Display a pie chart (currently not being implemented)
+        """Display a pie chart
+
+        Data structures: list
         """
         # Extract descriptions and prices from the property table
         descriptions = []
