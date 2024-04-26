@@ -26,7 +26,7 @@ from gui.Contractor_Page_GUI.Contractor_Page import Contractor_Page
 from gui.TenantPage_GUI.tenantsUI_main import tenantsui
 
 #controllers
-from System import Cont_UserProfile, Cont_Tenant
+from System import Cont_UserProfile, Cont_Tenant, Cont_Contractor
 
 
 class Dashboard(QMainWindow, Ui_DashBoard):
@@ -114,7 +114,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         Args:
             checked (bool): Indicates whether the button is checked or not.
         """
-        self.contractor_page = Contractor_Page()
+        self.contractor_page = Contractor_Page(Cont_Contractor)
         self.contractor_page.show()
 
     def goto_tenant_page(self, checked):

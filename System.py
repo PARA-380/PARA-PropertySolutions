@@ -11,11 +11,13 @@ Passes the database file to controllers that need to import from System.
 from src.Entities.Account import Account
 from src.Entities.Property import Property
 from src.Entities.Tenant import Tenant
+from src.Entities.Contractor import Contractor
 import src.Database.Database as db
 
 from src.Cont_UserProfile import Cont_UserProfile
 from src.Cont_Login import Cont_Login
 from src.Cont_Tenant import Cont_Tenant
+from src.Cont_Contractor import Cont_Contractor
 
 class System():
     def __init__(self, main : Account = None):
@@ -30,6 +32,7 @@ class System():
         self.cont_userprofile : Cont_UserProfile
         self.cont_login : Cont_Login
         self.cont_tenant : Cont_Tenant
+        self.cont_contractor : Cont_Contractor
         #setup database and controllers
         self.StartSession()
         

@@ -28,6 +28,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtCore import Qt, QUrl
 from PyQt6.QtGui import QDesktopServices  
 import sys
+from System import Contractor, Cont_Contractor
 
 # Define a class for the Contractor Page
 class Contractor_Page(QMainWindow):
@@ -38,7 +39,7 @@ class Contractor_Page(QMainWindow):
     Args:
         QMainWindow (QMainWindow): The base class for the main window of the application.
     """
-    def __init__(self):
+    def __init__(self, controller_contractor: Cont_Contractor):
         """Initialize the Contractor_Page instance.
 
         Initializes the user interface components, including input fields, buttons,
@@ -47,7 +48,6 @@ class Contractor_Page(QMainWindow):
         super().__init__()
         self.resize(800, 600)
         self.setWindowTitle("Contractor Page")
-
         central_widget = QWidget()  
         self.setCentralWidget(central_widget)  
 
@@ -82,7 +82,6 @@ class Contractor_Page(QMainWindow):
 
         # Add Contractor button
         add_button = QPushButton("Add Contractor")  
-        add_button.clicked.connect(self.add_contractor_to_table)
         button_layout.addWidget(add_button)
 
         # Delete Selected Contractor button
@@ -107,7 +106,17 @@ class Contractor_Page(QMainWindow):
         recommended_button.clicked.connect(self.open_recommended_contractors_website)
         layout.addWidget(recommended_button)
 
-    def add_contractor_to_table(self):
+        self.cont_contractor = controller_contractor
+        self.add_contractors(self.cont_contractor.get_contractors())
+
+        add_button.clicked.connect(lambda: self.add_contractor_to_table(contractor=None))
+
+
+    def add_contractors(self, contractors):
+        for contractor in contractors:
+            self.add_contractor_to_table(contractor)
+
+    def add_contractor_to_table(self, contractor : Contractor = None):
         """Add a new contractor to the table
 
         Retrieves information from input fields and adds a new row to the contractors' table.
@@ -119,6 +128,10 @@ class Contractor_Page(QMainWindow):
         last_name = self.last_name_input.text()
         phone = self.phone_input.text()
 
+        if contractor is None:
+            contractor = Contractor(specialization=specialization, firstname=first_name, lastname=last_name, phonenumber=phone)
+            self.cont_contractor.create_contractor(contractor)
+            
         # Check if all fields are filled
         if specialization and first_name and last_name and phone:
             row_count = self.contractors_table.rowCount()

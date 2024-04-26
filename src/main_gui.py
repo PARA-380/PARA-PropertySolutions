@@ -15,7 +15,6 @@ from src.Entities.Account import Account
 from src.Entities.Tenant import Tenant
 
 
-
 def run():
     """Represents the driver function to run the entire application
     """

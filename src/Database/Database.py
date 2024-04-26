@@ -10,7 +10,7 @@
 import sqlite3
 # from Account import Account
 # from Tenant import Tenant
-from System import Account, Tenant, Property
+from System import Account, Tenant, Property, Contractor
 
 __conn : sqlite3.Connection = None
 __cursor : sqlite3.Cursor = None
@@ -81,6 +81,17 @@ def createTables():
                     acc_ID integer,
                     address text
                    )""")
+    
+    # create Table for Contractors
+    __cursor.execute("""CREATE TABLE Contractor(
+                    contractor_ID integer PRIMARY KEY AUTOINCREMENT,
+                    specialization text,
+                    first text,
+                    last text,
+                    phone text
+                   )""")
+    
+    __conn.commit()
     
 def readTables():
     pass
@@ -280,3 +291,47 @@ def deleteTenant(ten_id : int):
         'ID' : ten_id
     })
     __conn.commit()
+
+
+def readContractors() -> list[Contractor]:
+    """Reads the Contractor Table from the Database and returns a list of Contractor objects.
+
+    Returns:
+        list[Contractor]: List of Contractor objects.
+    """
+    global __conn, __cursor
+    contractors = list()
+
+    data = __cursor.execute("SELECT * FROM Contractor WHERE (acc_ID) = (:acc_ID)",{
+        'acc_ID : accID'
+    }).fetchall()
+
+    if data is None:
+        print(f"No data was returned from request on read Contractors on Account Number {accID}")
+        return None
+
+    for contractor_data in data:
+        contractor = Contractor(
+            specialization=contractor_data[1],
+            first=contractor_data[2],
+            last=contractor_data[3],
+            phonenumber=contractor_data[4]
+        )
+        contractor.setID(contractor_data[0])
+        contractors.append(contractor)
+
+    return contractors
+
+def addToContractors(accID: int, contractor : Contractor):
+
+    global __conn, __cursor
+
+    __cursor.execute("""INSERT INTO Contractor (acc_ID, specialization, first, last, phone 
+                     VALUES (:acc_ID, :specialization, :first, :last, :phone)""",
+                     {
+                         'acc_ID' : accID,
+                         'specialization' : contractor.get_specialization(),
+                         'first' : contractor.get_first_name(),
+                         'last' : contractor.get_last_name(),
+                         'phone' : contractor.get_phone_number()
+                     })
