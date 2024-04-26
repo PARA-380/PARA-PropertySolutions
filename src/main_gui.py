@@ -33,7 +33,7 @@ def run():
     if(loginWindow.is_login):
         session.setControllerUserProfile()
         
-        window = Dashboard(session.cont_userprofile,session.cont_tenant)
+        window = Dashboard(session.cont_userprofile,session.cont_tenant, session.cont_contractor)
 
         window.show()
 

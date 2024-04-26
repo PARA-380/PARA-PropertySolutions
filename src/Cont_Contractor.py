@@ -24,4 +24,4 @@ class Cont_Contractor:
         return self.contractors
     
     def update_contractors(self):
-        self.contractors = list(db.readContractors(self.accID))
+        self.contractors = db.readContractors(self.accID)

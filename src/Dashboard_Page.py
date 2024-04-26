@@ -38,7 +38,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         QMainWindow (QMainWindow): The base class for the main window of the application.
         Ui_DashBoard (Ui_DashBoard): The user interface class for the dashboard with the assist of QtDesigner.
     """
-    def __init__(self, Cont_UserProfile : Cont_UserProfile, Cont_TenantPage : Cont_Tenant):
+    def __init__(self, Cont_UserProfile : Cont_UserProfile, Cont_TenantPage : Cont_Tenant, Cont_Contractor : Cont_Contractor):
         """Initialize the Dashboard instance.
 
         Args:
@@ -52,6 +52,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         #edits by Ali
         self.Cont_UserProfile = Cont_UserProfile
         self.Cont_TenantPage = Cont_TenantPage
+        self.Cont_Contractor = Cont_Contractor
         #
         self.show()
 
@@ -114,7 +115,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         Args:
             checked (bool): Indicates whether the button is checked or not.
         """
-        self.contractor_page = Contractor_Page(Cont_Contractor)
+        self.contractor_page = Contractor_Page(self.Cont_Contractor)
         self.contractor_page.show()
 
     def goto_tenant_page(self, checked):

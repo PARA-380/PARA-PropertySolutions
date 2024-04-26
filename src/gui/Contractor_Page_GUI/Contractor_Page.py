@@ -133,36 +133,38 @@ class Contractor_Page(QMainWindow):
             self.cont_contractor.create_contractor(contractor)
             
         # Check if all fields are filled
-        if specialization and first_name and last_name and phone:
-            row_count = self.contractors_table.rowCount()
-            self.contractors_table.setRowCount(row_count + 1)
+        # if specialization and first_name and last_name and phone:
+        row_count = self.contractors_table.rowCount()
+        self.contractors_table.setRowCount(row_count + 1)
 
-            # Create table items for specialization, first name, last name, and phone number
-            specialization_item = QTableWidgetItem(specialization)
-            first_name_item = QTableWidgetItem(first_name)
-            last_name_item = QTableWidgetItem(last_name)
-            phone_item = QTableWidgetItem(phone)
+        # Create table items for specialization, first name, last name, and phone number
+        '''
+        specialization_item = QTableWidgetItem(specialization)
+        first_name_item = QTableWidgetItem(first_name)
+        last_name_item = QTableWidgetItem(last_name)
+        phone_item = QTableWidgetItem(phone)
+        '''
 
-             # Set items in the table
-            self.contractors_table.setItem(row_count, 0, specialization_item)
-            self.contractors_table.setItem(row_count, 1, first_name_item)
-            self.contractors_table.setItem(row_count, 2, last_name_item)
-            self.contractors_table.setItem(row_count, 3, phone_item)
+        # Set items in the table
+        self.contractors_table.setItem(row_count, 0, QTableWidgetItem(contractor.get_specialization()))
+        self.contractors_table.setItem(row_count, 1, QTableWidgetItem(contractor.get_first_name()))
+        self.contractors_table.setItem(row_count, 2, QTableWidgetItem(contractor.get_last_name()))
+        self.contractors_table.setItem(row_count, 3, QTableWidgetItem(contractor.get_phone_number()))
 
-            # Add a combo box for actions
-            action_combo_box = QComboBox()
-            action_combo_box.addItems(["Property 1", "Property 2", "Property 3", "Pending"])
-            action_combo_box.setCurrentText("Pending")  # Set default value to "Pending"
-            self.contractors_table.setCellWidget(row_count, 4, action_combo_box)
+        # Add a combo box for actions
+        action_combo_box = QComboBox()
+        action_combo_box.addItems(["Property 1", "Property 2", "Property 3", "Pending"])
+        action_combo_box.setCurrentText("Pending")  # Set default value to "Pending"
+        self.contractors_table.setCellWidget(row_count, 4, action_combo_box)
 
-             # Add a combo box for status
-            status_combo_box = QComboBox()
-            status_combo_box.addItems(["In Progress", "Complete", "Pending"])
-            status_combo_box.setCurrentText("Pending")  # Set default value to "Pending"
-            status_combo_box.currentTextChanged.connect(self.check_notification)  # Connect the signal to the slot
-            self.contractors_table.setCellWidget(row_count, 5, status_combo_box)
+            # Add a combo box for status
+        status_combo_box = QComboBox()
+        status_combo_box.addItems(["In Progress", "Complete", "Pending"])
+        status_combo_box.setCurrentText("Pending")  # Set default value to "Pending"
+        status_combo_box.currentTextChanged.connect(self.check_notification)  # Connect the signal to the slot
+        self.contractors_table.setCellWidget(row_count, 5, status_combo_box)
 
-            self.clear_inputs()
+        self.clear_inputs()
 
     def delete_contractor_from_table(self):
         """Delete the selected contractor from the table.
@@ -216,9 +218,3 @@ class Contractor_Page(QMainWindow):
         # Replace 'https://example.com' with the actual website URL
         website_url = "https://example.com"
         QDesktopServices.openUrl(QUrl(website_url))
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    contractor_page = Contractor_Page()
-    contractor_page.show()
-    sys.exit(app.exec())

@@ -43,6 +43,7 @@ def cleartables():
     __cursor.execute("DROP TABLE IF EXISTS Account")
     __cursor.execute("DROP TABLE IF EXISTS Tenant")
     __cursor.execute("DROP TABLE IF EXISTS Property")
+    __cursor.execute("DROP TABLE IF EXISTS Contractor")
 
 def createTables():
     """Creates All Tables needed for initializing the Database
@@ -85,6 +86,7 @@ def createTables():
     # create Table for Contractors
     __cursor.execute("""CREATE TABLE Contractor(
                     contractor_ID integer PRIMARY KEY AUTOINCREMENT,
+                    acc_ID integer,
                     specialization text,
                     first text,
                     last text,
@@ -293,7 +295,7 @@ def deleteTenant(ten_id : int):
     __conn.commit()
 
 
-def readContractors() -> list[Contractor]:
+def readContractors(accID: int) -> list[Contractor]:
     """Reads the Contractor Table from the Database and returns a list of Contractor objects.
 
     Returns:
@@ -303,7 +305,7 @@ def readContractors() -> list[Contractor]:
     contractors = list()
 
     data = __cursor.execute("SELECT * FROM Contractor WHERE (acc_ID) = (:acc_ID)",{
-        'acc_ID : accID'
+        'acc_ID' : accID
     }).fetchall()
 
     if data is None:
@@ -312,12 +314,13 @@ def readContractors() -> list[Contractor]:
 
     for contractor_data in data:
         contractor = Contractor(
-            specialization=contractor_data[1],
-            first=contractor_data[2],
-            last=contractor_data[3],
-            phonenumber=contractor_data[4]
+            accID=contractor_data[1],
+            specialization=contractor_data[2],
+            firstname=contractor_data[3],
+            lastname=contractor_data[4],
+            phonenumber=contractor_data[5]
         )
-        contractor.setID(contractor_data[0])
+        contractor.set_id(contractor_data[0])
         contractors.append(contractor)
 
     return contractors
@@ -326,8 +329,7 @@ def addToContractors(accID: int, contractor : Contractor):
 
     global __conn, __cursor
 
-    __cursor.execute("""INSERT INTO Contractor (acc_ID, specialization, first, last, phone 
-                     VALUES (:acc_ID, :specialization, :first, :last, :phone)""",
+    __cursor.execute("INSERT INTO Contractor (acc_ID, specialization, first, last, phone) VALUES (:acc_ID, :specialization, :first, :last, :phone)",
                      {
                          'acc_ID' : accID,
                          'specialization' : contractor.get_specialization(),
@@ -335,3 +337,7 @@ def addToContractors(accID: int, contractor : Contractor):
                          'last' : contractor.get_last_name(),
                          'phone' : contractor.get_phone_number()
                      })
+    
+    __conn.commit()
+    contractor.set_id(__cursor.lastrowid)
+    return __cursor.lastrowid

@@ -104,6 +104,7 @@ class System():
         self.cont_userprofile = self.cont_login.getUserProfile()
         self.mainAccount = self.cont_userprofile.getMainAccount()
         self.cont_tenant = Cont_Tenant(self.mainAccount.getID()) #review this line
+        self.cont_contractor = Cont_Contractor(self.mainAccount.getID())
 
     def EndSession(self):
         """

@@ -1,7 +1,8 @@
 
 
 class Contractor:
-    def __init__(self, ID : int = None, specialization: str = "", firstname: str = "", lastname: str = "", phonenumber: str = "",):
+    def __init__(self, accID : int = None, ID : int = None, specialization: str = "", firstname: str = "", lastname: str = "", phonenumber: str = "",):
+        self.accID = accID
         self.contractor_id = ID
         self.contractor_specialization = specialization
         self.contractor_firstname = firstname
@@ -9,11 +10,10 @@ class Contractor:
         self.contractor_phone = phonenumber
 
     def __repr__(self):
-
         return f"""contractor ID: {self.contractor_id} \n
         {self.contractor_firstname} {self.contractor_lastname} \n
         phone-number: {self.contractor_phone} \n"""
-    
+
     def get_first_name(self):
         return self.contractor_firstname
     
@@ -28,3 +28,6 @@ class Contractor:
     
     def get_contractor_id(self):
         return self.contractor_id
+    
+    def set_id(self, id):
+        self.contractor_id = id
