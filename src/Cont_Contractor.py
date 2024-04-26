@@ -1,4 +1,5 @@
 from System import db, Contractor
+from typing import List
 
 class Cont_Contractor:
     def __init__(self, accID):
@@ -16,11 +17,11 @@ class Cont_Contractor:
         self.add_contractor(new_contractor)
 
     def add_contractor(self, contractor: Contractor):
-        self.tenants.append(contractor)
+        self.contractors.append(contractor)
 
-    def get_contractors(self):
+    def get_contractors(self) -> list[Contractor]:
         self.update_contractors()
         return self.contractors
     
     def update_contractors(self):
-        self.tenants = list(db.readContractors(self.accID))
+        self.contractors = list(db.readContractors(self.accID))
