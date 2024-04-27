@@ -341,3 +341,10 @@ def addToContractors(accID: int, contractor : Contractor):
     __conn.commit()
     contractor.set_id(__cursor.lastrowid)
     return __cursor.lastrowid
+
+def deleteContractor(contractor_id : int):
+    global __conn, __cursor
+    __cursor.execute("DELETE FROM Contractor WHERE (contractor_id) = (:ID)", {
+        'ID' : contractor_id
+    })
+    __conn.commit()

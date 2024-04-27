@@ -25,3 +25,10 @@ class Cont_Contractor:
     
     def update_contractors(self):
         self.contractors = db.readContractors(self.accID)
+
+    def remove_contractor(self, contractor_id:int):
+        for contractor in self.contractors:
+            if contractor.get_contractor_id() == contractor_id:
+                print("DELETED CONTRACTOR")
+                self.contractors.remove(contractor)
+        db.deleteContractor(contractor_id)

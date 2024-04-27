@@ -92,7 +92,7 @@ class Contractor_Page(QMainWindow):
         # Create a table to display contractors' information
         self.contractors_table = QTableWidget()  
         self.contractors_table.setColumnCount(7)  
-        self.contractors_table.setHorizontalHeaderLabels(["Specialization", "First Name", "Last Name", "Phone Number", "Property", "Status", "Description"])
+        self.contractors_table.setHorizontalHeaderLabels(["Contractor ID", "Specialization", "First Name", "Last Name", "Phone Number", "Property", "Status"])
         
         # Set the resizing mode for the last section (column) to stretch
         header = self.contractors_table.horizontalHeader()
@@ -146,23 +146,24 @@ class Contractor_Page(QMainWindow):
         '''
 
         # Set items in the table
-        self.contractors_table.setItem(row_count, 0, QTableWidgetItem(contractor.get_specialization()))
-        self.contractors_table.setItem(row_count, 1, QTableWidgetItem(contractor.get_first_name()))
-        self.contractors_table.setItem(row_count, 2, QTableWidgetItem(contractor.get_last_name()))
-        self.contractors_table.setItem(row_count, 3, QTableWidgetItem(contractor.get_phone_number()))
+        self.contractors_table.setItem(row_count, 0, QTableWidgetItem(str(contractor.get_contractor_id())))
+        self.contractors_table.setItem(row_count, 1, QTableWidgetItem(contractor.get_specialization()))
+        self.contractors_table.setItem(row_count, 2, QTableWidgetItem(contractor.get_first_name()))
+        self.contractors_table.setItem(row_count, 3, QTableWidgetItem(contractor.get_last_name()))
+        self.contractors_table.setItem(row_count, 4, QTableWidgetItem(contractor.get_phone_number()))
 
         # Add a combo box for actions
         action_combo_box = QComboBox()
         action_combo_box.addItems(["Property 1", "Property 2", "Property 3", "Pending"])
         action_combo_box.setCurrentText("Pending")  # Set default value to "Pending"
-        self.contractors_table.setCellWidget(row_count, 4, action_combo_box)
+        self.contractors_table.setCellWidget(row_count, 5, action_combo_box)
 
             # Add a combo box for status
         status_combo_box = QComboBox()
         status_combo_box.addItems(["In Progress", "Complete", "Pending"])
         status_combo_box.setCurrentText("Pending")  # Set default value to "Pending"
         status_combo_box.currentTextChanged.connect(self.check_notification)  # Connect the signal to the slot
-        self.contractors_table.setCellWidget(row_count, 5, status_combo_box)
+        self.contractors_table.setCellWidget(row_count, 6, status_combo_box)
 
         self.clear_inputs()
 
@@ -174,10 +175,16 @@ class Contractor_Page(QMainWindow):
         
         If no row is selected, a warning message will be displayed.
         """
-        selected_row = self.contractors_table.currentRow()
+        current_row = self.contractors_table.currentRow()
 
-        if selected_row >= 0:
-            self.contractors_table.removeRow(selected_row)
+        selected_row = self.contractors_table.selectionModel().selectedRows()
+
+        for index in selected_row:
+            contractor_id = self.contractors_table.model().data(self.contractors_table.model().index(index.row(), 0))
+
+        if current_row >= 0:
+            self.contractors_table.removeRow(current_row)
+            self.cont_contractor.remove_contractor(contractor_id)
         else:
             QMessageBox.warning(self, "Warning", "No row selected.")
 
