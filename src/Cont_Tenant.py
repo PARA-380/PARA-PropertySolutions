@@ -40,6 +40,22 @@ class Cont_Tenant:
         print(names)
         return names
     
+    def get_tenants_at_property(self, propertyID):
+        """given a property ID, find the tenants that live there and return a list
+
+        Args:
+            propertyID (_type_): db Property ID to filter by
+
+        Returns:
+            _type_: list of tenants at the property
+        """
+        tenants_at_property = []
+        for tenant in self.tenants:
+            if tenant.get_property_id() == propertyID:
+                tenants_at_property.append(tenant)
+        return tenants_at_property
+
+    
     def update_tenants(self):
         self.tenants = list(db.readTenants(self.accID))
 

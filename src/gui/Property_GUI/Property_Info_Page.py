@@ -99,7 +99,7 @@ class Property_Info(QMainWindow):
 
         # Button to add tenant to table
         add_tenant_button = QPushButton("Add Tenant")  
-        add_tenant_button.clicked.connect(self.add_tenant_to_table)
+        add_tenant_button.clicked.connect(lambda : self.add_tenant_to_table())
         button_layout.addWidget(add_tenant_button)
 
         # Button to delete selected tenant from table
@@ -240,13 +240,34 @@ class Property_Info(QMainWindow):
         self.property_table.setCellWidget(0, 2, QWidget())
 
      # Function to add tenant details to tenants table
-    def add_tenant_to_table(self):
-        tenant_name = self.tenant_dropdown.currentText()
+    def add_tenant_to_table(self, tenant_name = None):
+        """Adds a new tenant to the property and to the table
+        Also Add the new tenant to that property with the controller
+
+        Args:
+            tenant_name (_type_, optional): The string name that will be displayed. Defaults to None.
+        """
+        if tenant_name == None:
+            tenant_name = self.tenant_dropdown.currentText()
 
         # Here, retrieve other details of the tenant using the selected name,
         # and add them to the table. adding the name for now (testing purpose)
 
         # Check if a tenant name is selected (i.e., if it is not empty)
+
+        #assigns tenant to property by setting its property ID and address
+        if tenant_name:
+            self.display_tenant_on_table(tenant_name)
+            self.assign_tenant(tenant_name)
+        # self.tenant_controller.add_to_property(tenant_id????,self.property_id)
+        #ask controller to set property id to this tenant
+
+    def display_tenant_on_table(self, tenant_name):
+        """strictly displays a tenant on the GUI table for the property
+
+        Args:
+            tenant_name (_type_): Name to display
+        """
         if tenant_name:
             # Get the current row count of the tenants table
             row_count = self.tenants_table.rowCount()
@@ -262,11 +283,6 @@ class Property_Info(QMainWindow):
             # Set the QTableWidgetItem object in the tenants table
             # Set the tenant name item in the first column (index 0)
             self.tenants_table.setItem(row_count, 0, name_item)
-
-            #assigns tenant to property by setting its property ID and address
-            self.assign_tenant(tenant_name)
-            # self.tenant_controller.add_to_property(tenant_id????,self.property_id)
-            #ask controller to set property id to this tenant
 
     def assign_tenant(self, tenant_name):
         """Does all the things that happen to the tenant when you add a tenant to 
@@ -307,6 +323,11 @@ class Property_Info(QMainWindow):
     # Function to save address input and display it in address label
     # Note this is mot save to database, this is just for the display purpose
     def save_address(self, address: str = None):
+        """When the user saves the address, save to database and display on GUI
+
+        Args:
+            address (str, optional): Address string to set to. Defaults to None.
+        """
         # Save the address associated with this property number using the controller
         if address is None:
             address = self.address_input.text()
@@ -319,9 +340,25 @@ class Property_Info(QMainWindow):
 
 
     def setup_address(self, key: int = None):
+        """Sets the existing address on GUI when opening the property's info
+
+        Args:
+            key (int, optional): The Property Number to translate to Property ID. Defaults to None.
+        """
         address = self.property_controller.get_property_address(self.property_controller.getPropertyID(key))
         print(f"Address:     {address}")
         self.save_address(address)
+
+    def setup_tenants(self):
+        """create a list of tenants already assigned to this property
+        asks the controller for list of tenants at that property
+        """
+        tenants = self.tenant_controller.get_tenants_at_property(self.property_id)
+        print(f"tenants at property{self.property_id}: {tenants}")
+        for tenant in tenants:
+            self.display_tenant_on_table(tenant.getFirstName())
+
+        pass
 
         
 

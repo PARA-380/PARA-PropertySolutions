@@ -123,9 +123,10 @@ def addToTenants(accID : int, tenant : Tenant):
     """
     global __conn, __cursor
 
-    __cursor.execute("INSERT INTO Tenant (acc_ID, first, last, ssn, address, phone, email) VALUES (:acc_ID, :first, :last, :ssn, :address, :phone, :email)",
+    __cursor.execute("INSERT INTO Tenant (acc_ID, prop_ID, first, last, ssn, address, phone, email) VALUES (:acc_ID,:prop_ID, :first, :last, :ssn, :address, :phone, :email)",
                      {
                          'acc_ID' : accID,
+                         'prop_ID' : tenant.get_property_id(),
                          'first' : tenant.getFirstName(),
                          'last' : tenant.getLastName(),
                          'ssn' : tenant.getSSN(),
@@ -221,11 +222,11 @@ def readTenants(accID:int) -> list[Tenant]:
     if data is None:
         print(f"No data was returned from request on read Tenants on Account Number {accID}")
         return None
-    print(f"Data: {data}")
+    print(f"Read Tenants Data: {data}")
 
     #parse through tenant data and create tenant objects
     for tenData in data:
-        tenant = Tenant(firstname=tenData[3],lastname=tenData[4],ssn=tenData[5],address=tenData[6],phonenumber=tenData[7],email=tenData[8])
+        tenant = Tenant(acc_id=tenData[1],prop_id=tenData[2],firstname=tenData[3],lastname=tenData[4],ssn=tenData[5],address=tenData[6],phonenumber=tenData[7],email=tenData[8])
         #use DB generated Key as Tenants' ID
         tenant.setID(tenData[0])
         # print(f"tenant {tenData[0]}, {tenant}")

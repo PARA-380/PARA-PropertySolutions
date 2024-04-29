@@ -109,6 +109,8 @@ class Property_Page(QMainWindow):
         # Retrieve Property_Info instance from PropertyInfoController
         property_info = self.property_info_controller.get_property_info(property_number)
         property_info.setup_address(property_number)
+        #duplicates tenant rows if opened again Needs fix
+        property_info.setup_tenants()
 
         if property_info:
             property_info.setWindowTitle(f"Property {property_number} Information")
