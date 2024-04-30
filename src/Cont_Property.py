@@ -12,6 +12,11 @@ class Cont_Property:
         new_id = db.addToProperty(accID=self.mainAccountID, property=property)
         self.Properties = self.getProperties()
         return new_id
+    
+    def deleteProperty(self, prop_number : int):
+        prop_id = self.property_IDs.pop(prop_number)
+        db.deleteProperty(prop_id)
+        self.Properties = self.getProperties()
 
 
     def getProperties(self) -> list[Property]:

@@ -287,6 +287,13 @@ def deleteTenant(ten_id : int):
     })
     __conn.commit()
 
+def deleteProperty(prop_id : int):
+    global __conn, __cursor
+    __cursor.execute("DELETE FROM Property WHERE (prop_id) = (:ID)", {
+        'ID' : prop_id
+    })
+    __conn.commit()
+
 def main():
     addToProperty(1,Property(accID=1))
 

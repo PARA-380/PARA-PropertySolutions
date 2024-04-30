@@ -20,6 +20,9 @@ class Property_Controller:
         # Increment the total properties created counter
         self.total_properties_created += 1
 
+        #do some one-time setup stuff
+        property_info.setup_tenants()
+
     def get_property_info(self, property_number):
         # Retrieve Property_Info instance for the given property number
         info_page = self.property_info_pages.get(property_number)
@@ -32,6 +35,7 @@ class Property_Controller:
             del self.property_info_pages[property_number]
             # Decrement the total properties created counter
             self.total_properties_created -= 1
+        self.Cont_Property.deleteProperty(property_number)
 
     def get_total_properties_created(self):
         return self.total_properties_created
