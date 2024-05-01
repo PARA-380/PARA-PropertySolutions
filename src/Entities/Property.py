@@ -11,7 +11,7 @@ from .Tenant import Tenant
 
 
 class Property:
-    def __init__(self, property_id: int = None, accID : int  = None, address: str = None, tenants: dict = {}, sqft: str = None, home_type: str = None,
+    def __init__(self, property_id: int = None, accID : int  = None, address: str = "", tenants: dict = {}, sqft: str = "", home_type: str = "",
                  max_living: int = None):
         """
         Defines Property variables
@@ -30,6 +30,12 @@ class Property:
         self.sqft = sqft
         self.home_type = home_type
         self.max_living = max_living
+
+    def __repr__(self):
+        return f"{self.property_id}, {self.address}"
+
+    def get_account_id(self):
+        return self.account_id
 
     def get_property_id(self):
         """
@@ -106,6 +112,8 @@ class Property:
         """
         self.max_living = num
 
+    def get_tenants(self):
+        return self.tenants
     def add_tenant_to_property(self, tenant: Tenant):
         """
         Adds Tenants to specified property

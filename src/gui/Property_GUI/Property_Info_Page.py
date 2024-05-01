@@ -16,6 +16,7 @@ import sys
 import re
 import matplotlib.pyplot as plt
 # from Property_Button_Controller import Property_Controller
+from System import Cont_Property,Cont_Tenant, Property
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
@@ -24,14 +25,19 @@ class Property_Info(QMainWindow):
     Args:
         QMainWindow: The base class for the main window widget.
     """
-    def __init__(self, property_number):
+        
+    def __init__(self, property_number, tenant_controller : Cont_Tenant, property_controller: Cont_Property):
         """Initializes the Property_Info object.
 
         Args:
             property_number (int): The unique identifier for the property.
         """
         super().__init__()
+        self.property_controller = property_controller
+        self.tenant_controller = tenant_controller
         self.property_number = property_number
+        # self.property_id where do we get this from? Dictionary in Property Button?
+        self.property_id = self.property_controller.getPropertyID(self.property_number)
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
 
@@ -55,6 +61,7 @@ class Property_Info(QMainWindow):
         # Address Input
         address_layout = QHBoxLayout()
         layout.addLayout(address_layout)
+        #self.setup_address(self.property_number)
 
         # Line edit for entering address
         self.address_input = QLineEdit()  
@@ -63,7 +70,7 @@ class Property_Info(QMainWindow):
 
         # Button to save address
         save_button = QPushButton("Save") 
-        save_button.clicked.connect(self.save_address)
+        save_button.clicked.connect(lambda: self.save_address())
         address_layout.addWidget(save_button)
 
         # Address Label
@@ -93,7 +100,8 @@ class Property_Info(QMainWindow):
 
         # Tenant dropdown list
         self.tenant_dropdown = QComboBox()  # Combo box for selecting tenant
-        self.tenant_dropdown.addItems(["Tenant 1", "Tenant 2", "Tenant 3"])  # Add tenant names here
+        self.tenantNames_to_id = self.tenant_controller.get_tenant_names() #changed name from tenantNames
+        self.tenant_dropdown.addItems(self.tenantNames_to_id.keys())  # Add tenant names here
         input_layout.addWidget(self.tenant_dropdown)
 
         # Buttons
@@ -112,7 +120,7 @@ class Property_Info(QMainWindow):
 
         # Button to add tenant to table
         add_tenant_button = QPushButton("Add Tenant")  
-        add_tenant_button.clicked.connect(self.add_tenant_to_table)
+        add_tenant_button.clicked.connect(lambda : self.add_tenant_to_table())
         button_layout.addWidget(add_tenant_button)
 
         # Button to delete selected tenant from table
@@ -266,17 +274,34 @@ class Property_Info(QMainWindow):
         self.property_table.setCellWidget(0, 2, QWidget())
 
      # Function to add tenant details to tenants table
-    def add_tenant_to_table(self):
-        """Adds tenant details to the tenants table.
+    def add_tenant_to_table(self, tenant_name = None):
+        """Adds a new tenant to the property and to the table
+        Also Add the new tenant to that property with the controller
 
-        the list of all tenants can be selected and added in to the specific property
+        Args:
+            tenant_name (_type_, optional): The string name that will be displayed. Defaults to None.
         """
-        tenant_name = self.tenant_dropdown.currentText()
+        if tenant_name == None:
+            tenant_name = self.tenant_dropdown.currentText()
 
         # Here, retrieve other details of the tenant using the selected name,
         # and add them to the table. adding the name for now (testing purpose)
 
         # Check if a tenant name is selected (i.e., if it is not empty)
+
+        #assigns tenant to property by setting its property ID and address
+        if tenant_name:
+            self.display_tenant_on_table(tenant_name)
+            self.assign_tenant(tenant_name)
+        # self.tenant_controller.add_to_property(tenant_id????,self.property_id)
+        #ask controller to set property id to this tenant
+
+    def display_tenant_on_table(self, tenant_name):
+        """strictly displays a tenant on the GUI table for the property
+
+        Args:
+            tenant_name (_type_): Name to display
+        """
         if tenant_name:
             # Get the current row count of the tenants table
             row_count = self.tenants_table.rowCount()
@@ -287,9 +312,31 @@ class Property_Info(QMainWindow):
             # Create a QTableWidgetItem object to hold the tenant name
             name_item = QTableWidgetItem(tenant_name)
 
+            #get tenant id from a dictionary [names -> ID]
+
             # Set the QTableWidgetItem object in the tenants table
             # Set the tenant name item in the first column (index 0)
             self.tenants_table.setItem(row_count, 0, name_item)
+
+    def assign_tenant(self, tenant_name):
+        """Does all the things that happen to the tenant when you add a tenant to 
+        a Property. 
+            *Setting the property ID in Tenant.
+            *Setting the Address of Tenant
+            *   
+            *
+
+        Args:
+            tenant_name (_type_): The tenant_name we were working with from the dropdown.
+        """
+        #get property ID from dictionary [property_number -> property_id]
+        tenant_id = self.tenantNames_to_id[tenant_name]
+        #Sets the tenants property ID so we can find it under that ID
+        self.tenant_controller.add_to_property(tenant_id,self.property_id)
+        #Get the property's address and set it and update the database
+        address=self.property_controller.get_property_address(self.property_id)
+
+        self.tenant_controller.update_tenant_address(tenant_id=tenant_id, new_address=address)
 
     # Function to delete selected tenant from tenants table
     def delete_tenant_from_table(self):
@@ -315,15 +362,44 @@ class Property_Info(QMainWindow):
 
     # Function to save address input and display it in address label
     # Note this is mot save to database, this is just for the display purpose
-    def save_address(self):
-        """Displays the address in the address label.
+    def save_address(self, address: str = None):
+        """When the user saves the address, save to database and display on GUI
+
+        Args:
+            address (str, optional): Address string to set to. Defaults to None.
         """
         # Save the address associated with this property number using the controller
-        address = self.address_input.text()
+        if address is None:
+            address = self.address_input.text()
         # self.controller.save_address_controller(self.property_number, address)
-
+        #print(f"{property.get_address()}")
         # Display the address in the label
-        self.address_label.setText(f"Address: {self.address_input.text()}")
+        self.address_label.setText(f"Address: {address}")
+        #now have the Controller set the address
+        self.property_controller.update_address(address,self.property_id)
+
+
+    def setup_address(self, key: int = None):
+        """Sets the existing address on GUI when opening the property's info
+
+        Args:
+            key (int, optional): The Property Number to translate to Property ID. Defaults to None.
+        """
+        address = self.property_controller.get_property_address(self.property_controller.getPropertyID(key))
+        print(f"Address:     {address}")
+        self.save_address(address)
+
+    def setup_tenants(self):
+        """create a list of tenants already assigned to this property
+        asks the controller for list of tenants at that property
+        """
+        tenants = self.tenant_controller.get_tenants_at_property(self.property_id)
+        print(f"tenants at property{self.property_id}: {tenants}")
+        for tenant in tenants:
+            self.display_tenant_on_table(tenant.getFirstName())
+
+        pass
+
         
     def see_pie_chart(self):
         """Display a pie chart

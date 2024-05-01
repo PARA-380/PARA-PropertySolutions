@@ -16,7 +16,7 @@ Tenant will reside in Account's Property.
 class Tenant:
     # tenantName = None
 
-    def __init__(self, ID : int = None, firstname: str = "", lastname: str = "", ssn: str = "", address: str = "",
+    def __init__(self, ten_ID : int = None, acc_id : int = None, prop_id : int = None, firstname: str = "", lastname: str = "", ssn: str = "", address: str = "",
                  phonenumber: str = "",
                  email: str = ""):
         """
@@ -29,8 +29,9 @@ class Tenant:
         @param phonenumber:
         @param email:
         """
-        self.tenantID = ID
-        self.accountID = None
+        self.tenantID = ten_ID
+        self.accountID = acc_id
+        self.propertyID = prop_id
         self.tenantFirstName = firstname
         self.tenantLastName = lastname
         self.tenantSSN = ssn
@@ -47,7 +48,7 @@ class Tenant:
         """
         return f"""Tenant ID: {self.tenantID} \n 
         {self.tenantFirstName} {self.tenantLastName} \n 
-        Address: {self.tenantAddress}\n
+        Address: {self.propertyID}: {self.tenantAddress}\n
         Account: {self.accountID}\n
         SSN: {self.tenantSSN}\n
         Email: {self.tenantEmail}\n
@@ -82,6 +83,12 @@ class Tenant:
         @return:
         """
         self.accountID = accID
+
+    def set_property_id(self, prop_id):
+        self.propertyID = prop_id
+
+    def get_property_id(self):
+        return self.propertyID
 
     def setAddress(self, newAddress: str = None):
         """

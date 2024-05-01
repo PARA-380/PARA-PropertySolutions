@@ -64,6 +64,7 @@ def createTables():
     __cursor.execute("""CREATE TABLE Tenant(  
                     Ten_ID integer NOT NULL PRIMARY KEY AUTOINCREMENT,
                     acc_ID integer,
+                    prop_ID integer,
                     first text,
                     last text,
                     ssn text,
@@ -72,15 +73,15 @@ def createTables():
                     email text
                 )""")
 
-    __conn.commit()
-
     # create Table for Property 
     # address should link to property id
     __cursor.execute("""CREATE TABLE Property(
-                    property_ID integer PRIMARY KEY AUTOINCREMENT,
-                    Ten_ID integer,
+                    prop_ID integer PRIMARY KEY AUTOINCREMENT,
                     acc_ID integer,
-                    address text
+                    address text,
+                    sqft int,
+                    hometype text,
+                    max_living int
                    )""")
     
     # create Table for Contractors
@@ -141,9 +142,10 @@ def addToTenants(accID : int, tenant : Tenant):
     """
     global __conn, __cursor
 
-    __cursor.execute("INSERT INTO Tenant (acc_ID, first, last, ssn, address, phone, email) VALUES (:acc_ID, :first, :last, :ssn, :address, :phone, :email)",
+    __cursor.execute("INSERT INTO Tenant (acc_ID, prop_ID, first, last, ssn, address, phone, email) VALUES (:acc_ID,:prop_ID, :first, :last, :ssn, :address, :phone, :email)",
                      {
                          'acc_ID' : accID,
+                         'prop_ID' : tenant.get_property_id(),
                          'first' : tenant.getFirstName(),
                          'last' : tenant.getLastName(),
                          'ssn' : tenant.getSSN(),
@@ -157,10 +159,9 @@ def addToTenants(accID : int, tenant : Tenant):
     tenant.setID(__cursor.lastrowid)
     return __cursor.lastrowid
 
-#Returns the ID of Property : need to set object propID to this return value
-def addToProperty(accID : int , tenID : int, property : Property):
-    """Adds a new Property Object into the Database by copying its contents and linking its IDs to other tables
 
+def addToProperty(accID : int, property : Property):
+    """Adds a new Property Object into the Database by copying its contents and linking its IDs to other tables
     Args:
         accID (int): The account associated with this property
         property (Property): Property Object to copy contents from
@@ -170,14 +171,15 @@ def addToProperty(accID : int , tenID : int, property : Property):
     """
     global __conn, __cursor
 
-    __cursor.execute("INSERT INTO Property (acc_ID, address) VALUES (:acc_ID, :ten_ID, :address)",
+    __cursor.execute("INSERT INTO Property (acc_ID, address) VALUES (:acc_ID, :address)",
                      {
                          'acc_ID' : accID,
-                         'address' : property.getAddress()
+                         'address' : property.get_address()
                      }
                      )
     
     __conn.commit()
+    property.set_property_id(__cursor.lastrowid)
 
     return __cursor.lastrowid   
 
@@ -252,10 +254,11 @@ def readTenants(accID:int) -> list[Tenant]:
     if data is None:
         print(f"No data was returned from request on read Tenants on Account Number {accID}")
         return None
+    print(f"Read Tenants Data: {data}")
 
     #parse through tenant data and create tenant objects
     for tenData in data:
-        tenant = Tenant(firstname=tenData[2],lastname=tenData[3],ssn=tenData[4],address=tenData[5],phonenumber=tenData[6],email=tenData[7])
+        tenant = Tenant(acc_id=tenData[1],prop_id=tenData[2],firstname=tenData[3],lastname=tenData[4],ssn=tenData[5],address=tenData[6],phonenumber=tenData[7],email=tenData[8])
         #use DB generated Key as Tenants' ID
         tenant.setID(tenData[0])
         # print(f"tenant {tenData[0]}, {tenant}")
@@ -264,6 +267,25 @@ def readTenants(accID:int) -> list[Tenant]:
     #return list of tenants associated to accID account
     # print(f"tenants: {tenants}")
     return tenants
+
+def readProperty(accID:int) -> list[Property]:
+    global __conn, __cursor
+    properties = list()
+    data = __cursor.execute("SELECT * FROM Property WHERE (acc_ID) = (:acc_ID)",{
+        'acc_ID' : accID
+    }).fetchall()
+    if data is None:
+        print(f"No data was returned from request on read Properties on Account Number {accID}")
+        return None
+    print(f"Data: {data}")
+
+    for propData in data:
+        temp_property = Property(accID=accID,address=propData[2])
+        temp_property.set_property_id(propData[0])
+        properties.append(temp_property)
+
+    return properties
+
 
 
 #UPDATE METHODS
@@ -278,6 +300,19 @@ def updateAccount(account : Account):
     __cursor.execute("UPDATE Account SET (first,last,username,phonenumber,password) = (:first, :last, :username,:phone, :password) WHERE (acc_ID) = (:acc_ID)",{'first': account.get_firstName(), 'last' : account.get_lastName(), 'username' : account.get_username(), 'acc_ID' : account.getID(),'phone':account.get_phonenumber(), 'password' : account.get_password()}).fetchone()
     __conn.commit()
     readAccount(account.getID())
+
+def updateTenant(tenant :Tenant):
+    global __conn, __cursor
+    __cursor.execute("UPDATE Tenant SET (prop_ID, first,last,ssn,address,phone,email) = (:prop_ID, :first, :last, :ssn, :address, :phone, :email) WHERE (ten_ID) = (:ten_ID)",
+                     {'prop_ID' : tenant.get_property_id(),'first': tenant.getFirstName(), 'last' : tenant.getLastName(), 'ssn' : tenant.getSSN(), 'address' : tenant.getAddress(), 'phone' : tenant.getPhoneNumber(), 'email' : tenant.getEmail(), 'ten_ID' : tenant.getID()})
+    __conn.commit()
+
+def updateProperty(property : Property):
+    global __conn, __cursor
+    __cursor.execute(
+        "UPDATE Property SET (acc_ID, address) = (:acc_ID, :address) WHERE (prop_ID) = (:prop_ID)",
+        {'acc_ID': property.get_account_id(), 'prop_ID': property.get_property_id(), 'address': property.get_address()})
+    __conn.commit()
 
 
 #DELETE METHODS
@@ -348,3 +383,16 @@ def deleteContractor(contractor_id : int):
         'ID' : contractor_id
     })
     __conn.commit()
+    
+def deleteProperty(prop_id : int):
+    global __conn, __cursor
+    __cursor.execute("DELETE FROM Property WHERE (prop_id) = (:ID)", {
+        'ID' : prop_id
+    })
+    __conn.commit()
+
+def main():
+    addToProperty(1,Property(accID=1))
+
+if __name__ == "__main__":
+    main()

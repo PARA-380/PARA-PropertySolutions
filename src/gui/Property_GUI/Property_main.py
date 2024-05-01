@@ -13,6 +13,8 @@ import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
 from .Property_Button_Controller import Property_Controller
 
+from System import Cont_Property, Cont_Tenant
+
 
 class Property_Page(QMainWindow):
     """Property_Page class provides a graphical user interface for managing properties (add/delete).
@@ -20,29 +22,35 @@ class Property_Page(QMainWindow):
     Args:
         QMainWindow (QMainWindow): The base class for UI object in PyQt6
     """
-    def __init__(self):
-        """Initializes the Property_Page class.
-        """
+    def __init__(self, cont_property : Cont_Property, cont_tenant : Cont_Tenant):
         super().__init__()
         # Set window title and size
         self.setWindowTitle("Property Page")
         self.setMinimumSize(300, 200)
-        
+
+
+        #Controllers
+        self.Cont_Property = cont_property
+        self.Cont_Tenant = cont_tenant
+
+        print(f"{self.Cont_Property.getProperties()}")
+
         # Create a central widget to hold the layout
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
-        
+
         # Create a vertical layout for the central widget
         self.vertical_layout = QVBoxLayout(self.central_widget)
-        
+
         # List to keep track of created button pairs
         self.buttons = []
 
         # Initialize set to track used property numbers
         self.used_property_numbers = set()  
+        # self.property_ids = {}
     
         # Initialize Property_Controller instance
-        self.property_info_controller = Property_Controller()  
+        self.property_info_controller = Property_Controller(self.Cont_Property,self.Cont_Tenant)
 
         # Create property buttons based on the total number of properties created
         total_properties_created = self.property_info_controller.get_total_properties_created()
@@ -56,20 +64,35 @@ class Property_Page(QMainWindow):
         for property_number in property_numbers:
             self.create_property(property_number)
 
+        self.is_setup = False
         # Create a button for adding properties
         self.add_property_layout = QHBoxLayout()  # Layout for "Add a property" button
         self.create_button = QPushButton('Add a property', self)
-        self.create_button.clicked.connect(self.create_property)
+        self.create_button.clicked.connect(lambda:  self._create_property())
         self.add_property_layout.addWidget(self.create_button)
         self.vertical_layout.addLayout(self.add_property_layout)
 
-    def create_property(self):
-        """Creates a new property button and associated functionality.
+        #setup the property numbers associated to which property ID
+        self.setup_properties(self.Cont_Property.getProperties())
+
+    def setup_properties(self,properties):
+        for property in properties:
+            self.is_setup = True
+            property_number = self._get_next_available_property_number()
+            self.Cont_Property.addPropertyID(property_number,property.get_property_id())
+            self._create_property(property_number)
+        print(f"Property Numbers{self.Cont_Property.property_IDs}")
+
+
+    def _create_property(self, property_number = None):
+        """_summary_
         """ 
-
-        property_number = self.get_next_available_property_number()
+        if not self.is_setup:
+            property_number = self._get_next_available_property_number()
+            newPropertyID = self.Cont_Property.createProperty()
+            self.Cont_Property.addPropertyID(property_number, newPropertyID)
+        self.is_setup = False
         self.used_property_numbers.add(property_number)  # Add the property number to the set of used property numbers
-
         self.property_info_controller.create_property_info(property_number)
 
         # Layout for each property button and delete button
@@ -94,6 +117,9 @@ class Property_Page(QMainWindow):
 
         # Retrieve Property_Info instance from PropertyInfoController
         property_info = self.property_info_controller.get_property_info(property_number)
+        property_info.setup_address(property_number)
+        #duplicates tenant rows if opened again Needs fix (FIXED: moved to _create_property^)
+        # property_info.setup_tenants()
 
         if property_info:
             property_info.setWindowTitle(f"Property {property_number} Information")
@@ -107,6 +133,7 @@ class Property_Page(QMainWindow):
         """
 
         self.used_property_numbers.remove(property_number)  # Remove the deleted property number from the set of used property numbers
+        
 
         # Create a QMessageBox for confirmation
         reply = QMessageBox.question(self, 'Confirm Deletion', f"Are you sure you want to delete Property {property_number}?",
@@ -138,6 +165,9 @@ class Property_Page(QMainWindow):
         while property_number in self.used_property_numbers:
             property_number += 1
         return property_number
+    
+    def get_property_id(self, property_number):
+        return self.property_IDs[property_number]
 
 '''
 def main():

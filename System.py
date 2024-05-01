@@ -18,6 +18,7 @@ from src.Cont_UserProfile import Cont_UserProfile
 from src.Cont_Login import Cont_Login
 from src.Cont_Tenant import Cont_Tenant
 from src.Cont_Contractor import Cont_Contractor
+from src.Cont_Property import Cont_Property
 
 class System():
     def __init__(self, main : Account = None):
@@ -33,6 +34,7 @@ class System():
         self.cont_login : Cont_Login
         self.cont_tenant : Cont_Tenant
         self.cont_contractor : Cont_Contractor
+        self.cont_property  : Cont_Property
         #setup database and controllers
         self.StartSession()
         
@@ -86,7 +88,7 @@ class System():
         
         db.init()
         try:
-            #db.cleartables()    #for testing purposes
+            # db.cleartables()    #for testing purposes
             db.createTables()   #creates the Account, Tenant, Property, etc. Tables
         except:
             pass
@@ -95,7 +97,7 @@ class System():
         #login will be validating here before creating user profile
         pass
     
-    def setControllerUserProfile(self):
+    def setControllerUserProfile(self): #change name to setupControllers
         """
         Sets the controller to the active account in session
         @return:
@@ -104,6 +106,7 @@ class System():
         self.cont_userprofile = self.cont_login.getUserProfile()
         self.mainAccount = self.cont_userprofile.getMainAccount()
         self.cont_tenant = Cont_Tenant(self.mainAccount.getID()) #review this line
+        self.cont_property = Cont_Property(self.mainAccount.getID())
         self.cont_contractor = Cont_Contractor(self.mainAccount.getID())
 
     def EndSession(self):

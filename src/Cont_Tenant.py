@@ -35,7 +35,6 @@ class Cont_Tenant:
         new_tenant = tenant
         db.addToTenants(self.accID, new_tenant)
         self.add_tenant(new_tenant)
-        # TODO: add database logic
 
     def add_tenant(self, tenant: Tenant):
         """Adds the tenant to the Controller's list of Tenant Objects
@@ -56,7 +55,7 @@ class Cont_Tenant:
             _type_: Returns the Tenant if Found or None if not found.
         """
         for tenant in self.tenants:
-            if tenant.get_id() == tenant_id:
+            if tenant.getID() == tenant_id:
                 return tenant
         print("Tenant not found")
         return None
@@ -69,12 +68,53 @@ class Cont_Tenant:
         self.update_tenants()
         return self.tenants
     
+    def get_tenant_names(self):
+        names = dict()
+        for tenant in self.tenants:
+            names[tenant.getFirstName() +" "+ tenant.getLastName()] = tenant.getID()
+        print(names)
+        return names
+    
+    def get_tenants_at_property(self, propertyID):
+        """given a property ID, find the tenants that live there and return a list
+
+        Args:
+            propertyID (_type_): db Property ID to filter by
+
+        Returns:
+            _type_: list of tenants at the property
+        """
+        tenants_at_property = []
+        for tenant in self.tenants:
+            if tenant.get_property_id() == propertyID:
+                tenants_at_property.append(tenant)
+        return tenants_at_property
+
+    
     def update_tenants(self):
         """
         Calls on the database to update list of tenants
         @return:
         """
         self.tenants = list(db.readTenants(self.accID))
+
+    def add_to_property(self, tenID, propID):
+        """adds the property ID, address to the tenant
+
+        Args:
+            tenID (_type_): _description_
+            propID (_type_): _description_
+        """
+        #find the tenant with id
+        tenant = self.find_tenant_by_id(self.accID,tenID)
+        #set tenant object's prop id
+        tenant.set_property_id(propID)
+
+        #ask database to update with tenantid
+        db.updateTenant(tenant)
+        
+        
+
 
     def update_tenant_first_name(self, account_id: int, tenant_first_name: str, tenant_id: int):
         """
@@ -87,7 +127,7 @@ class Cont_Tenant:
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_first_name(tenant_first_name)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_tenant_name(self, account_id: int, tenant_last_name: str, tenant_id: int):
         """
@@ -100,7 +140,7 @@ class Cont_Tenant:
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_last_name(tenant_last_name)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_ssn(self, account_id: int, tenant_id: int, tenant_ssn: str):
         """
@@ -113,7 +153,7 @@ class Cont_Tenant:
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_ssn(tenant_ssn)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_phone_number(self, account_id: int, tenant_id: int, phone_number: str):
         """
@@ -126,7 +166,7 @@ class Cont_Tenant:
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_phone_number(phone_number)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_tenant_address(self, account_id: int, tenant_id: int, new_address: str):
         """
@@ -139,7 +179,7 @@ class Cont_Tenant:
         tenant = self.find_tenant_by_id(1,tenant_id)
         if tenant:
             tenant.setAddress(new_address)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def update_tenant_email(self, account_id: int, tenant_id: int, email: str):
         """
@@ -152,7 +192,7 @@ class Cont_Tenant:
         tenant = self.find_tenant_by_id(1, tenant_id)
         if tenant:
             tenant.set_email(email)
-            db.update_tenant(tenant)
+            db.updateTenant(tenant)
 
     def remove_tenant(self, ten_id:int):
         """

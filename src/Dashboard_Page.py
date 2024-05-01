@@ -26,21 +26,21 @@ from gui.Contractor_Page_GUI.Contractor_Page import Contractor_Page
 from gui.TenantPage_GUI.tenantsUI_main import tenantsui
 
 #controllers
-from System import Cont_UserProfile, Cont_Tenant, Cont_Contractor
+from System import Cont_UserProfile, Cont_Tenant, Cont_Property, Cont_Contractor
 
+"""Represents the dashboard interface for the application.
 
+provides functionalities to navigate to different pages in the application.
+
+Args:
+    QMainWindow (QMainWindow): The base class for the main window of the application.
+    Ui_DashBoard (Ui_DashBoard): The user interface class for the dashboard with the assist of QtDesigner.
+"""
+        
 class Dashboard(QMainWindow, Ui_DashBoard):
-    """Represents the dashboard interface for the application.
+    def __init__(self, Cont_UserProfile : Cont_UserProfile, Cont_TenantPage : Cont_Tenant, Cont_PropertyPage : Cont_Property, Cont_Contractor : Cont_Contractor):
 
-    provides functionalities to navigate to different pages in the application.
-
-    Args:
-        QMainWindow (QMainWindow): The base class for the main window of the application.
-        Ui_DashBoard (Ui_DashBoard): The user interface class for the dashboard with the assist of QtDesigner.
-    """
-    def __init__(self, Cont_UserProfile : Cont_UserProfile, Cont_TenantPage : Cont_Tenant, Cont_Contractor : Cont_Contractor):
         """Initialize the Dashboard instance.
-
         Args:
             Cont_UserProfile (Cont_UserProfile): An instance of Cont_UserProfile, 
                 which handles user profile-related functionalities.
@@ -53,6 +53,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         self.Cont_UserProfile = Cont_UserProfile
         self.Cont_TenantPage = Cont_TenantPage
         self.Cont_Contractor = Cont_Contractor
+        self.Cont_PropertyPage = Cont_PropertyPage
         #
         self.show()
 
@@ -78,7 +79,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         Args:
             checked (bool): Indicates whether the button is checked or not.
         """
-        self.property_page = Property_Page()
+        self.property_page = Property_Page(cont_property=self.Cont_PropertyPage, cont_tenant=self.Cont_TenantPage)
         self.property_page.show()
 
     def goto_user_profile_page(self, checked):
