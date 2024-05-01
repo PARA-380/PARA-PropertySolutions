@@ -78,7 +78,7 @@ class Property_Page(QMainWindow):
     def setup_properties(self,properties):
         for property in properties:
             self.is_setup = True
-            property_number = self._get_next_available_property_number()
+            property_number = self.get_next_available_property_number()
             self.Cont_Property.addPropertyID(property_number,property.get_property_id())
             self._create_property(property_number)
         print(f"Property Numbers{self.Cont_Property.property_IDs}")
@@ -88,7 +88,7 @@ class Property_Page(QMainWindow):
         """_summary_
         """ 
         if not self.is_setup:
-            property_number = self._get_next_available_property_number()
+            property_number = self.get_next_available_property_number()
             newPropertyID = self.Cont_Property.createProperty()
             self.Cont_Property.addPropertyID(property_number, newPropertyID)
         self.is_setup = False

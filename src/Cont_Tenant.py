@@ -116,7 +116,7 @@ class Cont_Tenant:
         
 
 
-    def update_tenant_first_name(self, account_id: int, tenant_first_name: str, tenant_id: int):
+    def update_tenant_first_name(self, tenant_first_name: str, tenant_id: int):
         """
         Finds the tenant by ID and updates the first name
         @param account_id:
@@ -129,7 +129,7 @@ class Cont_Tenant:
             tenant.set_first_name(tenant_first_name)
             db.updateTenant(tenant)
 
-    def update_tenant_name(self, account_id: int, tenant_last_name: str, tenant_id: int):
+    def update_tenant_name(self, tenant_last_name: str, tenant_id: int):
         """
         Finds the tenant by ID and updates the last name
         @param account_id:
@@ -142,7 +142,7 @@ class Cont_Tenant:
             tenant.set_last_name(tenant_last_name)
             db.updateTenant(tenant)
 
-    def update_ssn(self, account_id: int, tenant_id: int, tenant_ssn: str):
+    def update_ssn(self, tenant_id: int, tenant_ssn: str):
         """
         Finds the tenant by ID and updates the SSN
         @param account_id:
@@ -155,7 +155,7 @@ class Cont_Tenant:
             tenant.set_ssn(tenant_ssn)
             db.updateTenant(tenant)
 
-    def update_phone_number(self, account_id: int, tenant_id: int, phone_number: str):
+    def update_phone_number(self, tenant_id: int, phone_number: str):
         """
         Finds the tenant by ID and updates the phone number
         @param account_id:
@@ -168,7 +168,7 @@ class Cont_Tenant:
             tenant.set_phone_number(phone_number)
             db.updateTenant(tenant)
 
-    def update_tenant_address(self, account_id: int, tenant_id: int, new_address: str):
+    def update_tenant_address(self, tenant_id: int, new_address: str):
         """
         Finds the tenant by ID and updates the address
         @param account_id:
@@ -181,7 +181,7 @@ class Cont_Tenant:
             tenant.setAddress(new_address)
             db.updateTenant(tenant)
 
-    def update_tenant_email(self, account_id: int, tenant_id: int, email: str):
+    def update_tenant_email(self, tenant_id: int, email: str):
         """
         Finds the tenant by ID and updates the email
         @param account_id:
