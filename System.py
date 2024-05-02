@@ -12,6 +12,7 @@ from src.Entities.Account import Account
 from src.Entities.Property import Property
 from src.Entities.Tenant import Tenant
 from src.Entities.Contractor import Contractor
+from src.Entities.Bills import Bills
 import src.Database.Database as db
 
 from src.Cont_UserProfile import Cont_UserProfile
@@ -19,6 +20,7 @@ from src.Cont_Login import Cont_Login
 from src.Cont_Tenant import Cont_Tenant
 from src.Cont_Contractor import Cont_Contractor
 from src.Cont_Property import Cont_Property
+from src.Cont_Bills import Cont_Bills
 
 class System():
     def __init__(self, main : Account = None):
@@ -35,6 +37,7 @@ class System():
         self.cont_tenant : Cont_Tenant
         self.cont_contractor : Cont_Contractor
         self.cont_property  : Cont_Property
+        self.cont_bills : Cont_Bills
         #setup database and controllers
         self.StartSession()
         
