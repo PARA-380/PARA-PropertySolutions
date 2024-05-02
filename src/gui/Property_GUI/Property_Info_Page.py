@@ -281,6 +281,7 @@ class Property_Info(QMainWindow):
         Args:
             tenant_name (_type_, optional): The string name that will be displayed. Defaults to None.
         """
+        # user input
         if tenant_name == None:
             tenant_name = self.tenant_dropdown.currentText()
             tenant_full_name = tenant_name.split()
@@ -291,7 +292,7 @@ class Property_Info(QMainWindow):
             print("last name", tenant_last_name)
             print(len(tenant_last_name))
             #self.tenant_controller.print_tenants()
-            tenant_id = self.tenant_controller.find_tenant_by_id(tenant_first_name, tenant_last_name)
+            tenant_id = self.tenant_controller.find_tenant_id(tenant_first_name, tenant_last_name)
             print("tenant id here found", tenant_id)
         # Here, retrieve other details of the tenant using the selected name,
         # and add them to the table. adding the name for now (testing purpose)
@@ -300,6 +301,7 @@ class Property_Info(QMainWindow):
 
         #assigns tenant to property by setting its property ID and address
         if tenant_name:
+            tenant_id = self.tenant_controller.find_tenant_id(tenant_first_name, tenant_last_name)
             self.display_tenant_on_table(tenant_id, tenant_first_name, tenant_last_name)
             self.assign_tenant(tenant_name)
         # self.tenant_controller.add_to_property(tenant_id????,self.property_id)
@@ -319,7 +321,7 @@ class Property_Info(QMainWindow):
             self.tenants_table.setRowCount(row_count + 1)
 
             # Create a QTableWidgetItem object to hold the tenant name
-            tenant_id_item = QTableWidgetItem(tenant_id)
+            tenant_id_item = QTableWidgetItem(str(tenant_id))
             first_name_item = QTableWidgetItem(tenant_first_name)
             last_name_item = QTableWidgetItem(tenant_last_name)
 
