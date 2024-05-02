@@ -213,3 +213,8 @@ class Cont_Tenant:
         """
         for tenant in self.tenants:
             print(tenant)
+
+    def find_tenant_id(self, first_name : str, last_name : str):
+        for tenant in self.tenants:
+            if first_name == tenant.getFirstName() and last_name == tenant.getLastName():
+                return tenant.getID()

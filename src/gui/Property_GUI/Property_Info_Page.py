@@ -16,7 +16,7 @@ import sys
 import re
 import matplotlib.pyplot as plt
 # from Property_Button_Controller import Property_Controller
-from System import Cont_Property,Cont_Tenant, Property
+from System import Cont_Property,Cont_Tenant, Property, Tenant
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
@@ -143,8 +143,8 @@ class Property_Info(QMainWindow):
 
         # Tenants Table (right)
         self.tenants_table = QTableWidget()  # Table to display tenant details
-        self.tenants_table.setColumnCount(2)
-        self.tenants_table.setHorizontalHeaderLabels(["Tenant Name", "Contact"])
+        self.tenants_table.setColumnCount(3)
+        self.tenants_table.setHorizontalHeaderLabels(["Tenant ID","First Name", "Last Name"])
         tables_layout.addWidget(self.tenants_table)
 
         # See Pie Chart Button
@@ -283,7 +283,16 @@ class Property_Info(QMainWindow):
         """
         if tenant_name == None:
             tenant_name = self.tenant_dropdown.currentText()
-
+            tenant_full_name = tenant_name.split()
+            tenant_first_name = tenant_full_name[0].strip()
+            tenant_last_name = tenant_full_name[1].strip()
+            print("first name", tenant_first_name)
+            print(len(tenant_first_name))
+            print("last name", tenant_last_name)
+            print(len(tenant_last_name))
+            #self.tenant_controller.print_tenants()
+            tenant_id = self.tenant_controller.find_tenant_by_id(tenant_first_name, tenant_last_name)
+            print("tenant id here found", tenant_id)
         # Here, retrieve other details of the tenant using the selected name,
         # and add them to the table. adding the name for now (testing purpose)
 
@@ -291,18 +300,18 @@ class Property_Info(QMainWindow):
 
         #assigns tenant to property by setting its property ID and address
         if tenant_name:
-            self.display_tenant_on_table(tenant_name)
+            self.display_tenant_on_table(tenant_id, tenant_first_name, tenant_last_name)
             self.assign_tenant(tenant_name)
         # self.tenant_controller.add_to_property(tenant_id????,self.property_id)
         #ask controller to set property id to this tenant
 
-    def display_tenant_on_table(self, tenant_name):
+    def display_tenant_on_table(self, tenant_id, tenant_first_name, tenant_last_name):
         """strictly displays a tenant on the GUI table for the property
 
         Args:
             tenant_name (_type_): Name to display
         """
-        if tenant_name:
+        if tenant_first_name and tenant_last_name:
             # Get the current row count of the tenants table
             row_count = self.tenants_table.rowCount()
 
@@ -310,13 +319,17 @@ class Property_Info(QMainWindow):
             self.tenants_table.setRowCount(row_count + 1)
 
             # Create a QTableWidgetItem object to hold the tenant name
-            name_item = QTableWidgetItem(tenant_name)
+            tenant_id_item = QTableWidgetItem(tenant_id)
+            first_name_item = QTableWidgetItem(tenant_first_name)
+            last_name_item = QTableWidgetItem(tenant_last_name)
 
             #get tenant id from a dictionary [names -> ID]
 
             # Set the QTableWidgetItem object in the tenants table
             # Set the tenant name item in the first column (index 0)
-            self.tenants_table.setItem(row_count, 0, name_item)
+            self.tenants_table.setItem(row_count, 0, tenant_id_item)
+            self.tenants_table.setItem(row_count, 1, first_name_item)
+            self.tenants_table.setItem(row_count, 2, last_name_item)
 
     def assign_tenant(self, tenant_name):
         """Does all the things that happen to the tenant when you add a tenant to 
@@ -343,11 +356,20 @@ class Property_Info(QMainWindow):
         """Deletes selected tenant from the tenants table.
         """
         # Get the index of the currently selected row in the tenants table
-        selected_row = self.tenants_table.currentRow()
+        current_row = self.tenants_table.currentRow()
+        selected_row = self.tenants_table.selectionModel().selectedRows()
+
+        for index in selected_row:
+            tenant_first_name = self.tenants_table.model().data(self.tenants_table.model().index(index.row(), 1))
+            tenant_last_name = self.tenants_table.model().data(self.tenants_table.model().index(index.row(), 2))
 
         # The rest logic is the same as delete_property_from_table
-        if selected_row >= 0:
-            self.tenants_table.removeRow(selected_row)
+        if current_row >= 0:
+            self.tenants_table.removeRow(current_row)
+            tenant_id = self.tenant_controller.find_tenant_id(tenant_first_name, tenant_last_name)
+            print("tenant_id found: ", tenant_id)
+            self.tenants_table.removeRow(current_row)  # Remove the selected row
+
         else:
             QMessageBox.warning(self, "Warning", "No row selected.")
 
@@ -396,7 +418,7 @@ class Property_Info(QMainWindow):
         tenants = self.tenant_controller.get_tenants_at_property(self.property_id)
         print(f"tenants at property{self.property_id}: {tenants}")
         for tenant in tenants:
-            self.display_tenant_on_table(tenant.getFirstName())
+            self.display_tenant_on_table(tenant.getID(), tenant.getFirstName(), tenant.getLastName())
 
         pass
 
