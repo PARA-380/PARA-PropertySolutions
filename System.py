@@ -12,7 +12,7 @@ from src.Entities.Account import Account
 from src.Entities.Property import Property
 from src.Entities.Tenant import Tenant
 from src.Entities.Contractor import Contractor
-from src.Entities.Bills import Bills
+from src.Entities.Bill import Bill
 import src.Database.Database as db
 
 from src.Cont_UserProfile import Cont_UserProfile
@@ -20,7 +20,7 @@ from src.Cont_Login import Cont_Login
 from src.Cont_Tenant import Cont_Tenant
 from src.Cont_Contractor import Cont_Contractor
 from src.Cont_Property import Cont_Property
-from src.Cont_Bills import Cont_Bills
+from src.Cont_Bill import Cont_Bill
 
 class System():
     def __init__(self, main : Account = None):
