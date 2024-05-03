@@ -143,8 +143,8 @@ class Property_Info(QMainWindow):
 
         # Tenants Table (right)
         self.tenants_table = QTableWidget()  # Table to display tenant details
-        self.tenants_table.setColumnCount(3)
-        self.tenants_table.setHorizontalHeaderLabels(["Tenant ID","First Name", "Last Name"])
+        self.tenants_table.setColumnCount(4)
+        self.tenants_table.setHorizontalHeaderLabels(["Tenant ID","First Name", "Last Name", "Contact"])
         tables_layout.addWidget(self.tenants_table)
 
         # See Pie Chart Button
@@ -287,13 +287,10 @@ class Property_Info(QMainWindow):
             tenant_full_name = tenant_name.split()
             tenant_first_name = tenant_full_name[0].strip()
             tenant_last_name = tenant_full_name[1].strip()
-            print("first name", tenant_first_name)
-            print(len(tenant_first_name))
-            print("last name", tenant_last_name)
-            print(len(tenant_last_name))
             #self.tenant_controller.print_tenants()
             tenant_id = self.tenant_controller.find_tenant_id(tenant_first_name, tenant_last_name)
-            print("tenant id here found", tenant_id)
+            tenant_contact = self.tenant_controller.find_tenant_contact(tenant_first_name, tenant_last_name)
+
         # Here, retrieve other details of the tenant using the selected name,
         # and add them to the table. adding the name for now (testing purpose)
 
@@ -302,12 +299,13 @@ class Property_Info(QMainWindow):
         #assigns tenant to property by setting its property ID and address
         if tenant_name:
             tenant_id = self.tenant_controller.find_tenant_id(tenant_first_name, tenant_last_name)
-            self.display_tenant_on_table(tenant_id, tenant_first_name, tenant_last_name)
+            tenant_contact = self.tenant_controller.find_tenant_contact(tenant_first_name, tenant_last_name)
+            self.display_tenant_on_table(tenant_id, tenant_first_name, tenant_last_name, tenant_contact)
             self.assign_tenant(tenant_name)
         # self.tenant_controller.add_to_property(tenant_id????,self.property_id)
         #ask controller to set property id to this tenant
 
-    def display_tenant_on_table(self, tenant_id, tenant_first_name, tenant_last_name):
+    def display_tenant_on_table(self, tenant_id, tenant_first_name, tenant_last_name, tenant_contact):
         """strictly displays a tenant on the GUI table for the property
 
         Args:
@@ -324,6 +322,7 @@ class Property_Info(QMainWindow):
             tenant_id_item = QTableWidgetItem(str(tenant_id))
             first_name_item = QTableWidgetItem(tenant_first_name)
             last_name_item = QTableWidgetItem(tenant_last_name)
+            contact_item = QTableWidgetItem(str(tenant_contact))
 
             #get tenant id from a dictionary [names -> ID]
 
@@ -332,6 +331,7 @@ class Property_Info(QMainWindow):
             self.tenants_table.setItem(row_count, 0, tenant_id_item)
             self.tenants_table.setItem(row_count, 1, first_name_item)
             self.tenants_table.setItem(row_count, 2, last_name_item)
+            self.tenants_table.setItem(row_count, 3, contact_item)
 
     def assign_tenant(self, tenant_name):
         """Does all the things that happen to the tenant when you add a tenant to 
@@ -420,7 +420,7 @@ class Property_Info(QMainWindow):
         tenants = self.tenant_controller.get_tenants_at_property(self.property_id)
         print(f"tenants at property{self.property_id}: {tenants}")
         for tenant in tenants:
-            self.display_tenant_on_table(tenant.getID(), tenant.getFirstName(), tenant.getLastName())
+            self.display_tenant_on_table(tenant.getID(), tenant.getFirstName(), tenant.getLastName(), tenant.getPhoneNumber())
 
         pass
 
