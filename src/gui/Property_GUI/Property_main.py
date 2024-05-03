@@ -131,29 +131,54 @@ class Property_Page(QMainWindow):
         Args:
             property_number (int): Property number to delete.
         """
-
-        self.used_property_numbers.remove(property_number)  # Remove the deleted property number from the set of used property numbers
-        
+        # Remove the deleted property number from the set of used property numbers
+        self.used_property_numbers.remove(property_number)
 
         # Create a QMessageBox for confirmation
-        reply = QMessageBox.question(self, 'Confirm Deletion', f"Are you sure you want to delete Property {property_number}?",
-                                     QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No)
-        if reply == QMessageBox.StandardButton.Yes:
-            # If the user confirms deletion, proceed with deletion
-            self.property_info_controller.delete_property_info(property_number)
-            # Find and remove the layout containing the property and delete buttons
-            for i in reversed(range(self.vertical_layout.count())):
-                layout_item = self.vertical_layout.itemAt(i)
-                if isinstance(layout_item, QHBoxLayout):
-                    property_button = layout_item.itemAt(0).widget()
-                    if property_button.property("property_number") == property_number:
-                        while layout_item.count():
-                            item = layout_item.takeAt(0)
-                            widget = item.widget()
-                            if widget:
-                                widget.deleteLater()
-                        self.vertical_layout.removeItem(layout_item)
-                        break
+        reply = QMessageBox.question(
+            self,
+            'Confirm Deletion',
+            f"Are you sure you want to delete Property {property_number}?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+
+        # Delete the property info from the controller
+        self.property_info_controller.delete_property_info(property_number)
+
+        # Remove the layout containing the property and delete buttons
+        for index in reversed(range(self.vertical_layout.count())):
+            layout_item = self.vertical_layout.itemAt(index)
+            if not isinstance(layout_item, QHBoxLayout):
+                continue
+
+            property_button = layout_item.itemAt(0).widget()
+            if property_button.property("property_number") != property_number:
+                continue
+
+            # call the remove layout method by passing the layout
+            self._remove_layout_widgets(layout_item)
+            self.vertical_layout.removeItem(layout_item)
+            break
+    
+    def _remove_layout_widgets(self, layout):
+        """Removes all widgets from the given layout.
+
+        This method iterates through the items in the provided layout and removes each widget.
+        If a widget is found, it is deleted using the `deleteLater()` method to ensure proper cleanup.
+
+        Args:
+            layout (QLayout): The layout from which widgets should be removed.
+                It can be any layout class that inherits from `QLayout`.
+        """
+        while layout.count():
+            item = layout.takeAt(0)
+            widget = item.widget()
+            if widget:
+                widget.deleteLater()
 
     def get_next_available_property_number(self):
         """Finds the next available property number.
