@@ -302,12 +302,22 @@ def updateAccount(account : Account):
     readAccount(account.getID())
 
 def updateTenant(tenant :Tenant):
+    """Updates a selected Tenant by ID
+
+    Args:
+        tenant (Tenant): tenant to update
+    """
     global __conn, __cursor
     __cursor.execute("UPDATE Tenant SET (prop_ID, first,last,ssn,address,phone,email) = (:prop_ID, :first, :last, :ssn, :address, :phone, :email) WHERE (ten_ID) = (:ten_ID)",
                      {'prop_ID' : tenant.get_property_id(),'first': tenant.getFirstName(), 'last' : tenant.getLastName(), 'ssn' : tenant.getSSN(), 'address' : tenant.getAddress(), 'phone' : tenant.getPhoneNumber(), 'email' : tenant.getEmail(), 'ten_ID' : tenant.getID()})
     __conn.commit()
 
 def updateProperty(property : Property):
+    """updates a selected Property by ID
+
+    Args:
+        property (Property): property to update
+    """
     global __conn, __cursor
     __cursor.execute(
         "UPDATE Property SET (acc_ID, address) = (:acc_ID, :address) WHERE (prop_ID) = (:prop_ID)",
@@ -361,7 +371,15 @@ def readContractors(accID: int) -> list[Contractor]:
     return contractors
 
 def addToContractors(accID: int, contractor : Contractor):
+    """Adds a contractor to contractor table assigning it to an account at the same time.
 
+    Args:
+        accID (int): account which added a contractor
+        contractor (Contractor): _description_
+
+    Returns:
+        _type_: _description_
+    """
     global __conn, __cursor
 
     __cursor.execute("INSERT INTO Contractor (acc_ID, specialization, first, last, phone) VALUES (:acc_ID, :specialization, :first, :last, :phone)",
@@ -378,6 +396,11 @@ def addToContractors(accID: int, contractor : Contractor):
     return __cursor.lastrowid
 
 def deleteContractor(contractor_id : int):
+    """Deletes a contractor from the table
+
+    Args:
+        contractor_id (int): ID to search for and delete contractor associated to it
+    """
     global __conn, __cursor
     __cursor.execute("DELETE FROM Contractor WHERE (contractor_id) = (:ID)", {
         'ID' : contractor_id
@@ -385,6 +408,11 @@ def deleteContractor(contractor_id : int):
     __conn.commit()
     
 def deleteProperty(prop_id : int):
+    """Deletes a Property from the property table
+
+    Args:
+        prop_id (int): ID to search for and delete property associated to it.
+    """
     global __conn, __cursor
     __cursor.execute("DELETE FROM Property WHERE (prop_id) = (:ID)", {
         'ID' : prop_id
