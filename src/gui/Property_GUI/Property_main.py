@@ -118,6 +118,7 @@ class Property_Page(QMainWindow):
         # Retrieve Property_Info instance from PropertyInfoController
         property_info = self.property_info_controller.get_property_info(property_number)
         property_info.setup_address(property_number)
+        # property_info.setup_link_images(property_number)
         #duplicates tenant rows if opened again Needs fix (FIXED: moved to _create_property^)
         # property_info.setup_tenants()
 

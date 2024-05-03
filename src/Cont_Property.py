@@ -52,3 +52,13 @@ class Cont_Property:
         prop = self.find_property_by_id(prop_id)
         prop.set_address(address)
         db.updateProperty(prop)
+
+    def update_link_images(self, link_images: str, prop_id: int):
+        self.Properties = self.getProperties()
+        prop = self.find_property_by_id(prop_id)
+        prop.set_link_images(link_images)
+        db.updateProperty(prop)
+
+    def get_property_link_images(self, prop_id: int):
+        return self.find_property_by_id(prop_id).get_link_images()
+    

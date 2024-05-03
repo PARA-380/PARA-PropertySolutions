@@ -159,7 +159,7 @@ class Property_Info(QMainWindow):
 
         # Button to open the link
         self.open_link_button = QPushButton("See Images", self)
-        self.open_link_button.clicked.connect(self.open_link_button_clicked)
+        self.open_link_button.clicked.connect(lambda: self.open_link_button_clicked())
         button_layout.addWidget(self.open_link_button)
 
     # Function to add property details to property table
@@ -452,10 +452,15 @@ class Property_Info(QMainWindow):
             QMessageBox.warning(self, "Warning", "No data available to plot pie chart.")
 
     # Function to open the link when the see images is clicked
-    def open_link_button_clicked(self):
+    def open_link_button_clicked(self, link: str = None):
         """Opens the link when the "See Images" button is clicked.
         """
-        link = self.link_input.text()
+        if link is None:
+            link = self.link_input.text()
+            print('link: ', link)
+            self.property_controller.update_link_images(link, self.property_id)
+
+        # self.link_input.setText(link)
 
         # Regular expression to validate the link format
         link_pattern = re.compile(r'https?://\S+')  # Simple pattern to match URLs starting with http:// or https://
@@ -466,6 +471,11 @@ class Property_Info(QMainWindow):
         else:
             # Show a warning if the link is invalid
             QMessageBox.warning(self, "Invalid Link", "Please enter a valid link.")
+    
+    def setup_link_images(self, key: int = None):
+        link = self.property_controller.get_property_link_images(self.property_id)
+        self.link_input.setText(link)
+        # self.open_link_button_clicked(link)
     
     def set_address_label(self, address):
         """Sets the address label.

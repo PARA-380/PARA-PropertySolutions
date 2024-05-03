@@ -81,7 +81,8 @@ def createTables():
                     address text,
                     sqft int,
                     hometype text,
-                    max_living int
+                    max_living int,
+                    link_images text
                    )""")
     
     # create Table for Contractors
@@ -320,8 +321,8 @@ def updateProperty(property : Property):
     """
     global __conn, __cursor
     __cursor.execute(
-        "UPDATE Property SET (acc_ID, address) = (:acc_ID, :address) WHERE (prop_ID) = (:prop_ID)",
-        {'acc_ID': property.get_account_id(), 'prop_ID': property.get_property_id(), 'address': property.get_address()})
+        "UPDATE Property SET (acc_ID, address, link_images) = (:acc_ID, :address, :link_images) WHERE (prop_ID) = (:prop_ID)",
+        {'acc_ID': property.get_account_id(), 'prop_ID': property.get_property_id(), 'address': property.get_address(), 'link_images': property.get_link_images()})
     __conn.commit()
 
 
