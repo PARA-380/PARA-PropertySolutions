@@ -26,7 +26,7 @@ from gui.Contractor_Page_GUI.Contractor_Page import Contractor_Page
 from gui.TenantPage_GUI.tenantsUI_main import tenantsui
 
 #controllers
-from System import Cont_UserProfile, Cont_Tenant, Cont_Property, Cont_Contractor
+from System import Cont_UserProfile, Cont_Tenant, Cont_Property, Cont_Contractor, Cont_Bill
 
 """Represents the dashboard interface for the application.
 
@@ -38,7 +38,7 @@ Args:
 """
         
 class Dashboard(QMainWindow, Ui_DashBoard):
-    def __init__(self, Cont_UserProfile : Cont_UserProfile, Cont_TenantPage : Cont_Tenant, Cont_PropertyPage : Cont_Property, Cont_Contractor : Cont_Contractor):
+    def __init__(self, Cont_UserProfile : Cont_UserProfile, Cont_TenantPage : Cont_Tenant, Cont_PropertyPage : Cont_Property, Cont_Contractor : Cont_Contractor, Cont_Bill : Cont_Bill):
 
         """Initialize the Dashboard instance.
         Args:
@@ -54,6 +54,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         self.Cont_TenantPage = Cont_TenantPage
         self.Cont_Contractor = Cont_Contractor
         self.Cont_PropertyPage = Cont_PropertyPage
+        self.Cont_Bill = Cont_Bill
         #
         self.show()
 
@@ -79,7 +80,7 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         Args:
             checked (bool): Indicates whether the button is checked or not.
         """
-        self.property_page = Property_Page(cont_property=self.Cont_PropertyPage, cont_tenant=self.Cont_TenantPage)
+        self.property_page = Property_Page(cont_property=self.Cont_PropertyPage, cont_tenant=self.Cont_TenantPage, cont_bill=self.Cont_Bill)
         self.property_page.show()
 
     def goto_user_profile_page(self, checked):

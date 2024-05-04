@@ -44,6 +44,8 @@ def cleartables():
     __cursor.execute("DROP TABLE IF EXISTS Tenant")
     __cursor.execute("DROP TABLE IF EXISTS Property")
     __cursor.execute("DROP TABLE IF EXISTS Contractor")
+    __cursor.execute("DROP TABLE IF EXISTS Bill")
+    print("Dropped Tables")
 
 def createTables():
     """Creates All Tables needed for initializing the Database
@@ -93,18 +95,19 @@ def createTables():
                     last text,
                     phone text
                    )""")
-    
-    __conn.commit()
+    print("Created Contractor Table")
 
     # create Table for Bills
     __cursor.execute("""CREATE TABLE Bill(
-                    bill_ID integer PRIMARY KEY AUTOINCREMENT,
+                    bill_ID INTEGER PRIMARY KEY,
                     acc_ID integer,
                     prop_ID integer,
                     amount int,
                     type text,
+                    description text
                    )""")
     
+    print("Created Bill table")
     __conn.commit()
     
 def readTables():
@@ -197,12 +200,13 @@ def addToProperty(accID : int, property : Property):
 def addToBill(accID : int, bill : Bill):
     global __conn, __cursor
 
-    __cursor.execute("INSERT INTO Bill (acc_ID, prop_ID, amount, type) VALUES (:acc_ID, :prop_ID, :amount, :type)",
+    __cursor.execute("INSERT INTO Bill (acc_ID, prop_ID, amount, type, description) VALUES (:acc_ID, :prop_ID, :amount, :type, :description)",
                      {
                          'acc_ID' : accID,
                          'prop_ID' : bill.get_propID(),
                          'amount' : bill.getAmount(),
-                         'type' : bill.get_type()
+                         'type' : bill.get_type(),
+                         'description' : bill.getDescription()
                      }
                      )
     
@@ -316,10 +320,10 @@ def readProperty(accID:int) -> list[Property]:
 
 
 
-def readBills(propID:int) -> list[Bill]:
+def readBills(propID:int) -> dict[int,Bill]:
     global __conn, __cursor
     #temporary dictionary to return list of tenant objects
-    bills = list()
+    bills = {}
     #use cursor to execute SELECT sql code. fetchall fields returned from condition for tenants associated with account id
     data=__cursor.execute("SELECT * FROM Bill WHERE (prop_ID) = (:prop_ID)",{
         'prop_ID' : propID
@@ -332,11 +336,39 @@ def readBills(propID:int) -> list[Bill]:
 
     #parse through bill data and create bill objects
     for billData in data:
-        bill = Bill()
+        bill = Bill(account_id=billData[1], property_ID=billData[2], amount= billData[3], bill_type=billData[4], description=billData[5] )
         bill.set_bill_id(billData[0])
-        bills.append(bill) 
+        bills[bill.get_bill_id()] = bill 
+        print(f"{bill}")
 
     return bills
+
+# def readBills_Account(accID:int) -> dict[int,dict[int,Bill]]:
+#     global __conn, __cursor
+#     #temporary dictionary to return list of tenant objects
+#     bills = dict[int,dict[int,Bill]] #[[prop_id] -> [bill_id -> bill]]
+#     #use cursor to execute SELECT sql code. fetchall fields returned from condition for tenants associated with account id
+#     data=__cursor.execute("SELECT * FROM Bill WHERE (acc_ID) = (:acc_ID)",{
+#         'acc_ID' : accID
+#     }).fetchall() #returns a list of tenant data, need to turn into Tenant Objects Dict
+#     #if data is None, then there was no tenants with associated account id
+#     if data is None:
+#         print(f"No data was returned from request on read Bills from account {accID}")
+#         return None
+#     print(f"Read Bills Data: {data}")
+
+#     #parse through bill data and create bill objects
+#     property_bills = dict[int,Bill]
+    
+#     for billData in data:
+#         bill = Bill()
+#         bill.set_bill_id(billData[0])
+#         property_bills[billData[0]] = bill
+        
+#         bills[bill.get_bill_id()] = bill 
+#         bills[billData[2]] = property_bills[billData[0]]
+
+#     return bills
 
 
 

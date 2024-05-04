@@ -41,7 +41,7 @@ def run():
     if(loginWindow.is_login):
         session.setControllerUserProfile()
         # db.addToProperty(session.getMainAccount().getID(),Property(address="123 main st"))
-        window = Dashboard(session.cont_userprofile,session.cont_tenant, session.cont_property, session.cont_contractor)
+        window = Dashboard(session.cont_userprofile,session.cont_tenant, session.cont_property, session.cont_contractor, session.cont_bill)
 
         window.show()
 

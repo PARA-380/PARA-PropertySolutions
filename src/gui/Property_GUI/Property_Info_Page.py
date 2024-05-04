@@ -16,7 +16,7 @@ import sys
 import re
 import matplotlib.pyplot as plt
 # from Property_Button_Controller import Property_Controller
-from System import Cont_Property,Cont_Tenant, Property
+from System import Cont_Property,Cont_Tenant, Cont_Bill, Property, Bill
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
@@ -26,7 +26,7 @@ class Property_Info(QMainWindow):
         QMainWindow: The base class for the main window widget.
     """
         
-    def __init__(self, property_number, tenant_controller : Cont_Tenant, property_controller: Cont_Property):
+    def __init__(self, property_number, tenant_controller : Cont_Tenant, property_controller: Cont_Property, bill_controller : Cont_Bill):
         """Initializes the Property_Info object.
 
         Args:
@@ -35,9 +35,11 @@ class Property_Info(QMainWindow):
         super().__init__()
         self.property_controller = property_controller
         self.tenant_controller = tenant_controller
+        self.bill_controller = bill_controller
         self.property_number = property_number
         # self.property_id where do we get this from? Dictionary in Property Button?
         self.property_id = self.property_controller.getPropertyID(self.property_number)
+        self.bill_controller.change_property(self.property_id)
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
 
@@ -110,7 +112,7 @@ class Property_Info(QMainWindow):
 
         # Button to add property description to table
         add_button = QPushButton("Add Description")  
-        add_button.clicked.connect(self.add_property_to_table)
+        add_button.clicked.connect(lambda : self.add_property_to_table())
         button_layout.addWidget(add_button)
 
         # Button to delete selected property description from table
@@ -162,13 +164,28 @@ class Property_Info(QMainWindow):
         self.open_link_button.clicked.connect(self.open_link_button_clicked)
         button_layout.addWidget(self.open_link_button)
 
+    def create_bill(self, description : str, type : str, price : int):
+        print(f"bill create: {description} {type} {price}")
+        self.bill_controller.create_bill(description=description, type=type, amount=price)
+
     # Function to add property details to property table
-    def add_property_to_table(self):
+    def add_property_to_table(self, bill : Bill = None):
         """Adds property details to the property table.
         """
-
-        description = self.description_input.text()
-        price = self.price_input.text()
+        #take user input
+        if bill is None:
+            description = self.description_input.text()
+            price = self.price_input.text()
+            # use the selected value from the single type_dropdown
+            selected_type = str(self.type_dropdown.currentText())
+            print(f"BillType: {type(selected_type)}")
+            self.create_bill(description=description,type=selected_type,price=price)
+        else:
+            # print(f"BILL: {type(bill.get_type())}")
+            description = bill.getDescription()
+            price = bill.getAmount()
+            print(f"price: {price}")
+            selected_type = bill.get_type()
 
         # Check if both description and price are not empty
         if description and price:
@@ -190,7 +207,7 @@ class Property_Info(QMainWindow):
 
             # Create QTableWidgetItem objects for the description price, and type
             description_item = QTableWidgetItem(description)
-            price_item = QTableWidgetItem(price)
+            price_item = QTableWidgetItem(str(price))
             
             # Set the QTableWidgetItem objects in the property table
             # Set the description item in the first column (index 0) 
@@ -199,7 +216,7 @@ class Property_Info(QMainWindow):
             self.property_table.setItem(row_count, 1, price_item)
 
             # use the selected value from the single type_dropdown
-            selected_type = self.type_dropdown.currentText()
+            # selected_type = self.type_dropdown.currentText()
 
             # Set the type for the new property
             type_item = QTableWidgetItem(selected_type)
@@ -399,6 +416,14 @@ class Property_Info(QMainWindow):
             self.display_tenant_on_table(tenant.getFirstName())
 
         pass
+
+    def setup_bills(self):
+        #go through all bills of this property and display them
+        bills = self.bill_controller.get_bills()
+        
+        for bill in bills.values():
+            print(f"type: {(bill)}")
+            self.add_property_to_table(bill)
 
         
     def see_pie_chart(self):
