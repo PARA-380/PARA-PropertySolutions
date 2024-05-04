@@ -78,31 +78,31 @@ class Property_Info(QMainWindow):
         layout.addWidget(self.address_label)
 
         # Input Widgets 
-        input_layout = QHBoxLayout()
-        layout.addLayout(input_layout)
+        self.input_layout = QHBoxLayout()
+        layout.addLayout(self.input_layout)
 
         # Line edit for entering property description
         self.description_input = QLineEdit()  
         self.description_input.setPlaceholderText("Description")
         self.description_input.setFixedWidth(150)
-        input_layout.addWidget(self.description_input)
+        self.input_layout.addWidget(self.description_input)
 
         # Line edit for entering property price
         self.price_input = QLineEdit()  
         self.price_input.setPlaceholderText("Price")
         self.price_input.setFixedWidth(100)
-        input_layout.addWidget(self.price_input)
+        self.input_layout.addWidget(self.price_input)
 
         # Dropdown list for selecting type
         self.type_dropdown = QComboBox()  
         self.type_dropdown.addItems(["Collect", "Pay"])
-        input_layout.addWidget(self.type_dropdown)
+        self.input_layout.addWidget(self.type_dropdown)
 
         # Tenant dropdown list
         self.tenant_dropdown = QComboBox()  # Combo box for selecting tenant
         self.tenantNames_to_id = self.tenant_controller.get_tenant_names() #changed name from tenantNames
         self.tenant_dropdown.addItems(self.tenantNames_to_id.keys())  # Add tenant names here
-        input_layout.addWidget(self.tenant_dropdown)
+        self.input_layout.addWidget(self.tenant_dropdown)
 
         # Buttons
         button_layout = QHBoxLayout()
@@ -153,9 +153,10 @@ class Property_Info(QMainWindow):
         layout.addWidget(see_pie_chart_button)
 
         # Line edit for inputting the link
-        self.link_input = QLineEdit(self)
-        self.link_input.setPlaceholderText("Enter link here")
-        input_layout.addWidget(self.link_input)
+        # self.link_input = QLineEdit(self)
+        # self.link_input.setPlaceholderText("Enter link here")
+        # self.input_layout.addWidget(self.link_input)
+        self.setup_link()
 
         # Button to open the link
         self.open_link_button = QPushButton("See Images", self)
@@ -413,6 +414,55 @@ class Property_Info(QMainWindow):
         print(f"Address:     {address}")
         self.save_address(address)
 
+    def setup_link(self):
+        """on initial startup of property page, set the link to an existing link or prompt user to enter one.
+        """
+        self.link_input = QLineEdit(self)
+        self.check_link_exists()
+        # Line edit for inputting the link
+        self.input_layout.addWidget(self.link_input)
+
+    def check_link_exists(self):
+        """if link exists, display it. Otherwise prompt user to enter one.
+        """
+        link = self.property_controller.get_property_link_images(self.property_id)
+        if link == None:
+            self.link_input.setPlaceholderText("Enter link here")
+        else:
+            print(f"Link: {link}")
+            self.link_input.setText(link)
+            # self.open_link_button_clicked(link)
+
+    def save_link(self):
+        """ask controller to save the link
+        """
+        link = self.link_input.text()
+        self.property_controller.update_link_images(link, self.property_id)
+
+    # Function to open the link when the see images is clicked
+    def open_link_button_clicked(self, link: str = None):
+        """Opens the link when the "See Images" button is clicked.
+        """
+        if link is None:
+            link = self.link_input.text()
+            print('link: ', link)
+            self.property_controller.update_link_images(link, self.property_id)
+        else:
+            self.check_link_exists()
+
+        # self.link_input.setText(link)
+
+        # Regular expression to validate the link format
+        link_pattern = re.compile(r'https?://\S+')  # Simple pattern to match URLs starting with http:// or https://
+
+        if link_pattern.fullmatch(link):
+            # Open the link in the default web browser
+            QDesktopServices.openUrl(QUrl(link))
+        else:
+            # Show a warning if the link is invalid
+            QMessageBox.warning(self, "Invalid Link", "Please enter a valid link.")
+    
+
     def setup_tenants(self):
         """create a list of tenants already assigned to this property
         asks the controller for list of tenants at that property
@@ -424,7 +474,6 @@ class Property_Info(QMainWindow):
 
         pass
 
-        
     def see_pie_chart(self):
         """Display a pie chart
 
@@ -451,31 +500,6 @@ class Property_Info(QMainWindow):
         else:
             QMessageBox.warning(self, "Warning", "No data available to plot pie chart.")
 
-    # Function to open the link when the see images is clicked
-    def open_link_button_clicked(self, link: str = None):
-        """Opens the link when the "See Images" button is clicked.
-        """
-        if link is None:
-            link = self.link_input.text()
-            print('link: ', link)
-            self.property_controller.update_link_images(link, self.property_id)
-
-        # self.link_input.setText(link)
-
-        # Regular expression to validate the link format
-        link_pattern = re.compile(r'https?://\S+')  # Simple pattern to match URLs starting with http:// or https://
-
-        if link_pattern.fullmatch(link):
-            # Open the link in the default web browser
-            QDesktopServices.openUrl(QUrl(link))
-        else:
-            # Show a warning if the link is invalid
-            QMessageBox.warning(self, "Invalid Link", "Please enter a valid link.")
-    
-    def setup_link_images(self, key: int = None):
-        link = self.property_controller.get_property_link_images(self.property_id)
-        self.link_input.setText(link)
-        # self.open_link_button_clicked(link)
     
     def set_address_label(self, address):
         """Sets the address label.
