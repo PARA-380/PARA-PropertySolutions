@@ -170,6 +170,29 @@ def addToTenants(accID : int, tenant : Tenant):
     tenant.setID(__cursor.lastrowid)
     return __cursor.lastrowid
 
+def addToProperty(accID : int, property : Property):
+    """Adds a new Property Object into the Database by copying its contents and linking its IDs to other tables
+    Args:
+        accID (int): The account associated with this property
+        property (Property): Property Object to copy contents from
+
+    Returns:
+        _type_: Returns the Unique ID in that table.
+    """
+    global __conn, __cursor
+
+    __cursor.execute("INSERT INTO Property (acc_ID, address) VALUES (:acc_ID, :address)",
+                     {
+                         'acc_ID' : accID,
+                         'address' : property.get_address()
+                     }
+                     )
+    
+    __conn.commit()
+    property.set_property_id(__cursor.lastrowid)
+
+    return __cursor.lastrowid   
+
 
 def addToBill(accID : int, bill : Bill):
     global __conn, __cursor
@@ -427,7 +450,7 @@ def deleteProperty(prop_id : int):
     })
     __conn.commit()
 
-def deleteProperty(bill_id : int):
+def deleteBill(bill_id : int):
     global __conn, __cursor
     __cursor.execute("DELETE FROM Bill WHERE (bill_id) = (:ID)", {
         'ID' : bill_id
