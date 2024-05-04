@@ -223,3 +223,14 @@ class Cont_Tenant:
         for tenant in self.tenants:
             if first_name == tenant.getFirstName() and last_name == tenant.getLastName():
                 return tenant.getPhoneNumber()
+            
+    def unassign_tenant_from_property(self, ten_id):
+        """Updates the tenants property id and address to None
+        """
+        #need to remove property id from tenant
+        tenant : Tenant = self.find_tenant_by_id(account_id=self.accID,tenant_id=ten_id)
+        tenant.set_property_id(None)
+        #then need to remove address
+        tenant.setAddress(None)
+        #update database
+        db.updateTenant(tenant)
