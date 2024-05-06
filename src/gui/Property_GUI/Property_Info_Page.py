@@ -424,7 +424,7 @@ class Property_Info(QMainWindow):
 
         # The rest logic is the same as delete_property_from_table
         if current_row >= 0:
-            self.tenants_table.removeRow(current_row)
+            # self.tenants_table.removeRow(current_row)
             tenant_id = self.tenant_controller.find_tenant_id(tenant_first_name, tenant_last_name)
             self.tenant_controller.unassign_tenant_from_property(tenant_id)
             print("tenant_id found: ", tenant_id)

@@ -185,10 +185,11 @@ def addToProperty(accID : int, property : Property):
     """
     global __conn, __cursor
 
-    __cursor.execute("INSERT INTO Property (acc_ID, address) VALUES (:acc_ID, :address)",
+    __cursor.execute("INSERT INTO Property (acc_ID, address, link_images) VALUES (:acc_ID, :address, :link_images)",
                      {
                          'acc_ID' : accID,
-                         'address' : property.get_address()
+                         'address' : property.get_address(),
+                         'link_images' : property.get_link_images()
                      }
                      )
     
@@ -313,7 +314,7 @@ def readProperty(accID:int) -> list[Property]:
     print(f"Data: {data}")
 
     for propData in data:
-        temp_property = Property(accID=accID,address=propData[2])
+        temp_property = Property(accID=accID,address=propData[2],link_images=propData[6])
         temp_property.set_property_id(propData[0])
         properties.append(temp_property)
 
