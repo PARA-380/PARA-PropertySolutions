@@ -136,8 +136,8 @@ class Property_Info(QMainWindow):
 
         # Property Details Table (left)
         self.property_table = QTableWidget()  # Table to display property details
-        self.property_table.setColumnCount(3)
-        self.property_table.setHorizontalHeaderLabels(["Description", "Price", "Type"])
+        self.property_table.setColumnCount(4)
+        self.property_table.setHorizontalHeaderLabels(["Item ID", "Description", "Price", "Type"])
         tables_layout.addWidget(self.property_table)
 
         # Add initial total row
@@ -189,6 +189,7 @@ class Property_Info(QMainWindow):
         if bill is None:
             description = self.description_input.text()
             price = self.price_input.text()
+            item_id = self.bill_controller.find_bill_id(description, price)
             try:
                 price_float = float(price)
             except ValueError:
@@ -204,6 +205,7 @@ class Property_Info(QMainWindow):
             # print(f"BILL: {type(bill.get_type())}")
             description = bill.getDescription()
             price = bill.getAmount()
+            item_id = bill.get_bill_id()
             print(f"price: {price}")
             selected_type = bill.get_type()
 
@@ -229,12 +231,14 @@ class Property_Info(QMainWindow):
             # Create QTableWidgetItem objects for the description price, and type
             description_item = QTableWidgetItem(description)
             price_item = QTableWidgetItem(str(price))
+            id_item = QTableWidgetItem(str(item_id))
             
+            self.property_table.setItem(self.row_count, 0, id_item)
             # Set the QTableWidgetItem objects in the property table
             # Set the description item in the first column (index 0) 
-            self.property_table.setItem(self.row_count, 0, description_item)
+            self.property_table.setItem(self.row_count, 1, description_item)
             # Set the price item in the second column (index 1)
-            self.property_table.setItem(self.row_count, 1, price_item)
+            self.property_table.setItem(self.row_count, 2, price_item)
 
             # use the selected value from the single type_dropdown
             # selected_type = self.type_dropdown.currentText()
@@ -257,15 +261,18 @@ class Property_Info(QMainWindow):
         """Deletes selected property from the property table.
         """
         # Get the index of the currently selected row in the property table
-        selected_row = self.property_table.currentRow()
-
-        # Check if a row is selected (i.e., if selected_row is not negative)
-        if selected_row >= 0:
-            # If a row is selected, remove it from the property table
-            self.property_table.removeRow(selected_row)
-        else:
-            # If no row is selected (selected_row is negative), display a warning message
-            QMessageBox.warning(self, "Warning", "No row selected.")
+        current_row = self.property_table.currentRow()
+        selected_row = self.property_table.selectionModel().selectedRows()
+        for index in selected_row:
+            item_id = self.property_table.model().data(self.property_table.model().index(index.row(), 0))
+            # Check if a row is selected (i.e., if selected_row is not negative)
+            if current_row >= 0:
+                # If a row is selected, remove it from the property table
+                self.property_table.removeRow(current_row)
+                self.bill_controller.delete_bill(int(item_id))
+            else:
+                # If no row is selected (selected_row is negative), display a warning message
+                QMessageBox.warning(self, "Warning", "No row selected.")
 
         self.calculate_total()  # Call the calculate_total method after adding a property
 
@@ -280,8 +287,8 @@ class Property_Info(QMainWindow):
         # Iterate over each row in the property table
         for row in range(self.property_table.rowCount()):
             # Retrieve the type and price from the current row
-            type_item = self.property_table.item(row, 2)
-            price_item = self.property_table.item(row, 1)
+            type_item = self.property_table.item(row, 3)
+            price_item = self.property_table.item(row, 2)
             # print(f"DEBUG: {type_item}")
             # print(f"DEBUG: {price_item}")
 

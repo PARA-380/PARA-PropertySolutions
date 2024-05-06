@@ -30,6 +30,10 @@ class Cont_Bill:
             _type_: Returns the popped bill
         """
         return self.bills.pop(bill_id)
+    
+    def delete_bill(self, bill_id):
+        db.deleteBill(bill_id)
+        self.remove_bill(bill_id)
 
     def pay_bill(self, amount):
         self.amount -= amount
@@ -51,3 +55,8 @@ class Cont_Bill:
 
     def update_bills(self):
         self.bills = db.readBills(self.property_id)
+
+    def find_bill_id(self, description, amount):
+        for bill_instance in self.bills.values():
+            if bill_instance.getDescription() == description and bill_instance.getAmount():
+                return bill_instance.billID()
