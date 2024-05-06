@@ -14,8 +14,9 @@ class Cont_Bill:
     def create_bill(self, description : str, type : str, amount : int):
         new_bill = Bill(account_id=self.account_id, property_ID=self.property_id, description= description, amount = amount, bill_type=type)
         print(f"billtype in here: {new_bill.get_type()}")
-        db.addToBill(self.property_id, new_bill)
+        bill_id = db.addToBill(self.property_id, new_bill)
         self.add_bill(new_bill.get_bill_id(), new_bill)
+        return bill_id
 
     def add_bill(self, bill_id, bill):
         self.bills.update({bill_id : bill})
@@ -58,5 +59,5 @@ class Cont_Bill:
 
     def find_bill_id(self, description, amount):
         for bill_instance in self.bills.values():
-            if bill_instance.getDescription() == description and bill_instance.getAmount():
+            if bill_instance.getDescription() == description and bill_instance.getAmount() == amount:
                 return bill_instance.billID()

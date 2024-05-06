@@ -178,8 +178,18 @@ class Property_Info(QMainWindow):
         self.calculate_total()
 
     def create_bill(self, description : str, type : str, price : int):
+        """
+
+        Args:
+            description (str): _description_
+            type (str): _description_
+            price (int): _description_
+
+        Returns:
+            bill_id: id of bill added.
+        """
         print(f"bill create: {description} {type} {price}")
-        self.bill_controller.create_bill(description=description, type=type, amount=price)
+        return self.bill_controller.create_bill(description=description, type=type, amount=price)
 
     # Function to add property details to property table
     def add_property_to_table(self, bill : Bill = None):
@@ -190,7 +200,7 @@ class Property_Info(QMainWindow):
         if bill is None:
             description = self.description_input.text()
             price = self.price_input.text()
-            item_id = self.bill_controller.find_bill_id(description, price)
+            # 
             try:
                 price_float = float(price)
             except ValueError:
@@ -201,7 +211,8 @@ class Property_Info(QMainWindow):
             # use the selected value from the single type_dropdown
             selected_type = str(self.type_dropdown.currentText())
             print(f"BillType: {type(selected_type)}")
-            self.create_bill(description=description,type=selected_type,price=price)
+            item_id = self.create_bill(description=description,type=selected_type,price=price)
+            # item_id = self.bill_controller.find_bill_id(description, price)
         else:
             # print(f"BILL: {type(bill.get_type())}")
             description = bill.getDescription()
@@ -562,8 +573,8 @@ class Property_Info(QMainWindow):
         descriptions = []
         prices = []
         for row in range(1, self.property_table.rowCount()):
-            description_item = self.property_table.item(row, 0)
-            price_item = self.property_table.item(row, 1)
+            description_item = self.property_table.item(row, 1)
+            price_item = self.property_table.item(row, 2)
             if description_item and price_item:
                 descriptions.append(description_item.text())
                 prices.append(float(price_item.text()))
