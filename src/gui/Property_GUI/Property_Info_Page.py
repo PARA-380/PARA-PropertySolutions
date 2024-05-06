@@ -164,6 +164,8 @@ class Property_Info(QMainWindow):
         self.open_link_button.clicked.connect(self.open_link_button_clicked)
         button_layout.addWidget(self.open_link_button)
 
+        self.row_count = 1
+
     def setup_on_open(self):
         """all the necessary things to be done when opening this property info.
         Note: still in scope as long as property main is open. Many things
@@ -182,6 +184,7 @@ class Property_Info(QMainWindow):
     def add_property_to_table(self, bill : Bill = None):
         """Adds property details to the property table.
         """
+
         #take user input
         if bill is None:
             description = self.description_input.text()
@@ -218,9 +221,10 @@ class Property_Info(QMainWindow):
             
             # If the conversion is successful, continue to add the property to the table
             # Get the current row count of the property table
-            row_count = self.property_table.rowCount()
+            self.row_count = self.property_table.rowCount()
+            print("row_count: ", self.row_count)
             # Increment the row count to accommodate the new property
-            self.property_table.setRowCount(row_count + 1)
+            self.property_table.setRowCount(self.row_count + 1)
 
             # Create QTableWidgetItem objects for the description price, and type
             description_item = QTableWidgetItem(description)
@@ -228,16 +232,16 @@ class Property_Info(QMainWindow):
             
             # Set the QTableWidgetItem objects in the property table
             # Set the description item in the first column (index 0) 
-            self.property_table.setItem(row_count, 0, description_item)
+            self.property_table.setItem(self.row_count, 0, description_item)
             # Set the price item in the second column (index 1)
-            self.property_table.setItem(row_count, 1, price_item)
+            self.property_table.setItem(self.row_count, 1, price_item)
 
             # use the selected value from the single type_dropdown
             # selected_type = self.type_dropdown.currentText()
 
             # Set the type for the new property
             type_item = QTableWidgetItem(selected_type)
-            self.property_table.setItem(row_count, 2, type_item)
+            self.property_table.setItem(self.row_count, 2, type_item)
 
 
             # Clear the input fields after adding the property to the table
@@ -293,6 +297,10 @@ class Property_Info(QMainWindow):
         total_price = total_collect + total_pay
         total_price_item = QTableWidgetItem(str(total_price))
         self.property_table.setItem(0, 1, total_price_item)
+
+    def reset_table_row_count(self, new_row_count):
+        """Resets the row count of the property table."""
+        self.property_table.setRowCount(new_row_count)
 
     def add_initial_total_row(self):
         """Adds an initial total row to the property details table.
@@ -448,7 +456,7 @@ class Property_Info(QMainWindow):
             self.property_table.removeRow(row)
             print(f"Removed row: {row}")
         print(f"Cleaning up!")
-        
+        self.row_count = self.reset_table_row_count(1)
 
     def setup_bills(self):
         #go through all bills of this property and display them
