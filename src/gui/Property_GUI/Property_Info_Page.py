@@ -164,6 +164,16 @@ class Property_Info(QMainWindow):
         self.open_link_button.clicked.connect(self.open_link_button_clicked)
         button_layout.addWidget(self.open_link_button)
 
+    def setup_on_open(self):
+        """all the necessary things to be done when opening this property info.
+        Note: still in scope as long as property main is open. Many things
+        to need to be aware of.
+        """
+        self.setup_address(self.property_number)
+        self.change_bill_scope()
+        self.setup_bills()
+        self.calculate_total()
+
     def create_bill(self, description : str, type : str, price : int):
         print(f"bill create: {description} {type} {price}")
         self.bill_controller.create_bill(description=description, type=type, amount=price)
