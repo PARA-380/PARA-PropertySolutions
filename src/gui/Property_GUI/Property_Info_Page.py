@@ -39,7 +39,7 @@ class Property_Info(QMainWindow):
         self.property_number = property_number
         # self.property_id where do we get this from? Dictionary in Property Button?
         self.property_id = self.property_controller.getPropertyID(self.property_number)
-        self.bill_controller.change_property(self.property_id)
+        # self.bill_controller.change_property(self.property_id)
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
 
@@ -176,6 +176,13 @@ class Property_Info(QMainWindow):
         if bill is None:
             description = self.description_input.text()
             price = self.price_input.text()
+            try:
+                price_float = float(price)
+            except ValueError:
+                # If the conversion fails (e.g., if price contains non-numeric characters),
+                # display a warning message and return from the function
+                QMessageBox.warning(self, "Warning", "Price must be a valid number.")
+                return
             # use the selected value from the single type_dropdown
             selected_type = str(self.type_dropdown.currentText())
             print(f"BillType: {type(selected_type)}")
@@ -228,6 +235,9 @@ class Property_Info(QMainWindow):
         
         self.calculate_total()  # Call the calculate_total method after adding a property
 
+    # def clear_table(self, table, start=0):
+
+
     # Function to delete selected property from property table
     def delete_property_from_table(self):
         """Deletes selected property from the property table.
@@ -258,13 +268,15 @@ class Property_Info(QMainWindow):
             # Retrieve the type and price from the current row
             type_item = self.property_table.item(row, 2)
             price_item = self.property_table.item(row, 1)
+            # print(f"DEBUG: {type_item}")
+            # print(f"DEBUG: {price_item}")
 
             # Check if both type_item and price_item are not None
             if type_item is not None and price_item is not None:
                 # Check the type and add the price accordingly
-                if type_item.text() == "Collect":
+                if type_item.text().lower() == "collect":
                     total_collect += float(price_item.text())
-                elif type_item.text() == "Pay":
+                elif type_item.text().lower() == "pay":
                     total_pay -= float(price_item.text())
 
         # Set the total values in the first row of the price column
@@ -415,15 +427,29 @@ class Property_Info(QMainWindow):
         for tenant in tenants:
             self.display_tenant_on_table(tenant.getFirstName())
 
-        pass
+    
+    def change_bill_scope(self):
+        print(f"Changed Property! {self.property_id}")
+        self.bill_controller.change_property(self.property_id)
+
+    def clear_bills(self):
+        #may need to clear bills table then resetup
+        for row in range(1, self.property_table.rowCount()):
+            self.property_table.removeRow(row)
+            print(f"Removed row: {row}")
+        print(f"Cleaning up!")
+        
 
     def setup_bills(self):
         #go through all bills of this property and display them
+        #CLEAR THE TABLE FIRST
+        self.clear_bills()
+        print(f"setting up!")
         bills = self.bill_controller.get_bills()
-        
         for bill in bills.values():
-            print(f"type: {(bill)}")
+            print(f"setting up: {(bill.description)}")
             self.add_property_to_table(bill)
+            #self.calculate_total()
 
         
     def see_pie_chart(self):

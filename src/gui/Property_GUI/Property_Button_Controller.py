@@ -45,7 +45,7 @@ class Property_Controller:
 
         #do some one-time setup stuff
         property_info.setup_tenants()
-        property_info.setup_bills()
+        # property_info.setup_bills()
 
     def get_property_info(self, property_number):
         """Retrieves the Property_Info instance for the given property number.

@@ -119,7 +119,11 @@ class Property_Page(QMainWindow):
 
         # Retrieve Property_Info instance from PropertyInfoController
         property_info = self.property_info_controller.get_property_info(property_number)
+        #setups on OPEN
         property_info.setup_address(property_number)
+        property_info.change_bill_scope()
+        property_info.setup_bills()
+        property_info.calculate_total()
         
         
         #duplicates tenant rows if opened again Needs fix (FIXED: moved to _create_property^)
