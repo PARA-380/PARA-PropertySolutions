@@ -12,7 +12,7 @@ from .Tenant import Tenant
 
 class Property:
     def __init__(self, property_id: int = None, accID : int  = None, address: str = "", tenants: dict = {}, sqft: str = "", home_type: str = "",
-                 max_living: int = None):
+                 max_living: int = None, link_images: str = None):
         """
         Defines Property variables
         @param property_id:
@@ -30,6 +30,7 @@ class Property:
         self.sqft = sqft
         self.home_type = home_type
         self.max_living = max_living
+        self.link_images = link_images
 
     def __repr__(self):
         return f"{self.property_id}, {self.address}"
@@ -114,6 +115,7 @@ class Property:
 
     def get_tenants(self):
         return self.tenants
+    
     def add_tenant_to_property(self, tenant: Tenant):
         """
         Adds Tenants to specified property
@@ -129,6 +131,12 @@ class Property:
         @return:
         """
         self.tenants.pop(key)
+
+    def get_link_images(self):
+        return self.link_images
+    
+    def set_link_images(self, link):
+        self.link_images = link
 
 
 def main() -> None:
