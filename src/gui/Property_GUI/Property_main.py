@@ -11,9 +11,10 @@ Algorithm:
 """
 import sys
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QApplication, QHBoxLayout, QMessageBox
+
 from .Property_Button_Controller import Property_Controller
 
-from System import Cont_Property, Cont_Tenant
+from System import Cont_Property, Cont_Tenant, Cont_Bill
 
 
 class Property_Page(QMainWindow):
@@ -22,7 +23,7 @@ class Property_Page(QMainWindow):
     Args:
         QMainWindow (QMainWindow): The base class for UI object in PyQt6
     """
-    def __init__(self, cont_property : Cont_Property, cont_tenant : Cont_Tenant):
+    def __init__(self, cont_property : Cont_Property, cont_tenant : Cont_Tenant, cont_bill : Cont_Bill):
         super().__init__()
         # Set window title and size
         self.setWindowTitle("Property Page")
@@ -32,6 +33,7 @@ class Property_Page(QMainWindow):
         #Controllers
         self.Cont_Property = cont_property
         self.Cont_Tenant = cont_tenant
+        self.Cont_Bill = cont_bill
 
         print(f"{self.Cont_Property.getProperties()}")
 
@@ -50,7 +52,7 @@ class Property_Page(QMainWindow):
         # self.property_ids = {}
     
         # Initialize Property_Controller instance
-        self.property_info_controller = Property_Controller(self.Cont_Property,self.Cont_Tenant)
+        self.property_info_controller = Property_Controller(self.Cont_Property,self.Cont_Tenant,self.Cont_Bill)
 
         # Create property buttons based on the total number of properties created
         total_properties_created = self.property_info_controller.get_total_properties_created()
@@ -117,7 +119,10 @@ class Property_Page(QMainWindow):
 
         # Retrieve Property_Info instance from PropertyInfoController
         property_info = self.property_info_controller.get_property_info(property_number)
-        property_info.setup_address(property_number)
+        #setups on OPEN
+        property_info.setup_on_open()
+        
+        
         #duplicates tenant rows if opened again Needs fix (FIXED: moved to _create_property^)
         # property_info.setup_tenants()
 

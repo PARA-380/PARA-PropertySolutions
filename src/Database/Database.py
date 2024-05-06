@@ -10,7 +10,7 @@
 import sqlite3
 # from Account import Account
 # from Tenant import Tenant
-from System import Account, Tenant, Property, Contractor
+from System import Account, Tenant, Property, Contractor, Bill
 
 __conn : sqlite3.Connection = None
 __cursor : sqlite3.Cursor = None
@@ -22,7 +22,7 @@ def init():
        __conn   : is the current connection to a certain database file. (stored locally)
     """
     global __conn, __cursor
-    # __conn = sqlite3.connect('../data/sql.db')
+    #__conn = sqlite3.connect('../data/sql.db')
     __conn = sqlite3.connect('data/sql.db')
     __cursor = __conn.cursor()
 
@@ -44,6 +44,8 @@ def cleartables():
     __cursor.execute("DROP TABLE IF EXISTS Tenant")
     __cursor.execute("DROP TABLE IF EXISTS Property")
     __cursor.execute("DROP TABLE IF EXISTS Contractor")
+    __cursor.execute("DROP TABLE IF EXISTS Bill")
+    print("Dropped Tables")
 
 def createTables():
     """Creates All Tables needed for initializing the Database
@@ -93,7 +95,19 @@ def createTables():
                     last text,
                     phone text
                    )""")
+    print("Created Contractor Table")
+
+    # create Table for Bills
+    __cursor.execute("""CREATE TABLE Bill(
+                    bill_ID INTEGER PRIMARY KEY,
+                    acc_ID integer,
+                    prop_ID integer,
+                    amount int,
+                    type text,
+                    description text
+                   )""")
     
+    print("Created Bill table")
     __conn.commit()
     
 def readTables():
@@ -159,7 +173,6 @@ def addToTenants(accID : int, tenant : Tenant):
     tenant.setID(__cursor.lastrowid)
     return __cursor.lastrowid
 
-
 def addToProperty(accID : int, property : Property):
     """Adds a new Property Object into the Database by copying its contents and linking its IDs to other tables
     Args:
@@ -180,6 +193,25 @@ def addToProperty(accID : int, property : Property):
     
     __conn.commit()
     property.set_property_id(__cursor.lastrowid)
+
+    return __cursor.lastrowid   
+
+
+def addToBill(accID : int, bill : Bill):
+    global __conn, __cursor
+
+    __cursor.execute("INSERT INTO Bill (acc_ID, prop_ID, amount, type, description) VALUES (:acc_ID, :prop_ID, :amount, :type, :description)",
+                     {
+                         'acc_ID' : accID,
+                         'prop_ID' : bill.get_propID(),
+                         'amount' : bill.getAmount(),
+                         'type' : bill.get_type(),
+                         'description' : bill.getDescription()
+                     }
+                     )
+    
+    __conn.commit()
+    bill.set_bill_id(__cursor.lastrowid)
 
     return __cursor.lastrowid   
 
@@ -288,6 +320,58 @@ def readProperty(accID:int) -> list[Property]:
 
 
 
+def readBills(propID:int) -> dict[int,Bill]:
+    global __conn, __cursor
+    #temporary dictionary to return list of tenant objects
+    bills = {}
+    #use cursor to execute SELECT sql code. fetchall fields returned from condition for tenants associated with account id
+    data=__cursor.execute("SELECT * FROM Bill WHERE (prop_ID) = (:prop_ID)",{
+        'prop_ID' : propID
+    }).fetchall() #returns a list of tenant data, need to turn into Tenant Objects Dict
+    #if data is None, then there was no tenants with associated account id
+    if data is None:
+        print(f"No data was returned from request on read Bills on property {propID}")
+        return None
+    print(f"Read Bills Data: {data}")
+
+    #parse through bill data and create bill objects
+    for billData in data:
+        bill = Bill(account_id=billData[1], property_ID=billData[2], amount= billData[3], bill_type=billData[4], description=billData[5] )
+        bill.set_bill_id(billData[0])
+        bills[bill.get_bill_id()] = bill 
+        print(f"{bill}")
+
+    return bills
+
+# def readBills_Account(accID:int) -> dict[int,dict[int,Bill]]:
+#     global __conn, __cursor
+#     #temporary dictionary to return list of tenant objects
+#     bills = dict[int,dict[int,Bill]] #[[prop_id] -> [bill_id -> bill]]
+#     #use cursor to execute SELECT sql code. fetchall fields returned from condition for tenants associated with account id
+#     data=__cursor.execute("SELECT * FROM Bill WHERE (acc_ID) = (:acc_ID)",{
+#         'acc_ID' : accID
+#     }).fetchall() #returns a list of tenant data, need to turn into Tenant Objects Dict
+#     #if data is None, then there was no tenants with associated account id
+#     if data is None:
+#         print(f"No data was returned from request on read Bills from account {accID}")
+#         return None
+#     print(f"Read Bills Data: {data}")
+
+#     #parse through bill data and create bill objects
+#     property_bills = dict[int,Bill]
+    
+#     for billData in data:
+#         bill = Bill()
+#         bill.set_bill_id(billData[0])
+#         property_bills[billData[0]] = bill
+        
+#         bills[bill.get_bill_id()] = bill 
+#         bills[billData[2]] = property_bills[billData[0]]
+
+#     return bills
+
+
+
 #UPDATE METHODS
 
 def updateAccount(account : Account):
@@ -322,6 +406,13 @@ def updateProperty(property : Property):
     __cursor.execute(
         "UPDATE Property SET (acc_ID, address) = (:acc_ID, :address) WHERE (prop_ID) = (:prop_ID)",
         {'acc_ID': property.get_account_id(), 'prop_ID': property.get_property_id(), 'address': property.get_address()})
+    __conn.commit()
+
+def updateBill(bill : Bill):
+    global __conn, __cursor
+    __cursor.execute(
+        "UPDATE Bill SET (acc_ID, prop_ID, type, amount) = (:acc_ID, :prop_id, :type, :amount) WHERE (bill_ID) = (:bill_ID)",
+        {'acc_ID': bill.get_acc_id(), 'prop_ID': bill.get_propID(), 'type': bill.get_type(), 'amount' : bill.getAmount()})
     __conn.commit()
 
 
@@ -416,6 +507,13 @@ def deleteProperty(prop_id : int):
     global __conn, __cursor
     __cursor.execute("DELETE FROM Property WHERE (prop_id) = (:ID)", {
         'ID' : prop_id
+    })
+    __conn.commit()
+
+def deleteBill(bill_id : int):
+    global __conn, __cursor
+    __cursor.execute("DELETE FROM Bill WHERE (bill_id) = (:ID)", {
+        'ID' : bill_id
     })
     __conn.commit()
 

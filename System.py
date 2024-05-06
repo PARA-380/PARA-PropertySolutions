@@ -12,6 +12,7 @@ from src.Entities.Account import Account
 from src.Entities.Property import Property
 from src.Entities.Tenant import Tenant
 from src.Entities.Contractor import Contractor
+from src.Entities.Bill import Bill
 import src.Database.Database as db
 
 from src.Cont_UserProfile import Cont_UserProfile
@@ -19,6 +20,7 @@ from src.Cont_Login import Cont_Login
 from src.Cont_Tenant import Cont_Tenant
 from src.Cont_Contractor import Cont_Contractor
 from src.Cont_Property import Cont_Property
+from src.Cont_Bill import Cont_Bill
 
 class System():
     def __init__(self, main : Account = None):
@@ -35,6 +37,7 @@ class System():
         self.cont_tenant : Cont_Tenant
         self.cont_contractor : Cont_Contractor
         self.cont_property  : Cont_Property
+        self.cont_bill : Cont_Bill
         #setup database and controllers
         self.StartSession()
         
@@ -88,7 +91,7 @@ class System():
         
         db.init()
         try:
-            #db.cleartables()    #for testing purposes
+            # db.cleartables()    #for testing purposes
             db.createTables()   #creates the Account, Tenant, Property, etc. Tables
         except:
             pass
@@ -108,6 +111,7 @@ class System():
         self.cont_tenant = Cont_Tenant(self.mainAccount.getID()) #review this line
         self.cont_property = Cont_Property(self.mainAccount.getID())
         self.cont_contractor = Cont_Contractor(self.mainAccount.getID())
+        self.cont_bill = Cont_Bill(self.mainAccount.getID(),None) #does not have a property associated to it yet
 
     def EndSession(self):
         """

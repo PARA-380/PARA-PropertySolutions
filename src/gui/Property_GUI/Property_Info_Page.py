@@ -11,12 +11,12 @@ from PyQt6.QtWidgets import (
     QMainWindow, QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox, QComboBox
 )
 from PyQt6.QtCore import Qt, QUrl
-from PyQt6.QtGui import QDesktopServices  
+from PyQt6.QtGui import QDesktopServices, QFont 
 import sys
 import re
 import matplotlib.pyplot as plt
 # from Property_Button_Controller import Property_Controller
-from System import Cont_Property,Cont_Tenant, Property, Tenant
+from System import Cont_Property,Cont_Tenant, Cont_Bill, Property, Bill, Tenant
 
 # Define a class Property_info
 class Property_Info(QMainWindow):
@@ -26,7 +26,7 @@ class Property_Info(QMainWindow):
         QMainWindow: The base class for the main window widget.
     """
         
-    def __init__(self, property_number, tenant_controller : Cont_Tenant, property_controller: Cont_Property):
+    def __init__(self, property_number, tenant_controller : Cont_Tenant, property_controller: Cont_Property, bill_controller : Cont_Bill):
         """Initializes the Property_Info object.
 
         Args:
@@ -35,9 +35,11 @@ class Property_Info(QMainWindow):
         super().__init__()
         self.property_controller = property_controller
         self.tenant_controller = tenant_controller
+        self.bill_controller = bill_controller
         self.property_number = property_number
         # self.property_id where do we get this from? Dictionary in Property Button?
         self.property_id = self.property_controller.getPropertyID(self.property_number)
+        # self.bill_controller.change_property(self.property_id)
         self.resize(800, 600)
         self.setWindowTitle(f"Property {property_number} Information")
 
@@ -110,7 +112,7 @@ class Property_Info(QMainWindow):
 
         # Button to add property description to table
         add_button = QPushButton("Add Description")  
-        add_button.clicked.connect(self.add_property_to_table)
+        add_button.clicked.connect(lambda : self.add_property_to_table())
         button_layout.addWidget(add_button)
 
         # Button to delete selected property description from table
@@ -134,8 +136,8 @@ class Property_Info(QMainWindow):
 
         # Property Details Table (left)
         self.property_table = QTableWidget()  # Table to display property details
-        self.property_table.setColumnCount(3)
-        self.property_table.setHorizontalHeaderLabels(["Description", "Price", "Type"])
+        self.property_table.setColumnCount(4)
+        self.property_table.setHorizontalHeaderLabels(["Item ID", "Description", "Price", "Type"])
         tables_layout.addWidget(self.property_table)
 
         # Add initial total row
@@ -162,13 +164,50 @@ class Property_Info(QMainWindow):
         self.open_link_button.clicked.connect(self.open_link_button_clicked)
         button_layout.addWidget(self.open_link_button)
 
+        self.row_count = 1
+
+    def setup_on_open(self):
+        """all the necessary things to be done when opening this property info.
+        Note: still in scope as long as property main is open. Many things
+        to need to be aware of.
+        """
+        self.setup_address(self.property_number)
+        self.change_bill_scope()
+        self.setup_bills()
+        self.calculate_total()
+
+    def create_bill(self, description : str, type : str, price : int):
+        print(f"bill create: {description} {type} {price}")
+        self.bill_controller.create_bill(description=description, type=type, amount=price)
+
     # Function to add property details to property table
-    def add_property_to_table(self):
+    def add_property_to_table(self, bill : Bill = None):
         """Adds property details to the property table.
         """
 
-        description = self.description_input.text()
-        price = self.price_input.text()
+        #take user input
+        if bill is None:
+            description = self.description_input.text()
+            price = self.price_input.text()
+            item_id = self.bill_controller.find_bill_id(description, price)
+            try:
+                price_float = float(price)
+            except ValueError:
+                # If the conversion fails (e.g., if price contains non-numeric characters),
+                # display a warning message and return from the function
+                QMessageBox.warning(self, "Warning", "Price must be a valid number.")
+                return
+            # use the selected value from the single type_dropdown
+            selected_type = str(self.type_dropdown.currentText())
+            print(f"BillType: {type(selected_type)}")
+            self.create_bill(description=description,type=selected_type,price=price)
+        else:
+            # print(f"BILL: {type(bill.get_type())}")
+            description = bill.getDescription()
+            price = bill.getAmount()
+            item_id = bill.get_bill_id()
+            print(f"price: {price}")
+            selected_type = bill.get_type()
 
         # Check if both description and price are not empty
         if description and price:
@@ -184,26 +223,29 @@ class Property_Info(QMainWindow):
             
             # If the conversion is successful, continue to add the property to the table
             # Get the current row count of the property table
-            row_count = self.property_table.rowCount()
+            self.row_count = self.property_table.rowCount()
+            print("row_count: ", self.row_count)
             # Increment the row count to accommodate the new property
-            self.property_table.setRowCount(row_count + 1)
+            self.property_table.setRowCount(self.row_count + 1)
 
             # Create QTableWidgetItem objects for the description price, and type
             description_item = QTableWidgetItem(description)
-            price_item = QTableWidgetItem(price)
+            price_item = QTableWidgetItem(str(price))
+            id_item = QTableWidgetItem(str(item_id))
             
+            self.property_table.setItem(self.row_count, 0, id_item)
             # Set the QTableWidgetItem objects in the property table
             # Set the description item in the first column (index 0) 
-            self.property_table.setItem(row_count, 0, description_item)
+            self.property_table.setItem(self.row_count, 1, description_item)
             # Set the price item in the second column (index 1)
-            self.property_table.setItem(row_count, 1, price_item)
+            self.property_table.setItem(self.row_count, 2, price_item)
 
             # use the selected value from the single type_dropdown
-            selected_type = self.type_dropdown.currentText()
+            # selected_type = self.type_dropdown.currentText()
 
             # Set the type for the new property
             type_item = QTableWidgetItem(selected_type)
-            self.property_table.setItem(row_count, 2, type_item)
+            self.property_table.setItem(self.row_count, 3, type_item)
 
 
             # Clear the input fields after adding the property to the table
@@ -211,20 +253,26 @@ class Property_Info(QMainWindow):
         
         self.calculate_total()  # Call the calculate_total method after adding a property
 
+    # def clear_table(self, table, start=0):
+
+
     # Function to delete selected property from property table
     def delete_property_from_table(self):
         """Deletes selected property from the property table.
         """
         # Get the index of the currently selected row in the property table
-        selected_row = self.property_table.currentRow()
-
-        # Check if a row is selected (i.e., if selected_row is not negative)
-        if selected_row >= 0:
-            # If a row is selected, remove it from the property table
-            self.property_table.removeRow(selected_row)
-        else:
-            # If no row is selected (selected_row is negative), display a warning message
-            QMessageBox.warning(self, "Warning", "No row selected.")
+        current_row = self.property_table.currentRow()
+        selected_row = self.property_table.selectionModel().selectedRows()
+        for index in selected_row:
+            item_id = self.property_table.model().data(self.property_table.model().index(index.row(), 0))
+            # Check if a row is selected (i.e., if selected_row is not negative)
+            if current_row >= 0:
+                # If a row is selected, remove it from the property table
+                self.property_table.removeRow(current_row)
+                self.bill_controller.delete_bill(int(item_id))
+            else:
+                # If no row is selected (selected_row is negative), display a warning message
+                QMessageBox.warning(self, "Warning", "No row selected.")
 
         self.calculate_total()  # Call the calculate_total method after adding a property
 
@@ -239,21 +287,27 @@ class Property_Info(QMainWindow):
         # Iterate over each row in the property table
         for row in range(self.property_table.rowCount()):
             # Retrieve the type and price from the current row
-            type_item = self.property_table.item(row, 2)
-            price_item = self.property_table.item(row, 1)
+            type_item = self.property_table.item(row, 3)
+            price_item = self.property_table.item(row, 2)
+            # print(f"DEBUG: {type_item}")
+            # print(f"DEBUG: {price_item}")
 
             # Check if both type_item and price_item are not None
             if type_item is not None and price_item is not None:
                 # Check the type and add the price accordingly
-                if type_item.text() == "Collect":
+                if type_item.text().lower() == "collect":
                     total_collect += float(price_item.text())
-                elif type_item.text() == "Pay":
+                elif type_item.text().lower() == "pay":
                     total_pay -= float(price_item.text())
 
         # Set the total values in the first row of the price column
         total_price = total_collect + total_pay
         total_price_item = QTableWidgetItem(str(total_price))
-        self.property_table.setItem(0, 1, total_price_item)
+        self.property_table.setItem(0, 2, total_price_item)
+
+    def reset_table_row_count(self, new_row_count):
+        """Resets the row count of the property table."""
+        self.property_table.setRowCount(new_row_count)
 
     def add_initial_total_row(self):
         """Adds an initial total row to the property details table.
@@ -266,12 +320,14 @@ class Property_Info(QMainWindow):
 
         # Set the text for the cells in the total row
         total_item = QTableWidgetItem("Total")
-        total_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
-        self.property_table.setItem(0, 0, total_item)
+        # total_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+        total_item.setTextAlignment(Qt.AlignmentFlag.AlignVCenter)
+        total_item.setFont(QFont("Times",weight = 15))
+        self.property_table.setItem(0, 1, total_item)
 
         # Set placeholders for price and type columns
-        self.property_table.setItem(0, 1, QTableWidgetItem(""))
-        self.property_table.setCellWidget(0, 2, QWidget())
+        self.property_table.setItem(0, 2, QTableWidgetItem(""))
+        self.property_table.setCellWidget(0, 3, QWidget())
 
      # Function to add tenant details to tenants table
     def add_tenant_to_table(self, tenant_name = None):
@@ -422,7 +478,29 @@ class Property_Info(QMainWindow):
         for tenant in tenants:
             self.display_tenant_on_table(tenant.getID(), tenant.getFirstName(), tenant.getLastName(), tenant.getPhoneNumber())
 
-        pass
+    
+    def change_bill_scope(self):
+        print(f"Changed Property! {self.property_id}")
+        self.bill_controller.change_property(self.property_id)
+
+    def clear_bills(self):
+        #may need to clear bills table then resetup
+        for row in range(1, self.property_table.rowCount()):
+            self.property_table.removeRow(row)
+            print(f"Removed row: {row}")
+        print(f"Cleaning up!")
+        self.row_count = self.reset_table_row_count(1)
+
+    def setup_bills(self):
+        #go through all bills of this property and display them
+        #CLEAR THE TABLE FIRST
+        self.clear_bills()
+        print(f"setting up!")
+        bills = self.bill_controller.get_bills()
+        for bill in bills.values():
+            print(f"setting up: {(bill.description)}")
+            self.add_property_to_table(bill)
+            #self.calculate_total()
 
         
     def see_pie_chart(self):

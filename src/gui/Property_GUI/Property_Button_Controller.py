@@ -10,7 +10,7 @@ Data Structure: List and Dictionary
 
 # Import Property_Info class
 from .Property_Info_Page import Property_Info
-from System import Cont_Property, Cont_Tenant
+from System import Cont_Property, Cont_Tenant, Cont_Bill
 
 class Property_Controller:
     """Property_Controller class manages communication between Property_main and Property_info.
@@ -20,12 +20,13 @@ class Property_Controller:
         total_properties_created (int): A counter to keep track of the total properties created.
         property_numbers (list): A list to store the property numbers.
     """
-    def __init__(self, cont_property: Cont_Property, cont_tenant : Cont_Tenant):
+    def __init__(self, cont_property: Cont_Property, cont_tenant : Cont_Tenant, cont_bill : Cont_Bill):
         self.property_info_pages = {}  # Dictionary to store Property_Info instances
         self.total_properties_created = 0  # Counter to keep track of total properties created
         self.property_numbers = []  # List to store the property numbers
         self.Cont_Property = cont_property
         self.Cont_Tenant = cont_tenant
+        self.Cont_Bill = cont_bill
 
     def create_property_info(self, property_number):
         """Creates a Property_Info instance for the given property number and stores it in the dictionary.
@@ -36,7 +37,7 @@ class Property_Controller:
         print(f"CREATED PROPERTY {property_number}")
 
         # Create an instance of Property_Info for the given property number
-        property_info = Property_Info(property_number=property_number,tenant_controller=self.Cont_Tenant, property_controller=self.Cont_Property)
+        property_info = Property_Info(property_number=property_number,tenant_controller=self.Cont_Tenant, property_controller=self.Cont_Property, bill_controller = self.Cont_Bill)
         # Store the instance in the dictionary
         self.property_info_pages[property_number] = property_info
         # Increment the total properties created counter
@@ -44,6 +45,7 @@ class Property_Controller:
 
         #do some one-time setup stuff
         property_info.setup_tenants()
+        # property_info.setup_bills()
 
     def get_property_info(self, property_number):
         """Retrieves the Property_Info instance for the given property number.
