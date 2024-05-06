@@ -11,7 +11,7 @@ from PyQt6.QtWidgets import (
     QMainWindow, QApplication, QWidget, QLineEdit, QPushButton, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, QHBoxLayout, QMessageBox, QComboBox
 )
 from PyQt6.QtCore import Qt, QUrl
-from PyQt6.QtGui import QDesktopServices  
+from PyQt6.QtGui import QDesktopServices, QFont 
 import sys
 import re
 import matplotlib.pyplot as plt
@@ -245,7 +245,7 @@ class Property_Info(QMainWindow):
 
             # Set the type for the new property
             type_item = QTableWidgetItem(selected_type)
-            self.property_table.setItem(self.row_count, 2, type_item)
+            self.property_table.setItem(self.row_count, 3, type_item)
 
 
             # Clear the input fields after adding the property to the table
@@ -303,7 +303,7 @@ class Property_Info(QMainWindow):
         # Set the total values in the first row of the price column
         total_price = total_collect + total_pay
         total_price_item = QTableWidgetItem(str(total_price))
-        self.property_table.setItem(0, 1, total_price_item)
+        self.property_table.setItem(0, 2, total_price_item)
 
     def reset_table_row_count(self, new_row_count):
         """Resets the row count of the property table."""
@@ -320,12 +320,14 @@ class Property_Info(QMainWindow):
 
         # Set the text for the cells in the total row
         total_item = QTableWidgetItem("Total")
-        total_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
-        self.property_table.setItem(0, 0, total_item)
+        # total_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+        total_item.setTextAlignment(Qt.AlignmentFlag.AlignVCenter)
+        total_item.setFont(QFont("Times",weight = 15))
+        self.property_table.setItem(0, 1, total_item)
 
         # Set placeholders for price and type columns
-        self.property_table.setItem(0, 1, QTableWidgetItem(""))
-        self.property_table.setCellWidget(0, 2, QWidget())
+        self.property_table.setItem(0, 2, QTableWidgetItem(""))
+        self.property_table.setCellWidget(0, 3, QWidget())
 
      # Function to add tenant details to tenants table
     def add_tenant_to_table(self, tenant_name = None):
