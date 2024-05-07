@@ -70,6 +70,7 @@ class Cont_Tenant:
     
     def get_tenant_names(self):
         names = dict()
+        self.update_tenants()
         for tenant in self.tenants:
             names[tenant.getFirstName() +" "+ tenant.getLastName()] = tenant.getID()
         print(names)

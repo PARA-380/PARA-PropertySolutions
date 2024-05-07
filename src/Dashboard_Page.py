@@ -60,6 +60,12 @@ class Dashboard(QMainWindow, Ui_DashBoard):
 
         self.is_signout = False
 
+        self.Properties_btn.setFixedSize(500, 200)
+        self.pushButton_4.setFixedSize(500, 200)
+        self.pushButton_5.setFixedSize(500, 200)
+        self.Tenants_btn.setFixedSize(500, 200)
+                                         
+
         self.Properties_btn.clicked.connect(self.goto_property_page)
         # pushButton = userprofile page
         self.pushButton_3.clicked.connect(self.goto_user_profile_page)
@@ -73,6 +79,8 @@ class Dashboard(QMainWindow, Ui_DashBoard):
         self.Tenants_btn.clicked.connect(self.goto_tenant_page)
         # signout_btn = signout button
         self.signout_btn.clicked.connect(self.sign_out)
+
+
 
     def goto_property_page(self, checked):
         """Navigate to the property page.
