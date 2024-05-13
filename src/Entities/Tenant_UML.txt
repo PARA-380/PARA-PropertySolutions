@@ -1,0 +1,45 @@
+@startuml
+class Tenant {
+    __repr__()
+    setID()
+    getID()
+    get_account_id()
+    _set_account_id()
+    set_property_id()
+    get_property_id()
+    setAddress()
+    setFirstName()
+    setLastName()
+    setSSN()
+    setPhoneNumber()
+    setEmail()
+    saveData()
+    getFirstName()
+    getLastName()
+    getName()
+    getEmail()
+    getSSN()
+    getAddress()
+    getPhoneNumber()
+    to_dict()
+        tenantID
+    accountID
+    propertyID
+    tenantFirstName
+    tenantLastName
+    tenantSSN
+    tenantAddress
+    tenantPhoneNumber
+    tenantEmail
+    tenantID
+    accountID
+    propertyID
+    tenantAddress
+    tenantFirstName
+    tenantLastName
+    tenantSSN
+    tenantPhoneNumber
+    tenantEmail
+    __init__()
+}
+@enduml

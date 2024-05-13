@@ -1,0 +1,11 @@
+@startuml
+class Notification_Page {
+    populate_notifications()
+    delete_selected_row()
+        central_widget
+    delete_button
+    notification_table
+    __init__()
+}
+QMainWindow <|-- Notification_Page
+@enduml

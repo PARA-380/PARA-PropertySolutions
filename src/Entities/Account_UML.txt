@@ -1,0 +1,39 @@
+@startuml
+class Account {
+    __repr__()
+    setID()
+    getID()
+    addTenant()
+    remove_tenant()
+    addContractor()
+    set_firstName()
+    set_lastName()
+    get_firstName()
+    get_lastName()
+    get_name()
+    get_phonenumber()
+    set_phonenumber()
+    set_username()
+    get_properties()
+    print_tenants()
+    get_username()
+    set_password()
+    get_password()
+    get_contractors()
+    to_dict()
+    main()
+        firstName
+    lastName
+    ID
+    phoneNumber
+    username
+    password
+    ID
+    firstName
+    lastName
+    phoneNumber
+    username
+    password
+    __init__()
+}
+@enduml

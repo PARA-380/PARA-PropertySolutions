@@ -1,0 +1,25 @@
+@startuml
+class Dashboard {
+    goto_property_page()
+    goto_user_profile_page()
+    goto_setting_page()
+    goto_notification_page()
+    goto_contractor_page()
+    goto_tenant_page()
+    sign_out()
+        Cont_UserProfile
+    Cont_TenantPage
+    Cont_Contractor
+    Cont_PropertyPage
+    Cont_Bill
+    is_signout
+    property_page
+    user_profile
+    setting_page
+    notification_page
+    contractor_page
+    tenant_page
+    is_signout
+    __init__()
+}
+@enduml

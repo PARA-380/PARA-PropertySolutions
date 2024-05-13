@@ -1,0 +1,15 @@
+@startuml
+class SignUp_Page {
+    sign_up()
+        Cont_Login
+    email_label
+    email_edit
+    password_label
+    password_edit
+    confirm_password_label
+    confirm_password_edit
+    sign_up_button
+    __init__()
+}
+QWidget <|-- SignUp_Page
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+class System {
+    __repr__()
+    setMainAccount()
+    getMainAccount()
+    getAccount()
+    StartSession()
+    setControllerUserProfile()
+    EndSession()
+    main()
+        Accounts : Account 
+    mainAccount : Account 
+    cont_userprofile : Cont_UserProfile
+    cont_login : Cont_Login
+    cont_tenant : Cont_Tenant
+    cont_contractor : Cont_Contractor
+    cont_property : Cont_Property
+    cont_bill : Cont_Bill
+    mainAccount
+    cont_login
+    cont_userprofile
+    mainAccount
+    cont_tenant
+    cont_property
+    cont_contractor
+    cont_bill
+    __init__(Accounts: Account , mainAccount: Account , cont_userprofile: Cont_UserProfile, cont_login: Cont_Login, cont_tenant: Cont_Tenant, cont_contractor: Cont_Contractor, cont_property: Cont_Property, cont_bill: Cont_Bill)
+}
+System --> Account
+System --> Account
+System --> Cont_UserProfile
+System --> Cont_Login
+System --> Cont_Tenant
+System --> Cont_Contractor
+System --> Cont_Property
+System --> Cont_Bill
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class Userprofile {
+    SaveInfo()
+    DisplayInfo()
+    ClearFields()
+        Cont_UserProfile
+    __init__()
+}
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class Cont_Property {
+    createProperty()
+    deleteProperty()
+    getProperties()
+    addPropertyID()
+    getPropertyID()
+    find_property_by_id()
+    get_property_address()
+    update_address()
+    update_link_images()
+    get_property_link_images()
+        mainAccountID
+    Properties
+    Properties
+    Properties
+    Properties
+    Properties
+    __init__()
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class Cont_Login {
+    getUserProfile()
+    setUserProfile()
+    validateLogin()
+    searchAccount()
+    createAccount()
+        cont_user
+    __init__()
+}
+@enduml

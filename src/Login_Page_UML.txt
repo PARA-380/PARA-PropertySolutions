@@ -1,0 +1,11 @@
+@startuml
+class Login_Page {
+    go_to_signup_page()
+    log_in()
+        is_login
+    cont_login
+    signup_page
+    is_login
+    __init__()
+}
+@enduml

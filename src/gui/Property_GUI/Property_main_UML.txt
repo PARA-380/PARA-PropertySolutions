@@ -1,0 +1,26 @@
+@startuml
+class Property_Page {
+    setup_properties()
+    _create_property()
+    open_property_info()
+    delete_property()
+    _remove_layout_widgets()
+    get_next_available_property_number()
+    get_property_id()
+    main()
+        Cont_Property
+    Cont_Tenant
+    Cont_Bill
+    central_widget
+    vertical_layout
+    used_property_numbers
+    property_info_controller
+    is_setup
+    add_property_layout
+    create_button
+    is_setup
+    is_setup
+    __init__()
+}
+QMainWindow <|-- Property_Page
+@enduml

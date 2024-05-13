@@ -1,0 +1,21 @@
+@startuml
+class Cont_Bill {
+    create_bill()
+    add_bill()
+    remove_bill()
+    delete_bill()
+    pay_bill()
+    collect_bill()
+    get_bills()
+    change_property()
+    update_bills()
+    find_bill_id()
+        account_id
+    property_id
+    bills : dict[int,Bill] 
+    property_id
+    bills
+    __init__(bills: dict[int,Bill] )
+}
+Cont_Bill --> Bill
+@enduml

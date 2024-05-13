@@ -1,0 +1,29 @@
+@startuml
+class Bill {
+    set_bill_id()
+    get_bill_id()
+    get_acc_id()
+    set_acc_id()
+    get_propID()
+    set_propID()
+    getDescription()
+    setDescription()
+    getAmount()
+    set_amount()
+    get_type()
+    set_type()
+        billID
+    acc_ID
+    propID
+    description : str
+    bill_type : str
+    amount : int 
+    billID
+    acc_ID
+    propID
+    description
+    amount
+    bill_type
+    __init__(description: str, bill_type: str, amount: int )
+}
+@enduml

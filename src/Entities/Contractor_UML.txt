@@ -1,0 +1,19 @@
+@startuml
+class Contractor {
+    __repr__()
+    get_first_name()
+    get_last_name()
+    get_specialization()
+    get_phone_number()
+    get_contractor_id()
+    set_id()
+        accID
+    contractor_id
+    contractor_specialization
+    contractor_firstname
+    contractor_lastname
+    contractor_phone
+    contractor_id
+    __init__()
+}
+@enduml

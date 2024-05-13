@@ -1,0 +1,37 @@
+@startuml
+class Property {
+    __repr__()
+    get_account_id()
+    get_property_id()
+    set_property_id()
+    get_address()
+    set_address()
+    get_sqft()
+    set_sqft()
+    get_home_type()
+    set_home_type()
+    get_max_living()
+    set_max_living()
+    get_tenants()
+    add_tenant_to_property()
+    remove_tenant_from_property()
+    get_link_images()
+    set_link_images()
+    main()
+        property_id
+    account_id
+    address
+    tenants
+    sqft
+    home_type
+    max_living
+    link_images
+    property_id
+    address
+    sqft
+    home_type
+    max_living
+    link_images
+    __init__()
+}
+@enduml

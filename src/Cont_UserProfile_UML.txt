@@ -1,0 +1,12 @@
+@startuml
+class Cont_UserProfile {
+    setMainAccount()
+    getMainAccount()
+    searchAccount()
+    updateAccount()
+    createAccount()
+        mainAccount
+    mainAccount
+    __init__()
+}
+@enduml

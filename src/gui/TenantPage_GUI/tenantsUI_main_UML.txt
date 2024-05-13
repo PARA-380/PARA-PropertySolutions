@@ -1,0 +1,9 @@
+@startuml
+class tenantsui {
+    Add_Tenants()
+    __Add_Tenant()
+    Delete_Tenant()
+        cont_tenant
+    __init__()
+}
+@enduml

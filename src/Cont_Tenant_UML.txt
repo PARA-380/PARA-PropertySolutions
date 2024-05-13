@@ -1,0 +1,27 @@
+@startuml
+class Cont_Tenant {
+    create_tenant()
+    add_tenant()
+    find_tenant_by_id()
+    get_tenants()
+    get_tenant_names()
+    get_tenants_at_property()
+    update_tenants()
+    add_to_property()
+    update_tenant_first_name()
+    update_tenant_name()
+    update_ssn()
+    update_phone_number()
+    update_tenant_address()
+    update_tenant_email()
+    remove_tenant()
+    print_tenants()
+    find_tenant_id()
+    find_tenant_contact()
+    unassign_tenant_from_property()
+        accID
+    tenants
+    tenants
+    __init__()
+}
+@enduml

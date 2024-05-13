@@ -1,0 +1,10 @@
+@startuml
+class Setting_Page {
+    show_delete_warning()
+    delete_account()
+        delete_button
+    contact_label
+    __init__()
+}
+QDialog <|-- Setting_Page
+@enduml

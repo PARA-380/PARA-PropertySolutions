@@ -1,0 +1,18 @@
+@startuml
+class Contractor_Page {
+    add_contractors()
+    add_contractor_to_table()
+    delete_contractor_from_table()
+    clear_inputs()
+    check_notification()
+    open_recommended_contractors_website()
+        specialization_input
+    first_name_input
+    last_name_input
+    phone_input
+    contractors_table
+    cont_contractor
+    __init__()
+}
+QMainWindow <|-- Contractor_Page
+@enduml

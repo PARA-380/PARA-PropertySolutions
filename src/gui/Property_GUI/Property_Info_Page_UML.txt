@@ -1,0 +1,52 @@
+@startuml
+class Property_Info {
+    setup_on_open()
+    create_bill()
+    add_property_to_table()
+    delete_property_from_table()
+    calculate_total()
+    reset_table_row_count()
+    add_initial_total_row()
+    add_tenant_to_table()
+    display_tenant_on_table()
+    assign_tenant()
+    delete_tenant_from_table()
+    clear_inputs()
+    save_address()
+    setup_address()
+    setup_link()
+    check_link_exists()
+    save_link()
+    open_link_button_clicked()
+    setup_tenants()
+    change_bill_scope()
+    clear_bills()
+    setup_bills()
+    see_pie_chart()
+    set_address_label()
+    get_address_label()
+    get_property_number()
+        property_controller
+    tenant_controller
+    bill_controller
+    property_number
+    property_id
+    address_input
+    address_label
+    input_layout
+    description_input
+    price_input
+    type_dropdown
+    tenant_dropdown
+    tenantNames_to_id
+    property_table
+    tenants_table
+    open_link_button
+    row_count
+    row_count
+    link_input
+    row_count
+    __init__()
+}
+QMainWindow <|-- Property_Info
+@enduml

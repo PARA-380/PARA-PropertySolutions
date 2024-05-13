@@ -1,0 +1,18 @@
+@startuml
+class Property_Controller {
+    create_property_info()
+    get_property_info()
+    delete_property_info()
+    get_total_properties_created()
+    get_property_numbers()
+    save_property_count()
+    save_new_property()
+    save_property_info_to_database()
+        total_properties_created
+    Cont_Property
+    Cont_Tenant
+    Cont_Bill
+    total_properties_created
+    __init__()
+}
+@enduml

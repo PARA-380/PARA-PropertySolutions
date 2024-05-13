@@ -1,0 +1,13 @@
+@startuml
+class Cont_Contractor {
+    create_contractor()
+    add_contractor()
+    get_contractors()
+    update_contractors()
+    remove_contractor()
+        accID
+    contractors
+    contractors
+    __init__()
+}
+@enduml
