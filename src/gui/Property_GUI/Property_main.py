@@ -78,6 +78,11 @@ class Property_Page(QMainWindow):
         self.setup_properties(self.Cont_Property.getProperties())
 
     def setup_properties(self,properties):
+        """set up all the necessity of the property
+
+        Args:
+            properties (list): list of property objects
+        """
         for property in properties:
             self.is_setup = True
             property_number = self.get_next_available_property_number()
@@ -87,7 +92,7 @@ class Property_Page(QMainWindow):
 
 
     def _create_property(self, property_number = None):
-        """_summary_
+        """create a property page according to the property button
         """ 
         if not self.is_setup:
             property_number = self.get_next_available_property_number()
