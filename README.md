@@ -9,6 +9,8 @@ git clone https://github.com/PARA-380/PARA-PropertySolutions.git
 
 # Install the dependencies using poetry
 
+'Ensure you have Python 3.12 installed'
+
 ### install poetry to your computer
 
 ```
