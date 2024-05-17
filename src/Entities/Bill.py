@@ -1,4 +1,9 @@
-"""Header
+"""
+Bill.py
+Name: Adrian Carreno
+Date: 05/17/24
+Description: Handles Bill attributes
+Purposes: Creates a basis for a Bill and its attributes. Attributes get handled by its controller.
 """
 class Bill:
     """A bill is assigned to a house and has a positive or negative value

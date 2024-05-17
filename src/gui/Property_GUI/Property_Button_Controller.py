@@ -116,26 +116,3 @@ class Property_Controller:
         property_number = self.save_property_info_to_database(property_number, address)
 
         return property_number
-    
-    def save_property_info_to_database(self, property_number, address):
-        """Saves the property information to the database.
-
-        Args:
-            property_number (int): The unique identifier for the property.
-            address (str): The address of the property.
-
-        Returns:
-            int: The property number.
-        """
-        # need to implement saving property information to the database here
-        # For demonstration purposes, let's just print the property information
-        print("Saving Property to Database:")
-        print("Property Number:", property_number)
-        print("Address:", address)
-
-        # need to replace this with actual database interaction code
-        # Example:
-        # property_id = addToProperty(property_number, address)
-
-        # For demonstration purposes, returning the same property number
-        return property_number
