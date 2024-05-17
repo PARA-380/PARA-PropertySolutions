@@ -5,7 +5,9 @@ by Ali Maamoun, Jittapatana Prayoonpruk, Adrian Carreno, Ridham Patel
 # Clone the repo
 
 'ensure that you clone the 'Presentation-Build' branch'
+'''
 git clone https://github.com/PARA-380/PARA-PropertySolutions.git
+'''
 
 # Install the dependencies using poetry
 
