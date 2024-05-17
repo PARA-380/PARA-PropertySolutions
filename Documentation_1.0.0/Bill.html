@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Bill</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">Bill</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Centities%5Cbill.py">c:\users\richa\desktop\github project\para-propertysolutions\src\entities\bill.py</a></td></tr></table>
+    <p><span class="code"><a href="#Bill">Bill</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno<br>
+Date:&nbsp;05/17/24<br>
+Description:&nbsp;Handles&nbsp;<a href="#Bill">Bill</a>&nbsp;attributes<br>
+Purposes:&nbsp;Creates&nbsp;a&nbsp;basis&nbsp;for&nbsp;a&nbsp;<a href="#Bill">Bill</a>&nbsp;and&nbsp;its&nbsp;attributes.&nbsp;Attributes&nbsp;get&nbsp;handled&nbsp;by&nbsp;its&nbsp;controller.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Bill.html#Bill">Bill</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Bill">class <strong>Bill</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Bill">Bill</a>(billID:&nbsp;int&nbsp;=&nbsp;None,&nbsp;account_id:&nbsp;int&nbsp;=&nbsp;None,&nbsp;property_ID:&nbsp;int&nbsp;=&nbsp;None,&nbsp;description:&nbsp;str&nbsp;=&nbsp;None,&nbsp;bill_type:&nbsp;str&nbsp;=&nbsp;None,&nbsp;amount:&nbsp;int&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+A&nbsp;bill&nbsp;is&nbsp;assigned&nbsp;to&nbsp;a&nbsp;house&nbsp;and&nbsp;has&nbsp;a&nbsp;positive&nbsp;or&nbsp;negative&nbsp;value<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Bill-__init__"><strong>__init__</strong></a>(self, billID: int = None, account_id: int = None, property_ID: int = None, description: str = None, bill_type: str = None, amount: int = None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="Bill-getAmount"><strong>getAmount</strong></a>(self)</dt><dd><span class="code">get&nbsp;amount&nbsp;of&nbsp;the&nbsp;bill<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;amount&nbsp;of&nbsp;the&nbsp;bill</span></dd></dl>
+
+<dl><dt><a name="Bill-getDescription"><strong>getDescription</strong></a>(self)</dt><dd><span class="code">get&nbsp;Description&nbsp;of&nbsp;the&nbsp;bill<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string:&nbsp;description&nbsp;of&nbsp;the&nbsp;bill</span></dd></dl>
+
+<dl><dt><a name="Bill-get_acc_id"><strong>get_acc_id</strong></a>(self)</dt><dd><span class="code">get&nbsp;account&nbsp;ID<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;account&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Bill-get_bill_id"><strong>get_bill_id</strong></a>(self)</dt><dd><span class="code">get&nbsp;the&nbsp;bill&nbsp;ID<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_int:&nbsp;bill&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Bill-get_propID"><strong>get_propID</strong></a>(self)</dt><dd><span class="code">get&nbsp;property&nbsp;ID<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;Property&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Bill-get_type"><strong>get_type</strong></a>(self)</dt><dd><span class="code">get&nbsp;type&nbsp;of&nbsp;the&nbsp;bill&nbsp;(pay&nbsp;or&nbsp;collet)<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string:&nbsp;"collect",&nbsp;"pay",&nbsp;or&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Bill-setDescription"><strong>setDescription</strong></a>(self, description)</dt><dd><span class="code">set&nbsp;Description&nbsp;of&nbsp;the&nbsp;bill<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description&nbsp;(string):&nbsp;description</span></dd></dl>
+
+<dl><dt><a name="Bill-set_acc_id"><strong>set_acc_id</strong></a>(self, accID)</dt><dd><span class="code">set&nbsp;account&nbsp;ID<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;accID&nbsp;(int):&nbsp;passing&nbsp;account&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Bill-set_amount"><strong>set_amount</strong></a>(self, num: int)</dt><dd><span class="code">set&nbsp;amount&nbsp;of&nbsp;the&nbsp;bill<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;(int):&nbsp;number&nbsp;indicates&nbsp;the&nbsp;amount</span></dd></dl>
+
+<dl><dt><a name="Bill-set_bill_id"><strong>set_bill_id</strong></a>(self, billID)</dt><dd><span class="code">set&nbsp;the&nbsp;bill&nbsp;id<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;billID&nbsp;(int):&nbsp;bill&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Bill-set_propID"><strong>set_propID</strong></a>(self, num: int)</dt><dd><span class="code">set&nbsp;property&nbsp;ID<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;(int):&nbsp;number&nbsp;to&nbsp;indicate&nbsp;property&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Bill-set_type"><strong>set_type</strong></a>(self, type)</dt><dd><span class="code">set&nbsp;type&nbsp;of&nbsp;the&nbsp;bill&nbsp;(pay&nbsp;or&nbsp;collet)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(string):&nbsp;type&nbsp;of&nbsp;the&nbsp;bill&nbsp;(pay&nbsp;or&nbsp;collet)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Cont_Bill</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">Cont_Bill</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Ccont_bill.py">c:\users\richa\desktop\github project\para-propertysolutions\src\cont_bill.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Cont_Bill">Cont_Bill</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno,&nbsp;Ali&nbsp;Maamoun<br>
+Date:&nbsp;04/23/24<br>
+Description:&nbsp;Controller&nbsp;Bill&nbsp;related&nbsp;taks<br>
+Purposes:&nbsp;Controller&nbsp;Class&nbsp;for&nbsp;Property&nbsp;Page&nbsp;to&nbsp;handle&nbsp;the&nbsp;bills&nbsp;for&nbsp;a&nbsp;property.<br>
+Adds&nbsp;new&nbsp;bills,&nbsp;searches&nbsp;for&nbsp;bills,&nbsp;and&nbsp;more.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="src.Database.Database.html">src.Database.Database</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Cont_Bill.html#Cont_Bill">Cont_Bill</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Cont_Bill">class <strong>Cont_Bill</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Cont_Bill">Cont_Bill</a>(acc_id,&nbsp;prop_id)<br>
+&nbsp;<br>
+Controller&nbsp;for&nbsp;actions&nbsp;regarding&nbsp;Bills&nbsp;which&nbsp;need&nbsp;database&nbsp;access<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Cont_Bill-__init__"><strong>__init__</strong></a>(self, acc_id, prop_id)</dt><dd><span class="code">Initializes&nbsp;a&nbsp;controller&nbsp;for&nbsp;bills<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;acc_id&nbsp;(_type_):&nbsp;The&nbsp;account&nbsp;associated&nbsp;with&nbsp;this&nbsp;controller<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prop_id&nbsp;(_type_):&nbsp;The&nbsp;property&nbsp;database&nbsp;ID&nbsp;associated&nbsp;with&nbsp;this&nbsp;controller</span></dd></dl>
+
+<dl><dt><a name="Cont_Bill-add_bill"><strong>add_bill</strong></a>(self, bill_id, bill)</dt><dd><span class="code">adds&nbsp;the&nbsp;new&nbsp;bill&nbsp;locally&nbsp;to&nbsp;the&nbsp;dictionary<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bill_id&nbsp;(_type_):&nbsp;database&nbsp;ID<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bill&nbsp;(_type_):&nbsp;bill&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="Cont_Bill-change_property"><strong>change_property</strong></a>(self, prop_id)</dt><dd><span class="code">changes&nbsp;the&nbsp;scope&nbsp;of&nbsp;which&nbsp;property&nbsp;controller&nbsp;is&nbsp;looking&nbsp;at.</span></dd></dl>
+
+<dl><dt><a name="Cont_Bill-create_bill"><strong>create_bill</strong></a>(self, description: str, type: str, amount: int)</dt><dd><span class="code">Creates&nbsp;a&nbsp;bill&nbsp;into&nbsp;the&nbsp;database&nbsp;and&nbsp;locally<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description&nbsp;(str):&nbsp;Bill's&nbsp;name<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(str):&nbsp;pay&nbsp;or&nbsp;collect<br>
+&nbsp;&nbsp;&nbsp;&nbsp;amount&nbsp;(int):&nbsp;dollar&nbsp;amount<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;bill_id&nbsp;generated&nbsp;by&nbsp;db</span></dd></dl>
+
+<dl><dt><a name="Cont_Bill-delete_bill"><strong>delete_bill</strong></a>(self, bill_id)</dt><dd><span class="code">Removes&nbsp;bill&nbsp;from&nbsp;database&nbsp;table<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bill_id&nbsp;(int):&nbsp;database&nbsp;ID&nbsp;to&nbsp;remove</span></dd></dl>
+
+<dl><dt><a name="Cont_Bill-find_bill_id"><strong>find_bill_id</strong></a>(self, description, amount)</dt><dd><span class="code">searches&nbsp;for&nbsp;database&nbsp;ID&nbsp;through&nbsp;the&nbsp;dictionary<br>
+searches&nbsp;for&nbsp;matching&nbsp;description&nbsp;and&nbsp;price<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;description&nbsp;(_type_):&nbsp;name&nbsp;of&nbsp;bill&nbsp;to&nbsp;find&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;amount&nbsp;(_type_):&nbsp;price&nbsp;of&nbsp;bill&nbsp;to&nbsp;match<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;database&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Cont_Bill-get_bills"><strong>get_bills</strong></a>(self) -&gt; dict[int, src.Entities.Bill.Bill]</dt><dd><span class="code">reads&nbsp;the&nbsp;database&nbsp;to&nbsp;get&nbsp;new&nbsp;changes<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict[int,Bill]:&nbsp;updates&nbsp;its&nbsp;local&nbsp;records</span></dd></dl>
+
+<dl><dt><a name="Cont_Bill-remove_bill"><strong>remove_bill</strong></a>(self, bill_id)</dt><dd><span class="code">Removes&nbsp;a&nbsp;bill&nbsp;from&nbsp;the&nbsp;dictionary&nbsp;by&nbsp;its&nbsp;ID<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bill_id&nbsp;(_type_):&nbsp;ID&nbsp;to&nbsp;remove<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;Returns&nbsp;the&nbsp;popped&nbsp;bill</span></dd></dl>
+
+<dl><dt><a name="Cont_Bill-update_bills"><strong>update_bills</strong></a>(self)</dt><dd><span class="code">reads&nbsp;the&nbsp;database&nbsp;and&nbsp;updates&nbsp;records</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

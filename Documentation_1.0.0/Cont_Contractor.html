@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Cont_Contractor</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">Cont_Contractor</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Ccont_contractor.py">c:\users\richa\desktop\github project\para-propertysolutions\src\cont_contractor.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Cont_Contractor">Cont_Contractor</a>.py<br>
+Name:&nbsp;Jittapatana&nbsp;Prayoonpruk<br>
+Date:&nbsp;04/27/24<br>
+Description:&nbsp;Controller&nbsp;for&nbsp;Contractor&nbsp;class<br>
+Purposes:&nbsp;Controller&nbsp;Class&nbsp;for&nbsp;Contractor&nbsp;Page&nbsp;to&nbsp;connect&nbsp;Contractor&nbsp;Operations&nbsp;to&nbsp;Database&nbsp;and&nbsp;GUI.<br>
+Sets&nbsp;the&nbsp;correct&nbsp;ID&nbsp;for&nbsp;contractors&nbsp;as&nbsp;well&nbsp;as&nbsp;handling&nbsp;function&nbsp;such&nbsp;as&nbsp;add/delete&nbsp;contractors.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="src.Database.Database.html">src.Database.Database</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Cont_Contractor.html#Cont_Contractor">Cont_Contractor</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Cont_Contractor">class <strong>Cont_Contractor</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Cont_Contractor">Cont_Contractor</a>(accID)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Cont_Contractor-__init__"><strong>__init__</strong></a>(self, accID)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="Cont_Contractor-add_contractor"><strong>add_contractor</strong></a>(self, contractor: src.Entities.Contractor.Contractor)</dt><dd><span class="code">add&nbsp;contractor&nbsp;to&nbsp;the&nbsp;list&nbsp;of&nbsp;contractors<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;contractor&nbsp;(Contractor):&nbsp;contractor&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="Cont_Contractor-create_contractor"><strong>create_contractor</strong></a>(self, contractor: src.Entities.Contractor.Contractor)</dt><dd><span class="code">create&nbsp;new&nbsp;contractor&nbsp;and&nbsp;connect&nbsp;to&nbsp;the&nbsp;database<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;contractor&nbsp;(Contractor):&nbsp;contractor&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="Cont_Contractor-get_contractors"><strong>get_contractors</strong></a>(self) -&gt; list[src.Entities.Contractor.Contractor]</dt><dd><span class="code">get&nbsp;list&nbsp;of&nbsp;contractors<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list[Contractor]:&nbsp;list&nbsp;of&nbsp;contractor&nbsp;objects</span></dd></dl>
+
+<dl><dt><a name="Cont_Contractor-remove_contractor"><strong>remove_contractor</strong></a>(self, contractor_id: int)</dt><dd><span class="code">remove&nbsp;contractor,&nbsp;by&nbsp;its&nbsp;ID,&nbsp;from&nbsp;the&nbsp;list<br>
+delete&nbsp;the&nbsp;contractor&nbsp;from&nbsp;the&nbsp;database<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;contractor_id&nbsp;(int):&nbsp;contractor_id&nbsp;(key&nbsp;to&nbsp;remove)</span></dd></dl>
+
+<dl><dt><a name="Cont_Contractor-update_contractors"><strong>update_contractors</strong></a>(self)</dt><dd><span class="code">update&nbsp;contractor&nbsp;to&nbsp;teh&nbsp;database</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>List</strong> = typing.List</td></tr></table>
+</body></html>

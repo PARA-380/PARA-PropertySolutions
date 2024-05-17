@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Cont_Property</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">Cont_Property</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cricha%5Cdesktop%5Cgithub%20project%5Cpara-propertysolutions%5Csrc%5Ccont_property.py">c:\users\richa\desktop\github project\para-propertysolutions\src\cont_property.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;<a href="#Cont_Property">Cont_Property</a>.py<br>
+Name:&nbsp;Adrian&nbsp;Carreno,&nbsp;Ali&nbsp;Maamoun<br>
+Date:&nbsp;04/23/24<br>
+Description:&nbsp;Controller&nbsp;for&nbsp;Property&nbsp;module<br>
+Purposes:&nbsp;Controller&nbsp;Class&nbsp;for&nbsp;handling&nbsp;tasks&nbsp;related&nbsp;to&nbsp;properties,<br>
+adding&nbsp;new&nbsp;properties&nbsp;to&nbsp;the&nbsp;database,&nbsp;and&nbsp;reading&nbsp;the&nbsp;databse&nbsp;for&nbsp;properties</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="src.Database.Database.html">src.Database.Database</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Cont_Property.html#Cont_Property">Cont_Property</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Cont_Property">class <strong>Cont_Property</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Cont_Property">Cont_Property</a>(accID:&nbsp;int&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Cont_Property-__init__"><strong>__init__</strong></a>(self, accID: int = None)</dt><dd><span class="code">Initializes&nbsp;a&nbsp;controller&nbsp;and&nbsp;connects&nbsp;to&nbsp;the&nbsp;database&nbsp;immediately<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;accID&nbsp;(int,&nbsp;optional):&nbsp;account&nbsp;ID&nbsp;to&nbsp;read&nbsp;their&nbsp;properties.&nbsp;Defaults&nbsp;to&nbsp;None.</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-addPropertyID"><strong>addPropertyID</strong></a>(self, key, ID)</dt><dd><span class="code">Adds&nbsp;local&nbsp;ID&nbsp;to&nbsp;its&nbsp;translation&nbsp;table&nbsp;of&nbsp;GUI&nbsp;numbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Used&nbsp;in&nbsp;PropertyMain<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;(_type_):&nbsp;GUI&nbsp;property&nbsp;number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ID&nbsp;(_type_):&nbsp;Database&nbsp;Property&nbsp;Number</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-createProperty"><strong>createProperty</strong></a>(self, property: src.Entities.Property.Property = None, ) -&gt; int</dt><dd><span class="code">Creates&nbsp;a&nbsp;new&nbsp;property&nbsp;into&nbsp;the&nbsp;database&nbsp;and&nbsp;updates&nbsp;its&nbsp;records<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property&nbsp;(Property,&nbsp;optional):&nbsp;empty&nbsp;Property&nbsp;Object.&nbsp;Defaults&nbsp;to&nbsp;Property().<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;ID&nbsp;generated&nbsp;by&nbsp;database</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-deleteProperty"><strong>deleteProperty</strong></a>(self, prop_number: int)</dt><dd><span class="code">Removes&nbsp;a&nbsp;property&nbsp;fromthe&nbsp;database&nbsp;and&nbsp;updates&nbsp;its&nbsp;records<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prop_number&nbsp;(int):&nbsp;Database&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-find_property_by_id"><strong>find_property_by_id</strong></a>(self, prop_id)</dt><dd><span class="code">Searches&nbsp;the&nbsp;list&nbsp;for&nbsp;a&nbsp;property&nbsp;by&nbsp;matching&nbsp;its&nbsp;database&nbsp;ID<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prop_id&nbsp;(_type_):&nbsp;database&nbsp;property&nbsp;id<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;Property&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;found</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-getProperties"><strong>getProperties</strong></a>(self) -&gt; list[src.Entities.Property.Property]</dt><dd><span class="code">Updates&nbsp;its&nbsp;records&nbsp;of&nbsp;properties<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list[Property]:updated&nbsp;list&nbsp;of&nbsp;properties</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-getPropertyID"><strong>getPropertyID</strong></a>(self, key)</dt><dd><span class="code">gets&nbsp;the&nbsp;propertyID&nbsp;in&nbsp;the&nbsp;database&nbsp;by&nbsp;using&nbsp;a&nbsp;GUI&nbsp;property&nbsp;number<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;(_type_):&nbsp;GUI&nbsp;Property&nbsp;Number&nbsp;<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;Database&nbsp;Property&nbsp;Number</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-get_property_address"><strong>get_property_address</strong></a>(self, prop_id: int)</dt><dd><span class="code">returns&nbsp;the&nbsp;property&nbsp;<a href="builtins.html#object">object</a>'s&nbsp;address<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prop_id&nbsp;(int):&nbsp;database&nbsp;property&nbsp;ID<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;address&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-get_property_link_images"><strong>get_property_link_images</strong></a>(self, prop_id: int)</dt><dd><span class="code">gets&nbsp;the&nbsp;property's&nbsp;link&nbsp;images<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prop_id&nbsp;(int):&nbsp;database&nbsp;property&nbsp;ID<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type_:&nbsp;the&nbsp;link&nbsp;to&nbsp;images</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-update_address"><strong>update_address</strong></a>(self, address: str, prop_id: int)</dt><dd><span class="code">Updates&nbsp;the&nbsp;Database&nbsp;then&nbsp;its&nbsp;own&nbsp;records<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address&nbsp;(str):&nbsp;address&nbsp;to&nbsp;update&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prop_id&nbsp;(int):&nbsp;database&nbsp;property&nbsp;ID</span></dd></dl>
+
+<dl><dt><a name="Cont_Property-update_link_images"><strong>update_link_images</strong></a>(self, link_images: str, prop_id: int)</dt><dd><span class="code">Updates&nbsp;the&nbsp;Database&nbsp;then&nbsp;its&nbsp;own&nbsp;records<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;link_images&nbsp;(str):&nbsp;images&nbsp;link&nbsp;to&nbsp;update&nbsp;to&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prop_id&nbsp;(int):&nbsp;database&nbsp;property&nbsp;ID</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
