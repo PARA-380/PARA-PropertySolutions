@@ -49,26 +49,6 @@ class Account:
         """
         assert self.ID != None
         return self.ID
-    
-    def addTenant(self,id, tenant):
-        """
-        Adds Tenants to the list
-        @param id:
-        @param tenant:
-        @return:
-        """
-        self.tenants[id] = tenant
-
-    def remove_tenant(self, key):
-        """
-        Removes Tenants from the list
-        @param key:
-        @return:
-        """
-        self.tenants.pop(key)
-
-    def addContractor(self, var):
-        self.contractors.append(var)
 
     def set_firstName(self, first):
         """
@@ -130,22 +110,6 @@ class Account:
         """
         self.username = username
 
-    def get_properties(self):
-        """
-        Prints a list of Properties
-        @return:
-        """
-        for p in self.properties:
-            print(p)
-
-    def print_tenants(self):
-        """
-        Prints a list of tenants
-        @return:
-        """
-        for t in self.tenants:
-            print(t)
-
     def get_username(self):
         """
         Returns the Username of the account
@@ -167,14 +131,6 @@ class Account:
         @return:
         """
         return self.password
-
-    def get_contractors(self):
-        """
-        Prints a list of Contractors
-        @return:
-        """
-        for c in self.contractors:
-            print(c)
 
     def to_dict(self):
         """
